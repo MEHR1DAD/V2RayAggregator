@@ -1,4 +1,5 @@
-import requests
+import httpx
+import asyncio
 import os
 import yaml
 from database import initialize_db, get_all_sources_to_check, update_source_status, get_connection
@@ -16,10 +17,7 @@ VALID_PROTOCOLS = ('vmess://', 'vless://', 'ss://', 'ssr://', 'trojan://',
                    'socks://', 'wireguard://')
 
 def ensure_initial_sources_exist():
-    """
-    Ensures that all sources from the initial_seed_sources list in config.yml
-    exist in the database. This allows for easy manual addition of sources.
-    """
+    """Ensures that all sources from the initial_seed_sources list exist in the database."""
     print("Ensuring all initial seed sources exist in the database...")
     all_db_sources = set(get_all_sources_to_check())
     
@@ -38,16 +36,19 @@ def read_urls_from_txt(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return {line.strip() for line in f if line.strip()}
 
-def is_source_valid(url):
+async def is_source_valid(client, url):
+    """Checks a single source asynchronously."""
     try:
-        response = requests.get(url, timeout=REQUEST_TIMEOUT)
+        response = await client.get(url, timeout=REQUEST_TIMEOUT)
         response.raise_for_status()
         content = response.text
-        return any(line.strip().startswith(VALID_PROTOCOLS) for line in content.splitlines())
-    except requests.RequestException:
-        return False
+        if any(line.strip().startswith(VALID_PROTOCOLS) for line in content.splitlines()):
+            return url, 'active'
+        return url, 'dead' # Valid content but no configs
+    except (httpx.RequestError, httpx.HTTPStatusError):
+        return url, 'dead'
 
-def main():
+async def main():
     print("--- Source Management Process Started ---")
     
     initialize_db()
@@ -57,22 +58,31 @@ def main():
     for url in discovered_urls:
         update_source_status(url, 'active')
 
-    all_potential_urls = set(get_all_sources_to_check())
+    all_potential_urls = list(set(get_all_sources_to_check()))
 
     if not all_potential_urls:
         print("No sources found to check. Exiting.")
         return
 
-    print(f"Checking a total of {len(all_potential_urls)} potential sources...")
+    print(f"Checking {len(all_potential_urls)} potential sources concurrently...")
+    
+    tasks = []
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        for url in all_potential_urls:
+            tasks.append(is_source_valid(client, url))
+        
+        results = await asyncio.gather(*tasks)
 
-    for i, url in enumerate(all_potential_urls):
-        print(f"  ({i+1}/{len(all_potential_urls)}) Checking: {url[:80]}...")
-        if is_source_valid(url):
-            update_source_status(url, 'active')
-            print("   -> ✅ Valid, status set to 'active'")
+    active_count = 0
+    dead_count = 0
+    for url, status in results:
+        update_source_status(url, status)
+        if status == 'active':
+            active_count += 1
         else:
-            update_source_status(url, 'dead')
-            print("   -> ❌ Invalid, status set to 'dead'")
+            dead_count += 1
+            
+    print(f"Finished checking. Active: {active_count}, Dead: {dead_count}")
 
     if os.path.exists(DISCOVERED_SOURCES_FILE):
         open(DISCOVERED_SOURCES_FILE, 'w').close()
@@ -84,4 +94,4 @@ if __name__ == "__main__":
     if not os.path.exists('config.yml'):
         print("FATAL: config.yml not found. Please create it first.")
     else:
-        main()
+        asyncio.run(main())
