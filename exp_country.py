@@ -23,10 +23,10 @@ GEOIP_URL = config['urls']['geoip_download']
 MAXMIND_LICENSE_KEY = os.getenv("MAXMIND_LICENSE_KEY")
 COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
-TEST_URL = config['urls']['http_test']
 XRAY_PATH = './xray'
-# تعداد کانفیگی که به صورت رندوم برای تست انتخاب می‌شود
 SAMPLE_SIZE = 5000
+# URL for a 1MB file for speed testing
+SPEED_TEST_URL = "http://speed.cloudflare.com/__down?bytes=1000000" 
 # --- End of Constants ---
 
 def download_geoip_database():
@@ -107,7 +107,8 @@ def parse_proxy_uri(uri: str):
         return None
     return None
 
-async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
+async def test_proxy_speed(proxy_config: str, port: int) -> float:
+    """Tests a proxy's connectivity and download speed using xray and curl."""
     config_path = f"temp_config_{port}.json"
     outbound_config = parse_proxy_uri(proxy_config)
     
@@ -133,14 +134,20 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
 
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
-            '--head', '-s', '--connect-timeout', str(REQUEST_TIMEOUT),
-            TEST_URL,
+            '--connect-timeout', str(REQUEST_TIMEOUT),
+            '-o', '/dev/null', '-s', '-w', '%{speed_download}',
+            SPEED_TEST_URL,
             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL
         )
         stdout, _ = await proc.communicate()
 
-        if proc.returncode == 0 and (b'200 OK' in stdout or b'301' in stdout or b'302' in stdout):
-            return round(random.uniform(50.0, 2000.0), 2)
+        if proc.returncode == 0:
+            try:
+                speed_bytes_per_sec = float(stdout.decode('utf-8').replace(',', '.'))
+                speed_kbps = speed_bytes_per_sec / 1024
+                return speed_kbps if speed_kbps > 1 else 0.0
+            except (ValueError, TypeError):
+                return 0.0
         return 0.0
     except Exception:
         return 0.0
@@ -157,7 +164,7 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
 async def process_batch(batch, reader, start_port):
     tasks = []
     for i, conn in enumerate(batch):
-        tasks.append(test_proxy_connectivity(conn, start_port + i))
+        tasks.append(test_proxy_speed(conn, start_port + i))
     
     results = await asyncio.gather(*tasks)
     
@@ -170,7 +177,7 @@ async def process_batch(batch, reader, start_port):
             country_code = get_country_code(ip, reader)
             if country_code:
                 successful_in_batch.append((conn, 'unknown', country_code, speed, now))
-                print(f"✅ Success | Country: {country_code} | Config: {conn[:40]}...")
+                print(f"✅ Success | Country: {country_code} | Speed: {speed:.2f} KB/s | Config: {conn[:40]}...")
     return successful_in_batch
 
 async def main():
@@ -190,13 +197,11 @@ async def main():
     with open(merged_configs_path, 'r', encoding='utf-8') as f:
         connections = list(set(f.read().strip().splitlines()))
     
-    # --- منطق جدید نمونه‌گیری ---
     if len(connections) > SAMPLE_SIZE:
         print(f"Original list has {len(connections)} configs. Taking a random sample of {SAMPLE_SIZE}.")
         connections_to_test = random.sample(connections, SAMPLE_SIZE)
     else:
         connections_to_test = connections
-    # --- پایان منطق نمونه‌گیری ---
 
     all_successful_configs = []
     
