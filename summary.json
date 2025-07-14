@@ -1,13 +1,13 @@
 {
-    "last_update": "2025-07-14T10:49:40.396994+03:30",
+    "last_update": "2025-07-14T10:58:46.897412+03:30",
     "merged_configs_url": "https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt",
-    "merged_configs_count": 8827,
+    "merged_configs_count": 11454,
     "countries": [
         {
             "code": "us",
             "name": "ایالات متحده",
             "flag": "🇺🇸",
-            "count": 3175,
+            "count": 4076,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_sub_100.txt"
         },
@@ -15,7 +15,7 @@
             "code": "de",
             "name": "آلمان",
             "flag": "🇩🇪",
-            "count": 1972,
+            "count": 2580,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_sub_100.txt"
         },
@@ -23,7 +23,7 @@
             "code": "gb",
             "name": "بریتانیا",
             "flag": "🇬🇧",
-            "count": 1036,
+            "count": 1371,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_sub_100.txt"
         },
@@ -31,7 +31,7 @@
             "code": "ir",
             "name": "ایران",
             "flag": "🇮🇷",
-            "count": 945,
+            "count": 1245,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_sub_100.txt"
         },
@@ -39,7 +39,7 @@
             "code": "nl",
             "name": "هلند",
             "flag": "🇳🇱",
-            "count": 707,
+            "count": 889,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_sub_100.txt"
         },
@@ -47,7 +47,7 @@
             "code": "fr",
             "name": "فرانسه",
             "flag": "🇫🇷",
-            "count": 476,
+            "count": 619,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_sub_100.txt"
         },
@@ -55,7 +55,7 @@
             "code": "ca",
             "name": "کانادا",
             "flag": "🇨🇦",
-            "count": 217,
+            "count": 281,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/CA_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/CA_sub_100.txt"
         },
@@ -63,7 +63,7 @@
             "code": "tr",
             "name": "ترکیه",
             "flag": "🇹🇷",
-            "count": 163,
+            "count": 216,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_sub_100.txt"
         },
@@ -71,7 +71,7 @@
             "code": "se",
             "name": "سوئد",
             "flag": "🇸🇪",
-            "count": 91,
+            "count": 116,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/SE_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/SE_sub_100.txt"
         },
@@ -79,7 +79,7 @@
             "code": "ae",
             "name": "امارات",
             "flag": "🇦🇪",
-            "count": 45,
+            "count": 61,
             "full_link": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/AE_sub.txt",
             "link_100": "https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/AE_sub_100.txt"
         }
