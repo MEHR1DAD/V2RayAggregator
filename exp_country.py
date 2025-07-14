@@ -14,7 +14,7 @@ from utils import extract_ip_from_connection, resolve_to_ip
 from database import initialize_db, bulk_update_configs
 
 # --- Load Configuration ---
-with open("config.yml", "r") as f:
+with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 # --- Constants ---
@@ -56,7 +56,6 @@ def get_country_code(ip, reader):
         return None
 
 def parse_proxy_uri(uri: str):
-    """A more robust parser for proxy URIs."""
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri)
@@ -65,15 +64,14 @@ def parse_proxy_uri(uri: str):
                 "protocol": "vless",
                 "settings": {
                     "vnext": [{
-                        "address": parsed.hostname,
-                        "port": parsed.port,
+                        "address": parsed.hostname, "port": parsed.port,
                         "users": [{"id": parsed.username, "flow": params.get("flow", [""])[0]}]
                     }]
                 },
                 "streamSettings": {
                     "network": params.get("type", ["tcp"])[0],
                     "security": params.get("security", ["none"])[0],
-                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security") == "tls" else None,
+                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security", ["none"])[0] == "tls" else None,
                     "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type") == "ws" else None,
                 }
             }
@@ -94,7 +92,7 @@ def parse_proxy_uri(uri: str):
                 user_info = unquote(parsed.username)
                 if ":" in user_info:
                     method, password = user_info.split(":", 1)
-                else: # Handle cases with no password
+                else:
                     method = user_info
                     password = ""
                 hostname = parsed.hostname
@@ -129,7 +127,7 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5) # Give xray time to start
 
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
@@ -146,8 +144,11 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
-            xray_process.terminate()
-            await xray_process.wait()
+            try:
+                xray_process.terminate()
+                await xray_process.wait()
+            except ProcessLookupError:
+                pass
         if os.path.exists(config_path):
             os.remove(config_path)
 
@@ -156,7 +157,19 @@ async def process_batch(batch, reader, start_port):
     for i, conn in enumerate(batch):
         tasks.append(test_proxy_connectivity(conn, start_port + i))
     
-    return await asyncio.gather(*tasks)
+    results = await asyncio.gather(*tasks)
+    
+    successful_in_batch = []
+    now = datetime.utcnow().isoformat()
+    for conn, speed in zip(batch, results):
+        if speed > 0:
+            host = extract_ip_from_connection(conn)
+            ip = resolve_to_ip(host)
+            country_code = get_country_code(ip, reader)
+            if country_code:
+                successful_in_batch.append((conn, 'unknown', country_code, speed, now))
+                print(f"✅ Success | Country: {country_code} | Config: {conn[:40]}...")
+    return successful_in_batch
 
 async def main():
     initialize_db()
@@ -177,8 +190,7 @@ async def main():
     
     random.shuffle(connections)
 
-    successful_configs_data = []
-    now = datetime.utcnow().isoformat()
+    all_successful_configs = []
     
     batch_size = 100
     start_port = 10809
@@ -187,20 +199,12 @@ async def main():
         batch = connections[i:i+batch_size]
         print(f"--- Processing batch {i//batch_size + 1} of {len(connections)//batch_size + 1} ---")
         
-        results = await process_batch(batch, reader, start_port)
+        successful_in_batch = await process_batch(batch, reader, start_port)
+        all_successful_configs.extend(successful_in_batch)
         
-        for conn, speed in zip(batch, results):
-             if speed > 0:
-                host = extract_ip_from_connection(conn)
-                ip = resolve_to_ip(host)
-                country_code = get_country_code(ip, reader)
-                if country_code:
-                    successful_configs_data.append((conn, 'unknown', country_code, speed, now))
-                    print(f"✅ Success | Country: {country_code} | Config: {conn[:40]}...")
-        
-    if successful_configs_data:
-        print(f"\nSaving {len(successful_configs_data)} tested configs to database...")
-        bulk_update_configs(successful_configs_data)
+    if all_successful_configs:
+        print(f"\nSaving {len(all_successful_configs)} tested configs to database...")
+        bulk_update_configs(all_successful_configs)
     else:
         print("\nNo new working configs found to save.")
     
