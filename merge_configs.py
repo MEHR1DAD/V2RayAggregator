@@ -303,7 +303,6 @@ urls = [
     "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/refs/heads/main/output/bugfix.txt",
     "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/refs/heads/main/output/converted.txt",
     "https://raw.githubusercontent.com/Surfboardv2ray/Subs/main/Realm",
-    "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria",
     "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2",
     "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/master/Eternity.txt",
     "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/master/providers/providers",
