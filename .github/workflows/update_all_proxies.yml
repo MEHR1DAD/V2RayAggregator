@@ -41,28 +41,18 @@ jobs:
       - name: Download Xray-core for testing
         run: |
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -q xray.zip xray
+          # اضافه کردن آپشن -o برای بازنویسی بدون سوال
+          unzip -o -q xray.zip xray
           chmod +x xray
 
       - name: Run Main Pipeline
         run: |
           echo "--- Running Main Data Pipeline ---"
-          # ۱. مقداردهی اولیه دیتابیس
           python -c "from database import initialize_db; initialize_db()"
-          
-          # ۲. مدیریت و پاک‌سازی منابع
           python manage_sources.py
-          
-          # ۳. تجمیع کانفیگ‌ها از منابع فعال
           python merge_configs.py
-          
-          # ۴. تست و ذخیره کانفیگ‌های سالم در دیتابیس
           python exp_country.py
-          
-          # ۵. ساخت فایل‌های اشتراک نهایی از دیتابیس
           python create_rotating_sub.py
-          
-          # ۶. ساخت فایل‌های README و summary.json
           python generate_readme.py
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -72,7 +62,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # فایل‌های بزرگ و موقت را به گیت اضافه نمی‌کنیم
           git rm --cached -r aggregator_data.db merged_configs.txt || true
           git add .
           if git diff --staged --quiet; then
@@ -86,7 +75,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          # فایل‌های خروجی نهایی را آپلود می‌کنیم
           files: |
             summary.json
             aggregator_data.db
