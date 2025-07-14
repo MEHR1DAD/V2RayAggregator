@@ -47,8 +47,8 @@ def generate_files():
                 'name': info['name'],
                 'flag': info['flag'],
                 'count': count,
-                'full_link': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master/subscription/{info['sub_file']}",
-                'link_100': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master/subscription/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
+                'full_link': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/main/subscription/{info['sub_file']}",
+                'link_100': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/main/subscription/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
             })
     
     country_data.sort(key=lambda x: x['count'], reverse=True)
@@ -160,11 +160,40 @@ def generate_files():
 <div dir="rtl">
 
 ---
+
 ## ✅ نرم‌افزارهای پیشنهادی
-(این بخش بدون تغییر باقی می‌ماند)
+
+<div align="center">
+
+### لیست کلاینت‌های موبایل (Mobile Clients)
+
+| iOS/iPadOS | Android | توضیحات مختصر |
+| :---: | :---: | :---: |
+| <b>[Hiddify](https://apps.apple.com/us/app/hiddify-next/id6476113229)</b> | <b>[Hiddify](https://play.google.com/store/apps/details?id=app.hiddify.com)</b> | <p dir="rtl">رایگان، چند پلتفرمی و با پشتیبانی از تمام پروتکل‌ها.</p> |
+| [V2Box](https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690) | [v2rayNG](https://github.com/2dust/v2rayNG/releases) | <p dir="rtl">کلاینت‌های محبوب و قدرتمند برای هر پلتفرم.</p> |
+| [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118) | [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) | <p dir="rtl">پشتیبانی از پروتکل‌های متنوع، نیازمند خرید یا تنظیمات پیشرفته.</p> |
+| [Streisand](https://apps.apple.com/us/app/streisand/id6450534064) | [Clash For Android](https://github.com/Kr328/ClashForAndroid/releases) | <p dir="rtl">بر پایه Clash با قابلیت‌های مدیریت پروکسی حرفه‌ای.</p> |
+
+<br>
+
+### لیست کلاینت‌های دسکتاپ (Desktop Clients)
+
+| Windows | macOS | Linux | توضیحات مختصر |
+| :---: | :---: | :---: | :---: |
+| <b>[Hiddify](https://github.com/hiddify/hiddify-next/releases)</b> | <b>[Hiddify](https://github.com/hiddify/hiddify-next/releases)</b> | <b>[Hiddify](https://github.com/hiddify/hiddify-next/releases)</b> | <p dir="rtl">رایگان، چند پلتفرمی و با کاربری آسان. (پیشنهاد اصلی)</p> |
+| [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) | [V2Box](https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690) | [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) | <p dir="rtl">ابزارهای قدرتمند با قابلیت‌های پیشرفته برای مدیریت پروکسی.</p> |
+| [v2rayN](https://github.com/2dust/v2rayN/releases) | [FoXray](https://github.com/Fndroid/Foxray/releases) | [Clash Verge](https://github.com/zzzgydi/clash-verge/releases) | <p dir="rtl">کلاینت‌های محبوب با جامعه کاربری بزرگ و پشتیبانی گسترده.</p> |
+
+</div>
+
 ---
+
 ### ⚠️ سلب مسئولیت
-(این بخش بدون تغییر باقی می‌ماند)
+
+- این کانفیگ‌ها به صورت عمومی و خودکار جمع‌آوری شده‌اند و امنیت آن‌ها تضمین نمی‌شود.
+- مسئولیت استفاده از این کانفیگ‌ها بر عهده کاربر است.
+- این پروژه صرفاً برای اهداف آموزشی و تحقیقاتی ایجاد شده است.
+
 </div>
     """
 
@@ -178,4 +207,3 @@ if __name__ == "__main__":
         print("FATAL: config.yml not found.")
     else:
         generate_files()
-
