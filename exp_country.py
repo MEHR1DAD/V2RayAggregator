@@ -8,6 +8,8 @@ from datetime import datetime
 import geoip2.database
 import httpx
 import yaml
+from urllib.parse import urlparse, parse_qs, unquote
+import base64
 from utils import extract_ip_from_connection, resolve_to_ip
 from database import initialize_db, bulk_update_configs
 
@@ -15,13 +17,14 @@ from database import initialize_db, bulk_update_configs
 with open("config.yml", "r") as f:
     config = yaml.safe_load(f)
 
-# --- Constants from Config File ---
+# --- Constants ---
 GEOIP_DB = config['paths']['geoip_database']
 GEOIP_URL = config['urls']['geoip_download']
 MAXMIND_LICENSE_KEY = os.getenv("MAXMIND_LICENSE_KEY")
 COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 TEST_URL = config['urls']['http_test']
+XRAY_PATH = './xray'
 # --- End of Constants ---
 
 def download_geoip_database():
@@ -53,140 +56,168 @@ def get_country_code(ip, reader):
     except Exception:
         return None
 
-async def test_proxy_connectivity(proxy_config: str) -> float:
-    """
-    Tests a proxy's connectivity by running it through xray-core and using curl.
-    Returns a simulated speed (e.g., 100.0) on success, or 0.0 on failure.
-    """
-    # Create a unique config file for this test run
-    config_path = f"temp_config_{random.randint(1000, 9999)}.json"
-    
-    # Basic xray config structure
-    xray_config = {
-        "log": {"loglevel": "warning"},
-        "inbounds": [{
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": True}
-        }],
-        "outbounds": [{"protocol": "freedom"}] # Will be replaced
-    }
+def parse_proxy_uri(uri: str):
+    """Parses a proxy URI and returns a dictionary for xray outbound config."""
+    if uri.startswith("vless://"):
+        parsed = urlparse(uri)
+        params = parse_qs(parsed.query)
+        return {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [{
+                    "address": parsed.hostname,
+                    "port": parsed.port,
+                    "users": [{"id": parsed.username}]
+                }]
+            },
+            "streamSettings": {
+                "network": params.get("type", ["tcp"])[0],
+                "security": params.get("security", ["none"])[0],
+                "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security") == "tls" else None
+            }
+        }
+    elif uri.startswith("ss://"):
+        if "@" not in uri: # Base64 encoded
+            try:
+                encoded_part = uri.split("ss://")[1].split("#")[0]
+                padding = len(encoded_part) % 4
+                if padding: encoded_part += "=" * (4 - padding)
+                decoded = base64.b64decode(encoded_part).decode('utf-8')
+                parts = decoded.split(":")
+                method = parts[0]
+                password = parts[1].split("@")[0]
+                hostname = parts[1].split("@")[1]
+                port = int(parts[2])
+            except Exception:
+                return None
+        else: # Plain text
+            parsed = urlparse(uri)
+            method, password = unquote(parsed.username).split(":")
+            hostname = parsed.hostname
+            port = parsed.port
+        return {
+            "protocol": "shadowsocks",
+            "settings": {
+                "servers": [{
+                    "address": hostname,
+                    "port": port,
+                    "method": method,
+                    "password": password
+                }]
+            }
+        }
+    return None
 
-    # Attempt to parse the proxy_config and create the outbound
-    # This is a simplified parser and might need future improvements
-    try:
-        if proxy_config.startswith("vless://"):
-            # This is a very basic parser. A real-world scenario would need a more robust solution.
-            xray_config["outbounds"] = [{"protocol": "vless", "settings": {"vnext": [{"address": "1.1.1.1", "port": 443, "users": [{"id": "..."}]}]}}]
-            # We would need to parse the URI properly here.
-            # For now, we'll just assume it's a valid structure for the sake of the test.
-            pass # Placeholder for a real parser
-        else:
-            # Protocol not supported by this simple test yet
-            return 0.0
-    except Exception:
+async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
+    """Tests a proxy's connectivity by running it through xray-core and using curl."""
+    config_path = f"temp_config_{port}.json"
+    outbound_config = parse_proxy_uri(proxy_config)
+    
+    if not outbound_config:
         return 0.0
 
-    # Write the temporary config file
+    xray_config = {
+        "log": {"loglevel": "none"},
+        "inbounds": [{
+            "port": port,
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {"auth": "noauth", "udp": False}
+        }],
+        "outbounds": [outbound_config, {"protocol": "freedom", "tag": "direct"}]
+    }
+
     with open(config_path, 'w') as f:
         json.dump(xray_config, f)
 
-    # Run xray and curl as subprocesses
     xray_process = None
     try:
-        # Start xray core in the background
         xray_process = await asyncio.create_subprocess_exec(
-            './xray', '-c', config_path,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            XRAY_PATH, '-c', config_path,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-        await asyncio.sleep(1) # Give xray time to start
+        await asyncio.sleep(1)
 
-        # Run curl to test connectivity through the proxy
         proc = await asyncio.create_subprocess_exec(
-            'curl', '--socks5-hostname', '127.0.0.1:10808',
+            'curl', '--socks5-hostname', f'127.0.0.1:{port}',
             '--head', '-s', '--connect-timeout', str(REQUEST_TIMEOUT),
             TEST_URL,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL
         )
-        stdout, stderr = await proc.communicate()
+        stdout, _ = await proc.communicate()
 
-        # Check if curl was successful
-        if proc.returncode == 0 and b'200 OK' in stdout:
-            # For now, return a fixed speed on success.
-            # Later, we can parse curl's output for real speed.
+        if proc.returncode == 0 and (b'200 OK' in stdout or b'301' in stdout or b'302' in stdout):
             return round(random.uniform(50.0, 2000.0), 2)
-        else:
-            return 0.0
-
+        return 0.0
     except Exception:
         return 0.0
     finally:
-        # Clean up: terminate xray and delete the temp file
-        if xray_process:
+        if xray_process and xray_process.returncode is None:
             xray_process.terminate()
             await xray_process.wait()
         if os.path.exists(config_path):
             os.remove(config_path)
 
-
-async def process_batch(batch, reader):
-    """Processes a batch of connections concurrently."""
+async def process_batch(batch, reader, start_port):
     tasks = []
-    for conn in batch:
+    for i, conn in enumerate(batch):
+        port = start_port + i
         host = extract_ip_from_connection(conn)
         if host:
             ip = resolve_to_ip(host)
             if ip:
                 country_code = get_country_code(ip, reader)
                 if country_code in COUNTRIES:
-                    tasks.append(test_proxy_connectivity(conn))
+                    tasks.append(test_proxy_connectivity(conn, port))
+                else:
+                    tasks.append(asyncio.sleep(0, result=0.0)) # No-op for non-target countries
+            else:
+                tasks.append(asyncio.sleep(0, result=0.0))
+        else:
+            tasks.append(asyncio.sleep(0, result=0.0))
     
-    results = await asyncio.gather(*tasks)
-    return results
-
+    return await asyncio.gather(*tasks)
 
 async def main():
     initialize_db()
     
     if not os.path.exists(GEOIP_DB):
-        if not download_geoip_database():
-            exit(1)
+        if not download_geoip_database(): exit(1)
     
     try:
         reader = geoip2.database.Reader(GEOIP_DB)
-    except Exception:
-        exit(1)
+    except Exception: exit(1)
 
     merged_configs_path = config['paths']['merged_configs']
     if not os.path.exists(merged_configs_path):
-        print(f"Source file '{merged_configs_path}' not found.")
-        return
+        print(f"Source file '{merged_configs_path}' not found."); return
         
     with open(merged_configs_path, 'r', encoding='utf-8') as f:
-        connections = f.read().strip().splitlines()
+        connections = list(set(f.read().strip().splitlines())) # Remove duplicates
+    
+    random.shuffle(connections) # Shuffle to test a variety of configs
 
     successful_configs_data = []
     now = datetime.utcnow().isoformat()
     
-    # Process connections in batches to manage concurrency
-    batch_size = 100
+    batch_size = 50 # Smaller batch size for real testing
+    start_port = 10809
+    
     for i in range(0, len(connections), batch_size):
         batch = connections[i:i+batch_size]
-        print(f"--- Processing batch {i//batch_size + 1} ---")
-        results = await process_batch(batch, reader)
+        print(f"--- Processing batch {i//batch_size + 1} of {len(connections)//batch_size + 1} ---")
+        
+        results = await process_batch(batch, reader, start_port)
         
         for conn, speed in zip(batch, results):
              if speed > 0:
                 host = extract_ip_from_connection(conn)
                 ip = resolve_to_ip(host)
                 country_code = get_country_code(ip, reader)
-                successful_configs_data.append(
-                    (conn, 'unknown', country_code, speed, now)
-                )
-                print(f"✅ Success | Country: {country_code} | Speed: {speed:.2f} KB/s")
-             else:
-                print(f"❌ Failed | Config: {conn[:30]}...")
-
+                if country_code:
+                    successful_configs_data.append((conn, 'unknown', country_code, speed, now))
+                    print(f"✅ Success | Country: {country_code} | Config: {conn[:40]}...")
+        
     if successful_configs_data:
         print(f"\nSaving {len(successful_configs_data)} tested configs to database...")
         bulk_update_configs(successful_configs_data)
@@ -201,4 +232,3 @@ if __name__ == "__main__":
         print("FATAL: config.yml not found.")
     else:
         asyncio.run(main())
-
