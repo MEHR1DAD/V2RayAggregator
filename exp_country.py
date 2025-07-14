@@ -11,7 +11,8 @@ import yaml
 from urllib.parse import urlparse, parse_qs, unquote
 import base64
 from utils import extract_ip_from_connection, resolve_to_ip
-from database import initialize_db, bulk_update_configs
+# تابع جدید را از دیتابیس وارد می‌کنیم
+from database import initialize_db, bulk_update_configs, clear_configs_table
 
 # --- Load Configuration ---
 with open("config.yml", "r", encoding="utf-8") as f:
@@ -25,11 +26,11 @@ COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 XRAY_PATH = './xray'
 SAMPLE_SIZE = 5000
-# URL for a 1MB file for speed testing
 SPEED_TEST_URL = "http://speed.cloudflare.com/__down?bytes=1000000" 
 # --- End of Constants ---
 
 def download_geoip_database():
+    # ... (This function remains unchanged)
     if not MAXMIND_LICENSE_KEY: print("Error: MAXMIND_LICENSE_KEY not set."); return False
     try:
         url = GEOIP_URL.format(MAXMIND_LICENSE_KEY)
@@ -49,6 +50,7 @@ def download_geoip_database():
     except Exception as e: print(f"An error occurred during GeoIP download: {e}"); return False
 
 def get_country_code(ip, reader):
+    # ... (This function remains unchanged)
     try:
         if not ip: return None
         return reader.city(ip).country.iso_code
@@ -58,6 +60,7 @@ def get_country_code(ip, reader):
         return None
 
 def parse_proxy_uri(uri: str):
+    # ... (This function remains unchanged)
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri)
@@ -108,7 +111,7 @@ def parse_proxy_uri(uri: str):
     return None
 
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    """Tests a proxy's connectivity and download speed using xray and curl."""
+    # ... (This function remains unchanged)
     config_path = f"temp_config_{port}.json"
     outbound_config = parse_proxy_uri(proxy_config)
     
@@ -162,6 +165,7 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             os.remove(config_path)
 
 async def process_batch(batch, reader, start_port):
+    # ... (This function remains unchanged)
     tasks = []
     for i, conn in enumerate(batch):
         tasks.append(test_proxy_speed(conn, start_port + i))
@@ -182,6 +186,9 @@ async def process_batch(batch, reader, start_port):
 
 async def main():
     initialize_db()
+    # --- خط جدید ---
+    clear_configs_table() # در ابتدای هر اجرا، نتایج قبلی را پاک می‌کنیم
+    # --- پایان خط جدید ---
     
     if not os.path.exists(GEOIP_DB):
         if not download_geoip_database(): exit(1)
