@@ -15,20 +15,22 @@ VALID_PROTOCOLS = ('vmess://', 'vless://', 'ss://', 'ssr://', 'trojan://',
                    'hysteria://', 'hysteria2://', 'tuic://', 'brook://',
                    'socks://', 'wireguard://')
 
-def seed_database_if_empty():
-    """Checks if the sources table is empty and seeds it from config if it is."""
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM sources")
-    count = cursor.fetchone()[0]
-    conn.close()
+def ensure_initial_sources_exist():
+    """
+    Ensures that all sources from the initial_seed_sources list in config.yml
+    exist in the database. This allows for easy manual addition of sources.
+    """
+    print("Ensuring all initial seed sources exist in the database...")
+    all_db_sources = set(get_all_sources_to_check())
     
-    if count == 0 and INITIAL_SEED_SOURCES:
-        print("Database is empty. Seeding with initial sources from config.yml...")
-        for url in INITIAL_SEED_SOURCES:
-            # اصلاح کلیدی: منابع اولیه را با وضعیت 'active' اضافه می‌کنیم
+    new_manual_sources = 0
+    for url in INITIAL_SEED_SOURCES:
+        if url not in all_db_sources:
             update_source_status(url, 'active')
-        print(f"Seeded {len(INITIAL_SEED_SOURCES)} initial sources.")
+            new_manual_sources += 1
+            
+    if new_manual_sources > 0:
+        print(f"Added {new_manual_sources} new manually configured sources to the database.")
 
 def read_urls_from_txt(file_path):
     if not os.path.exists(file_path):
@@ -49,12 +51,9 @@ def main():
     print("--- Source Management Process Started ---")
     
     initialize_db()
-    seed_database_if_empty()
+    ensure_initial_sources_exist()
 
-    sources_from_db = set(get_all_sources_to_check())
     discovered_urls = read_urls_from_txt(DISCOVERED_SOURCES_FILE)
-    
-    # منابع جدید کشف شده را با وضعیت 'active' اضافه می‌کنیم تا بلافاصله تست شوند
     for url in discovered_urls:
         update_source_status(url, 'active')
 
