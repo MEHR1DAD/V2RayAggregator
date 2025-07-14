@@ -25,6 +25,8 @@ COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 TEST_URL = config['urls']['http_test']
 XRAY_PATH = './xray'
+# تعداد کانفیگی که به صورت رندوم برای تست انتخاب می‌شود
+SAMPLE_SIZE = 5000
 # --- End of Constants ---
 
 def download_geoip_database():
@@ -127,7 +129,7 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-        await asyncio.sleep(0.5) # Give xray time to start
+        await asyncio.sleep(0.5)
 
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
@@ -188,16 +190,22 @@ async def main():
     with open(merged_configs_path, 'r', encoding='utf-8') as f:
         connections = list(set(f.read().strip().splitlines()))
     
-    random.shuffle(connections)
+    # --- منطق جدید نمونه‌گیری ---
+    if len(connections) > SAMPLE_SIZE:
+        print(f"Original list has {len(connections)} configs. Taking a random sample of {SAMPLE_SIZE}.")
+        connections_to_test = random.sample(connections, SAMPLE_SIZE)
+    else:
+        connections_to_test = connections
+    # --- پایان منطق نمونه‌گیری ---
 
     all_successful_configs = []
     
     batch_size = 100
     start_port = 10809
     
-    for i in range(0, len(connections), batch_size):
-        batch = connections[i:i+batch_size]
-        print(f"--- Processing batch {i//batch_size + 1} of {len(connections)//batch_size + 1} ---")
+    for i in range(0, len(connections_to_test), batch_size):
+        batch = connections_to_test[i:i+batch_size]
+        print(f"--- Processing batch {i//batch_size + 1} of {len(connections_to_test)//batch_size + 1} ---")
         
         successful_in_batch = await process_batch(batch, reader, start_port)
         all_successful_configs.extend(successful_in_batch)
