@@ -13,9 +13,6 @@ def initialize_db():
     """
     conn = get_connection()
     cursor = conn.cursor()
-    
-    # --- جدول منابع (Sources) ---
-    # اضافه کردن 'new' به لیست وضعیت‌های مجاز
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS sources (
             url TEXT PRIMARY KEY,
@@ -23,8 +20,6 @@ def initialize_db():
             last_checked TEXT NOT NULL
         )
     ''')
-    
-    # --- جدول کانفیگ‌ها (Configs) ---
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS configs (
             config TEXT PRIMARY KEY,
@@ -34,13 +29,24 @@ def initialize_db():
             last_tested TEXT
         )
     ''')
-    
-    print("Database initialized successfully.")
     conn.commit()
     conn.close()
 
+# --- تابع جدید برای پاک کردن نتایج قدیمی ---
+def clear_configs_table():
+    """Deletes all records from the configs table to ensure a fresh start."""
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM configs")
+        conn.commit()
+        conn.close()
+        print("🧹 Cleared all previous records from the configs table.")
+    except Exception as e:
+        print(f"Error clearing configs table: {e}")
+# --- پایان تابع جدید ---
+
 def get_all_sources_to_check():
-    """Returns all URLs from the sources table."""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT url FROM sources")
@@ -49,7 +55,6 @@ def get_all_sources_to_check():
     return urls
 
 def get_active_sources():
-    """Returns a list of all URLs with 'active' status."""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT url FROM sources WHERE status = 'active'")
@@ -58,28 +63,21 @@ def get_active_sources():
     return urls
 
 def update_source_status(url: str, status: str):
-    """Inserts a new source or updates the status of an existing one."""
     conn = get_connection()
     cursor = conn.cursor()
     now = datetime.utcnow().isoformat()
-    
     cursor.execute('''
         INSERT INTO sources (url, status, last_checked) VALUES (?, ?, ?)
         ON CONFLICT(url) DO UPDATE SET
             status = excluded.status,
             last_checked = excluded.last_checked
     ''', (url, status, now))
-    
     conn.commit()
     conn.close()
 
 def bulk_update_configs(configs_data: list):
-    """
-    Updates or inserts multiple configs in a single transaction.
-    """
     conn = get_connection()
     cursor = conn.cursor()
-    
     cursor.executemany('''
         INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?)
         ON CONFLICT(config) DO UPDATE SET
@@ -88,20 +86,16 @@ def bulk_update_configs(configs_data: list):
             speed_kbps = excluded.speed_kbps,
             last_tested = excluded.last_tested
     ''', configs_data)
-    
     conn.commit()
     conn.close()
     print(f"Successfully upserted {len(configs_data)} configs into the database.")
 
 def get_configs_by_country(country_code: str, limit: int = None):
-    """Fetches fast and recently tested configs for a specific country."""
     conn = get_connection()
     cursor = conn.cursor()
-    
     query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC"
     if limit:
         query += f" LIMIT {limit}"
-            
     cursor.execute(query, (country_code,))
     configs = [row[0] for row in cursor.fetchall()]
     conn.close()
