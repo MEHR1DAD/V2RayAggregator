@@ -93,6 +93,7 @@ def bulk_update_configs(configs_data: list):
 def get_configs_by_country(country_code: str, limit: int = None):
     conn = get_connection()
     cursor = conn.cursor()
+    # مرتب‌سازی بر اساس سرعت، از بیشترین به کمترین
     query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC"
     if limit:
         query += f" LIMIT {limit}"
