@@ -176,6 +176,7 @@ https://raw.githubusercontent.com/Augists/NDD/405485054ca7fae05f2b9fee24826acf25
 https://raw.githubusercontent.com/AyushMehta292/Webdev2/4a0d6a531cae735205ab46c3212780f400a520c1/1.txt
 https://raw.githubusercontent.com/AzadNetCH/temp/refs/heads/main/KR.txt
 https://raw.githubusercontent.com/B721nova/submission/d57615867b8feb16dbee1593070e4d108a29469a/4e995b4d6a3631b93762.txt
+https://raw.githubusercontent.com/BB-3022/aiSchool/6c97bfe5d856f2d85d6c378113f50da7564be2d2/Python/Machine Learning/data/aclImdb/train/pos/4013_7.txt
 https://raw.githubusercontent.com/BIC-MNI/bic-pipelines/b2aacbfe9fc19a4fde94d0874ceb0d7bf35a41c9/CMakeLists.txt
 https://raw.githubusercontent.com/BLCM/BLCMods/713aaf6e4ecdb8d68cb4750f48d8c7b044b0085b/Borderlands 2 mods/Aaron0000/Assault Rifles/BastardV3.txt
 https://raw.githubusercontent.com/BNLNLP/PPN_model/277f7e35820abba98e5115fe04942f75e548c70d/datasets/zhou_2021/annots/train_8148.txt
@@ -241,6 +242,7 @@ https://raw.githubusercontent.com/CabbageLab/AlgoScripts/3cf881e851dc4f80b3d652d
 https://raw.githubusercontent.com/CaesarVincens/Ring_of_Fire_Mod/dc66da88eb8ffa0f3d73970d102bec4698d08eab/1632_RoF/history/states/286.txt
 https://raw.githubusercontent.com/CalvinNeo/HHUACMCONTEST2016/150edc6c235d46757d67f85d5c6861f835fc8b14/C.txt
 https://raw.githubusercontent.com/Capstone-B10-2022/Capstone_Dataset/451b4f65db34883f3e2fd21eadd2aec61a53bae5/Java_Nodes/O(Nd)/nodes5.txt
+https://raw.githubusercontent.com/CarterFendley/Sentimental/1cb68b30de324f181adad5efae05ecb8ac855419/data/imdb_raw/train/pos/4013_7.txt
 https://raw.githubusercontent.com/CasaDeRobison/wixtoolset-codeplex/cdd458f6599159530d3fbfb7c4431d569444c05b/OLD-README.TXT
 https://raw.githubusercontent.com/Catif/Portfolio/cbe7c0f98b66727725fb4e2d2ca58647893f2e23/public/robots.txt
 https://raw.githubusercontent.com/CatimaLoyalty/Android/359a37c8a641aecb5eefb61de7bb526091657dd0/fastlane/metadata/android/cs-CZ/changelogs/41.txt
@@ -295,6 +297,7 @@ https://raw.githubusercontent.com/DaniSchober/LabLiquidVision/ee945b097954896510
 https://raw.githubusercontent.com/DaniSchober/LabLiquidVision/ee945b097954896510f047b0600d33fe7dc8ccfd/pouring_simulation/output/MediaBottle_diff/TCP_28_1800.txt
 https://raw.githubusercontent.com/DanielleQuinn/RBarMUN/60d08937946316914c59529431cc8d778a4a0213/OSCSeminar/Data Cleaning/taxonomy_reference.txt
 https://raw.githubusercontent.com/Danieltrof/SOC-Automation-Lab/29c4dfd7225c800feb1c177157f14f794fda20b8/install-instructions/Step 1 How to setup everything you need for this project/StepByStepVideo.txt
+https://raw.githubusercontent.com/Daocuong-main/Transfer-Learning-Library/2eca8feb9a0950248a3e2255d205c56a91b504db/examples/domain_adaptation/image_classification/Result/DAN/percent/byte_512/MKMMD/lambda_0.05/use_0.5/train-2023-10-13-09_49_46.txt
 https://raw.githubusercontent.com/DareData/fidelidade-lp-datascience/540df1fd865237f0eb838f465de384b89af76fa1/08_text_classification/BLU09 - Information Extraction/datasets/aclImdb/train/unsup/28386_0.txt
 https://raw.githubusercontent.com/Dav-Sc/TOL-MP-Fanfork/2951855b3f71eb4b421f061502358d8077ab1311/common/countries/Comoros.txt
 https://raw.githubusercontent.com/David112x/android-firmware-qti-sdm660/b5e5bb9ed6c92442fd502b3e726d7c8024dc0763/adsp_proc/Sensors/playback/fast_playback_diag_input.txt
@@ -310,6 +313,7 @@ https://raw.githubusercontent.com/DelvisSanabria/Grupo_15-main/82dea7c86c27310cb
 https://raw.githubusercontent.com/Demon1997rus/Qt-polygon/a64bcc54443b9be9bc0fd6aaceb882032bc99c0c/src/zmq-extended-request-reply/broker/CMakeLists.txt
 https://raw.githubusercontent.com/DengMark/CameraCalibrator/4f0fb0026d6eb7b9c8ffe2cdf7773d7fbe9c08fe/p.txt
 https://raw.githubusercontent.com/DeuroIO/Udacity-AIND/db590675dced20b91ea42458d9c922dbcda78071/nlp/AIND-NLP/data/imdb-reviews/train/pos/4013_7.txt
+https://raw.githubusercontent.com/Dev1ze/LoadRunner-Scripts/8a0bf728e74378c0577f021313e3e4db93b34886/Scripts/UC1_LoginLogout/result1/Iteration1/t1_ResponseHeader.txt
 https://raw.githubusercontent.com/DevTeamOfficial/Real-State-UI/06906a384caf5cab257e28ccf95100a06bed2a31/android/app/.cxx/Debug/58683s5l/x86_64/symbol_folder_index.txt
 https://raw.githubusercontent.com/DgAronn/wrapp/1be8d99d118bb8de65264e155049d4d7b87c8a72/link.txt
 https://raw.githubusercontent.com/DheerajParkash/Generating-Graphs-with-Specified-Properties/7f4de838205c6cae8a59a45576f2571fd47efe16/data/train/description/graph_4600.txt
@@ -534,6 +538,7 @@ https://raw.githubusercontent.com/Jack-Bagel/Minecraft-Lora-Training/b3e8b26e1e3
 https://raw.githubusercontent.com/JacobFV/Implicate-Morphogenic-Potentiality/61486ea340e1d5c8f63ff12cb1bfebe727b522ad/data/time is accelerating.txt
 https://raw.githubusercontent.com/JaeyongYoo/VisualXSwitch/8100cc4b92957ccb180e3d3f1e930ea2fe2adb8b/drivers/e1000-5.x/ldistrib.txt
 https://raw.githubusercontent.com/Jamezzand/AkunV2ray/6fee3f4e3e47b9dabbac5da7321610de86f7d1fd/Vmess.txt
+https://raw.githubusercontent.com/JanaEl-khatib/Movie-Reviews/31b28698078b641e0ada4c95574330426187dfbb/SentimentClassification/aclImdb/train/unsup/28386_0.txt
 https://raw.githubusercontent.com/Jasc94/thebridge/e194e7f5948dc52bc62fc06bd4ae58a031d3aa7a/week12_DL/day2_PLN/theory/aclImdb/train/pos/4013_7.txt
 https://raw.githubusercontent.com/Jayesh8055/cg/a51e2e0c2ca952264d511d472a884866fcd7d67d/3.txt
 https://raw.githubusercontent.com/Jeamorg/Collect/2d10cc5d8fbdcbba34d19bdf1387e198d2025892/Air.txt
@@ -596,6 +601,7 @@ https://raw.githubusercontent.com/KaiLee2025/SN68/c42712cdfb5f1c125c97ed7b0e1215
 https://raw.githubusercontent.com/KaiLee2025/SN68/cc0c3b8ca73ce1064e80a613a04643571c7e4b4c/66217a6ff5b3f07edeab.txt
 https://raw.githubusercontent.com/KaiLee2025/SN68/e150113379b78be2da01d22c1e196f6992e87474/66217a6ff5b3f07edeab.txt
 https://raw.githubusercontent.com/KaiLee2025/SN68/f00b25132fd3b9d8a40af3b0a2e7a8d758728486/66217a6ff5b3f07edeab.txt
+https://raw.githubusercontent.com/KaiLee2025/SN68/f41e2aa06c6949611349a531593460eb48cf9ef2/66217a6ff5b3f07edeab.txt
 https://raw.githubusercontent.com/KaiLee2025/SN68/f919aa9f5913542d55ffb9fd387f4ce5d968be31/66217a6ff5b3f07edeab.txt
 https://raw.githubusercontent.com/KaiLee2025/SN68/f98b493306eeb42545c30e8a471a6a9089660547/66217a6ff5b3f07edeab.txt
 https://raw.githubusercontent.com/KaiLee2025/SN68/fafb888f0f936d78459f73ea0d0eb9ff51afc6be/66217a6ff5b3f07edeab.txt
@@ -620,6 +626,7 @@ https://raw.githubusercontent.com/LASER-UMASS/JavaRepair-replication-package/80b
 https://raw.githubusercontent.com/LBwaks/data-engineering-zoomcamp/e01313bc99778d4316d0135f395e2267c5cbd739/j.txt
 https://raw.githubusercontent.com/LCMJ21/RPCW2023-Projeto/e68e314383ce9b1af13524e35caf5c736a2ca9ca/a.txt
 https://raw.githubusercontent.com/LFVFL/v2sub/8fdef629ba2810c0a3558cc53d39ee652262ddeb/v2rayse_sub.txt
+https://raw.githubusercontent.com/LFrum/Text_Analytics/cbf552b70bc51c546f1a3714770075546ee68a30/redactor/redactor/train/pos - complete/4013_7.txt
 https://raw.githubusercontent.com/LLNL/SW4CK/bb6469840bf4decdd16b92a28bd59d1a830e27ca/src/roofline.txt
 https://raw.githubusercontent.com/Lahari133/Madhu/3811fcc86f980ff00ba97fe0d9c6ace49c443fe3/f.txt
 https://raw.githubusercontent.com/Lahari133/madhuriii/0e508b5b2427fb9f1f05703e8e338e1349f568f6/f.txt
@@ -792,6 +799,7 @@ https://raw.githubusercontent.com/NhanAZ/TMK/f5e77844f6b38bcc9d8b5b22f7fb33206d1
 https://raw.githubusercontent.com/NiREvil/vless/refs/heads/main/sub/SSTime
 https://raw.githubusercontent.com/NicholasRodrigues/blog-aggregator/a5453f29db66ef8e57db1dbdbe0e8cd3d78f27f1/a.txt
 https://raw.githubusercontent.com/NickLargey/TextMiningAssignment3/ec43119c4487a49bb1051fb3f4811393be150c22/Training Songs/Rock/What a Wonderful Life.txt
+https://raw.githubusercontent.com/NicoRuedaA/Simple-Exercices/3ca2fc85952168f9c29f2668718d6140989b8621/C#/Lab 6/3/obj/Debug/net8.0/3.csproj.FileListAbsolute.txt
 https://raw.githubusercontent.com/Niger-Volta-LTI/yoruba-text/1e5ee7da7fd808ab0e8cee3e5f9abd693a013640/Bibeli_Mimo/BSN/NUM.17.BMY/NUM.17.9.txt
 https://raw.githubusercontent.com/Niger-Volta-LTI/yoruba-text/1e5ee7da7fd808ab0e8cee3e5f9abd693a013640/Bibeli_Mimo/Biblica/JAS.2.BMY/JAS.2.25.txt
 https://raw.githubusercontent.com/Nikitalats/Loadrunner/c0e2f3bfa2d5e482f6e8b21362aab51a709b9aae/Скрипты/UC02_FindFlight/data/t33_ResponseHeader.txt
@@ -902,6 +910,9 @@ https://raw.githubusercontent.com/QTTECH2023/protein-molecules/6cdb74b175cf10f06
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/6fe9ba81f50bb4f8c7f40da174b3b213b2f6a3f9/178bc0b556f1f1ff1697.txt
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/6fe9ba81f50bb4f8c7f40da174b3b213b2f6a3f9/a13efc2d0946818bec8d.txt
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/6fe9ba81f50bb4f8c7f40da174b3b213b2f6a3f9/aaeb93ba5be7e1d0282c.txt
+https://raw.githubusercontent.com/QTTECH2023/protein-molecules/782d2b36db8b579e3771f710d1a53c48625e71b4/178bc0b556f1f1ff1697.txt
+https://raw.githubusercontent.com/QTTECH2023/protein-molecules/782d2b36db8b579e3771f710d1a53c48625e71b4/a13efc2d0946818bec8d.txt
+https://raw.githubusercontent.com/QTTECH2023/protein-molecules/782d2b36db8b579e3771f710d1a53c48625e71b4/aaeb93ba5be7e1d0282c.txt
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/7a63a8bbd36986484579f2f5db2447b79eab716e/178bc0b556f1f1ff1697.txt
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/7a63a8bbd36986484579f2f5db2447b79eab716e/a13efc2d0946818bec8d.txt
 https://raw.githubusercontent.com/QTTECH2023/protein-molecules/7a63a8bbd36986484579f2f5db2447b79eab716e/aaeb93ba5be7e1d0282c.txt
@@ -1030,6 +1041,7 @@ https://raw.githubusercontent.com/SeanFDZ/environmental-station/230c26d4582947c7
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/27323a5dfb3c9af3062195f8319c8a9dde56d586/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/27e87bc906d14a98f9b743868058d34b0aba3181/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/2f13bc8314561e6bd34542773390de9f26143fa7/data/daily/2024/LHS-Daily-2024-10-08.txt
+https://raw.githubusercontent.com/SeanFDZ/environmental-station/32558f20216e43ea0b9608e4962f1d6ead500811/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/410ad527d93cd43409b90417052dae2398e7523f/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/421977fa6e475b06f6b7884eec218a83f00debc4/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/4dd0aa23d7021f8b22238e7a94988fd49eb2302e/data/daily/2024/LHS-Daily-2024-10-08.txt
@@ -1052,6 +1064,7 @@ https://raw.githubusercontent.com/SeanFDZ/environmental-station/a1276c772fac80fd
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/a212967397bd2de491059c966eb41223c6d33476/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/a7de6ba0f0509346513f9a116f94388d689778f2/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/adeea38cb66d154210d99f3f05b5d6a376c322c3/data/daily/2024/LHS-Daily-2024-10-08.txt
+https://raw.githubusercontent.com/SeanFDZ/environmental-station/bdf30db7a509aae08dcc0f103f7791939cdd9976/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/be06681afc8c6bc6ef3f4925e85cad20257beab6/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/c1a778e7ed5a662b37cf7adc4379b80b68e9e813/data/daily/2024/LHS-Daily-2024-10-08.txt
 https://raw.githubusercontent.com/SeanFDZ/environmental-station/c9884c05b621e8185202af68ad586ca7c5d986ff/data/daily/2024/LHS-Daily-2024-10-08.txt
@@ -1162,6 +1175,7 @@ https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Count
 https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Countries/Vietnam.txt
 https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Countries/Vn.txt
 https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/all_configs.txt
+https://raw.githubusercontent.com/SoundsLikeJaz/Feature-Engineering-AT/87f791f51b5162cbdaf05f76c009422b5e9084eb/aclImdb/pos/4013_7.txt
 https://raw.githubusercontent.com/Sparsh101AI/NLP-Semantle-golf-game/0b26361ecf8c57f5f5c46c008dbc654e7e0b44df/DimensionAccuracy/wiki-scrapper/wiki/psychiatryArticles/60/externalLinks.txt
 https://raw.githubusercontent.com/SrirangaDigital/ammandharsanam/17d01902cd903476d5167e123c7c9f9e5d1ffe8d/Text/024/06/0001.txt
 https://raw.githubusercontent.com/SrirangaDigital/tattvaloka/64c327d2b43374f5957c7b46fe8b6d718e4bc90c/Text/024/06/0001.txt
@@ -1266,6 +1280,7 @@ https://raw.githubusercontent.com/UTCID/DMOZ-Privacy-Policy-Corpus-CODASPY21/4d7
 https://raw.githubusercontent.com/UncensorX1/v2/ce53b148c97db0413357ffb88cba1294f8c6d550/TuicL.txt
 https://raw.githubusercontent.com/UrszulaC/ProductivityCalculator/29029fac5a50f609f42403af5b0ba9831ee0183f/app/requirements.txt
 https://raw.githubusercontent.com/Uttam-Sarkar/Compiler-Lab/b0d9f5809987a52f60970bd011592feffe97ec39/5.txt
+https://raw.githubusercontent.com/V1ktor1ys/HTMLs_Parser/801422adbfbc3ec0b8fa96cc497596486661d1d4/HTMLs/htmls_07.06/4_files/f(13).txt
 https://raw.githubusercontent.com/V1ktor1ys/HTMLs_Parser/e617b8a3a143065a591c183140f4f2bfa51ad645/HTMLs/htmls_07.06/4_files/f(13).txt
 https://raw.githubusercontent.com/VATSIM-Saudi-Arabia/Saudi-vACC-Sector-File-Controller-Pack/699e715633f0bf4f3d224bacad550c7958db4990/OEJD/Settings/Display Config/CTR PRF/Sector_exit_list.txt
 https://raw.githubusercontent.com/Vaishnavi493/Image-Annotation/f0f06cdfd54415fedd3bed71761cfe729c61de5e/b.txt
@@ -1284,6 +1299,7 @@ https://raw.githubusercontent.com/Vrroom/vectorrvnn/8eea74af5b57353f1885afda832d
 https://raw.githubusercontent.com/WPPlugins/cookie-notice/18613b86c7500a068a2150a1b31e15b14c7b3b53/readme.txt
 https://raw.githubusercontent.com/WPPlugins/private-url/be918d2fa813f02523dff3b9b037e80256e6678f/readme.txt
 https://raw.githubusercontent.com/WPPlugins/rock-metal-lyrics/605bcf475fbb64f2640f6a69ad3e6180547cf9ce/changelog.txt
+https://raw.githubusercontent.com/Walidomar2/C-practices/2b51e2514eddecebcf1ab56ed6a0ee67257b43b4/generic_delegate/obj/Debug/net8.0/generic_delegate.csproj.FileListAbsolute.txt
 https://raw.githubusercontent.com/WebGCDev/db-university/2da05ef01d9c2cc1f15221b32bcdb2e4a191a07c/db_university_phpmyadmin.txt
 https://raw.githubusercontent.com/WebGLayer/webglayer/0abdc5fe3792d11f04da4f45df6cfd28700dea6e/examples/chicago/data/identify/26.txt
 https://raw.githubusercontent.com/WillardDev/Maziwa-Max/dfcf4208f314c498d18243af73a9119b665207e7/data/dairy1.txt
@@ -1353,6 +1369,7 @@ https://raw.githubusercontent.com/a97083435/Autoproxy/a0cf17eb782656c3499f557a05
 https://raw.githubusercontent.com/a97083435/Autoproxy/a0cf17eb782656c3499f557a0565a9f023148f02/sub/2406/240610.txt
 https://raw.githubusercontent.com/a97083435/Autoproxy/a0cf17eb782656c3499f557a0565a9f023148f02/sub/2406/240611.txt
 https://raw.githubusercontent.com/a97083435/Autoproxy/a0cf17eb782656c3499f557a0565a9f023148f02/sub/2406/240614.txt
+https://raw.githubusercontent.com/aadrijupadya/aadrijupadya/d81f4b5e3facc2e0c30ee2c1371c9fd9c7297e04/Machine Learning/https:/raw.githubusercontent.com/Yorko/mlcourse.ai/master/data/aclImdb/train/unsup/28386_0.txt
 https://raw.githubusercontent.com/aaronH45/Finance2_Final_Project/84ef3a2856e0661a297ac843cdbd03f60a61a842/data/8k_2021/002/ES_0000013372_EX991_20210216_EX-99_excerpt.txt
 https://raw.githubusercontent.com/aatifsyed/syn-graphs/ab804c2440643e0a79ebef5bf9bead5761e826dd/test-vectors/dot/kennedyanc.gv.txt
 https://raw.githubusercontent.com/abadan6262/V2/2546e04acca3c2a26699a18f49aa6cdb588852f6/1.txt
@@ -1398,8 +1415,10 @@ https://raw.githubusercontent.com/ahwazi12/kn-panel/bfc142c241d30aa35007a54399cb
 https://raw.githubusercontent.com/aiboboxx/v2rayfree/refs/heads/main/README.md
 https://raw.githubusercontent.com/ajb2969/MLInformationRetrieval/e7682cc2537f31fabfbc0175c61f9b5cdef1fc9a/documents/14-1383.txt
 https://raw.githubusercontent.com/akai-org/trios/fda936dbc486ebd7df2a53f49bd344f36f5296d2/resources/trios_sentences/trios-237.txt
+https://raw.githubusercontent.com/akeemamuni/object-detection/c438df6cd99425f2ac8348c2ae662ef7c8c9c96d/00-data-prep/data-img/train/bottle_05.txt
 https://raw.githubusercontent.com/akreal/diphones/216e3462164b8496186446c56d1d35668ff1ce19/data/corpora/librispeech/3334-171008.trans.txt
 https://raw.githubusercontent.com/akshatdy/Automated-Text-Summarizer/111773bea248f0fb132d4c36c5d4dfc6cad9c0f3/Dataset/legal_judgments/dataset/IN-Abs/train-data/judgement/4604.txt
+https://raw.githubusercontent.com/akshaykhadse/reinforcement-learning/16e770178041f20317eb062b6e7e611e22eeb98f/Gridworld/other-results/mdp0-tuning/qlearning/alpha/0.4/rs29.txt
 https://raw.githubusercontent.com/alaminshaikh/cheatsheet/22b04a03f98d709b965588a555ff14b18fa33979/txtcodes/media-only.txt
 https://raw.githubusercontent.com/alan-leslie/CIIA_TextAnalysis/6e1fe4ae198b811e65b93c4eec22ea17e569b5b5/5.txt
 https://raw.githubusercontent.com/alaym3/musician-network-analysis/642d6093aad526e04c026fc6a1663a52d4eaa775/Wikipages/FKA Twigs.txt
@@ -1635,6 +1654,9 @@ https://raw.githubusercontent.com/cligs/projects/d8a60564d3436a207ce4d94dbdefed9
 https://raw.githubusercontent.com/cltl/LabelingPeople/2d3501a203fc1b0555a59e76189839a4f5a77fc3/Flickr30k/resources/Sentences/2512450458.txt
 https://raw.githubusercontent.com/cltl/LabelingPeople/2d3501a203fc1b0555a59e76189839a4f5a77fc3/Flickr30k/resources/Sentences/2527303359.txt
 https://raw.githubusercontent.com/cmdcolin/jb2hubs/079685319d5ace3ed1aef5675af6d6a2a5e42d8e/website/hubs/GCF/002/118/905/GCF_002118905.1/hub.txt
+https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/7768039ff37a2ef195f6e538b1c15abbceb4dd4b/files/568245b88fbaedcb1959-11d77a2de00000.txt
+https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/7768039ff37a2ef195f6e538b1c15abbceb4dd4b/files/568245b88fbaedcb1959-12a60af9e00000.txt
+https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/7768039ff37a2ef195f6e538b1c15abbceb4dd4b/files/568245b88fbaedcb1959-13a72e91e00000.txt
 https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/bc580f58a607b7ed2aceb2ade40a922a457cbff6/files/568245b88fbaedcb1959-11d77a2de00000.txt
 https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/bc580f58a607b7ed2aceb2ade40a922a457cbff6/files/568245b88fbaedcb1959-12a60af9e00000.txt
 https://raw.githubusercontent.com/cmu-pasta/linux-kernel-enriched-corpus/bc580f58a607b7ed2aceb2ade40a922a457cbff6/files/568245b88fbaedcb1959-13a72e91e00000.txt
@@ -1833,6 +1855,7 @@ https://raw.githubusercontent.com/edmondbilli/text_lora/f170c4a5097573b3450eeeed
 https://raw.githubusercontent.com/eelenadelolmo/hypernyms/5c534eaef44850e9663f5a0dae4d3bdd2d8f7812/venv/main/corpus/Medical/kw/rake/rake_degreeFreqRatio_length/1f362f6d-e3ad-40d6-adf3-2f24a4b5aef2.txt
 https://raw.githubusercontent.com/ejtaal/mabhath-data/af1aacc5f3b4fd060bbb1e09da8d778259bedc43/text/ll_nvd/ن/نشد.txt
 https://raw.githubusercontent.com/ejtaal/mabhath-data/af1aacc5f3b4fd060bbb1e09da8d778259bedc43/text/ta_nvd/ت/تذرب.txt
+https://raw.githubusercontent.com/elciclon/algoritmos-y-estructuras-de-datos/caed2ca57be72be529a1847204907ea528174041/guia_8/archivo.txt
 https://raw.githubusercontent.com/electron-v2ray/Telegram-Config-Dumpr/main/config.txt
 https://raw.githubusercontent.com/elinaelkama/faci/a89ef238d715e99b5e8414c063665df3ae1e490e/requirements.dev.txt
 https://raw.githubusercontent.com/eloffel/improved_embeddings/7141e84601bf6343de4d5fe85f54d06e48dc3759/data/tutorial/4098.txt
@@ -1972,6 +1995,7 @@ https://raw.githubusercontent.com/gnu0000/mec-old-schizo/06a273a57808e0877923d84
 https://raw.githubusercontent.com/gnu0000/mec-old-schizo/06a273a57808e0877923d849d69f964ea5b7fb10/bkup3/a.txt
 https://raw.githubusercontent.com/goorm-6th-Als/for_study_Algorithm/f2f019cc19ef791c4fdd33dd163fb587c297b0d4/Kangjunsu/Boj_10798_세로읽기.java.txt
 https://raw.githubusercontent.com/gottburgm/Exploits/fd340a05cbec416e89bfae898e27bf5fcb429101/MSFExploits/TRAQ/MSF/TraqPluginExec_data.txt
+https://raw.githubusercontent.com/gripped/artixpkgbuilds/006b0f526a347ed4cd49d27a8874708df8dcb6f5/world/sdcv/Changelog.txt
 https://raw.githubusercontent.com/gripped/artixpkgbuilds/2ff346c3b4669fbd99c755675045fee6eb0f2c12/world/sdcv/Changelog.txt
 https://raw.githubusercontent.com/gripped/artixpkgbuilds/31bfb8d99a73a065d96b990dd09eb3e70eb05355/world/sdcv/Changelog.txt
 https://raw.githubusercontent.com/gripped/artixpkgbuilds/3653a40ca2974a05fe2df664c9b68633e656f5b1/world/sdcv/Changelog.txt
@@ -2072,6 +2096,7 @@ https://raw.githubusercontent.com/iHamsterball/stellaris_tech_tree/ea63b48bbcb47
 https://raw.githubusercontent.com/iam7107/AI-Slips/7926ab7fb9655d8cdcd4f13d11e6f34c4ae7498c/9.txt
 https://raw.githubusercontent.com/iamEtornam/Eatery/d6446e8923a9a4bfd32bbbcb9d1954b4fd896515/linux/CMakeLists.txt
 https://raw.githubusercontent.com/ianhi/detect-arduino/66e37e5b641fd10c48815496ed7cddc6d9de46b4/boards/ATmegaxxM1-C1-1.0.8-boards.txt
+https://raw.githubusercontent.com/iarunsaragadam/easyloops/3ca22c9418c3e3db004fdef0b72607b4dfe8eebf/public/questions/36-writing-to-files/expected98.txt
 https://raw.githubusercontent.com/iarunsaragadam/easyloops/3fc2a4a25e61db768758dac202f7ea5cc31c0038/public/questions/36-writing-to-files/expected98.txt
 https://raw.githubusercontent.com/iarunsaragadam/easyloops/6f822bfdd6bb955db97bc36d4358dcb023cda5d2/public/questions/36-writing-to-files/expected98.txt
 https://raw.githubusercontent.com/iboxz/free-v2ray-collector/main/main/shadowsocks
@@ -2081,6 +2106,7 @@ https://raw.githubusercontent.com/icdevs/ic_devs_org_tutorials/883de9f5a97fe6b86
 https://raw.githubusercontent.com/iclcv/icl/d2c3bfbadc2ca0c7aa3d58626f16a9a58a910b37/ICLGeom/apps/CMakeLists.txt
 https://raw.githubusercontent.com/ifundeasy/corpus.id/74364a87855b2c8d335bd0b4edbebd10eaf63215/kateglo/ibujari.txt
 https://raw.githubusercontent.com/ifundeasy/corpus.id/74364a87855b2c8d335bd0b4edbebd10eaf63215/kateglo/kerajinanrumahtangga.txt
+https://raw.githubusercontent.com/iharh/notes/2763113caa3715ca23654236d1015ea4e69ee5c6/devops/container/docker/tools/dockerized.txt
 https://raw.githubusercontent.com/iharh/notes/b843b68b2d70f01e0004e565a77027913946b4a6/devops/container/docker/tools/dockerized.txt
 https://raw.githubusercontent.com/iharh/notes/b8f7a8b1e1e71b53253bfa67f21435e40f735fc9/devops/container/docker/tools/dockerized.txt
 https://raw.githubusercontent.com/ihrnexuslab2013-2016/enron_CollocateNetworks/3832c4d09faba89b4a950946dd5dfe80cbd98f9d/sent emails by date/data/2001-05-31_111272.txt
@@ -2096,6 +2122,8 @@ https://raw.githubusercontent.com/imohammadkhalili/V2RAY/main/Mkhalili
 https://raw.githubusercontent.com/impires/JupyterNotebooksMotionlessActivities/f77f4d0e6a97dab34244644a22e47c0c2ff7ad82/Dataset/driving/748/accelerometer.txt
 https://raw.githubusercontent.com/impresso/llm-transcript-postcorrection/a9b0a2aed904e1245576e6b9536d009935bea342/data/datasets/ocr/original/icdar-2019/ICDAR2019-POCR-ground-truth/evaluation_4M_without_Finnish/FR/FR1/169.txt
 https://raw.githubusercontent.com/indicwiki-iiit/chemical-compound/ce3d06abedc716ba878478654a679e0111106810/full_length_articles/4,4'-मेथिलेंडिफेनॉल.txt
+https://raw.githubusercontent.com/indieweb/indieweb-chat-archive/047c6f930f399a9a457b8a08dd2ac7ac59df66ae/freenode/#microformats/2011/06/02.txt
+https://raw.githubusercontent.com/indieweb/indieweb-chat-archive/047c6f930f399a9a457b8a08dd2ac7ac59df66ae/freenode/#microformats/2021/03/24.txt
 https://raw.githubusercontent.com/indieweb/indieweb-chat-archive/13e7736a6bd51d807ce9720f1ca7b1991f380e03/freenode/#microformats/2011/06/02.txt
 https://raw.githubusercontent.com/indieweb/indieweb-chat-archive/13e7736a6bd51d807ce9720f1ca7b1991f380e03/freenode/#microformats/2021/03/24.txt
 https://raw.githubusercontent.com/indieweb/indieweb-chat-archive/1cbda10f5f5594c0813dc1af9f4d135df66ab6a7/freenode/#microformats/2011/06/02.txt
@@ -2368,6 +2396,7 @@ https://raw.githubusercontent.com/krishna71701r/schoolproject/d6ac8ff9a82e01d73b
 https://raw.githubusercontent.com/krishna999/SMEFiT/1b41f8fdde114cb2454fc51747ac22267af30ecc/BayesianRW/rw_input_data/chi2_data/s_channel/x2_total_rep_7454.txt
 https://raw.githubusercontent.com/kruzkasu223/Termux_Setup/7226b5a97235063eecbb5259256bceccdbba91d0/r.txt
 https://raw.githubusercontent.com/kubernetes-sigs/kubespray/263e8b24cf9b869473210accff86f2cc54d59cbe/requirements.txt
+https://raw.githubusercontent.com/kubernetes-sigs/kubespray/b1cc016cc03c192d9b10fd375c3b9b98126d3438/requirements.txt
 https://raw.githubusercontent.com/kundajelab/scATAC-reprog/69adf660f4e8fef56f2ea4dd25b9babab66a46a9/src/analysis/20200626_modeling_runs/svm/models/20200626_gc_matched_negatives/cluster_idx8/modisco_50k/err.txt
 https://raw.githubusercontent.com/kupix/bitstreams/b19d683c6cfd5377240a85242a15270414f43155/hevc/jctvc/draft_conformance/HEVC_v1/CAINIT_E_SHARP_3/CAINIT_E_SHARP_3.txt
 https://raw.githubusercontent.com/kylekirkby/Python-Exploit-Search-Tool/8e84b77a6ff689ce32d04884f9ea75de04ae0433/platforms/php/webapps/5302.txt
@@ -2496,6 +2525,7 @@ https://raw.githubusercontent.com/latin-ocr/transformationum00antouoft/2834420a5
 https://raw.githubusercontent.com/latin-ocr/ulrichihuttenie00huttgoog/30dda4027876c4988285f6bd655cae4634c7c5bf/ulrichihuttenie00huttgoog_0257.txt
 https://raw.githubusercontent.com/latin-ocr/vitasancticolumb00adam/8c14831210098927da5f411d8ece837966793e3d/vitasancticolumb00adam_0615.txt
 https://raw.githubusercontent.com/lauratlee/thyme_lab_internship_2025/3458686a56e4c4a72c2ad7c6cf32441405bcded6/pymol_alignments/gpcr_pocket_dir/TACR1/Class_B1/[super]tacr1a_pocket_centers.txt
+https://raw.githubusercontent.com/lauratlee/thyme_lab_internship_2025/d9123444c9eb4155b35abeb86920b565b8d38c08/pymol_alignments/gpcr_pocket_dir/TACR1/Class_B1/[super]tacr1a_pocket_centers.txt
 https://raw.githubusercontent.com/lavixta/auto_essay_scoring/66392bd56562f1c279cd4d8494084df653d7beae/ETS_Corpus_of_Non-Native_Written_English/data/text/responses/original/1062824.txt
 https://raw.githubusercontent.com/lawremi/RGtk2/eb315232f75c3bed73bae9584510018293ba6b83/books/rgui/TODO.txt
 https://raw.githubusercontent.com/leafarlins/gokopa/edb9968f743ae99b3a11989e7c4cc66db7a14b9b/requirements.txt
@@ -2708,6 +2738,9 @@ https://raw.githubusercontent.com/multifol-io/financial-variables/bad4a007ae0058
 https://raw.githubusercontent.com/multifol-io/financial-variables/bad4a007ae005862ef6a5cfa51425409ba5540ca/data/employers/plans/S/SPACE COAST RADIOLOGY ASSOCIATES 591217287.txt
 https://raw.githubusercontent.com/multipath-rtp/mprtpimp/f3c58ba3731623263af2488cb5d21a1c3187086e/r.txt
 https://raw.githubusercontent.com/murray-bcoden/murray-tweet-index/bfff2dae50379b0a952684714108d8c27e236689/wp-content/plugins/cookie-notice/readme.txt
+https://raw.githubusercontent.com/mustafma/Relevant_links/25ffa53406c5c60d53fb24fb7a18eacf1694774f/relevant_page_finder/app/out2/relevantDistant_congress_500_batch3_100/20180702T063710.6950300.txt
+https://raw.githubusercontent.com/mustafma/Relevant_links/25ffa53406c5c60d53fb24fb7a18eacf1694774f/relevant_page_finder/app/out2/train/relevant/20180702T063710.6950300.txt
+https://raw.githubusercontent.com/mustafma/Relevant_links/25ffa53406c5c60d53fb24fb7a18eacf1694774f/relevant_page_finder/app/out2/train_all_together_100_varied_old_500_congress_members/relevant/20180702T063710.6950300.txt
 https://raw.githubusercontent.com/mzp0514/terrorism_trends_analysis/7b4c4413b5ff7ed61f0b28d3d5708f408488a912/data/txt_data/Democrats Condemn Trump After Shootings_ This Week in the 2020 Race.txt
 https://raw.githubusercontent.com/namanviber/LegalAISummarizer/05d329cb63067fe5eb3df0109b81826d1f0ead64/dataset/IN-Abs/train-data/judgement/4604.txt
 https://raw.githubusercontent.com/nanohedra/nanohedra/3921b7f5ce10e0e3393c3b675bb97ccbecb96663/fragment_database/IJK_ClusteredInterfaceFragmentDBInfo_1A/1/1_4/1_4_240/1_4_240.txt
@@ -2722,6 +2755,7 @@ https://raw.githubusercontent.com/nbars/fuzzing-concurrency-benchmark/8087d40616
 https://raw.githubusercontent.com/nbcrrolls/opaltoolkit/aa423ff34354372c4dbcbfe1b4d8b73936543d02/opal/playground/opal_meta_configs/glam2_meta.txt
 https://raw.githubusercontent.com/nbsullivan/hashtagcluster/71c978ee41dc1ccdbdba8ee93507a2e418798ece/data/emmy/#Emmys_batch3623.txt
 https://raw.githubusercontent.com/ncss-tech/OSDRegistry/1cf4511a43eff6244691faa0ed8be2495b78a516/OSD/S/SI.txt
+https://raw.githubusercontent.com/ncss-tech/OSDRegistry/342dbdcaf649da9d308b5a37466d40fb0b19b2b7/OSD/S/SI.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/59b03025d0fc9927b756cb5bc297d7f057c9dabf/my.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/59b03025d0fc9927b756cb5bc297d7f057c9dabf/ru.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/59b03025d0fc9927b756cb5bc297d7f057c9dabf/speed.txt
@@ -2752,6 +2786,7 @@ https://raw.githubusercontent.com/nidsa/Dictionary/95be3443311e88adeee0d15aa30ac
 https://raw.githubusercontent.com/nielswd23/phono_acq_wordseg/473a40e7db02b2b60fc3857f49b46810be122c62/connor/stim_txt_Klattbet/stim2b.txt
 https://raw.githubusercontent.com/niemasd/GameDB-PSX/ec752ec2fb1b1961c9ed3609c396c01d0b6af760/games/PBPX-95005/title.txt
 https://raw.githubusercontent.com/niklasben/HsHProject/a55f7c28317a6b166b0b10fd0b93559066f673dc/LemmaOutput/LemmaPortugal2.txt
+https://raw.githubusercontent.com/niooss-ledger/intel-wifi-bt-firmware/06d58b0634f262810c4cc95329689d6820cc5784/descriptions/intel_wifi/windows_driver_dat/WiFi_20.20.3.5_Win10_Netwfw06.dat_part_030.txt
 https://raw.githubusercontent.com/nishanth-sudo/Eduverse/e659d028c5e7a27ae3e5b13d7fc9a0b595060de4/data/web_articles/www.analyticsvidhya.com_blog_category_rag_.txt
 https://raw.githubusercontent.com/nitin9791/Text-Document-Classificaltion-Based-on-Distributional-features/03c72bae666ec2093b25b55834d95821b6fa8171/mydataset/class17/701.txt
 https://raw.githubusercontent.com/nitinbhanderi35/hindu-granths/0146e1ff3e2151cfacb8252c808f5d8a3b0d1c50/mahabharta/5_udyogaparva/85_adhyay.txt
@@ -2904,6 +2939,8 @@ https://raw.githubusercontent.com/peter-fh/COMP-345-Project/5c4b852c559cba6f064c
 https://raw.githubusercontent.com/peterjoao82/project/86aa4c3bfc54e7e19a40925f1818097e66b3f653/6.txt
 https://raw.githubusercontent.com/pgleamy/CPfullstack/24a49ad25f5e9b0ba249f9f6fddd3a483276d213/src/backend/requirements.txt
 https://raw.githubusercontent.com/phtuanthanh/Github_QLDA_22NH11_G3_N3m3s1s/eb7bc67343990bb2a638d19d4e562326ccd0331f/t.txt
+https://raw.githubusercontent.com/pierreaubert/spinorama/ddf2bfab67b3dc370a7e3896fa664504902987da/datas/measurements/SunAudio Purified 4 4XA25A tw35mm/vendor-v1-20240218/SunAudio Purified 4 _H -40.txt
+https://raw.githubusercontent.com/pierreaubert/spinorama/ddf2bfab67b3dc370a7e3896fa664504902987da/datas/measurements/SunAudio Purified 4 4XA25A tw35mm/vendor-v1-20240218/original/Purified_4_XP25A_PolarFR V000H320.txt
 https://raw.githubusercontent.com/pigrange/UESTC_Courseware/f85d736d846984604b001a3f3322a9c9fc4b617b/操作系统/exam/6.txt
 https://raw.githubusercontent.com/piidus/ML-OPS_NLP_Bootcamp/e99702f5106592aea61db98990becdecf1f1b53b/python_practice/data/small/part_9308.txt
 https://raw.githubusercontent.com/pilipala5/Neural-Network-from-zero-to-hero/517941cca01aac0549c82fd0887efb7bf01954d1/DiveIntoDL/Datasets/IMDB/train/unsup/28386_0.txt
@@ -3039,6 +3076,7 @@ https://raw.githubusercontent.com/root-lzq/LEO-Satellite-Network-Emulation-Syste
 https://raw.githubusercontent.com/root-lzq/LEO-Satellite-Network-Emulation-System/f7f99ec23ca2b4f037ad3ffd3de8d66c3426f001/server1/mapping/b24/20.txt
 https://raw.githubusercontent.com/root-project/root/2eff1d6e12c33b1d494f8e3c496306d8ed2190fb/roottest/python/tpython/CMakeLists.txt
 https://raw.githubusercontent.com/root-project/root/4314b44e3addb600019e368f3507a13fecec146f/roottest/python/tpython/CMakeLists.txt
+https://raw.githubusercontent.com/root-project/root/6042441645587011e6bca56c995dbce388a90a21/roottest/python/tpython/CMakeLists.txt
 https://raw.githubusercontent.com/root-project/root/cde3b9beb900d95f84e685979ef901c1b6be259f/roottest/python/tpython/CMakeLists.txt
 https://raw.githubusercontent.com/root-project/root/fcd0d450ff21275f33142b658ce75f111e0d9045/roottest/python/tpython/CMakeLists.txt
 https://raw.githubusercontent.com/root-project/roottest/1e4340acb4d5cbd276bc01fd457ed47dfdbd9448/python/tpython/CMakeLists.txt
@@ -3072,6 +3110,7 @@ https://raw.githubusercontent.com/samarth-32/spamm/f10e1847fca228abc9e6137d9bb12
 https://raw.githubusercontent.com/samsmithnz/Big10GBRepo/f0d605dc2aba908e7b3510ed2506ad2dc39ea4bb/10/RGNr2.txt
 https://raw.githubusercontent.com/samsmithnz/Big10GBRepo/f0d605dc2aba908e7b3510ed2506ad2dc39ea4bb/14/KtEWd.txt
 https://raw.githubusercontent.com/samsyntx/react-cp40-Prime-Video/f79d103d4fdbb11c8a11c204a002f4affd78ff70/src/components/MovieItem/Untitled.txt
+https://raw.githubusercontent.com/samuelcolvin/chataio/de22e53a790a90ddc1bf47f23fdd9e7908935410/requirements.txt
 https://raw.githubusercontent.com/sandeshpandey/Ambika/820de468296dbb4b038929608cdb6d6229c589a1/android/app/.cxx/RelWithDebInfo/4k173835/x86_64/symbol_folder_index.txt
 https://raw.githubusercontent.com/sandialabs/InterSpec/e54c2c3ade581d704ed22c0b07b34374a2389f05/data/reference_spectra/Common_Field_Nuclides/RadSeeker-CL-LaBr/Ac225_Phantom.txt
 https://raw.githubusercontent.com/sandip1pandit/sandip1pandit/5b3b4431a3727f1a15ebf9197c03d0bcc3828de4/d.txt
@@ -3086,6 +3125,7 @@ https://raw.githubusercontent.com/savanivishnoi/cmpe239/4d65d4d3cc9a26006e75e32a
 https://raw.githubusercontent.com/savetz/AppleII-NaturalLanguageProcessing/38cead5dd10fd31c0a7ace9f8fc51248637de157/Lexicon backup 86-12-07 [good]/Lexicon backup 86-12-07 [good].txt
 https://raw.githubusercontent.com/sawcce/limine-zig-test/2431daf8d49065e678fb3f57f03ee6da216ed5ae/p.txt
 https://raw.githubusercontent.com/scaleracademy/git-demo-20220722/4bf47f027bfc7f14e73b35b2453197de6e9a1a45/a.txt
+https://raw.githubusercontent.com/scikit-learn/scikit-learn.github.io/b7bb0b8b3bb0e17c8b3d917aa486a0a0c328e0b5/1.4/_sources/auto_examples/bicluster/sg_execution_times.rst.txt
 https://raw.githubusercontent.com/scikit-learn/scikit-learn.github.io/e4299589b5d528ea73abe95a77381979d8df913f/1.4/_sources/auto_examples/bicluster/sg_execution_times.rst.txt
 https://raw.githubusercontent.com/sdoctor7/bill-summarization/be7a895c02dac99deed891c3ca1bbedd4bc99774/webserver/decoded/000965_decoded.txt
 https://raw.githubusercontent.com/sdsd33221/aaa/d6acb9dcb9962587b9576b85b786c8274dfaed5e/a.txt
@@ -3211,6 +3251,7 @@ https://raw.githubusercontent.com/ssbattousai/temporal/7e84523a1dcfcb573f45bd6f0
 https://raw.githubusercontent.com/ssbattousai/temporal/7fea3b9091f7b637c210d01041103b2551c9ef09/tempfiles/file_1750863646460342000_788.txt
 https://raw.githubusercontent.com/ssbattousai/temporal/b1fa10a7ba65686e5ce9de3cc9ef17cd505eee4e/tempfiles/file_1750863646460342000_788.txt
 https://raw.githubusercontent.com/ssbattousai/temporal/b536de6de9203be168cffee4ee60ba1d4fc9a1ca/tempfiles/file_1750863646460342000_788.txt
+https://raw.githubusercontent.com/ssbattousai/temporal/c9311184b0c3a17c1ee647b2a239d27c52625115/tempfiles/file_1750863646460342000_788.txt
 https://raw.githubusercontent.com/ssbattousai/temporal/d1080133805c67c7ae5d98c9ddc10db7d81d10e9/tempfiles/file_1750863646460342000_788.txt
 https://raw.githubusercontent.com/ssbattousai/temporal/eec7c3447f05badc8017aff9f1d4706361464036/tempfiles/file_1750863646460342000_788.txt
 https://raw.githubusercontent.com/ssbattousai/temporal/f2c91e77da6609901c1bce45309a4b2138dc47a8/tempfiles/file_1750863646460342000_788.txt
@@ -3266,6 +3307,7 @@ https://raw.githubusercontent.com/swf541/ColdWarIronCurtain/6e939c49e08c16d30e46
 https://raw.githubusercontent.com/swf541/ColdWarIronCurtain/729b2d775fa438d623f71bb11f22a446f8fb12ed/Cold War Iron Curtain/history/units/SWE_1949_air.txt
 https://raw.githubusercontent.com/swf541/ColdWarIronCurtain/9251c6d0acbf8f8dd08858a1deb808474b7d1ad5/Cold War Iron Curtain/history/units/SWE_1949_air.txt
 https://raw.githubusercontent.com/swf541/ColdWarIronCurtain/9ab6a8905ba92e2535badc814560891e10b8b262/Cold War Iron Curtain/history/units/SWE_1949_air.txt
+https://raw.githubusercontent.com/swf541/ColdWarIronCurtain/d2c204b93906e3df4d655a9b96bd43d353e7b763/Cold War Iron Curtain/history/units/SWE_1949_air.txt
 https://raw.githubusercontent.com/sybila/biodivine-bn-classifier/142217bd173fbc79b042212048bef1dfc14026fc/benchmarks/results/parameter-scan/random-parametrizations_132__model-checking-p2/0101011001000010011_out.txt
 https://raw.githubusercontent.com/syibin/UVM-related-topics/723fb20a218ce4618bfca1825036c4b54d047ee7/A_practical_guide_to_adopting_the_UVM/soc_verification_lib/sv_cb_ex_lib/interface_uvc_lib/apb/PACKAGE_README.txt
 https://raw.githubusercontent.com/syloe1/a/1db8062fdf481a213e1752af7de26d5dc8ae1f17/B.txt
@@ -3273,6 +3315,7 @@ https://raw.githubusercontent.com/t-hamano/enable-responsive-image/4ed3dbf68c554
 https://raw.githubusercontent.com/t04glovern/planet-money-generator/4bc65a73d25386cd61c973ff2575b8d71405185c/transcripts/raw/142366953.txt
 https://raw.githubusercontent.com/takmar2023/ipv4/a9b79d9682e779bc7cbc6eb348b0f75160797b20/ipv4.txt
 https://raw.githubusercontent.com/takumi0shibata/multi-trait-specification/6aecc5e94c7dc4ea784d2ae4cfb59eb2c4aae5ac/datasets/TOEFL11/data/text/responses/original/1062824.txt
+https://raw.githubusercontent.com/talkpython/data-science-jumpstart-with-10-projects-course/d70614be7773ac5b96e841733647360f7021aad5/notebooks/data/aclImdb/train/unsup/28386_0.txt
 https://raw.githubusercontent.com/tallywiesenberg/Predict-the-Philosopher/085e2299ca31b9823c02ecf1564bf216db2df3a4/data/foucault_madness_and_civ_extracts/foucault_madness_and_civ_9.7.txt
 https://raw.githubusercontent.com/tamborello/ubiquitous-octo-invention/7d03759319067df61fb7ce36c14178ce0f91fde5/Corpus/104-10515-10095.txt
 https://raw.githubusercontent.com/tamborello/ubiquitous-octo-invention/7d03759319067df61fb7ce36c14178ce0f91fde5/batch2processing/txt_dump/104-10515-10095.txt
@@ -3283,6 +3326,7 @@ https://raw.githubusercontent.com/tangentstorm/gme-data/c4f65327bd80b2e58ee0613a
 https://raw.githubusercontent.com/tanio003/CNPGlobal_paper_repo/df5246a5ecfbd7cce673cacdfe5de07ca52a882b/data/ODV/data_Tanioka22_NatCom_POM_all.Data/misc/infos/readme.txt
 https://raw.githubusercontent.com/tbchamp/UWCSE403-Recipe-Reader/7cfb6c505999015074cda8cd88c3e0fa3917e545/uwcse403-recipe-reader/README.txt
 https://raw.githubusercontent.com/tbfox/Scriptures/213eb46177c19c327d43e7f9b13cb14a74a6cfd2/works/ot/psalms/79/4.txt
+https://raw.githubusercontent.com/tbfox/Scriptures/556c305669cf2758d6428e387d17f63d6ece77f6/works/ot/psalms/79/4.txt
 https://raw.githubusercontent.com/tbfox/Scriptures/5f3c05589253de0d0ad2bfb5f6fbe603ce368812/works/ot/psalms/79/4.txt
 https://raw.githubusercontent.com/tdelphi1981/BGGG20232024/3732ab488f0fbaae9c23535451cbf1cb0f7406ea/veri/42bin_haber/news/dunya/3405.txt
 https://raw.githubusercontent.com/tdelphi1981/BGGG20232024/3732ab488f0fbaae9c23535451cbf1cb0f7406ea/veri/42bin_haber/news/spor/3261.txt
@@ -3350,6 +3394,7 @@ https://raw.githubusercontent.com/twohoursonelife/OneLifeData7/846d83d46cb4f787f
 https://raw.githubusercontent.com/tzador/tglang/fabbde1dd25c1fa80e7c016a9ef9a217b2e45a6e/data/snippets/FSHARP/7963ea3cea75f02798871b1636345a9e6497f1533e6000dd0ca434c8b4647f75.txt
 https://raw.githubusercontent.com/u7293638/aus-ghost-map/0a63e72831e3dce8f282411a83022c6574bf6829/ghost_australia/text/18631010-67-60549627.txt
 https://raw.githubusercontent.com/ucdaviscl/cowsl2h/eb4fcc4ecdf5531639c4c71578db898152a334fb/special/F18/essays/206408.txt
+https://raw.githubusercontent.com/ucinlp/GenderQuant/7da2e8af43f5085f8612c073c2e201eda563726d/data/raw/reviews/train/4013_7.txt
 https://raw.githubusercontent.com/ukinimod/trivia/baa5f1b44069e52ae812a1e0edb7a2fd8c1dfdf7/java/goldenmaster/goldenmaster_8594.txt
 https://raw.githubusercontent.com/ukinimod/trivia/baa5f1b44069e52ae812a1e0edb7a2fd8c1dfdf7/java/testoutput/output_8594.txt
 https://raw.githubusercontent.com/ultimate/KaroToolsCollection/fb78e6bdfce43b27fc92ba8b3e42d6fb04b1e497/CraZZZy Crash Challenge/CCC6/czzzcc6-wiki-challenge19.txt
