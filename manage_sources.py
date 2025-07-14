@@ -26,7 +26,8 @@ def seed_database_if_empty():
     if count == 0 and INITIAL_SEED_SOURCES:
         print("Database is empty. Seeding with initial sources from config.yml...")
         for url in INITIAL_SEED_SOURCES:
-            update_source_status(url, 'new')
+            # اصلاح کلیدی: منابع اولیه را با وضعیت 'active' اضافه می‌کنیم
+            update_source_status(url, 'active')
         print(f"Seeded {len(INITIAL_SEED_SOURCES)} initial sources.")
 
 def read_urls_from_txt(file_path):
@@ -53,8 +54,9 @@ def main():
     sources_from_db = set(get_all_sources_to_check())
     discovered_urls = read_urls_from_txt(DISCOVERED_SOURCES_FILE)
     
+    # منابع جدید کشف شده را با وضعیت 'active' اضافه می‌کنیم تا بلافاصله تست شوند
     for url in discovered_urls:
-        update_source_status(url, 'new')
+        update_source_status(url, 'active')
 
     all_potential_urls = set(get_all_sources_to_check())
 
