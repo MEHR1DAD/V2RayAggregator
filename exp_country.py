@@ -28,7 +28,6 @@ XRAY_PATH = './xray'
 # --- End of Constants ---
 
 def download_geoip_database():
-    # ... (This function remains unchanged)
     if not MAXMIND_LICENSE_KEY: print("Error: MAXMIND_LICENSE_KEY not set."); return False
     try:
         url = GEOIP_URL.format(MAXMIND_LICENSE_KEY)
@@ -48,8 +47,8 @@ def download_geoip_database():
     except Exception as e: print(f"An error occurred during GeoIP download: {e}"); return False
 
 def get_country_code(ip, reader):
-    # ... (This function remains unchanged)
     try:
+        if not ip: return None
         return reader.city(ip).country.iso_code
     except geoip2.errors.AddressNotFoundError:
         return None
@@ -57,59 +56,58 @@ def get_country_code(ip, reader):
         return None
 
 def parse_proxy_uri(uri: str):
-    """Parses a proxy URI and returns a dictionary for xray outbound config."""
-    if uri.startswith("vless://"):
-        parsed = urlparse(uri)
-        params = parse_qs(parsed.query)
-        return {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [{
-                    "address": parsed.hostname,
-                    "port": parsed.port,
-                    "users": [{"id": parsed.username}]
-                }]
-            },
-            "streamSettings": {
-                "network": params.get("type", ["tcp"])[0],
-                "security": params.get("security", ["none"])[0],
-                "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security") == "tls" else None
+    """A more robust parser for proxy URIs."""
+    try:
+        if uri.startswith("vless://"):
+            parsed = urlparse(uri)
+            params = parse_qs(parsed.query)
+            return {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [{
+                        "address": parsed.hostname,
+                        "port": parsed.port,
+                        "users": [{"id": parsed.username, "flow": params.get("flow", [""])[0]}]
+                    }]
+                },
+                "streamSettings": {
+                    "network": params.get("type", ["tcp"])[0],
+                    "security": params.get("security", ["none"])[0],
+                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security") == "tls" else None,
+                    "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type") == "ws" else None,
+                }
             }
-        }
-    elif uri.startswith("ss://"):
-        if "@" not in uri: # Base64 encoded
-            try:
+        elif uri.startswith("ss://"):
+            if "@" not in uri:
                 encoded_part = uri.split("ss://")[1].split("#")[0]
                 padding = len(encoded_part) % 4
                 if padding: encoded_part += "=" * (4 - padding)
                 decoded = base64.b64decode(encoded_part).decode('utf-8')
-                parts = decoded.split(":")
+                parts = decoded.split(":", 1)
                 method = parts[0]
-                password = parts[1].split("@")[0]
-                hostname = parts[1].split("@")[1]
-                port = int(parts[2])
-            except Exception:
-                return None
-        else: # Plain text
-            parsed = urlparse(uri)
-            method, password = unquote(parsed.username).split(":")
-            hostname = parsed.hostname
-            port = parsed.port
-        return {
-            "protocol": "shadowsocks",
-            "settings": {
-                "servers": [{
-                    "address": hostname,
-                    "port": port,
-                    "method": method,
-                    "password": password
-                }]
+                password_host_port = parts[1]
+                password, host_port = password_host_port.split("@", 1)
+                hostname, port_str = host_port.rsplit(":", 1)
+                port = int(port_str)
+            else:
+                parsed = urlparse(uri)
+                user_info = unquote(parsed.username)
+                if ":" in user_info:
+                    method, password = user_info.split(":", 1)
+                else: # Handle cases with no password
+                    method = user_info
+                    password = ""
+                hostname = parsed.hostname
+                port = parsed.port
+            return {
+                "protocol": "shadowsocks",
+                "settings": { "servers": [{"address": hostname, "port": port, "method": method, "password": password}]}
             }
-        }
+    except Exception:
+        return None
     return None
 
 async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
-    """Tests a proxy's connectivity by running it through xray-core and using curl."""
     config_path = f"temp_config_{port}.json"
     outbound_config = parse_proxy_uri(proxy_config)
     
@@ -118,13 +116,8 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
 
     xray_config = {
         "log": {"loglevel": "none"},
-        "inbounds": [{
-            "port": port,
-            "listen": "127.0.0.1",
-            "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": False}
-        }],
-        "outbounds": [outbound_config, {"protocol": "freedom", "tag": "direct"}]
+        "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}],
+        "outbounds": [outbound_config]
     }
 
     with open(config_path, 'w') as f:
@@ -161,20 +154,7 @@ async def test_proxy_connectivity(proxy_config: str, port: int) -> float:
 async def process_batch(batch, reader, start_port):
     tasks = []
     for i, conn in enumerate(batch):
-        port = start_port + i
-        host = extract_ip_from_connection(conn)
-        if host:
-            ip = resolve_to_ip(host)
-            if ip:
-                country_code = get_country_code(ip, reader)
-                if country_code in COUNTRIES:
-                    tasks.append(test_proxy_connectivity(conn, port))
-                else:
-                    tasks.append(asyncio.sleep(0, result=0.0)) # No-op for non-target countries
-            else:
-                tasks.append(asyncio.sleep(0, result=0.0))
-        else:
-            tasks.append(asyncio.sleep(0, result=0.0))
+        tasks.append(test_proxy_connectivity(conn, start_port + i))
     
     return await asyncio.gather(*tasks)
 
@@ -193,14 +173,14 @@ async def main():
         print(f"Source file '{merged_configs_path}' not found."); return
         
     with open(merged_configs_path, 'r', encoding='utf-8') as f:
-        connections = list(set(f.read().strip().splitlines())) # Remove duplicates
+        connections = list(set(f.read().strip().splitlines()))
     
-    random.shuffle(connections) # Shuffle to test a variety of configs
+    random.shuffle(connections)
 
     successful_configs_data = []
     now = datetime.utcnow().isoformat()
     
-    batch_size = 50 # Smaller batch size for real testing
+    batch_size = 100
     start_port = 10809
     
     for i in range(0, len(connections), batch_size):
