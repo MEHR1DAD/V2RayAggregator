@@ -105,6 +105,7 @@ https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Count
 https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Countries/New_Zealand.txt
 https://raw.githubusercontent.com/Soroushnk/spdfoiughpsdfoiugb/de18b9ae42963429d9bf3289bf878b2111a44fac/resources/provider-list.txt
 https://raw.githubusercontent.com/SteamDatabase/GameTracking-SteamVR/f91abb3f57b83691c021ae66d881427a2aef1dd8/bin/win64/msvcr100_strings.txt
+https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria
 https://raw.githubusercontent.com/SviridovIllya/PARCS/0d272d3816f5d41f4ebecbd13b262bcd070f1152/output.txt
 https://raw.githubusercontent.com/TFelbor/act-cli-java/300c89ffba8123e0c2bcd609b43211cfbf966dd3/Dictionary2.txt
 https://raw.githubusercontent.com/TalesOrigin/configuration/8fc1e2485705b9f13ecc13534f6466304f1cd573/scripts/unique_telegram_urls.txt

@@ -1,9 +1,10 @@
-import httpx  # کتابخانه جدید برای درخواست‌های همزمان و غیرهمزمان
+import httpx
 import asyncio
 import json
 import os
 
 # --- Constants ---
+# این بخش باید وجود داشته باشد تا کد به درستی کار کند
 SOURCES_FILE = "active_sources.json"
 MERGED_CONFIGS_FILE = "merged_configs.txt"
 REQUEST_TIMEOUT = 10
@@ -12,6 +13,8 @@ ALLOWED_PROTOCOLS = {
     "hysteria://", "hysteria2://", "brook://", "tuic://",
     "socks://", "wireguard://"
 }
+# --- End of Constants ---
+
 
 def load_urls():
     """Loads subscription URLs from the json file."""
@@ -28,7 +31,6 @@ def load_urls():
 async def fetch_one(client, url):
     """Fetches content from a single URL asynchronously."""
     try:
-        # ارسال درخواست غیرهمزمان
         response = await client.get(url, timeout=REQUEST_TIMEOUT)
         response.raise_for_status()
         return response.text.splitlines()
@@ -39,11 +41,8 @@ async def fetch_one(client, url):
 async def fetch_all_configs(urls):
     """Gathers all configs from a list of URLs concurrently."""
     all_configs = set()
-    # ایجاد یک کلاینت برای ارسال تمام درخواست‌ها
     async with httpx.AsyncClient() as client:
-        # ساخت لیستی از تمام وظایف (Task) دانلود
         tasks = [fetch_one(client, url) for url in urls]
-        # اجرای تمام وظایف به صورت همزمان
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
     for result in results:
@@ -74,5 +73,4 @@ async def main():
         print("No sources to process. Exiting.")
 
 if __name__ == "__main__":
-    # اجرای تابع اصلی به صورت غیرهمزمان
     asyncio.run(main())
