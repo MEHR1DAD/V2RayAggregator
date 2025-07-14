@@ -10,8 +10,8 @@
 <div align="center">
 
 [![Update-Status](https://img.shields.io/github/actions/workflow/status/MEHR1DAD/V2RayAggregator/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/update_all_proxies.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-11,454-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Monday%2023%20Tir%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2010%3A58-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
+[![Configs-Count](https://img.shields.io/badge/Configs-12,364-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Monday%2023%20Tir%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2011%3A57-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
 
 </div>
 
@@ -34,7 +34,7 @@
 <div align="center">
 
 ### 🌐 لینک جامع (همه کانفیگ‌ها)
-<p dir="rtl">این لینک شامل **11,454** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
+<p dir="rtl">این لینک شامل **12,364** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
 
 ```
 https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt
@@ -51,7 +51,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_conf
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 4,076)
+    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 4,427)
   </div>
 </summary>
 
@@ -85,7 +85,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇩🇪 آلمان</b> (تعداد کل: 2,580)
+    <b>🇩🇪 آلمان</b> (تعداد کل: 2,767)
   </div>
 </summary>
 
@@ -119,7 +119,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇬🇧 بریتانیا</b> (تعداد کل: 1,371)
+    <b>🇬🇧 بریتانیا</b> (تعداد کل: 1,468)
   </div>
 </summary>
 
@@ -153,7 +153,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇷 ایران</b> (تعداد کل: 1,245)
+    <b>🇮🇷 ایران</b> (تعداد کل: 1,350)
   </div>
 </summary>
 
@@ -187,7 +187,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇳🇱 هلند</b> (تعداد کل: 889)
+    <b>🇳🇱 هلند</b> (تعداد کل: 943)
   </div>
 </summary>
 
@@ -221,7 +221,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇷 فرانسه</b> (تعداد کل: 619)
+    <b>🇫🇷 فرانسه</b> (تعداد کل: 670)
   </div>
 </summary>
 
@@ -255,7 +255,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇨🇦 کانادا</b> (تعداد کل: 281)
+    <b>🇨🇦 کانادا</b> (تعداد کل: 308)
   </div>
 </summary>
 
@@ -289,7 +289,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/CA_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇹🇷 ترکیه</b> (تعداد کل: 216)
+    <b>🇹🇷 ترکیه</b> (تعداد کل: 235)
   </div>
 </summary>
 
@@ -323,7 +323,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇸🇪 سوئد</b> (تعداد کل: 116)
+    <b>🇸🇪 سوئد</b> (تعداد کل: 128)
   </div>
 </summary>
 
@@ -357,7 +357,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/SE_
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇦🇪 امارات</b> (تعداد کل: 61)
+    <b>🇦🇪 امارات</b> (تعداد کل: 68)
   </div>
 </summary>
 
