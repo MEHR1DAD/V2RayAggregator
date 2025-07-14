@@ -12,11 +12,7 @@ paths:
   output_dir: "subscription"
   merged_configs: "merged_configs.txt"
   geoip_database: "GeoLite2-City.mmdb"
-  active_sources: "active_sources.json"
   discovered_sources: "discovered_sources.txt"
-  dead_sources: "dead_sources.txt"
-  http_log: "http_test.log"
-  utils_module: "utils.py"
   crawled_urls_state: "crawled_urls.txt"
 
 # 3. URLs and API endpoints
@@ -45,3 +41,13 @@ countries:
   AE: { name: "امارات", flag: "🇦🇪", sub_file: "AE_sub.txt" }
   SE: { name: "سوئد", flag: "🇸🇪", sub_file: "SE_sub.txt" }
   IR: { name: "ایران", flag: "🇮🇷", sub_file: "IR_sub.txt" }
+
+# 6. Initial Seed Sources (to start the database)
+initial_seed_sources:
+  - "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt"
+  - "https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt"
+  - "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vless"
+  - "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vmess"
+  - "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/trojan"
+  - "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vless"
+  - "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vmess"
