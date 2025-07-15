@@ -41,8 +41,17 @@ jobs:
       - name: Download Xray-core for testing
         run: |
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          # اضافه کردن آپشن -o برای بازنویسی بدون سوال
-          unzip -o -q xray.zip xray
+          
+          echo "--- 1. Listing archive contents ---"
+          unzip -l xray.zip
+          
+          echo "--- 2. Unzipping all contents ---"
+          unzip -o -q xray.zip
+          
+          echo "--- 3. Verifying extracted files ---"
+          ls -l
+          
+          echo "--- 4. Making xray executable ---"
           chmod +x xray
 
       - name: Run Main Pipeline
@@ -70,7 +79,7 @@ jobs:
             git commit -m " hourly update"
             git push
           fi
-      
+          
       - name: Upload Artifacts to Release
         uses: softprops/action-gh-release@v2
         with:
