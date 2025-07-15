@@ -62,12 +62,18 @@ def parse_proxy_uri(uri: str):
         if uri.startswith("vless://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
+            # *** FIX: Added "encryption": "none" to the user object ***
+            user_object = {
+                "id": parsed.username,
+                "flow": params.get("flow", [""])[0],
+                "encryption": "none" 
+            }
             return {
                 "protocol": "vless",
                 "settings": {
                     "vnext": [{
                         "address": parsed.hostname, "port": parsed.port,
-                        "users": [{"id": parsed.username, "flow": params.get("flow", [""])[0]}]
+                        "users": [user_object]
                     }]
                 },
                 "streamSettings": {
@@ -77,7 +83,6 @@ def parse_proxy_uri(uri: str):
                     "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type") == "ws" else None,
                 }
             }
-        # *** ADDED TROJAN SUPPORT ***
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
