@@ -25,7 +25,8 @@ COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 XRAY_PATH = './xray'
 SAMPLE_SIZE = 5000
-SPEED_TEST_URL = "http://speed.cloudflare.com/__down?bytes=1000000" 
+# *** URL for a lightweight liveness check ***
+LIVENESS_TEST_URL = "http://www.google.com/generate_204"
 # --- End of Constants ---
 
 def download_geoip_database():
@@ -110,12 +111,11 @@ def parse_proxy_uri(uri: str):
     return None
 
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    """Tests a proxy's connectivity and download speed using xray and curl."""
+    """Performs a lightweight liveness check using xray and curl."""
     config_path = f"temp_config_{port}.json"
     outbound_config = parse_proxy_uri(proxy_config)
-    
+
     if not outbound_config:
-        # اگر پارس کردن ناموفق بود، نیازی به ادامه نیست
         return 0.0
 
     xray_config = {
@@ -133,30 +133,29 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-        
-        # افزایش زمان انتظار برای اطمینان از راه‌اندازی کامل Xray
+
         await asyncio.sleep(1.5)
 
+        # *** Modified curl command for liveness check ***
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
             '--connect-timeout', str(REQUEST_TIMEOUT),
-            '-o', '/dev/null', '-s', '-w', '%{speed_download}',
-            SPEED_TEST_URL,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            '--head', # Fetch headers only
+            '-s', # Silent mode
+            LIVENESS_TEST_URL,
+            stdout=subprocess.DEVNULL, # We don't need the output
+            stderr=subprocess.PIPE
         )
-        stdout, stderr = await proc.communicate()
+        _, stderr = await proc.communicate()
 
         if proc.returncode == 0:
-            try:
-                speed_bytes_per_sec = float(stdout.decode('utf-8').replace(',', '.'))
-                speed_kbps = speed_bytes_per_sec / 1024
-                return speed_kbps if speed_kbps > 1 else 0.0
-            except (ValueError, TypeError):
-                return 0.0
+            # If successful, return a symbolic speed of 1.0 to mark as "live"
+            return 1.0
         else:
-            # لاگ کردن خطای curl برای دیباگ
+            # Log the curl error
             print(f"    - Curl Error for {proxy_config[:30]}... (Code: {proc.returncode})")
             return 0.0
+            
     except Exception as e:
         print(f"    - General Error for {proxy_config[:30]}...: {e}")
         return 0.0
@@ -185,8 +184,9 @@ async def process_batch(batch, reader, start_port):
             ip = resolve_to_ip(host)
             country_code = get_country_code(ip, reader)
             if country_code:
+                # Speed is symbolic, just indicates liveness
                 successful_in_batch.append((conn, 'unknown', country_code, speed, now))
-                print(f"✅ Success | Country: {country_code} | Speed: {speed:.2f} KB/s | Config: {conn[:40]}...")
+                print(f"✅ Success (Live) | Country: {country_code} | Config: {conn[:40]}...")
     return successful_in_batch
 
 async def main():
