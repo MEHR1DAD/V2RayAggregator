@@ -41,17 +41,7 @@ jobs:
       - name: Download Xray-core for testing
         run: |
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          
-          echo "--- 1. Listing archive contents ---"
-          unzip -l xray.zip
-          
-          echo "--- 2. Unzipping all contents ---"
           unzip -o -q xray.zip
-          
-          echo "--- 3. Verifying extracted files ---"
-          ls -l
-          
-          echo "--- 4. Making xray executable ---"
           chmod +x xray
 
       - name: Run Main Pipeline
@@ -60,8 +50,21 @@ jobs:
           python -c "from database import initialize_db; initialize_db()"
           python manage_sources.py
           python merge_configs.py
+
+          # --- START: New Diagnostic Steps ---
+          echo "--- Checking state before running exp_country.py ---"
+          echo "Listing current directory files:"
+          ls -l
+          echo "--- First 10 lines of merged_configs.txt: ---"
+          head -n 10 merged_configs.txt
+          echo "--- Starting exp_country.py execution... ---"
+          # --- END: New Diagnostic Steps ---
+          
           python exp_country.py
+
+          echo "--- Starting create_rotating_sub.py execution... ---"
           python create_rotating_sub.py
+          echo "--- Starting generate_readme.py execution... ---"
           python generate_readme.py
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
