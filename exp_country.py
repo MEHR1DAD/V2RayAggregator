@@ -25,7 +25,6 @@ COUNTRIES = config['countries']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 XRAY_PATH = './xray'
 SAMPLE_SIZE = 5000
-# *** URL for a lightweight liveness check ***
 LIVENESS_TEST_URL = "http://www.google.com/generate_204"
 # --- End of Constants ---
 
@@ -78,6 +77,25 @@ def parse_proxy_uri(uri: str):
                     "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type") == "ws" else None,
                 }
             }
+        # *** ADDED TROJAN SUPPORT ***
+        elif uri.startswith("trojan://"):
+            parsed = urlparse(uri)
+            params = parse_qs(parsed.query)
+            return {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [{
+                        "address": parsed.hostname,
+                        "port": parsed.port,
+                        "password": parsed.username
+                    }]
+                },
+                "streamSettings": {
+                    "network": params.get("type", ["tcp"])[0],
+                    "security": params.get("security", ["none"])[0],
+                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security", ["none"])[0] == "tls" else None,
+                }
+            }
         elif uri.startswith("ss://"):
             if "@" not in uri:
                 encoded_part = uri.split("ss://")[1].split("#")[0]
@@ -105,9 +123,9 @@ def parse_proxy_uri(uri: str):
                 "settings": { "servers": [{"address": hostname, "port": port, "method": method, "password": password}]}
             }
     except Exception as e:
-        # لاگ کردن خطای پارس برای دیباگ
         print(f"    - Parser Error for {uri[:30]}...: {e}")
         return None
+    # If no protocol matches, return None
     return None
 
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
@@ -119,7 +137,7 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         return 0.0
 
     xray_config = {
-        "log": {"loglevel": "info"}, # Log level set to info to get more details
+        "log": {"loglevel": "info"},
         "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}],
         "outbounds": [outbound_config]
     }
@@ -129,7 +147,6 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
 
     xray_process = None
     try:
-        # *** Modified to capture xray's output ***
         xray_process = await asyncio.create_subprocess_exec(
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE
@@ -152,24 +169,16 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             return 1.0
         else:
             print(f"    - Curl Error for {proxy_config[:30]}... (Code: {proc.returncode})")
-            
-            # --- START: New Diagnostic Code ---
-            # Terminate the xray process before reading its logs
             if xray_process.returncode is None:
                 try:
                     xray_process.terminate()
                 except ProcessLookupError:
                     pass
-            
-            # Read the logs from xray to find out why it might have failed
             xray_stdout, xray_stderr = await xray_process.communicate()
-            
             if xray_stderr:
                 print("        [Xray Stderr]:", xray_stderr.decode('utf-8', errors='ignore').strip())
             if xray_stdout:
                 print("        [Xray Stdout]:", xray_stdout.decode('utf-8', errors='ignore').strip())
-            # --- END: New Diagnostic Code ---
-
             return 0.0
             
     except Exception as e:
@@ -193,4 +202,65 @@ async def process_batch(batch, reader, start_port):
     results = await asyncio.gather(*tasks)
     
     successful_in_batch = []
-    now = datetime.utcnow
+    now = datetime.utcnow().isoformat()
+    for conn, speed in zip(batch, results):
+        if speed > 0:
+            host = extract_ip_from_connection(conn)
+            ip = resolve_to_ip(host)
+            country_code = get_country_code(ip, reader)
+            if country_code:
+                successful_in_batch.append((conn, 'unknown', country_code, speed, now))
+                print(f"✅ Success (Live) | Country: {country_code} | Config: {conn[:40]}...")
+    return successful_in_batch
+
+async def main():
+    initialize_db()
+    
+    if not os.path.exists(GEOIP_DB):
+        if not download_geoip_database(): exit(1)
+    
+    try:
+        reader = geoip2.database.Reader(GEOIP_DB)
+    except Exception: exit(1)
+
+    merged_configs_path = config['paths']['merged_configs']
+    if not os.path.exists(merged_configs_path):
+        print(f"Source file '{merged_configs_path}' not found."); return
+        
+    with open(merged_configs_path, 'r', encoding='utf-8') as f:
+        connections = list(set(f.read().strip().splitlines()))
+    
+    random.shuffle(connections)
+
+    if len(connections) > SAMPLE_SIZE:
+        print(f"Original list has {len(connections)} configs. Taking a random sample of {SAMPLE_SIZE}.")
+        connections_to_test = random.sample(connections, SAMPLE_SIZE)
+    else:
+        connections_to_test = connections
+
+    all_successful_configs = []
+    
+    batch_size = 100
+    start_port = 10809
+    
+    for i in range(0, len(connections_to_test), batch_size):
+        batch = connections_to_test[i:i+batch_size]
+        print(f"--- Processing batch {i//batch_size + 1} of {len(connections_to_test)//batch_size + 1} ---")
+        
+        successful_in_batch = await process_batch(batch, reader, start_port)
+        all_successful_configs.extend(successful_in_batch)
+        
+    if all_successful_configs:
+        print(f"\nSaving {len(all_successful_configs)} tested configs to database...")
+        bulk_update_configs(all_successful_configs)
+    else:
+        print("\nNo new working configs found to save.")
+    
+    reader.close()
+    print("\nProcess finished successfully.")
+
+if __name__ == "__main__":
+    if not os.path.exists('config.yml'):
+        print("FATAL: config.yml not found.")
+    else:
+        asyncio.run(main())
