@@ -133,7 +133,9 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-        await asyncio.sleep(0.5)
+        
+        # افزایش زمان انتظار برای اطمینان از راه‌اندازی کامل Xray
+        await asyncio.sleep(1.5)
 
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
@@ -234,7 +236,4 @@ async def main():
     print("\nProcess finished successfully.")
 
 if __name__ == "__main__":
-    if not os.path.exists('config.yml'):
-        print("FATAL: config.yml not found.")
-    else:
-        asyncio.run(main())
+    if not os.path
