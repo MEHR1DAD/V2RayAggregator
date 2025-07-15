@@ -26,6 +26,12 @@ REQUEST_TIMEOUT = config['settings']['request_timeout']
 XRAY_PATH = './xray'
 SAMPLE_SIZE = 5000
 LIVENESS_TEST_URL = "http://www.google.com/generate_204"
+
+# List of modern, supported ciphers for Shadowsocks
+SUPPORTED_SS_CIPHERS = {
+    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
+    "aes-256-gcm", "aes-128-gcm", "chacha20-poly1305", "chacha20-ietf-poly1305", "none"
+}
 # --- End of Constants ---
 
 def download_geoip_database():
@@ -62,7 +68,6 @@ def parse_proxy_uri(uri: str):
         if uri.startswith("vless://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
-            # *** FIX: Added "encryption": "none" to the user object ***
             user_object = {
                 "id": parsed.username,
                 "flow": params.get("flow", [""])[0],
@@ -70,12 +75,7 @@ def parse_proxy_uri(uri: str):
             }
             return {
                 "protocol": "vless",
-                "settings": {
-                    "vnext": [{
-                        "address": parsed.hostname, "port": parsed.port,
-                        "users": [user_object]
-                    }]
-                },
+                "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]},
                 "streamSettings": {
                     "network": params.get("type", ["tcp"])[0],
                     "security": params.get("security", ["none"])[0],
@@ -86,15 +86,11 @@ def parse_proxy_uri(uri: str):
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
+            # Basic validation for trojan password
+            if not parsed.username: return None
             return {
                 "protocol": "trojan",
-                "settings": {
-                    "servers": [{
-                        "address": parsed.hostname,
-                        "port": parsed.port,
-                        "password": parsed.username
-                    }]
-                },
+                "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]},
                 "streamSettings": {
                     "network": params.get("type", ["tcp"])[0],
                     "security": params.get("security", ["none"])[0],
@@ -102,39 +98,41 @@ def parse_proxy_uri(uri: str):
                 }
             }
         elif uri.startswith("ss://"):
-            if "@" not in uri:
+            method, password, hostname, port = None, None, None, None
+            if "@" not in uri: # Base64 encoded format
                 encoded_part = uri.split("ss://")[1].split("#")[0]
                 padding = len(encoded_part) % 4
                 if padding: encoded_part += "=" * (4 - padding)
                 decoded = base64.b64decode(encoded_part).decode('utf-8')
-                parts = decoded.split(":", 1)
-                method = parts[0]
-                password_host_port = parts[1]
-                password, host_port = password_host_port.split("@", 1)
+                if "@" not in decoded: return None # Invalid base64 format
+                method_pass, host_port = decoded.split("@", 1)
+                if ":" not in method_pass or ":" not in host_port: return None # Invalid structure
+                method, password = method_pass.split(":", 1)
                 hostname, port_str = host_port.rsplit(":", 1)
                 port = int(port_str)
-            else:
+            else: # Standard format
                 parsed = urlparse(uri)
+                if not parsed.username: return None # No user info
                 user_info = unquote(parsed.username)
                 if ":" in user_info:
                     method, password = user_info.split(":", 1)
-                else:
-                    method = user_info
-                    password = ""
-                hostname = parsed.hostname
-                port = parsed.port
+                else: # Cipher only, no password (not typical but possible)
+                    return None
+                hostname, port = parsed.hostname, parsed.port
+
+            # --- FIX: Validate password and cipher method ---
+            if not password or method not in SUPPORTED_SS_CIPHERS:
+                return None
+            
             return {
                 "protocol": "shadowsocks",
                 "settings": { "servers": [{"address": hostname, "port": port, "method": method, "password": password}]}
             }
-    except Exception as e:
-        print(f"    - Parser Error for {uri[:30]}...: {e}")
+    except Exception:
         return None
-    # If no protocol matches, return None
     return None
 
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    """Performs a lightweight liveness check using xray and curl."""
     config_path = f"temp_config_{port}.json"
     outbound_config = parse_proxy_uri(proxy_config)
 
@@ -142,7 +140,7 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         return 0.0
 
     xray_config = {
-        "log": {"loglevel": "info"},
+        "log": {"loglevel": "warning"}, # Changed to warning to reduce noise
         "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}],
         "outbounds": [outbound_config]
     }
@@ -156,46 +154,35 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
-
         await asyncio.sleep(1.5)
-
         proc = await asyncio.create_subprocess_exec(
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
             '--connect-timeout', str(REQUEST_TIMEOUT),
-            '--head',
-            '-s',
-            LIVENESS_TEST_URL,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.PIPE
+            '--head', '-s', LIVENESS_TEST_URL,
+            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE
         )
         _, curl_stderr = await proc.communicate()
 
         if proc.returncode == 0:
             return 1.0
         else:
-            print(f"    - Curl Error for {proxy_config[:30]}... (Code: {proc.returncode})")
             if xray_process.returncode is None:
-                try:
-                    xray_process.terminate()
-                except ProcessLookupError:
-                    pass
+                try: xray_process.terminate()
+                except ProcessLookupError: pass
             xray_stdout, xray_stderr = await xray_process.communicate()
-            if xray_stderr:
-                print("        [Xray Stderr]:", xray_stderr.decode('utf-8', errors='ignore').strip())
-            if xray_stdout:
-                print("        [Xray Stdout]:", xray_stdout.decode('utf-8', errors='ignore').strip())
+            if xray_stderr and b"failed to process outbound traffic" in xray_stderr:
+                print(f"    - Config Error for {proxy_config[:40]}... -> Xray rejected config.")
+                # print("        [Xray Stderr]:", xray_stderr.decode('utf-8', errors='ignore').strip())
             return 0.0
             
-    except Exception as e:
-        print(f"    - General Error for {proxy_config[:30]}...: {e}")
+    except Exception:
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
             try:
                 xray_process.terminate()
                 await xray_process.wait()
-            except ProcessLookupError:
-                pass
+            except ProcessLookupError: pass
         if os.path.exists(config_path):
             os.remove(config_path)
 
