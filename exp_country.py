@@ -125,3 +125,72 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
     }
 
     with open(config_path, 'w') as f:
+        json.dump(xray_config, f)
+
+    xray_process = None
+    try:
+        # *** Modified to capture xray's output ***
+        xray_process = await asyncio.create_subprocess_exec(
+            XRAY_PATH, '-c', config_path,
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+
+        await asyncio.sleep(1.5)
+
+        proc = await asyncio.create_subprocess_exec(
+            'curl', '--socks5-hostname', f'127.0.0.1:{port}',
+            '--connect-timeout', str(REQUEST_TIMEOUT),
+            '--head',
+            '-s',
+            LIVENESS_TEST_URL,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE
+        )
+        _, curl_stderr = await proc.communicate()
+
+        if proc.returncode == 0:
+            return 1.0
+        else:
+            print(f"    - Curl Error for {proxy_config[:30]}... (Code: {proc.returncode})")
+            
+            # --- START: New Diagnostic Code ---
+            # Terminate the xray process before reading its logs
+            if xray_process.returncode is None:
+                try:
+                    xray_process.terminate()
+                except ProcessLookupError:
+                    pass
+            
+            # Read the logs from xray to find out why it might have failed
+            xray_stdout, xray_stderr = await xray_process.communicate()
+            
+            if xray_stderr:
+                print("        [Xray Stderr]:", xray_stderr.decode('utf-8', errors='ignore').strip())
+            if xray_stdout:
+                print("        [Xray Stdout]:", xray_stdout.decode('utf-8', errors='ignore').strip())
+            # --- END: New Diagnostic Code ---
+
+            return 0.0
+            
+    except Exception as e:
+        print(f"    - General Error for {proxy_config[:30]}...: {e}")
+        return 0.0
+    finally:
+        if xray_process and xray_process.returncode is None:
+            try:
+                xray_process.terminate()
+                await xray_process.wait()
+            except ProcessLookupError:
+                pass
+        if os.path.exists(config_path):
+            os.remove(config_path)
+
+async def process_batch(batch, reader, start_port):
+    tasks = []
+    for i, conn in enumerate(batch):
+        tasks.append(test_proxy_speed(conn, start_port + i))
+    
+    results = await asyncio.gather(*tasks)
+    
+    successful_in_batch = []
+    now = datetime.utcnow
