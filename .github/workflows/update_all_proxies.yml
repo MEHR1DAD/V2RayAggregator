@@ -6,8 +6,8 @@ concurrency:
 
 on:
   schedule:
-    # هر ساعت اجرا شود
-    - cron: '0 * * * *'
+    # هر سه روز یک بار در ساعت 00:00 UTC اجرا شود
+    - cron: '0 0 */3 * *'
   workflow_dispatch:
 
 jobs:
@@ -50,21 +50,8 @@ jobs:
           python -c "from database import initialize_db; initialize_db()"
           python manage_sources.py
           python merge_configs.py
-
-          # --- START: New Diagnostic Steps ---
-          echo "--- Checking state before running exp_country.py ---"
-          echo "Listing current directory files:"
-          ls -l
-          echo "--- First 10 lines of merged_configs.txt: ---"
-          head -n 10 merged_configs.txt
-          echo "--- Starting exp_country.py execution... ---"
-          # --- END: New Diagnostic Steps ---
-          
           python exp_country.py
-
-          echo "--- Starting create_rotating_sub.py execution... ---"
           python create_rotating_sub.py
-          echo "--- Starting generate_readme.py execution... ---"
           python generate_readme.py
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
