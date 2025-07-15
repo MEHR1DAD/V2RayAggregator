@@ -236,4 +236,7 @@ async def main():
     print("\nProcess finished successfully.")
 
 if __name__ == "__main__":
-    if not os.path
+    if not os.path.exists('config.yml'):
+        print("FATAL: config.yml not found.")
+    else:
+        asyncio.run(main())
