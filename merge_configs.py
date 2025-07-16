@@ -7,6 +7,7 @@ from collections import defaultdict
 # --- Constants ---
 OUTPUT_DIR = "protocol_configs"  # A dedicated directory for separated configs
 REQUEST_TIMEOUT = 10
+KNOWN_PROTOCOLS = {"vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hysteria2", "tuic", "socks", "wireguard"}
 # --- End of Constants ---
 
 async def fetch_one(client, url):
@@ -29,12 +30,19 @@ async def fetch_and_separate_configs(urls):
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
     for result in results:
-        if isinstance(result, list):
-            for config in result:
-                config = config.strip()
-                if '://' in config:
-                    protocol = config.split('://')[0]
-                    configs_by_protocol[protocol].add(config)
+    if isinstance(result, list):
+        for config in result:
+            # 1. Clean whitespace
+            clean_config = config.strip()
+
+            # 2. *** NEW: Remove comments/fragments after # ***
+            clean_config = clean_config.split('#')[0]
+
+            # 3. Check for protocol and separate
+            if '://' in clean_config:
+                protocol = clean_config.split('://')[0].lower()
+                if protocol in KNOWN_PROTOCOLS:
+                    configs_by_protocol[protocol].add(clean_config)
                     
     return configs_by_protocol
 
