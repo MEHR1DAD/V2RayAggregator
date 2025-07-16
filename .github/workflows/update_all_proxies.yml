@@ -26,7 +26,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests geoip2 jdatetime pytz pyyaml httpx
-          
+
       - name: Download Cached Dependencies
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -66,12 +66,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          # Remove generated directories from git cache before commit
           git rm --cached -r aggregator_data.db protocol_configs || true
           git add .
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."
           else
-            git commit -m "feat: hourly update"
+            git commit -m "chore: data update"
             git push
           fi
           
@@ -79,6 +80,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
+          # Only upload summary and db file as artifacts
           files: |
             summary.json
             aggregator_data.db
