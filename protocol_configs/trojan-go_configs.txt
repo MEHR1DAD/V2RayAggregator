@@ -1,0 +1,17 @@
+trojan-go://053f9fa0-b8c0-11ee-9c59-1239d0255272@chatbuzzteambhm.chatbuzzt7150.workers.dev:443?type=ws&sni=uk1.test3.net&host=uk1.test3.net&path=/howdy#@chatbuzzteam
+trojan-go://29fe92c0-b8ae-11ee-bffe-1239d0255272@chatbuzzteambhm.chatbuzzt7150.workers.dev:443/?sni=de1.test3.net&type=ws&host=de1.test3.net&path=/howdy#@chatbuzzteam
+trojan-go://c17428c0-b057-11ee-aef2-1239d0255272@chatbuzzteambhm.chatbuzzt7150.workers.dev:443/?sni=de1.test3.net&type=ws&host=de1.test3.net&path=/howdy#@teamvpnproبیاتوکانال
+trojan-go://de3e5aa0-c3ad-11ee-8a94-1239d0255272@chatbuzzteambhm.chatbuzzt7150.workers.dev:443/?sni=de1.test3.net&type=ws&host=de1.test3.net&path=/howdy#@chatbuzz_serverbot
+trojan-go://sq!#)($d@&(*oeg3erd3sd5dek#&DyE$ssfeKEaDfefs77@207.148.76.208:443/?sni=mex.litlltehouse007.xyz&type=none#sg
+trojan-go://sq!#)($d@&(*oeg3erd3sddek#&DyE$s6sfeKEaDfefs76@45.76.184.190:443/?sni=caf.litlltehouse007.xyz&type=none#sg
+trojan-go://sq!#)($d@&(*oeg3erd3sddek#&DyE$ssfeKEaDfefs74@45.32.110.98:443/?sni=food.cartoonshophouse.com&type=none#sg
+trojan-go://trojan-go@sg.premium2.artunnel57.host:443?type=ws&sni=sg.premium2.artunnel57.host&host=sg.premium2.artunnel57.host&path=/trojan-go#trojan_go_443
+trojan-go://trojan-go@sg.premium2.artunnel57.host:80?type=ws&sni=sg.premium2.artunnel57.host&host=sg.premium2.artunnel57.host&path=/trojan-go#trojan_go_80
+trojan-go://trojan_go@my.armod.artunnel57.host:443?type=ws&sni=my.armod.artunnel57.host&host=my.armod.artunnel57.host&path=/trojan-go#trojan_go_443
+trojan-go://trojan_go@my.armod.artunnel57.host:80?type=ws&sni=my.armod.artunnel57.host&host=my.armod.artunnel57.host&path=/trojan-go#trojan_go_80
+trojan-go://trojan_go@sg.multiport1.artunnel57.host:443?type=ws&sni=sg.multiport1.artunnel57.host&host=sg.multiport1.artunnel57.host&path=/trojan-go#trojan_go_443
+trojan-go://trojan_go@sg.multiport1.artunnel57.host:80?type=ws&sni=sg.multiport1.artunnel57.host&host=sg.multiport1.artunnel57.host&path=/trojan-go#trojan_go_80
+trojan-go://trojan_go@sg.multiport2.artunnel57.host:443?type=ws&sni=sg.multiport2.artunnel57.host&host=sg.multiport2.artunnel57.host&path=/trojan-go#trojan_go_443
+trojan-go://trojan_go@sg.multiport2.artunnel57.host:80?type=ws&sni=sg.multiport2.artunnel57.host&host=sg.multiport2.artunnel57.host&path=/trojan-go#trojan_go_80
+trojan-go://trojan_go_ws@sg.premium2.artunnel57.host:443?type=ws&sni=sg.premium2.artunnel57.host&host=sg.premium2.artunnel57.host&path=/trojan-go#trojan_go_ws443
+trojan-go://trojan_go_ws@sg.premium2.artunnel57.host:80?type=ws&sni=sg.premium2.artunnel57.host&host=sg.premium2.artunnel57.host&path=/trojan-go#trojan_go_ws80
