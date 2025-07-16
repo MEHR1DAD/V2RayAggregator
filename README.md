@@ -10,8 +10,8 @@
 <div align="center">
 
 [![Update-Status](https://img.shields.io/github/actions/workflow/status/MEHR1DAD/V2RayAggregator/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/update_all_proxies.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-100-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Tuesday%2024%20Tir%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2020%3A51-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
+[![Configs-Count](https://img.shields.io/badge/Configs-100-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/merged_configs.txt)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Wednesday%2025%20Tir%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2006%3A27-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
 
 </div>
 
@@ -37,7 +37,7 @@
 <p dir="rtl">این لینک شامل **100** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
 
 ```
-https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_configs.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/merged_configs.txt
 ```
 
 ---
@@ -67,7 +67,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/releases/latest/download/merged_conf
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/US_sub.txt
 ```
 </div>
 
@@ -75,7 +75,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/US_sub_100.txt
 ```
 </div>
 
@@ -101,7 +101,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/US_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/FR_sub.txt
 ```
 </div>
 
@@ -109,7 +109,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/FR_sub_100.txt
 ```
 </div>
 
@@ -135,7 +135,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/FR_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/GB_sub.txt
 ```
 </div>
 
@@ -143,7 +143,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/GB_sub_100.txt
 ```
 </div>
 
@@ -169,7 +169,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/GB_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/IR_sub.txt
 ```
 </div>
 
@@ -177,7 +177,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/IR_sub_100.txt
 ```
 </div>
 
@@ -203,7 +203,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/IR_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/DE_sub.txt
 ```
 </div>
 
@@ -211,7 +211,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/DE_sub_100.txt
 ```
 </div>
 
@@ -237,7 +237,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/DE_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/NL_sub.txt
 ```
 </div>
 
@@ -245,7 +245,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/NL_sub_100.txt
 ```
 </div>
 
@@ -271,7 +271,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/NL_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_sub.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/TR_sub.txt
 ```
 </div>
 
@@ -279,7 +279,7 @@ https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_
 <div align="center">
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/main/subscription/TR_sub_100.txt
+https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/subscription/TR_sub_100.txt
 ```
 </div>
 
