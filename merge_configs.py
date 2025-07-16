@@ -5,7 +5,7 @@ from database import get_active_sources
 from collections import defaultdict
 
 # --- Constants ---
-OUTPUT_DIR = "protocol_configs"  # A dedicated directory for separated configs
+OUTPUT_DIR = "protocol_configs"
 REQUEST_TIMEOUT = 10
 KNOWN_PROTOCOLS = {"vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hysteria2", "tuic", "socks", "wireguard"}
 # --- End of Constants ---
@@ -22,7 +22,6 @@ async def fetch_one(client, url):
 
 async def fetch_and_separate_configs(urls):
     """Fetches all configs and separates them by protocol."""
-    # Use defaultdict for cleaner code to handle new protocols automatically
     configs_by_protocol = defaultdict(set)
     
     async with httpx.AsyncClient() as client:
@@ -30,20 +29,16 @@ async def fetch_and_separate_configs(urls):
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
     for result in results:
-    if isinstance(result, list):
-        for config in result:
-            # 1. Clean whitespace
-            clean_config = config.strip()
+        if isinstance(result, list):
+            for config in result:
+                clean_config = config.strip()
+                clean_config = clean_config.split('#')[0]
 
-            # 2. *** NEW: Remove comments/fragments after # ***
-            clean_config = clean_config.split('#')[0]
-
-            # 3. Check for protocol and separate
-            if '://' in clean_config:
-                protocol = clean_config.split('://')[0].lower()
-                if protocol in KNOWN_PROTOCOLS:
-                    configs_by_protocol[protocol].add(clean_config)
-                    
+                if '://' in clean_config:
+                    protocol = clean_config.split('://')[0].lower()
+                    if protocol in KNOWN_PROTOCOLS:
+                        configs_by_protocol[protocol].add(clean_config)
+    
     return configs_by_protocol
 
 def save_separated_configs(configs_by_protocol):
