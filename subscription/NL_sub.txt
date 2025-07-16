@@ -9,3 +9,6 @@ vmess://eyJhZGQiOiAiY2hhbm5lbC5kb2xsYXJkb29uLmNvbSIsICJhaWQiOiAiMCIsICJhbHBuIjog
 trojan://Aimer@45.154.98.230:7102?sni=epma.ambercc.filegear-sg.me
 vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@188.119.112.3:2052?type=ws&host=vkvd127.mycdn.me&path=/&fp=chrome
 vless://d12e7198-95d4-41f1-b4d2-a94a1ee28546@45.149.12.254:8443?security=tls&sni=kanal-ma-falcunargo.2bddce6dfd.workers.dev&allowInsecure=1&fp=chrome&type=ws&path=/?ed%3D2560&host=kanal-ma-falcunargo.2bddce6dfd.workers.dev&packetEncoding=xudp&encryption=none
+trojan://ca0888b0-f505-4411-ad10-efb2841bf962@nl2-full.privateip.net:443?security=tls
+vless://54f6e78c-b497-4db7-ba48-38c4cf81d5ef@45.131.6.88:2053?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=tls&encryption=none&host=019309B7.XyZ0.PaGeS.dEV&fp=randomized&type=ws&sni=019309B7.XyZ0.PaGeS.dEV
+trojan://NISHIKUITAN111@45.149.12.23:443?
