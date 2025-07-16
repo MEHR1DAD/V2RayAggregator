@@ -13,3 +13,4 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.140.167.59:8880/?type=grpc&encry
 vmess://eyJhZGQiOiI0Ni4yNTAuMjQzLjU2IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJ3d3cuc3BlZWR0ZXN0Lm5ldCIsImlkIjoiYTc1ZjNmOTUtYWQ0ZS00NDk4LWZjNzItZGQ3NDBkZDAyYmZjIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI1MDM5NCIsInBzIjoiQHdhcnBfY2l0eSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 trojan://NISHIKUITAN111@164.38.155.246:443?
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.159.248.125:8880?mode=gun&security=none&encryption=none&authority=&type=grpc&serviceName=
+vless://401374e6-df77-41fb-f638-dad8184f175b@77.75.199.71:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
