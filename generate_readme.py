@@ -18,7 +18,9 @@ REPO_NAME = config['project']['repo_name']
 ALL_CONFIGS_FILE = config['paths']['merged_configs']
 COUNTRIES = config['countries']
 
-ALL_CONFIGS_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/releases/latest/download/{ALL_CONFIGS_FILE}"
+BASE_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master"
+ALL_CONFIGS_URL = f"{BASE_URL}/{ALL_CONFIGS_FILE}"
+SUBSCRIPTION_URL_BASE = f"{BASE_URL}/subscription"
 
 def get_jalali_update_time():
     tehran_tz = pytz.timezone('Asia/Tehran')
@@ -47,8 +49,8 @@ def generate_files():
                 'name': info['name'],
                 'flag': info['flag'],
                 'count': count,
-                'full_link': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/main/subscription/{info['sub_file']}",
-                'link_100': f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/main/subscription/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
+                'full_link': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file']}",
+                'link_100': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
             })
     
     country_data.sort(key=lambda x: x['count'], reverse=True)
