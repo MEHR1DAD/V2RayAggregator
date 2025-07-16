@@ -1,0 +1,65 @@
+name: Update External Dependencies
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run once daily at 3:00 UTC
+    - cron: '0 3 * * *'
+
+jobs:
+  update-xray:
+    name: Check and Cache Xray-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download latest Xray
+        run: |
+          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -o -q xray.zip xray
+          chmod +x ./xray
+
+      - name: Get Xray Version
+        id: xray_version
+        run: echo "VERSION=$(./xray --version | head -n 1 | awk '{print $2}')" >> $GITHUB_OUTPUT
+
+      - name: Create New Release if it does not exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: deps/xray-${{ steps.xray_version.outputs.VERSION }}
+          name: "Xray-core v${{ steps.xray_version.outputs.VERSION }}"
+          body: "Automated cache of Xray-core binary."
+          files: ./xray
+          # This allows the action to fail gracefully if the release already exists
+          fail_on_unmatched_files: false
+          
+  update-geoip:
+    name: Check and Cache GeoIP DB
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository to read config
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Get GeoIP Download URL
+        id: geoip_url
+        run: |
+          URL=$(python -c "import yaml; f = open('config.yml'); config = yaml.safe_load(f); print(config['urls']['geoip_download'].format('${{ secrets.MAXMIND_LICENSE_KEY }}'))")
+          echo "URL=$URL" >> $GITHUB_OUTPUT
+
+      - name: Download GeoLite2-City Database
+        run: |
+          wget -q -O GeoLite2-City.tar.gz "${{ steps.geoip_url.outputs.URL }}"
+          DB_FILENAME=$(tar -tzf GeoLite2-City.tar.gz | grep '\.mmdb$')
+          tar -xzf GeoLite2-City.tar.gz "$DB_FILENAME"
+          mv "$DB_FILENAME" GeoLite2-City.mmdb
+
+      - name: Create or Update GeoIP Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: deps/geoip-latest
+          name: "Latest GeoIP Database"
+          body: "Automated cache of the latest GeoLite2-City database. Updated daily."
+          files: GeoLite2-City.mmdb
