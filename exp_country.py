@@ -83,6 +83,47 @@ def parse_proxy_uri(uri: str):
                     "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type") == "ws" else None,
                 }
             }
+            
+        elif uri.startswith("vmess://"):
+            try:
+                encoded_part = uri.split("vmess://")[1]
+                # Add padding for base64 decoding if needed
+                padding = len(encoded_part) % 4
+                if padding:
+                    encoded_part += "=" * (4 - padding)
+                
+                decoded_json_str = base64.b64decode(encoded_part).decode('utf-8')
+                vmess_data = json.loads(decoded_json_str)
+
+                # Basic validation
+                if not all(k in vmess_data for k in ['add', 'port', 'id']):
+                    return None
+
+                user_object = {
+                    "id": vmess_data.get("id"),
+                    "alterId": int(vmess_data.get("aid", 0)),
+                    "security": vmess_data.get("scy", "auto")
+                }
+                
+                return {
+                    "protocol": "vmess",
+                    "settings": {
+                        "vnext": [{
+                            "address": vmess_data.get("add"),
+                            "port": int(vmess_data.get("port")),
+                            "users": [user_object]
+                        }]
+                    },
+                    "streamSettings": {
+                        "network": vmess_data.get("net", "tcp"),
+                        "security": vmess_data.get("tls", "none"),
+                        "tlsSettings": {"serverName": vmess_data.get("sni")} if vmess_data.get("tls") == "tls" else None,
+                        "wsSettings": {"path": vmess_data.get("path")} if vmess_data.get("net") == "ws" else None,
+                    }
+                }
+            except Exception:
+                return None # Return None on any parsing error for vmess
+            
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
