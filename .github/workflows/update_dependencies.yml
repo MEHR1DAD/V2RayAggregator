@@ -21,27 +21,27 @@ jobs:
         id: xray_version
         run: echo "VERSION=$(./xray --version | head -n 1 | awk '{print $2}')" >> $GITHUB_OUTPUT
 
-      - name: Check for existing release and create if not found
+      - name: Create New Release if it does not exist
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          XRAY_VERSION: ${{ steps.xray_version.outputs.VERSION }}
-        run: |
-          if ! gh release view "deps/xray-$XRAY_VERSION" --repo ${{ github.repository }}; then
-            echo "Release for Xray v$XRAY_VERSION not found. Creating..."
-            gh release create "deps/xray-$XRAY_VERSION" ./xray --repo ${{ github.repository }} --title "Xray-core v$XRAY_VERSION" --notes "Automated cache of Xray-core binary."
-          else
-            echo "Release for Xray v$XRAY_VERSION already exists. Skipping."
-          fi
-
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: deps/xray-${{ steps.xray_version.outputs.VERSION }}
+          name: "Xray-core v${{ steps.xray_version.outputs.VERSION }}"
+          body: "Automated cache of Xray-core binary."
+          files: ./xray
+          # This allows the action to fail gracefully if the release already exists
+          fail_on_unmatched_files: false
+          
   update-geoip:
     name: Check and Cache GeoIP DB
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        run: pip install pyyaml
-
       - name: Checkout repository to read config
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pyyaml
 
       - name: Get GeoIP Download URL
         id: geoip_url
@@ -52,11 +52,8 @@ jobs:
       - name: Download GeoLite2-City Database
         run: |
           wget -q -O GeoLite2-City.tar.gz "${{ steps.geoip_url.outputs.URL }}"
-          # Find the .mmdb file name inside the archive
           DB_FILENAME=$(tar -tzf GeoLite2-City.tar.gz | grep '\.mmdb$')
-          # Extract just that file
           tar -xzf GeoLite2-City.tar.gz "$DB_FILENAME"
-          # Rename it to our standard name
           mv "$DB_FILENAME" GeoLite2-City.mmdb
 
       - name: Create or Update GeoIP Release
@@ -66,5 +63,3 @@ jobs:
           name: "Latest GeoIP Database"
           body: "Automated cache of the latest GeoLite2-City database. Updated daily."
           files: GeoLite2-City.mmdb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
