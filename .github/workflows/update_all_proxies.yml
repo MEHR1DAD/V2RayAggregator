@@ -35,8 +35,8 @@ jobs:
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
           
           echo "Downloading cached Xray-core..."
-          # Find the latest xray release tag (they are not marked as 'latest')
-          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 | grep 'deps/xray-' | head -n 1 | awk '{print $1}')
+          # FIX: Use a more robust command to get the specific tag name
+          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
           
           if [ -z "$LATEST_XRAY_TAG" ]; then
             echo "::error::No cached Xray release found. Please run the 'Update External Dependencies' workflow first."
@@ -66,7 +66,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # Remove generated directories from git cache before commit
           git rm --cached -r aggregator_data.db protocol_configs || true
           git add .
           if git diff --staged --quiet; then
@@ -80,7 +79,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          # Only upload summary and db file as artifacts
           files: |
             summary.json
             aggregator_data.db
