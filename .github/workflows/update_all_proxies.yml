@@ -54,7 +54,8 @@ jobs:
           echo "--- Running Main Data Pipeline ---"
           python manage_sources.py
           python merge_configs.py
-          python exp_country.py
+          # Run the new liveness checker instead of the old tester
+          python check_liveness.py
           python create_rotating_sub.py
           python generate_readme.py
         env:
