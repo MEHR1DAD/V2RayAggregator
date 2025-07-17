@@ -6,7 +6,7 @@ concurrency:
 
 on:
   schedule:
-    # هر سه روز یک بار در ساعت 00:00 UTC اجرا شود
+    # Runs every three days at 00:00 UTC
     - cron: '0 0 */3 * *'
   workflow_dispatch:
 
@@ -22,32 +22,37 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Get current date for caching
-        id: date
-        run: echo "TODAY=$(date -u +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
-      - name: Cache GeoIP Database
-        id: cache-geoip
-        uses: actions/cache@v4
-        with:
-          path: GeoLite2-City.mmdb
-          key: ${{ runner.os }}-geoip-${{ steps.date.outputs.TODAY }}
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests geoip2 jdatetime pytz pyyaml httpx
 
-      - name: Download Xray-core for testing
+      - name: Download Cached Dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -o -q xray.zip
+          echo "Downloading cached GeoIP database..."
+          gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
+          
+          echo "Downloading cached Xray-core..."
+          # FIX: Use a more robust command to get the specific tag name
+          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
+          
+          if [ -z "$LATEST_XRAY_TAG" ]; then
+            echo "::error::No cached Xray release found. Please run the 'Update External Dependencies' workflow first."
+            exit 1
+          fi
+          
+          echo "Using cached Xray version: $LATEST_XRAY_TAG"
+          gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
           chmod +x xray
+          
+          echo "Dependencies downloaded successfully:"
+          ls -l xray GeoLite2-City.mmdb
 
       - name: Run Main Pipeline
         run: |
           echo "--- Running Main Data Pipeline ---"
-          python -c "from database import initialize_db; initialize_db()"
           python manage_sources.py
           python merge_configs.py
           python exp_country.py
@@ -61,12 +66,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git rm --cached -r aggregator_data.db merged_configs.txt || true
+          git rm --cached -r aggregator_data.db protocol_configs || true
           git add .
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."
           else
-            git commit -m " hourly update"
+            git commit -m "chore: data update"
             git push
           fi
           
@@ -77,6 +82,5 @@ jobs:
           files: |
             summary.json
             aggregator_data.db
-            merged_configs.txt
-          body: "آخرین خروجی‌های پروژه. این فایل‌ها به صورت خودکار به‌روز می‌شوند."
+          body: "Latest subscription files and data. This release is updated automatically."
           make_latest: true
