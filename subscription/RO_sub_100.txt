@@ -1,0 +1,1 @@
+vless://6b4db602-e441-4ede-fdc0-b47efe3fe928@45.85.118.86:8443?encryption=none&security=tls&sni=snap4.snnap.sbs&fp=chrome&type=grpc&authority=&serviceName=emalls.ir&mode=gun

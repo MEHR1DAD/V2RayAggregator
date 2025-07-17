@@ -1,2 +1,1 @@
-trojan://Aimer@45.66.129.147:46741?sni=epccj.ambercc.filegear-sg.me
-trojan://ttfang@140.83.57.20:13118?sni=ttfang.fange.me
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@156.238.18.153:2095?path=%2F&security=none&encryption=none&host=redw.pooriam.ir&type=ws
