@@ -1,0 +1,6 @@
+trojan://c3d6d2e4-05a5-4a48-b91a-070b5e9fcdfb@sg2-full.privateip.net:443?security=tls
+trojan://3177337c-9316-4f3d-98f4-757e8a7d92bc@sg2.microsoft-orgwly.vip:80?type=tcp&sni=tls.microsoft-orgwly.vip&allowInsecure=1
+trojan://fe41cdbe-ad89-40cd-b415-12067af904b3@sg2-full.privateip.net:443?security=tls
+trojan://45ef6be3-e154-43a0-afbc-c8a3b2b00bfa@149.28.159.35:80?type=tcp&sni=blogfa.com&allowInsecure=1
+trojan://Aimer@206.238.237.86:2087?sni=agepw.ambercc.filegear-sg.me
+trojan://Aimer@27.50.49.207:443?allowInsecure=0&sni=epccy.ambercc.filegear-sg.me
