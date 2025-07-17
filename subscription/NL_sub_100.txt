@@ -1,3 +1,10 @@
-trojan://01dd9960-ed03-11ed-ba5d-1239d0255272@51.158.146.183:443?type=tcp&sni=www.adge.com&allowInsecure=1
-trojan://vpn@79.137.204.130:2025?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me
-vless://54f6e78c-b497-4db7-ba48-38c4cf81d5ef@45.131.6.124:2053?encryption=none&security=tls&sni=019309B7.XyZ0.PaGeS.dEV&fp=chrome&type=ws&host=019309B7.XyZ0.PaGeS.dEV&path=%2F
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.210.86:80?security=none&sni=redfree8.pooriashop.ir&type=ws&host=redfree8.pooriashop.ir&path=Telegram%40WangCai2%2F%3Fed%3D2560
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.6.166:80?encryption=none&security=none&sni=psycho.suex12.ir&type=ws&host=psycho.suex12.ir&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560
+vless://2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5@185.176.24.113:443?security=tls&sni=cfed.tgzdyz2.top&type=ws&path=%2Ftg%40zdyz2fp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMTVNOaDIxVHJYalIyb2syNVEybkU4RU5UMnpvQm1QdmthM1JDQ1VBSFpFTENuV29la1ZqdmFmODlxd2NSa2RieEVmZXAyYmMyYVV0bW54cXZGMWF5UVJlejFKSGpVTGo@exchange.gameaurela.click:52952
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.4.147:80?path=Tam%F0%9F%87%A8%F0%9F%87%B3%402%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8.pooriashop.ir&type=ws
+trojan://b9f3ff1a-9c85-48e1-9809-7a6431c4329f@nl2-full.privateip.net:443?security=tls
+trojan://Aimer@77.238.236.134:8443?allowInsecure=1&sni=ngepx.ambercc.filegear-sg.me
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.6.164:80?encryption=none&security=none&sni=psycho.suex12.ir&type=ws&host=psycho.suex12.ir&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560
+vless://96a1b724-68d2-4f4d-ab25-38ecd83577bc@45.131.7.249:2096?security=tls&sni=LhCgBjGr29.vElTrIxS.OrG&type=ws&host=LhCgBjGr29.vElTrIxS.OrG&path=%2F&fp=chrome&alpn=h3%2Ch2
+vmess://eyJhZGQiOiI4MS4yOC4xMi4xMiIsImFpZCI6IjAiLCJob3N0IjoidWExLnBhcnNhLnVzLmtnIiwiaWQiOiJJX0xvdmVf8J+HtfCfh7hfc3NoT2NlYW5fNDY1ZCIsIm5ldCI6IndzIiwicGF0aCI6Ii92bWVzcyNET05ULUZPUkdFVC1UTy1TVVBQT1JULVNTSE1BWC5ORVQtVE8tS0VFUC1USElTLVNFUlZFUi1BTElWRSIsInBvcnQiOiI0NDMiLCJwcyI6IlJheWFuIC0gVm1lc3MgLSBHQyAtIHVhIiwic2N5Ijoibm9uZSIsInNuaSI6Imdjb3JlLmx1IiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9

@@ -1,0 +1,2 @@
+vless://db3ce2b0-2461-47c3-a2b6-b6a06aed8ce6@tel5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
+vless://705fa414-163d-4de7-8525-71c8ef7af456@tel5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision

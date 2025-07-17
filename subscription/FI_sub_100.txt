@@ -1,1 +1,2 @@
-vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi11.bot-hosting.net:20083?encryption=none&security=none&type=ws&path=%2F
+vless://ed447de4-ebd3-4f1c-8339-c084e06ec588@all3.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com:443?encryption=none&security=tls&sni=ez.ez0535.com&fp=chrome&type=grpc&authority=&serviceName=%2F&mode=gun
+vless://3ab9cb9a-4ed8-426c-b42d-b3079c89df84@download.online24net.ir:2083?encryption=none&security=reality&sni=cdn-download.zula.ir&fp=chrome&pbk=AxIOXEujA6HwUz2QZnPM6O8llj2QVaI50lZXGUlibhs&sid=ea83a8b0&type=tcp&headerType=none

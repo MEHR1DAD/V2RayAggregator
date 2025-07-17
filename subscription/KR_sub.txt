@@ -1,1 +1,2 @@
-trojan://juzi@140.238.8.194:15800?security=tls&sni=juzi8186-sr1.pages.dev&fp=randomized&type=ws&host=juzi8186-sr1.pages.dev&path=%2F%3Fed%3D2560%26proxyip%3Dsjc.o00o.ooo
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@203.243.63.166:27249?encryption=none&security=tls&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=Telegram%40WangCai2%2F%3Fed%3D2560
+vless://c7d1fef0-8115-4488-9c6e-60bd175c4e33@58.120.196.122:10182?security=tls&sni=etc.mesa.ip-ddns.com&type=ws&host=etc.mesa.ip-ddns.com&allowInsecure=0
