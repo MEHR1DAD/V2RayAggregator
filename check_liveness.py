@@ -9,7 +9,7 @@ import geoip2.database
 # --- Constants ---
 INPUT_DIR = "protocol_configs"
 CONNECTION_TIMEOUT = 5
-GEOIP_DB_PATH = "GeoLite2-City.mmdb" 
+GEOIP_DB_PATH = "GeoLite2-City.mmdb"
 
 async def check_port_open(host, port):
     """Asynchronously checks if a TCP port is open."""
@@ -25,43 +25,48 @@ async def check_port_open(host, port):
         return False
 
 async def process_config_file(file_path, geoip_reader):
-    """Reads a single config file and performs liveness checks."""
+    """Reads a single config file, performs liveness checks, and returns a list of live configs."""
     live_configs = []
     now = datetime.utcnow().isoformat()
 
     with open(file_path, 'r', encoding='utf-8') as f:
         configs = f.read().strip().splitlines()
 
-    tasks = []
+    # --- REFACTORED LOGIC ---
+    # 1. First, create a list of valid targets to test
+    valid_targets = []
     for config in configs:
         host_port_str = extract_ip_from_connection(config)
-        if not host_port_str or ':' not in host_port_str:
-            continue
-        
-        host, port_str = host_port_str.rsplit(':', 1)
-        try:
-            port = int(port_str)
-            tasks.append(check_port_open(host, port))
-        except ValueError:
-            continue
+        if host_port_str and ':' in host_port_str:
+            host, port_str = host_port_str.rsplit(':', 1)
+            try:
+                port = int(port_str)
+                valid_targets.append({'config': config, 'host': host, 'port': port})
+            except ValueError:
+                continue
+    
+    # 2. Create and run liveness check tasks only for valid targets
+    if not valid_targets:
+        return []
 
+    tasks = [check_port_open(target['host'], target['port']) for target in valid_targets]
     results = await asyncio.gather(*tasks)
 
-    for config, is_live in zip(configs, results):
+    # 3. Process the results
+    for target, is_live in zip(valid_targets, results):
         if is_live:
-            host, _ = extract_ip_from_connection(config).rsplit(':', 1)
-            ip = resolve_to_ip(host)
+            ip = resolve_to_ip(target['host'])
             country = get_country_code(ip, geoip_reader)
             if country:
-                live_configs.append((config, 'unknown', country, 1.0, now))
-                print(f"✅ Live | {country} | {config[:50]}...")
+                live_configs.append((target['config'], 'unknown', country, 1.0, now))
+                print(f"✅ Live | {country} | {target['config'][:50]}...")
     
     return live_configs
 
 async def main():
     """Main function to run the liveness check process."""
     initialize_db()
-    clear_configs_table() 
+    clear_configs_table()
     
     if not os.path.exists(GEOIP_DB_PATH):
         print(f"GeoIP database not found at {GEOIP_DB_PATH}. Cannot proceed.")
@@ -76,9 +81,14 @@ async def main():
         
     file_paths = [os.path.join(INPUT_DIR, f) for f in os.listdir(INPUT_DIR) if f.endswith("_configs.txt")]
     
-    for file_path in file_paths:
-        live_in_file = await process_config_file(file_path, geoip_reader)
-        all_live_configs.extend(live_in_file)
+    # Create tasks for each file to be processed
+    tasks = [process_config_file(file_path, geoip_reader) for file_path in file_paths]
+    
+    # Run all file processing concurrently
+    list_of_results = await asyncio.gather(*tasks)
+    
+    for result_list in list_of_results:
+        all_live_configs.extend(result_list)
         
     if all_live_configs:
         print(f"\nFound {len(all_live_configs)} live configurations in total.")
