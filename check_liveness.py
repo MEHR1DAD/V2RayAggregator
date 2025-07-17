@@ -5,7 +5,7 @@ from datetime import datetime
 import random
 import time
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
-from database import initialize_db, bulk_update_configs, clear_configs_table
+from database import initialize_db, bulk_update_configs
 import geoip2.database
 import yaml
 
@@ -17,18 +17,26 @@ with open("config.yml", "r", encoding="utf-8") as f:
 INPUT_DIR = "protocol_configs"
 CONNECTION_TIMEOUT = 5 
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
-LIVENESS_SAMPLE_SIZE = 5000 
+# How many configs to check in each run
+INCREMENTAL_CHUNK_SIZE = 5000 
 BATCH_SIZE = 500
-# Set timeout to 14 minutes for development runs
-TOTAL_TIMEOUT_SECONDS = 14 * 60 
-START_TIME = time.time()
+# State file to remember our position
+STATE_FILE = "liveness_state.txt"
 
-def is_timeout():
-    """Checks if the global script timeout has been reached."""
-    if (time.time() - START_TIME) > TOTAL_TIMEOUT_SECONDS:
-        print("⏰ Global timeout reached. Finalizing the process...")
-        return True
-    return False
+def read_state():
+    """Reads the last processed line number from the state file."""
+    if not os.path.exists(STATE_FILE):
+        return 0
+    with open(STATE_FILE, 'r') as f:
+        try:
+            return int(f.read().strip())
+        except ValueError:
+            return 0
+
+def save_state(last_processed_index):
+    """Saves the last processed line number to the state file."""
+    with open(STATE_FILE, 'w') as f:
+        f.write(str(last_processed_index))
 
 async def check_port_open_curl(host, port):
     """Asynchronously checks if a TCP port is open using curl."""
@@ -58,84 +66,76 @@ async def process_batch(batch_of_targets, geoip_reader):
     return live_configs_in_batch
 
 async def main():
-    """Main function to run the liveness check process."""
+    """Main function to run the incremental liveness check process."""
     initialize_db()
-    clear_configs_table()
     
     if not os.path.exists(GEOIP_DB_PATH):
         print(f"GeoIP database not found at {GEOIP_DB_PATH}. Cannot proceed.")
         return
         
     geoip_reader = geoip2.database.Reader(GEOIP_DB_PATH)
-    all_live_configs = []
     
-    try:
-        if not os.path.exists(INPUT_DIR):
-            print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
-            return
-        
-        all_configs = []
-        for filename in os.listdir(INPUT_DIR):
-            if filename.endswith("_configs.txt"):
-                file_path = os.path.join(INPUT_DIR, filename)
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    all_configs.extend(f.read().strip().splitlines())
+    if not os.path.exists(INPUT_DIR):
+        print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
+        return
+    
+    all_configs = []
+    for filename in sorted(os.listdir(INPUT_DIR)): # Sort to ensure consistent order
+        if filename.endswith("_configs.txt"):
+            file_path = os.path.join(INPUT_DIR, filename)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                all_configs.extend(f.read().strip().splitlines())
 
-        if not all_configs:
-            print("No configs found to test. Exiting.")
-            return
+    if not all_configs:
+        print("No configs found to test. Exiting.")
+        return
 
-        print(f"Loaded {len(all_configs)} total configs.")
-        
-        if len(all_configs) > LIVENESS_SAMPLE_SIZE:
-            print(f"Taking a random sample of {LIVENESS_SAMPLE_SIZE} configs to test.")
-            configs_to_test = random.sample(all_configs, LIVENESS_SAMPLE_SIZE)
-        else:
-            configs_to_test = all_configs
+    # --- NEW: Incremental Processing Logic ---
+    last_index = read_state()
+    print(f"Starting from index {last_index} out of {len(all_configs)} total configs.")
 
-        valid_targets = []
-        for config in configs_to_test:
-            host_port_str = extract_ip_from_connection(config)
-            if host_port_str and ':' in host_port_str:
-                host, port_str = host_port_str.rsplit(':', 1)
-                try:
-                    port = int(port_str)
-                    valid_targets.append({'config': config, 'host': host, 'port': port})
-                except ValueError:
-                    continue
+    # Reset if we've processed the whole list
+    if last_index >= len(all_configs):
+        print("All configs have been processed. Resetting to the beginning.")
+        last_index = 0
 
-        for i in range(0, len(valid_targets), BATCH_SIZE):
-            if is_timeout():
-                break
+    # Define the chunk to test in this run
+    end_index = last_index + INCREMENTAL_CHUNK_SIZE
+    configs_to_test = all_configs[last_index:end_index]
+    
+    print(f"Testing {len(configs_to_test)} configs in this run (from index {last_index} to {end_index}).")
 
-            batch = valid_targets[i:i+BATCH_SIZE]
-            print(f"--- Processing batch {i//BATCH_SIZE + 1} of {len(valid_targets)//BATCH_SIZE + 1} ---")
-            
-            remaining_time = TOTAL_TIMEOUT_SECONDS - (time.time() - START_TIME)
-            if remaining_time <= 0:
-                print("⏰ Timeout reached before starting new batch.")
-                break
-            
+    valid_targets = []
+    for config in configs_to_test:
+        host_port_str = extract_ip_from_connection(config)
+        if host_port_str and ':' in host_port_str:
+            host, port_str = host_port_str.rsplit(':', 1)
             try:
-                live_in_batch = await asyncio.wait_for(
-                    process_batch(batch, geoip_reader),
-                    timeout=remaining_time
-                )
-                all_live_configs.extend(live_in_batch)
-            except asyncio.TimeoutError:
-                print("⏰ Batch timed out. Finalizing results...")
-                break
-            
-    finally:
-        if all_live_configs:
-            print(f"\nFound {len(all_live_configs)} live configurations in total.")
-            print("Saving live configs to the database before exiting...")
-            bulk_update_configs(all_live_configs)
-        else:
-            print("\nNo live configurations found.")
-            
-        geoip_reader.close()
-        print("Liveness check process finished.")
+                port = int(port_str)
+                valid_targets.append({'config': config, 'host': host, 'port': port})
+            except ValueError:
+                continue
+
+    all_live_configs = []
+    for i in range(0, len(valid_targets), BATCH_SIZE):
+        batch = valid_targets[i:i+BATCH_SIZE]
+        print(f"--- Processing batch {i//BATCH_SIZE + 1} of {len(valid_targets)//BATCH_SIZE + 1} ---")
+        live_in_batch = await process_batch(batch, geoip_reader)
+        all_live_configs.extend(live_in_batch)
+        
+    if all_live_configs:
+        print(f"\nFound {len(all_live_configs)} new live configurations.")
+        print("Adding live configs to the database...")
+        bulk_update_configs(all_live_configs)
+    else:
+        print("\nNo new live configurations found in this chunk.")
+    
+    # Save the new position for the next run
+    save_state(end_index)
+    print(f"Next run will start from index {end_index}.")
+        
+    geoip_reader.close()
+    print("Liveness check process finished successfully.")
 
 if __name__ == "__main__":
     asyncio.run(main())
