@@ -26,7 +26,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests geoip2 jdatetime pytz pyyaml httpx
-
+          
       - name: Download Cached Dependencies
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +35,6 @@ jobs:
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
           
           echo "Downloading cached Xray-core..."
-          # FIX: Use a more robust command to get the specific tag name
           LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
           
           if [ -z "$LATEST_XRAY_TAG" ]; then
