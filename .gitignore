@@ -6,3 +6,6 @@ merged_configs.txt
 merged_configs.txt
 merged_configs.txt
 merged_configs.txt
+.DS_Store
+protocol_configs/
+GeoLite2-City.mmdb
