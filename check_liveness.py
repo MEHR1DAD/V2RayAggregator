@@ -14,10 +14,11 @@ with open("config.yml", "r", encoding="utf-8") as f:
     
 # --- Constants ---
 INPUT_DIR = "protocol_configs"
-CONNECTION_TIMEOUT = config['settings']['request_timeout']
+# Use a shorter timeout for development runs
+CONNECTION_TIMEOUT = 5 
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
-LIVENESS_SAMPLE_SIZE = 20000 
-# --- NEW: Define a batch size for concurrent checks ---
+# Use a smaller sample size for development runs
+LIVENESS_SAMPLE_SIZE = 5000 
 BATCH_SIZE = 500
 
 async def check_port_open_curl(host, port):
@@ -81,7 +82,6 @@ async def main():
     else:
         configs_to_test = all_configs
 
-    # --- REFACTORED: Create valid targets first, then process in batches ---
     valid_targets = []
     for config in configs_to_test:
         host_port_str = extract_ip_from_connection(config)
@@ -105,7 +105,7 @@ async def main():
         print("Saving live configs to the database...")
         bulk_update_configs(all_live_configs)
     else:
-        print("\nNo live configurations found.")
+        print("\nNo new working configurations found.")
         
     geoip_reader.close()
     print("Liveness check process finished successfully.")
