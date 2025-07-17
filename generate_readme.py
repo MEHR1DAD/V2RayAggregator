@@ -5,8 +5,30 @@ import jdatetime
 from urllib.parse import quote
 import yaml
 import json
+# --- Helper for Country Information ---
+# In the future, we can move this to a separate file or use a library
+COUNTRY_INFO_MAP = {
+    "US": {"name": "ایالات متحده", "flag": "🇺🇸", "sub_file": "US_sub.txt"},
+    "NL": {"name": "هلند", "flag": "🇳🇱", "sub_file": "NL_sub.txt"},
+    "DE": {"name": "آلمان", "flag": "🇩🇪", "sub_file": "DE_sub.txt"},
+    "GB": {"name": "بریتانیا", "flag": "🇬🇧", "sub_file": "GB_sub.txt"},
+    "FR": {"name": "فرانسه", "flag": "🇫🇷", "sub_file": "FR_sub.txt"},
+    "CA": {"name": "کانادا", "flag": "🇨🇦", "sub_file": "CA_sub.txt"},
+    "TR": {"name": "ترکیه", "flag": "🇹🇷", "sub_file": "TR_sub.txt"},
+    "AE": {"name": "امارات", "flag": "🇦🇪", "sub_file": "AE_sub.txt"},
+    "SE": {"name": "سوئد", "flag": "🇸🇪", "sub_file": "SE_sub.txt"},
+    "IR": {"name": "ایران", "flag": "🇮🇷", "sub_file": "IR_sub.txt"},
+    # Add other potential countries here or handle them dynamically
+    "JP": {"name": "ژاپن", "flag": "🇯🇵", "sub_file": "JP_sub.txt"},
+    "SG": {"name": "سنگاپور", "flag": "🇸🇬", "sub_file": "SG_sub.txt"},
+    "HK": {"name": "هنگ کنگ", "flag": "🇭🇰", "sub_file": "HK_sub.txt"},
+    "XX": {"name": "مکان نامشخص", "flag": "🏴‍☠️", "sub_file": "XX_sub.txt"}, # For unknown locations
+}
+
+def get_country_info(country_code):
+    return COUNTRY_INFO_MAP.get(country_code.upper())
 # توابع دیتابیس را وارد می‌کنیم
-from database import get_configs_by_country
+from database import get_configs_by_country, get_countries_with_config_counts
 
 # --- Load Configuration ---
 with open("config.yml", "r") as f:
@@ -16,7 +38,7 @@ with open("config.yml", "r") as f:
 REPO_OWNER = config['project']['repo_owner']
 REPO_NAME = config['project']['repo_name']
 ALL_CONFIGS_FILE = config['paths']['merged_configs']
-COUNTRIES = config['countries']
+
 
 BASE_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master"
 ALL_CONFIGS_URL = f"{BASE_URL}/{ALL_CONFIGS_FILE}"
@@ -38,22 +60,30 @@ def generate_files():
     print("--- Generating Final Output Files ---")
     print("Fetching data from database...")
 
-    for code, info in COUNTRIES.items():
-        configs = get_configs_by_country(code)
-        count = len(configs)
+    # --- This entire block needs to be indented ---
+    countries_from_db = get_countries_with_config_counts()
+
+    for code, count in countries_from_db:
+        info = get_country_info(code)
+        # Skip if country info is not available
+        if not info:
+            continue
+
         total_configs_count += count
-        
-        if count > 0:
-            country_data.append({
-                'code': code.lower(),
-                'name': info['name'],
-                'flag': info['flag'],
-                'count': count,
-                'full_link': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file']}",
-                'link_100': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
-            })
+
+        country_data.append({
+            'code': code.lower(),
+            'name': info['name'],
+            'flag': info['flag'],
+            'count': count,
+            'full_link': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file']}",
+            'link_100': f"{SUBSCRIPTION_URL_BASE}/{info['sub_file'].replace('_sub.txt', '_sub_100.txt')}"
+        })
+    # --- End of the block that needs indentation ---
     
     country_data.sort(key=lambda x: x['count'], reverse=True)
+    
+    # ... (rest of the function) ...
     
     readme_update_time, web_update_time = get_jalali_update_time()
 
