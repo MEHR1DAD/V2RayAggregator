@@ -30,7 +30,6 @@ jobs:
           name: "Xray-core v${{ steps.xray_version.outputs.VERSION }}"
           body: "Automated cache of Xray-core binary."
           files: ./xray
-          # This allows the action to fail gracefully if the release already exists
           fail_on_unmatched_files: false
           
   update-geoip:
