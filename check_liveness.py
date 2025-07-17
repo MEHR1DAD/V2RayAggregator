@@ -2,6 +2,7 @@ import os
 import asyncio
 import subprocess
 from datetime import datetime
+import random
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 from database import initialize_db, bulk_update_configs, clear_configs_table
 import geoip2.database
@@ -15,61 +16,36 @@ with open("config.yml", "r", encoding="utf-8") as f:
 INPUT_DIR = "protocol_configs"
 CONNECTION_TIMEOUT = config['settings']['request_timeout']
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
+LIVENESS_SAMPLE_SIZE = 20000 
+# --- NEW: Define a batch size for concurrent checks ---
+BATCH_SIZE = 500
 
 async def check_port_open_curl(host, port):
-    """
-    Asynchronously checks if a TCP port is open using curl.
-    This is more robust in restricted network environments like GitHub Actions.
-    """
-    command = [
-        'curl',
-        '--connect-timeout', str(CONNECTION_TIMEOUT),
-        '-v',  # Verbose to get connection details
-        f'telnet://{host}:{port}'
-    ]
-    
+    """Asynchronously checks if a TCP port is open using curl."""
+    command = ['curl', '--connect-timeout', str(CONNECTION_TIMEOUT), '-v', f'telnet://{host}:{port}']
     process = await asyncio.create_subprocess_exec(
-        *command,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
+        *command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
     )
     await process.wait()
     return process.returncode == 0
 
-async def process_config_file(file_path, geoip_reader):
-    """Reads a single config file, performs liveness checks, and returns a list of live configs."""
-    live_configs = []
+async def process_batch(batch_of_targets, geoip_reader):
+    """Processes a single batch of configs for liveness."""
+    live_configs_in_batch = []
     now = datetime.utcnow().isoformat()
 
-    with open(file_path, 'r', encoding='utf-8') as f:
-        configs = f.read().strip().splitlines()
-
-    valid_targets = []
-    for config in configs:
-        host_port_str = extract_ip_from_connection(config)
-        if host_port_str and ':' in host_port_str:
-            host, port_str = host_port_str.rsplit(':', 1)
-            try:
-                port = int(port_str)
-                valid_targets.append({'config': config, 'host': host, 'port': port})
-            except ValueError:
-                continue
-    
-    if not valid_targets:
-        return []
-
-    tasks = [check_port_open_curl(target['host'], target['port']) for target in valid_targets]
+    tasks = [check_port_open_curl(target['host'], target['port']) for target in batch_of_targets]
     results = await asyncio.gather(*tasks)
 
-    for target, is_live in zip(valid_targets, results):
+    for target, is_live in zip(batch_of_targets, results):
         if is_live:
             ip = resolve_to_ip(target['host'])
             country = get_country_code(ip, geoip_reader)
             if country:
-                live_configs.append((target['config'], 'unknown', country, 1.0, now))
+                live_configs_in_batch.append((target['config'], 'unknown', country, 1.0, now))
                 print(f"✅ Live | {country} | {target['config'][:50]}...")
     
-    return live_configs
+    return live_configs_in_batch
 
 async def main():
     """Main function to run the liveness check process."""
@@ -81,20 +57,48 @@ async def main():
         return
         
     geoip_reader = geoip2.database.Reader(GEOIP_DB_PATH)
-    all_live_configs = []
     
     if not os.path.exists(INPUT_DIR):
         print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
         return
-        
-    file_paths = [os.path.join(INPUT_DIR, f) for f in os.listdir(INPUT_DIR) if f.endswith("_configs.txt")]
     
-    tasks = [process_config_file(file_path, geoip_reader) for file_path in file_paths]
+    all_configs = []
+    for filename in os.listdir(INPUT_DIR):
+        if filename.endswith("_configs.txt"):
+            file_path = os.path.join(INPUT_DIR, filename)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                all_configs.extend(f.read().strip().splitlines())
+
+    if not all_configs:
+        print("No configs found to test. Exiting.")
+        return
+
+    print(f"Loaded {len(all_configs)} total configs.")
     
-    list_of_results = await asyncio.gather(*tasks)
-    
-    for result_list in list_of_results:
-        all_live_configs.extend(result_list)
+    if len(all_configs) > LIVENESS_SAMPLE_SIZE:
+        print(f"Taking a random sample of {LIVENESS_SAMPLE_SIZE} configs to test.")
+        configs_to_test = random.sample(all_configs, LIVENESS_SAMPLE_SIZE)
+    else:
+        configs_to_test = all_configs
+
+    # --- REFACTORED: Create valid targets first, then process in batches ---
+    valid_targets = []
+    for config in configs_to_test:
+        host_port_str = extract_ip_from_connection(config)
+        if host_port_str and ':' in host_port_str:
+            host, port_str = host_port_str.rsplit(':', 1)
+            try:
+                port = int(port_str)
+                valid_targets.append({'config': config, 'host': host, 'port': port})
+            except ValueError:
+                continue
+
+    all_live_configs = []
+    for i in range(0, len(valid_targets), BATCH_SIZE):
+        batch = valid_targets[i:i+BATCH_SIZE]
+        print(f"--- Processing batch {i//BATCH_SIZE + 1} of {len(valid_targets)//BATCH_SIZE + 1} ---")
+        live_in_batch = await process_batch(batch, geoip_reader)
+        all_live_configs.extend(live_in_batch)
         
     if all_live_configs:
         print(f"\nFound {len(all_live_configs)} live configurations in total.")
