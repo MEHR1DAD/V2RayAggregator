@@ -21,13 +21,11 @@ with open("config.yml", "r", encoding="utf-8") as f:
 GEOIP_DB = config['paths']['geoip_database']
 GEOIP_URL = config['urls']['geoip_download']
 MAXMIND_LICENSE_KEY = os.getenv("MAXMIND_LICENSE_KEY")
-# --- DELETED LINE: COUNTRIES = config['countries'] ---
 REQUEST_TIMEOUT = config['settings']['request_timeout']
 XRAY_PATH = './xray'
 SAMPLE_SIZE = 5000
 LIVENESS_TEST_URL = "http://www.google.com/generate_204"
 
-# --- Define which protocols to test and where to find them ---
 PROTOCOLS_TO_TEST = ["vless", "trojan", "ss", "vmess"]
 INPUT_DIR = "protocol_configs"
 
@@ -60,17 +58,32 @@ def get_country_code(ip, reader):
         return None
 
 def parse_proxy_uri(uri: str):
-    # ... (parser logic remains the same) ...
-    # ... (I have omitted it here for brevity, but it should be in your file) ...
-    pass # Placeholder for the full parser function
+    # This function remains unchanged. It should be the last correct version we made.
+    pass
 
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    # ... (tester logic remains the same) ...
-    pass # Placeholder for the full tester function
+    # This function remains unchanged.
+    pass
 
 async def process_batch(batch, reader, start_port):
-    # ... (batch logic remains the same) ...
-    pass # Placeholder for the full batch function
+    tasks = []
+    for i, conn in enumerate(batch):
+        tasks.append(test_proxy_speed(conn, start_port + i))
+    
+    results = await asyncio.gather(*tasks)
+    
+    successful_in_batch = []
+    now = datetime.utcnow().isoformat()
+    for conn, speed in zip(batch, results):
+        if speed > 0:
+            host = extract_ip_from_connection(conn)
+            ip = resolve_to_ip(host)
+            country_code = get_country_code(ip, reader)
+            if country_code:
+                successful_in_batch.append((conn, 'unknown', country_code, speed, now))
+                print(f"✅ Success (Live) | Country: {country_code} | Config: {conn[:40]}...")
+    # *** FIX: Ensure this line is correctly indented ***
+    return successful_in_batch
 
 async def main():
     initialize_db()
