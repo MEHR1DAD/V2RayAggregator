@@ -1,28 +1,40 @@
 import os
 import asyncio
-import socket
+import subprocess
 from datetime import datetime
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 from database import initialize_db, bulk_update_configs, clear_configs_table
 import geoip2.database
+import yaml
 
+# --- Load Configuration ---
+with open("config.yml", "r", encoding="utf-8") as f:
+    config = yaml.safe_load(f)
+    
 # --- Constants ---
 INPUT_DIR = "protocol_configs"
-CONNECTION_TIMEOUT = 5
+CONNECTION_TIMEOUT = config['settings']['request_timeout']
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
 
-async def check_port_open(host, port):
-    """Asynchronously checks if a TCP port is open."""
-    try:
-        _, writer = await asyncio.wait_for(
-            asyncio.open_connection(host, port), 
-            timeout=CONNECTION_TIMEOUT
-        )
-        writer.close()
-        await writer.wait_closed()
-        return True
-    except Exception:
-        return False
+async def check_port_open_curl(host, port):
+    """
+    Asynchronously checks if a TCP port is open using curl.
+    This is more robust in restricted network environments like GitHub Actions.
+    """
+    command = [
+        'curl',
+        '--connect-timeout', str(CONNECTION_TIMEOUT),
+        '-v',  # Verbose to get connection details
+        f'telnet://{host}:{port}'
+    ]
+    
+    process = await asyncio.create_subprocess_exec(
+        *command,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+    await process.wait()
+    return process.returncode == 0
 
 async def process_config_file(file_path, geoip_reader):
     """Reads a single config file, performs liveness checks, and returns a list of live configs."""
@@ -32,8 +44,6 @@ async def process_config_file(file_path, geoip_reader):
     with open(file_path, 'r', encoding='utf-8') as f:
         configs = f.read().strip().splitlines()
 
-    # --- REFACTORED LOGIC ---
-    # 1. First, create a list of valid targets to test
     valid_targets = []
     for config in configs:
         host_port_str = extract_ip_from_connection(config)
@@ -45,14 +55,12 @@ async def process_config_file(file_path, geoip_reader):
             except ValueError:
                 continue
     
-    # 2. Create and run liveness check tasks only for valid targets
     if not valid_targets:
         return []
 
-    tasks = [check_port_open(target['host'], target['port']) for target in valid_targets]
+    tasks = [check_port_open_curl(target['host'], target['port']) for target in valid_targets]
     results = await asyncio.gather(*tasks)
 
-    # 3. Process the results
     for target, is_live in zip(valid_targets, results):
         if is_live:
             ip = resolve_to_ip(target['host'])
@@ -81,10 +89,8 @@ async def main():
         
     file_paths = [os.path.join(INPUT_DIR, f) for f in os.listdir(INPUT_DIR) if f.endswith("_configs.txt")]
     
-    # Create tasks for each file to be processed
     tasks = [process_config_file(file_path, geoip_reader) for file_path in file_paths]
     
-    # Run all file processing concurrently
     list_of_results = await asyncio.gather(*tasks)
     
     for result_list in list_of_results:
