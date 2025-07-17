@@ -32,7 +32,6 @@ def initialize_db():
     conn.commit()
     conn.close()
 
-# --- تابع جدید برای پاک کردن نتایج قدیمی ---
 def clear_configs_table():
     """Deletes all records from the configs table to ensure a fresh start."""
     try:
@@ -44,7 +43,6 @@ def clear_configs_table():
         print("🧹 Cleared all previous records from the configs table.")
     except Exception as e:
         print(f"Error clearing configs table: {e}")
-# --- پایان تابع جدید ---
 
 def get_all_sources_to_check():
     conn = get_connection()
@@ -93,7 +91,6 @@ def bulk_update_configs(configs_data: list):
 def get_configs_by_country(country_code: str, limit: int = None):
     conn = get_connection()
     cursor = conn.cursor()
-    # مرتب‌سازی بر اساس سرعت، از بیشترین به کمترین
     query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC"
     if limit:
         query += f" LIMIT {limit}"
@@ -101,3 +98,24 @@ def get_configs_by_country(country_code: str, limit: int = None):
     configs = [row[0] for row in cursor.fetchall()]
     conn.close()
     return configs
+
+# --- NEW FUNCTION FOR DYNAMIC COUNTRIES ---
+def get_countries_with_config_counts():
+    """
+    Gets a list of all countries and the number of active configs for each,
+    sorted from most configs to least.
+    """
+    conn = get_connection()
+    cursor = conn.cursor()
+    query = """
+        SELECT country_code, COUNT(config)
+        FROM configs
+        WHERE country_code IS NOT NULL AND country_code != ''
+        GROUP BY country_code
+        ORDER BY COUNT(config) DESC
+    """
+    cursor.execute(query)
+    # Returns a list of tuples like [('US', 50), ('DE', 20)]
+    countries = cursor.fetchall()
+    conn.close()
+    return countries
