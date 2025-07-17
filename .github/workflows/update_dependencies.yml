@@ -10,6 +10,8 @@ jobs:
   update-xray:
     name: Check and Cache Xray-core
     runs-on: ubuntu-latest
+    # Add a safety timeout
+    timeout-minutes: 30
     steps:
       - name: Download latest Xray
         run: |
@@ -35,6 +37,8 @@ jobs:
   update-geoip:
     name: Check and Cache GeoIP DB
     runs-on: ubuntu-latest
+    # Add a safety timeout
+    timeout-minutes: 30
     steps:
       - name: Checkout repository to read config
         uses: actions/checkout@v4

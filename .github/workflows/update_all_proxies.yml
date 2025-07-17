@@ -6,13 +6,15 @@ concurrency:
 
 on:
   schedule:
-    # Runs every three days at 00:00 UTC
-    - cron: '0 0 */3 * *'
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
   update-all:
     runs-on: ubuntu-latest
+    # Add a safety timeout, slightly longer than the internal script timeout
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -54,7 +56,6 @@ jobs:
           echo "--- Running Main Data Pipeline ---"
           python manage_sources.py
           python merge_configs.py
-          # Run the new liveness checker instead of the old tester
           python check_liveness.py
           python create_rotating_sub.py
           python generate_readme.py
