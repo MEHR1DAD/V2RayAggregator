@@ -11,22 +11,30 @@ with open("config.yml", "r") as f:
 # --- Constants from Config File ---
 DISCOVERED_SOURCES_FILE = config['paths']['discovered_sources']
 REQUEST_TIMEOUT = config['settings']['request_timeout']
-INITIAL_SEED_SOURCES = config.get('initial_seed_sources', [])
+SEED_SOURCES_FILE = "seed_sources.txt"
 VALID_PROTOCOLS = ('vmess://', 'vless://', 'ss://', 'ssr://', 'trojan://',
                    'hysteria://', 'hysteria2://', 'tuic://', 'brook://',
                    'socks://', 'wireguard://')
 
 def ensure_initial_sources_exist():
-    """Ensures that all sources from the initial_seed_sources list exist in the database."""
+    """Ensures that all sources from the seed_sources.txt file exist in the database."""
     print("Ensuring all initial seed sources exist in the database...")
+
+    if not os.path.exists(SEED_SOURCES_FILE):
+        print(f"Warning: '{SEED_SOURCES_FILE}' not found. Skipping initial seed.")
+        return
+
+    with open(SEED_SOURCES_FILE, 'r', encoding='utf-8') as f:
+        seed_urls = {line.strip() for line in f if line.strip()}
+
     all_db_sources = set(get_all_sources_to_check())
-    
+
     new_manual_sources = 0
-    for url in INITIAL_SEED_SOURCES:
+    for url in seed_urls:
         if url not in all_db_sources:
             update_source_status(url, 'active')
             new_manual_sources += 1
-            
+
     if new_manual_sources > 0:
         print(f"Added {new_manual_sources} new manually configured sources to the database.")
 
