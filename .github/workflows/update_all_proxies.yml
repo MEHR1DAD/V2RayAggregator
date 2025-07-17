@@ -13,8 +13,8 @@ on:
 jobs:
   update-all:
     runs-on: ubuntu-latest
-    # Add a safety timeout, slightly longer than the internal script timeout
-    timeout-minutes: 20
+    # --- ADDED: Hard timeout for the job ---
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -67,7 +67,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git rm --cached -r aggregator_data.db protocol_configs || true
           git add .
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."
@@ -75,13 +74,3 @@ jobs:
             git commit -m "chore: data update"
             git push
           fi
-          
-      - name: Upload Artifacts to Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: latest
-          files: |
-            summary.json
-            aggregator_data.db
-          body: "Latest subscription files and data. This release is updated automatically."
-          make_latest: true
