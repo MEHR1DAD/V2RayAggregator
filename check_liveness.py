@@ -3,7 +3,7 @@ import asyncio
 import subprocess
 from datetime import datetime
 import random
-import time  # Import the time library
+import time
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 from database import initialize_db, bulk_update_configs, clear_configs_table
 import geoip2.database
@@ -17,10 +17,8 @@ with open("config.yml", "r", encoding="utf-8") as f:
 INPUT_DIR = "protocol_configs"
 CONNECTION_TIMEOUT = 5 
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
-LIVENESS_SAMPLE_SIZE = 20000 
+LIVENESS_SAMPLE_SIZE = 5000 
 BATCH_SIZE = 500
-
-# --- NEW: Timeout Implementation ---
 # Set timeout to 14 minutes for development runs
 TOTAL_TIMEOUT_SECONDS = 14 * 60 
 START_TIME = time.time()
@@ -31,7 +29,6 @@ def is_timeout():
         print("⏰ Global timeout reached. Finalizing the process...")
         return True
     return False
-# --- End of Timeout Implementation ---
 
 async def check_port_open_curl(host, port):
     """Asynchronously checks if a TCP port is open using curl."""
@@ -108,17 +105,28 @@ async def main():
                     continue
 
         for i in range(0, len(valid_targets), BATCH_SIZE):
-            # *** NEW: Check for timeout before processing a new batch ***
             if is_timeout():
                 break
 
             batch = valid_targets[i:i+BATCH_SIZE]
             print(f"--- Processing batch {i//BATCH_SIZE + 1} of {len(valid_targets)//BATCH_SIZE + 1} ---")
-            live_in_batch = await process_batch(batch, geoip_reader)
-            all_live_configs.extend(live_in_batch)
+            
+            remaining_time = TOTAL_TIMEOUT_SECONDS - (time.time() - START_TIME)
+            if remaining_time <= 0:
+                print("⏰ Timeout reached before starting new batch.")
+                break
+            
+            try:
+                live_in_batch = await asyncio.wait_for(
+                    process_batch(batch, geoip_reader),
+                    timeout=remaining_time
+                )
+                all_live_configs.extend(live_in_batch)
+            except asyncio.TimeoutError:
+                print("⏰ Batch timed out. Finalizing results...")
+                break
             
     finally:
-        # --- NEW: This block will always run, ensuring data is saved ---
         if all_live_configs:
             print(f"\nFound {len(all_live_configs)} live configurations in total.")
             print("Saving live configs to the database before exiting...")
