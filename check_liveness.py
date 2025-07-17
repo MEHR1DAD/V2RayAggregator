@@ -2,64 +2,57 @@ import os
 import asyncio
 import socket
 from datetime import datetime
-from utils import extract_ip_from_connection, resolve_to_ip
-from database import initialize_db, bulk_update_configs, get_country_code, clear_configs_table
+from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
+from database import initialize_db, bulk_update_configs, clear_configs_table
 import geoip2.database
 
 # --- Constants ---
 INPUT_DIR = "protocol_configs"
-# A short timeout for a simple socket connection
-CONNECTION_TIMEOUT = 5 
-# We need the GeoIP database to determine the country
+CONNECTION_TIMEOUT = 5
 GEOIP_DB_PATH = "GeoLite2-City.mmdb" 
 
 async def check_port_open(host, port):
-    """
-    Asynchronously checks if a TCP port is open on a given host.
-    Returns True if open, False otherwise.
-    """
+    """Asynchronously checks if a TCP port is open."""
     try:
-        # Create a socket and try to connect with a timeout
-        reader, writer = await asyncio.wait_for(
+        _, writer = await asyncio.wait_for(
             asyncio.open_connection(host, port), 
             timeout=CONNECTION_TIMEOUT
         )
         writer.close()
         await writer.wait_closed()
         return True
-    except (socket.gaierror, asyncio.TimeoutError, ConnectionRefusedError, OSError):
-        # Any connection error means the port is likely closed or unreachable
+    except Exception:
         return False
 
 async def process_config_file(file_path, geoip_reader):
-    """
-    Reads a single config file, performs liveness checks, 
-    and returns a list of live configs.
-    """
+    """Reads a single config file and performs liveness checks."""
     live_configs = []
     now = datetime.utcnow().isoformat()
 
     with open(file_path, 'r', encoding='utf-8') as f:
         configs = f.read().strip().splitlines()
 
+    tasks = []
     for config in configs:
-        # We need a more robust way to get host and port, but for now this works for many cases
-        host_and_port = extract_ip_from_connection(config) 
-        if not host_and_port or ':' not in host_and_port:
+        host_port_str = extract_ip_from_connection(config)
+        if not host_port_str or ':' not in host_port_str:
             continue
         
-        host, port_str = host_and_port.rsplit(':', 1)
+        host, port_str = host_port_str.rsplit(':', 1)
         try:
             port = int(port_str)
+            tasks.append(check_port_open(host, port))
         except ValueError:
             continue
-            
-        is_live = await check_port_open(host, port)
+
+    results = await asyncio.gather(*tasks)
+
+    for config, is_live in zip(configs, results):
         if is_live:
+            host, _ = extract_ip_from_connection(config).rsplit(':', 1)
             ip = resolve_to_ip(host)
             country = get_country_code(ip, geoip_reader)
             if country:
-                # Save with a symbolic speed of 1.0 to mark as live
                 live_configs.append((config, 'unknown', country, 1.0, now))
                 print(f"✅ Live | {country} | {config[:50]}...")
     
@@ -68,7 +61,6 @@ async def process_config_file(file_path, geoip_reader):
 async def main():
     """Main function to run the liveness check process."""
     initialize_db()
-    # Clear previous results before starting a new cycle
     clear_configs_table() 
     
     if not os.path.exists(GEOIP_DB_PATH):
@@ -82,18 +74,11 @@ async def main():
         print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
         return
         
-    # Create a list of tasks for each config file
-    tasks = []
-    for filename in os.listdir(INPUT_DIR):
-        if filename.endswith("_configs.txt"):
-            file_path = os.path.join(INPUT_DIR, filename)
-            tasks.append(process_config_file(file_path, geoip_reader))
-            
-    # Run all file processing concurrently
-    results = await asyncio.gather(*tasks)
+    file_paths = [os.path.join(INPUT_DIR, f) for f in os.listdir(INPUT_DIR) if f.endswith("_configs.txt")]
     
-    for result_list in results:
-        all_live_configs.extend(result_list)
+    for file_path in file_paths:
+        live_in_file = await process_config_file(file_path, geoip_reader)
+        all_live_configs.extend(live_in_file)
         
     if all_live_configs:
         print(f"\nFound {len(all_live_configs)} live configurations in total.")
