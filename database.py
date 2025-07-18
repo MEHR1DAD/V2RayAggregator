@@ -8,7 +8,6 @@ def get_connection():
     return sqlite3.connect(DB_FILE)
 
 def initialize_db():
-    # ... (code for this function is unchanged) ...
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute('''
@@ -30,25 +29,15 @@ def initialize_db():
     conn.commit()
     conn.close()
 
-def bulk_update_configs(configs_data: list):
-    # ... (code for this function is unchanged) ...
-    if not configs_data:
-        return
+def get_all_sources_to_check():
+    """Gets all unique source URLs from the database to be checked."""
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.executemany('''
-        INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?)
-        ON CONFLICT(config) DO UPDATE SET
-            source_url = excluded.source_url,
-            country_code = excluded.country_code,
-            speed_kbps = excluded.speed_kbps,
-            last_tested = excluded.last_tested
-    ''', configs_data)
-    conn.commit()
+    cursor.execute("SELECT url FROM sources")
+    urls = [row[0] for row in cursor.fetchall()]
     conn.close()
-    print(f"Successfully upserted {len(configs_data)} configs into the database.")
+    return urls
 
-# --- Other existing functions like get_active_sources, get_configs_by_country, etc. remain unchanged ---
 def get_active_sources():
     conn = get_connection()
     cursor = conn.cursor()
@@ -69,6 +58,24 @@ def update_source_status(url: str, status: str):
     ''', (url, status, now))
     conn.commit()
     conn.close()
+
+def bulk_update_configs(configs_data: list):
+    if not configs_data:
+        return
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.executemany('''
+        INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?)
+        ON CONFLICT(config) DO UPDATE SET
+            source_url = excluded.source_url,
+            country_code = excluded.country_code,
+            speed_kbps = excluded.speed_kbps,
+            last_tested = excluded.last_tested
+    ''', configs_data)
+    conn.commit()
+    conn.close()
+    print(f"Successfully upserted {len(configs_data)} configs into the database.")
+
 
 def get_configs_by_country(country_code: str, limit: int = None):
     conn = get_connection()
@@ -114,8 +121,6 @@ def bulk_delete_configs(configs_to_delete: list):
     conn.close()
     print(f"Successfully deleted {len(configs_to_delete)} dead configs from the database.")
 
-
-# --- NEW FUNCTIONS FOR SMART LIST GENERATION ---
 def get_average_speed(country_code: str) -> float:
     """Calculates the average speed for a given country."""
     conn = get_connection()
