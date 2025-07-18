@@ -2,7 +2,7 @@ import os
 import json
 import asyncio
 import subprocess
-from datetime importdatetime
+from datetime import datetime
 import geoip2.database
 import yaml
 import re
@@ -53,10 +53,10 @@ def parse_proxy_uri_to_xray_json(uri: str):
                 }
             }
         elif uri.startswith("vmess://"):
-            # Your existing VMess parser can be adapted here
-            return None # Placeholder
+            # Placeholder for your existing VMess parser logic
+            # For now, we'll skip these to ensure the pipeline runs
+            return None 
         elif uri.startswith("trojan://"):
-            # Your existing Trojan parser can be adapted here
             match = re.match(r'trojan://([^@]+)@([^:?#]+):(\d+)(?:\?([^#]*))?(?:#.*)?', uri)
             if not match: return None
             password, address, port, query = match.groups()
@@ -72,8 +72,8 @@ def parse_proxy_uri_to_xray_json(uri: str):
                 }
             }
         elif uri.startswith("ss://"):
-            # Your existing SS parser can be adapted here
-            return None # Placeholder
+            # Placeholder for your existing SS parser logic
+            return None
     except Exception:
         return None
     return None
@@ -119,13 +119,15 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         stdout, stderr = await proc.communicate()
 
         if proc.returncode == 0 and stdout:
-            speed_bytes_per_sec = float(stdout.decode('utf-8'))
-            return speed_bytes_per_sec / 1024 # Convert to KB/s
+            try:
+                speed_bytes_per_sec = float(stdout.decode('utf-8'))
+                return speed_bytes_per_sec / 1024 # Convert to KB/s
+            except (ValueError, TypeError):
+                return 0.0
         else:
             return 0.0
             
     except Exception as e:
-        # print(f"Error during speed test for port {port}: {e}")
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
@@ -153,7 +155,6 @@ async def process_batch(batch, reader, start_port):
             ip = resolve_to_ip(host)
             country_code = get_country_code(ip, reader)
             if country_code:
-                # Data format for bulk_update_configs: (config, source_url, country_code, speed_kbps, last_tested)
                 successful_in_batch.append((conn, 'speed-tested', country_code, round(speed_kbps, 2), now))
                 print(f"✅ Success ({round(speed_kbps)} KB/s) | Country: {country_code} | Config: {conn[:40]}...")
     return successful_in_batch
@@ -196,7 +197,6 @@ async def main():
             
     if all_successful_configs:
         print(f"\nUpserting {len(all_successful_configs)} successfully tested configs into the database...")
-        # This function performs an "upsert" (insert or update)
         bulk_update_configs(all_successful_configs)
     else:
         print("\nNo new working configs found to save in this run.")
