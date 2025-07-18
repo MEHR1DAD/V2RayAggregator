@@ -26,6 +26,9 @@ urls:
 # Settings for various scripts
 # ===============================================================
 settings:
+  # General request timeout for simple scripts like manage_sources
+  request_timeout: 15
+
   # Settings for the incremental liveness check script
   check_liveness:
     connection_timeout: 5 # Timeout in seconds for each port check
