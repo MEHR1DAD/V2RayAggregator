@@ -1,1 +1,3 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.188:8080
+vmess://eyJhZGQiOiJmYXN0LnYyc3ViLm9ubGluZSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoicnZuLmNvbSIsImlkIjoiZGIzMDRkY2UtNDk5Yi00NmE0LWE3ODItYTdkMDMxOTk1NTFjIiwibmV0IjoieGh0dHAiLCJwYXRoIjoiLyIsInBvcnQiOiI4MCIsInBzIjoiQFZpcF9TZWN1cml0eSBqb2luIHVzIC0gNDQ0XG4iLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6ImF1dG8iLCJ2IjoiMiJ9
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.81.58.186:8880?encryption=none&security=tls&sni=Telegram-channel-WangCai2&fp=chrome&type=ws&host=Telegram-channel-WangCai2&path=%2Ftelegram%F0%9F%87%A8%F0%9F%87%B3%20%40wangcai2%20%2F%3Fed%3D2560
+vless://b5441b0d-2147-4898-8a6a-9b2c87f58382@45.81.58.11:8880?path=%2F%3Fed%3D2560&security=&encryption=none&host=bitget1.asdasd.click&type=ws

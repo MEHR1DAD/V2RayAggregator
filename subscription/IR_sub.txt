@@ -1,2 +1,3 @@
-vless://4c183cd1-0079-45ce-9204-4360a643601c@5.159.49.176:2052?security=none&type=ws&path=/
-vmess://eyJhZGQiOiJ0dS5zaG9wdHguc2JzIiwiaG9zdCI6Ind3dy5zcGVlZHRlc3QubmV0IiwiaWQiOiJjYzY2MDYxNC0xMTcyLTQ5ODgtOTY0Ny0zODQ2NTAyZDBlNGYiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiLyIsInBvcnQiOiIxNTQwMCIsInBzIjoiQHZwbmNsYXNoZmEgLSAxMDgxXG4iLCJzY3kiOiJhdXRvIiwidHlwZSI6Imh0dHAifQ==
+vless://56480b5b-aa8e-414c-996c-838b1c60b55a@185.143.233.120:443?path=%2F%40Am20094-%40Am20094-%40Am20094&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=amirgeek.vijra.ir&fp=chrome&type=ws&sni=mydigipay.com
+vless://e3aad33a-a244-4dfc-9152-50cf00cdb229@iran24.fastbest.ir:2098?security=none&encryption=none&headerType=http&type=tcp
+vless://af9dacf8-94a7-4f39-9231-bfbb3b3b4676@sar8pj.de3.bbbbbbbbbbbb9.biz:10217?security=none&encryption=none&host=efvu5cgz.speedtest1.shatel.ir&headerType=http&type=tcp

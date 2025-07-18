@@ -1,2 +1,1 @@
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@92.53.190.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
-vless://cc6b985d-0362-4129-8763-38564174fb3e@92.53.188.33:443?security=tls&sni=iryiccyne.wwtraveler.com&type=grpc&serviceName=michi&fp=chrome&alpn=http/1.1,h2
+vless://71ed6628-5870-4d19-8a52-f2a3ba3d4898@92.53.188.245:8443?security=tls&sni=va.zhuk.us.kg&type=ws&host=va.zhuk.us.kg&path=%2F%3Fed%3D2560

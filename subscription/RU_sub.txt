@@ -1,2 +1,2 @@
-vless://8274a9f0-f7ed-4384-8c69-6bf8a98d19a6@185.59.218.119:443?security=tls&sni=us2_tg_fxnodes.sfacg.uk&type=ws&host=us2_tg_fxnodes.sfacg.uk&path=%2Ftg%40fxnodes%3Fed%3D2048&fp=chrome
-vless://4d91916f-a7fd-419b-8b90-640bb8d1b9f4@45.8.211.174:443?encryption=none&security=tls&sni=TITanTabLOmaNAHaMRaH.IR&fp=randomized&type=ws&host=TITanTabLOmaNAHaMRaH.IR&path=%2FJHVdDlmFTThrY7WI%2FNjIuMy4xMi4xODU
+vless://5475990d-e0ce-46ea-95e5-50f9e4879af9@ru.sfasti.ru:443?security=reality&encryption=none&pbk=J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ru.sfasti.ru&sid=16895459a2c7768d
+vless://219d848d-60f2-4321-8275-72b9b575b37e@45.67.215.113:443?security=tls&sni=qaa.zhuk.us.kg&type=ws&host=qaa.zhuk.us.kg&path=%2F%3Fed%3D2560

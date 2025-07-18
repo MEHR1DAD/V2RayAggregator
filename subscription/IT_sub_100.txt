@@ -1,1 +1,1 @@
-vless://d4bbafbe-f973-48c5-8a18-7dedf95bc6a6@mcnew.dl101movis.ir:80?mode=auto&security=none&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A%201000000%2C%20%22scMaxConcurrentPosts%22%3A%20100%2C%20%22scMinPostsIntervalMs%22%3A%2030%2C%20%22xPaddingBytes%22%3A%20%22100-1000%22%2C%20%22noGRPCHeader%22%3A%20false%7D&host=tixgixofhfuoofu888.ir&type=xhttp
+vless://0603385b-2d6f-4bfb-8f26-d26dbc85878d@45.82.101.5:443?security=tls&sni=revil.servehttp.com&alpn=http/1.1&fp=chrome&type=ws&path=/?ed%3D2048&host=revil.servehttp.com&encryption=none
