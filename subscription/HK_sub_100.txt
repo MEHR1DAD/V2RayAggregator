@@ -1,4 +1,2 @@
-vless://5d94abf1-2c96-4719-8a0c-2abdafd9df4c@hon5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
-vless://305c1df7-c5bc-4209-918a-887b3f003835@hon5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
-ss://YWVzLTEyOC1nY206YS13eW00b3ZZNFl3@1.36.223.86:80
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowOTgzM2E2Zi00ZDQ2LTQyNmUtODdmZS03NzkzYTU0ODlmODQ=@h-k02.loveroise.com:54002
+trojan://28bccca2-43d2-47f8-bd63-b1361ce7d362@ussj.iamnotagoodman.com:443?type=tcp&allowInsecure=1
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5NmQwM2I2NS1hYmY5LTRhNDAtOWFmNS02NzAxMjk0NWVhNTQ@hk07.mmyjiedian.com:10007

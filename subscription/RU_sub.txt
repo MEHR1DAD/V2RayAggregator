@@ -1,5 +1,2 @@
-trojan://Aimer@5.182.84.66:2083?security=tls&sni=acepo.ambercc.filegear-sg.me&type=tcp
-vless://4d91916f-a7fd-419b-8b90-640bb8d1b9f4@185.148.104.222:443?encryption=none&security=tls&sni=TITanTabLOmaNAHaMRaH.IR&fp=randomized&type=ws&host=TITanTabLOmaNAHaMRaH.IR&path=%2FJHVdDlmFThrY7WI%2FNjIuMy4xMi4xODU
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@46.254.92.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳&allowInsecure=0
-vless://4d91916f-a7fd-419b-8b90-640bb8d4b3f2@45.8.211.214:443?encryption=none&security=tls&sni=mypHOtoGRAPICpIctUre.iR&fp=chrome&type=ws&host=mypHOtoGRAPICpIctUre.iR&path=%2FfJBvsL0uR2MtzRig
-vless://00e92112-b43b-4757-a56a-fa7b53ad3419@89.221.203.100:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=cdnjs.com&fp=chrome&pbk=9F7JxyyP-TNLt0dY2xOB0_34I8W0xXIpFY7rZ7-L0Gg&sid=0a6ba2716a409da6&type=tcp&headerType=none
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.142.120.79:443?path=%2FTELEGRAM----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN----%40JOKERRVPN&security=tls&encryption=none&alpn=http/1.1&host=reedfree8mahsang2.redorg.ir&type=ws&sni=reedfree8mahsang2.redorg.ir
+vless://772785e6-7b81-416c-f678-2c3765861faa@iptz-47.almass22.ir:2096?encryption=none&security=tls&sni=er7cdn47.almass22.ir&fp=chrome&type=ws&host=er7cdn47.almass22.ir&path=%2F
