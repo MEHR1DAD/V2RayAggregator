@@ -1,1 +1,2 @@
-vmess://eyJ2IjoiMiIsInBzIjoi8J+HsPCfh7cg6Z+p5Zu9XzExMjIwOTEiLCJhZGQiOiJrcjEubWF5aXl1bi5zaG9wIiwicG9ydCI6IjgwIiwidHlwZSI6Im5vbmUiLCJpZCI6IjZmZTNjYzk5LTVjNGEtNDRmNi05ZDc5LWY2MDM1MTkzZGM2NyIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6ImEuMTg5LmNuIiwidGxzIjoiIn0=
+vless://d9a3389d-7533-44c2-ad34-ad59a844500f@lovefishingfishes.kuckenpq.ir:8880?security=none&type=tcp&headerType=http&path=%2F&host=speedtest.net
+vless://2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5@103.169.142.121:443?security=tls&sni=cfed.tgzdyz2.top&type=ws&path=%2Ftg%40zdyz2securityfp

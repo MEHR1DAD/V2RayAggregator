@@ -1,7 +1,2 @@
-vless://71ed6628-5870-4d19-8a52-f2a3ba3d4898@154.194.12.78:443?security=tls&sni=vs1.ylks2024.us.kg&type=ws&host=vs1.ylks2024.us.kg&path=%2Fylks
-vmess://eyJhZGQiOiAiMTM0LjEyMi4xODQuODkiLCAiYWlkIjogIjY0IiwgImhvc3QiOiAid3d3LjI0MDExODA1Lnh5eiIsICJpZCI6ICI0MTgwNDhhZi1hMjkzLTRiOTktOWIwYy05OGNhMzU4MGRkMjQiLCAibmV0IjogIndzIiwgInBhdGgiOiAiL3BhdGgvMTkxMDE5MDcyOTI3IiwgInBvcnQiOiA0NDMsICJwcyI6ICJHaXRodWJcdTY0MWNcdTdkMjJUcm9qYW5MaW5rcyIsICJ0bHMiOiAidGxzIiwgInR5cGUiOiAiZHRscyIsICJ2IjogIjIifQ==
-vless://f0d584bc-342f-4443-ba24-79e4d0e504b1@206.238.236.213:80?security=none&type=ws&host=late-tooth.granzinhannah.workers.dev&path=%2FTelegram%40NETMelliAnti%3Fed%3D2560
-vless://b22a0538-39c3-4b16-92c9-c81a5b94d4f5@8.219.69.28:18658?encryption=none&security=tls&sni=mot.luyuju.dpdns.org&fp=random&type=ws&host=mot.luyuju.dpdns.org&path=%2F%3Fed%3D2560
-vless://31cebb90-917e-4bf4-9f2c-8ec4e35b286d@5.223.68.198:80?security=&encryption=none&host=zula.ir&headerType=http&type=tcp
-vmess://eyJhZGQiOiJzZy0xLmhpaHUubmV0IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJhbmRyb2lkLmdvb2dsZWFwaXMuY29tIiwiaWQiOiI2MWIwYTM4MC01N2VlLTExZWYtYjUzMy0yMDVjNmQ1ZjVkNzgiLCJuZXQiOiJ3cyIsInBhdGgiOiIvNW4zYTlzcGsiLCJwb3J0IjoiODAiLCJwcyI6IkBpcm9ubmV0dCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
-trojan://18304160-03d4-4c55-95c1-586c0a5f3a0a@ap.liangyuandian.top:443
+vless://948f6596-66f9-4707-aa92-3107a214ce53@160.22.79.179:443?encryption=none&security=tls&sni=oops.shalamshorba.dpdns.org&type=ws&host=oops.shalamshorba.dpdns.org&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560
+vless://1ebc6b56-5f5b-41bb-aecd-67ea5e9ad3d0@143.198.206.10:22099?path=/FREE By Tharuwa (0767597317)&amp;security=none&amp;encryption=none&amp;host=m.zoom.us&amp;type=ws

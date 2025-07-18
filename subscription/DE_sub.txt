@@ -1,6 +1,4 @@
-vless://73397689-b039-4fbd-8e8f-234038396305@195.201.226.44:443?encryption=none&security=reality&sni=www.speedtest.net&fp=chrome&pbk=mcsO0kCCvx9Ld5Jym3hranNF1-Dn-lLikLGPCmCHMjo&sid=838bb63f54f97ed0&type=grpc&authority=&serviceName=ef0ce02d&mode=gun
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@5.10.214.177:8880?allowInsecure=0&sni=ip.langmanshanxi.top&type=ws&host=ip.langmanshanxi.top&path=/Telegram@WangCai2/?ed=2560
-vless://b22a0538-39c3-4b16-92c9-c81a5b94d4f5@159.69.162.184:42262?encryption=none&security=tls&sni=mot.luyuju.dpdns.org&fp=random&type=ws&host=mot.luyuju.dpdns.org&path=%2F%3Fed%3D2560
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@89.116.46.213:8880?type=ws&host=jp.laoyoutiao.link
-vless://97364abe-a27e-4be3-b0d7-0c3c1d64bc07@213.202.223.187:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=dropbox.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&type=tcp&headerType=none
-vless://10525b84-7f6e-43ef-912b-87434df813f4@132.145.232.171:443?security=tls&sni=news5.testsnew.com&type=ws&path=%2Fwss
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInZtXzMzMzgiLA0KICAiYWRkIjogInBhbmVsMy5pcHlhci5vcmciLA0KICAicG9ydCI6ICIzMjAyMCIsDQogICJpZCI6ICIzNzUyYmEzOS02MmM2LTQ3ODYtYjU1OC1lOTlmY2I1MTNkOTciLA0KICAiYWlkIjogIjAiLA0KICAic2N5IjogImF1dG8iLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIiwNCiAgImZwIjogIiINCn0=
+trojan://juzi@5.9.192.27:443?security=tls&sni=juzi8186-sr1.pages.dev&fp=randomized&type=ws&host=juzi8186-sr1.pages.dev&path=%2F%3Fed%3D2560%26proxyip%3Dsjc.o00o.ooo
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTova0dwWU13QlVmSlVTM0FOQ0l2YnI3RnpPRDdmclUvVDd3bVhMa0RJSDVRPQ==@23.88.54.248:443
+vless://03764d9b-0b74-4734-8507-43fab103f3e2@49.13.117.194:443?encryption=none&security=reality&sni=tgju.org&fp=chrome&pbk=FQ91JdFD-slVwUfqbs_zkQ9uSGfJ6EOmlsEey1nx2XU&sid=7f91df&type=grpc&authority=&serviceName=%2F&mode=gun
