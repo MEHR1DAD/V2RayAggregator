@@ -6,15 +6,15 @@ concurrency:
 
 on:
   schedule:
-    # Runs every 30 minutes
-    - cron: '*/30 * * * *'
+    # Runs every 60 minutes
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
   update-all:
     runs-on: ubuntu-latest
     # --- ADDED: Hard timeout for the job ---
-    timeout-minutes: 15
+    timeout-minutes: 55
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
