@@ -1,3 +1,1 @@
-trojan://aef2ca33-b162-409f-8f16-4c736c338412@20.205.37.136:443?security=tls&allowInsecure=1&type=tcp
-ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206WWpOa1kyRTVNbUptTVRNM056UXlZZz09OlpHRTBNV016WmpNdFlUZGhNUzAwTkE9PQ@zz.xn--2vxn29amga.com:8093
-trojan://28bccca2-43d2-47f8-bd63-b1361ce7d362@ussj.iamnotagoodman.com:443?type=tcp&allowInsecure=1
+ss://MjAyMi1ibGFrZTMtYWVzLTEyOC1nY206WVdZNU16STJZMlEzTkRNNU9UTTVNdz09Ok1XSTVPVGxoT1dNdFlUaGlOeTAwTXc9PQ%3D%3D@tianmao-zz.legeth.xyz:26111

@@ -1,2 +1,2 @@
-vless://401374e6-df77-41fb-f638-dad8184f175b@94.247.142.103:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.212:8880?allowInsecure=1&sni=Telegram-channel-WangCai2&type=ws&host=kjgx.laoyoutiao.link&path=/Telegram🇨🇳 @WangCai2 /?ed=2560fp=chrome
+vless://b99590df-eda0-4e34-e1a9-3d1118faed83@77.75.199.121:8880?security=none&type=httpupgrade&host=nufillter.jtip.sbs.&path=
+vless://678ac895-92c2-4f27-a9d4-f1a89c5f5365@217.163.76.89:2053?security=tls&sni=mositr.freenods.sbs&type=ws&path=Twitter%E8%8B%8F%E5%B0%8F%E6%9F%A0
