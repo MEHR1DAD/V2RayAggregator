@@ -8,10 +8,9 @@ def get_connection():
     return sqlite3.connect(DB_FILE)
 
 def initialize_db():
-    """Creates the necessary tables if they don't already exist."""
+    # ... (code for this function is unchanged) ...
     conn = get_connection()
     cursor = conn.cursor()
-    # Your existing table creation logic...
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS sources (
             url TEXT PRIMARY KEY,
@@ -31,43 +30,8 @@ def initialize_db():
     conn.commit()
     conn.close()
 
-def clear_configs_table():
-    """Deletes all records from the configs table."""
-    try:
-        conn = get_connection()
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM configs")
-        conn.commit()
-        conn.close()
-        print("🧹 Cleared all previous records from the configs table.")
-    except Exception as e:
-        print(f"Error clearing configs table: {e}")
-
-def get_active_sources():
-    """Gets all sources with 'active' status."""
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT url FROM sources WHERE status = 'active'")
-    urls = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return urls
-
-def update_source_status(url: str, status: str):
-    """Inserts or updates a source's status in the database."""
-    conn = get_connection()
-    cursor = conn.cursor()
-    now = datetime.utcnow().isoformat()
-    cursor.execute('''
-        INSERT INTO sources (url, status, last_checked) VALUES (?, ?, ?)
-        ON CONFLICT(url) DO UPDATE SET
-            status = excluded.status,
-            last_checked = excluded.last_checked
-    ''', (url, status, now))
-    conn.commit()
-    conn.close()
-
 def bulk_update_configs(configs_data: list):
-    """Efficiently inserts or updates a list of configuration data."""
+    # ... (code for this function is unchanged) ...
     if not configs_data:
         return
     conn = get_connection()
@@ -84,8 +48,29 @@ def bulk_update_configs(configs_data: list):
     conn.close()
     print(f"Successfully upserted {len(configs_data)} configs into the database.")
 
+# --- Other existing functions like get_active_sources, get_configs_by_country, etc. remain unchanged ---
+def get_active_sources():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT url FROM sources WHERE status = 'active'")
+    urls = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return urls
+
+def update_source_status(url: str, status: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    now = datetime.utcnow().isoformat()
+    cursor.execute('''
+        INSERT INTO sources (url, status, last_checked) VALUES (?, ?, ?)
+        ON CONFLICT(url) DO UPDATE SET
+            status = excluded.status,
+            last_checked = excluded.last_checked
+    ''', (url, status, now))
+    conn.commit()
+    conn.close()
+
 def get_configs_by_country(country_code: str, limit: int = None):
-    """Gets configs for a specific country, sorted by speed."""
     conn = get_connection()
     cursor = conn.cursor()
     query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC"
@@ -97,7 +82,6 @@ def get_configs_by_country(country_code: str, limit: int = None):
     return configs
 
 def get_countries_with_config_counts():
-    """Gets a list of countries and their active config counts."""
     conn = get_connection()
     cursor = conn.cursor()
     query = """
@@ -112,9 +96,7 @@ def get_countries_with_config_counts():
     conn.close()
     return countries
 
-# --- NEW FUNCTIONS FOR MAINTENANCE ---
 def get_all_db_configs():
-    """Gets all configs currently stored in the database."""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT config FROM configs")
@@ -123,13 +105,47 @@ def get_all_db_configs():
     return configs
 
 def bulk_delete_configs(configs_to_delete: list):
-    """Efficiently deletes a list of configs from the database."""
     if not configs_to_delete:
         return
     conn = get_connection()
     cursor = conn.cursor()
-    # Need to wrap each config in a tuple for executemany
     cursor.executemany("DELETE FROM configs WHERE config = ?", [(c,) for c in configs_to_delete])
     conn.commit()
     conn.close()
     print(f"Successfully deleted {len(configs_to_delete)} dead configs from the database.")
+
+
+# --- NEW FUNCTIONS FOR SMART LIST GENERATION ---
+def get_average_speed(country_code: str) -> float:
+    """Calculates the average speed for a given country."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT AVG(speed_kbps) FROM configs WHERE country_code = ? AND speed_kbps > 0", (country_code,))
+    result = cursor.fetchone()[0]
+    conn.close()
+    return result if result else 0.0
+
+def get_configs_above_speed(country_code: str, speed_kbps: float) -> list:
+    """Gets all configs for a country above a certain speed, sorted from fastest to slowest."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT config FROM configs WHERE country_code = ? AND speed_kbps >= ? ORDER BY speed_kbps DESC",
+        (country_code, speed_kbps)
+    )
+    configs = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return configs
+
+def get_live_configs_no_speed(country_code: str) -> list:
+    """Gets live configs that have not been speed-tested (speed is NULL or 0)."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    # Assuming configs with no speed test have speed_kbps as NULL or 0
+    cursor.execute(
+        "SELECT config FROM configs WHERE country_code = ? AND (speed_kbps IS NULL OR speed_kbps <= 1)",
+        (country_code,)
+    )
+    configs = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return configs
