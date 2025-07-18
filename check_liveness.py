@@ -18,15 +18,14 @@ INPUT_DIR = "protocol_configs"
 CONNECTION_TIMEOUT = 5 
 GEOIP_DB_PATH = "GeoLite2-City.mmdb"
 LIVENESS_SAMPLE_SIZE = 5000 
-BATCH_SIZE = 500
-# Set timeout to 14 minutes for development runs
+BATCH_SIZE = 150
 TOTAL_TIMEOUT_SECONDS = 14 * 60 
 START_TIME = time.time()
 
 def is_timeout():
     """Checks if the global script timeout has been reached."""
     if (time.time() - START_TIME) > TOTAL_TIMEOUT_SECONDS:
-        print("⏰ Global timeout reached. Finalizing the process...")
+        print("⏰ Global timeout reached. Finalizing...")
         return True
     return False
 
@@ -66,7 +65,12 @@ async def main():
         print(f"GeoIP database not found at {GEOIP_DB_PATH}. Cannot proceed.")
         return
         
-    geoip_reader = geoip2.database.Reader(GEOIP_DB_PATH)
+    try:
+        geoip_reader = geoip2.database.Reader(GEOIP_DB_PATH)
+    except Exception as e:
+        print(f"Error loading GeoIP database: {e}")
+        return
+
     all_live_configs = []
     
     try:
@@ -75,7 +79,7 @@ async def main():
             return
         
         all_configs = []
-        for filename in os.listdir(INPUT_DIR):
+        for filename in sorted(os.listdir(INPUT_DIR)):
             if filename.endswith("_configs.txt"):
                 file_path = os.path.join(INPUT_DIR, filename)
                 with open(file_path, 'r', encoding='utf-8') as f:
@@ -121,7 +125,8 @@ async def main():
                     process_batch(batch, geoip_reader),
                     timeout=remaining_time
                 )
-                all_live_configs.extend(live_in_batch)
+                if live_in_batch is not None:
+                    all_live_configs.extend(live_in_batch)
             except asyncio.TimeoutError:
                 print("⏰ Batch timed out. Finalizing results...")
                 break

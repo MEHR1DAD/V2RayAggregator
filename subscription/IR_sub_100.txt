@@ -1,13 +1,3 @@
-vless://c850f7f1-da5e-49e5-adc4-957ff4fc68af@s26.radnikmax.ir:8452?encryption=none&security=none&type=tcp&headerType=http
-vless://c92348f4-1ebb-4232-b546-c056f3721ffb@185.143.233.120:443?path=%2Fwp-content%3Fed%3D2020&security=tls&encryption=none&host=mrpooya4.sbs&type=ws&sni=mydigipay.com
-vless://0d69b241-cfaf-42df-8b2b-d69a51e03b07@fr.snappirtun.nikastoring.ir:2020?security=none&amp;encryption=none&amp;host=goftino.com&amp;headerType=http&amp;type=tcp
-vless://2805c403-ccf6-4786-a2f4-fcaf8d246a47@tnl15.radnikmax.ir:8098?encryption=none&security=none&type=tcp&headerType=http
-vless://4ac411aa-3186-4df5-bad3-f76872b168b3@tn14.radmehrmax.ir:8088?encryption=none&security=none&type=tcp&headerType=http
-vless://00dfdd9e-c793-44b7-f15d-f37b53f52ce8@snapp.ir.iraniantim.ir:80?security=reality&encryption=none&pbk=yYv9vuo4k2scMcm85us3qCADcfhGl9EEB2PjG1MNE10&headerType=none&fp=chrome&spx=%2FJoin--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN&type=tcp&sni=refersion.com
-vless://5aa79f02-48ec-4b52-9591-9c21f62a04ce@swd.ashiyanehsazan.com:443?type=ws&security=none&host=&path=%2F
-vless://e2a586aa-0e2b-42ac-af68-cc840b5c94cd@sv1.tsdata2.top:1443?security=none&encryption=none&host=isna.ir&headerType=http&type=tcp
-vless://f8a995f7-2862-4f53-985d-3cca55d09ea2@5.159.49.241:80?path=%2F&security=none&encryption=none&type=ws
-vless://80346ffe-9019-4352-b9f1-2437d54b5477@eng.mestershop.top:51255?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp
-vless://a8943348-34f6-41fa-9e91-8ddac34fa400@s26.radnikmax.ir:8452?encryption=none&security=none&type=tcp&headerType=http
-vless://ba59e99f-a171-4a34-a019-aa08cc2ab22e@np.iranpr.site:35896?security=none&encryption=none&host=ponisha.ir&headerType=http&type=tcp
-vless://f211336e-5628-4baf-aebd-66bebb704184@tn14.radmehrmax.ir:8088?encryption=none&security=none&type=tcp&headerType=http
+vless://46153d1a-ebe7-4218-9155-19618285a286@ir.bamtech.site:1720?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp
+ss://53a58a9f-204a-4351-b093-16b9ada44071@185.143.234.120:2053?encryption=none&security=tls&sni=num.2d2d.ir&fp=chrome&type=ws&path=%2F
+vless://dcd7a24c-530a-4e38-98f8-c62a15d20e35@194.1.155.46:9501?security=none&encryption=none&headerType=none&type=tcp
