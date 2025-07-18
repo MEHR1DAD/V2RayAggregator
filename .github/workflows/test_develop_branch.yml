@@ -47,14 +47,23 @@ jobs:
           gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
           chmod +x xray
 
-      - name: Run Test Pipeline
+      - name: Run Staged Testing and Generation Pipeline
         run: |
-          echo "--- Running Test Data Pipeline ---"
-          # NOTE: This is where we will implement and test our new two-stage logic
+          echo "--- Running Main Data Pipeline ---"
+          
+          echo "==> STAGE 1: Managing sources..."
           python manage_sources.py
+          
+          echo "==> STAGE 2: Merging configs..."
           python merge_configs.py
+          
+          echo "==> STAGE 3: Running incremental liveness check..."
           python check_liveness.py
-          # The new exp_country.py step will be added here later
+          
+          echo "==> STAGE 4: Running speed test on live candidates..."
+          python exp_country.py
+          
+          echo "==> STAGE 5: Generating subscription files and README..."
           python create_rotating_sub.py
           python generate_readme.py
         env:
