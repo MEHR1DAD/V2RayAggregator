@@ -1,0 +1,66 @@
+name: Maintain Database
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run once daily at 5:00 UTC
+    - cron: '0 5 * * *'
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  maintain-db:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests geoip2 pyyaml httpx
+
+      - name: Download Cached Dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Downloading cached GeoIP database..."
+          gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
+          
+          echo "Downloading cached Xray-core..."
+          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
+          
+          if [ -z "$LATEST_XRAY_TAG" ]; then
+            echo "::error::No cached Xray release found."
+            exit 1
+          fi
+          
+          echo "Using cached Xray version: $LATEST_XRAY_TAG"
+          gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
+          chmod +x xray
+
+      - name: Run Database Maintenance Script
+        run: python maintain_db.py
+        env:
+          MAXMIND_LICENSE_KEY: ${{ secrets.MAXMIND_LICENSE_KEY }}
+
+      - name: Commit and push database changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Maintenance)"
+          # Only add the database file itself
+          git add aggregator_data.db
+          if git diff --staged --quiet; then
+            echo "No changes to the database. Skipping commit."
+          else
+            git commit -m "chore: database maintenance"
+            git push
+          fi
