@@ -1,2 +1,1 @@
-trojan://28bccca2-43d2-47f8-bd63-b1361ce7d362@ussj.iamnotagoodman.com:443?type=tcp&allowInsecure=1
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5NmQwM2I2NS1hYmY5LTRhNDAtOWFmNS02NzAxMjk0NWVhNTQ@hk07.mmyjiedian.com:10007
+trojan://820517c1-1cfb-47ff-bfdd-48faf83773b5@pt.mjt000.com:443?allowInsecure=0&peer=pt.mjt000.com&sni=pt.mjt000.com

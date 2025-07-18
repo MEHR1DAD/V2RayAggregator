@@ -1,4 +1,2 @@
-vless://Parsashonam-185@185.146.173.39:8880?path=%2F&security=none&encryption=none&host=Search.DigiKala.CYoU.&type=httpupgrade
-vless://d3f9e777-24df-44a1-a244-bc879351b62f@185.146.173.185:2095?path=%2F&security=none&encryption=none&host=V2ray-_-_-_-_-_-ShhProxy.TelegramChannelJoinBede.com.&type=ws
-vless://3fc55264-7eb8-4aeb-a2f2-c9eff71c9252@185.146.173.58:8080?path=/servernett&security=none&encryption=none&host=lc22.lebasnoo.ir.&type=ws
-vless://c369d666-7942-44be-b24c-3ffa0972e169@46.246.98.130:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=sto5.vpntype.dev&fp=chrome&type=tcp&headerType=none
+vless://3c1073b1-8f8b-5710-a053-b96660ce4d80@185.146.173.114:443?security=tls&sni=fr1.vless.site&type=ws&host=fr1.vless.site&path=%2Fvless
+vless://5007dc3f-0270-4ed8-a210-1a1d7952756d@185.146.173.58:443?path=Telegram-proxy_mtmTelegram-proxy_mtmTelegram-proxy_mtmTelegram-proxy_mtm%2F%3Fed%3D2560&security=tls&encryption=none&host=bIA-paiN-BaCHE.pAGES.Dev&type=ws&sni=bIA-paIn-bacHE.PAGeS.DEv
