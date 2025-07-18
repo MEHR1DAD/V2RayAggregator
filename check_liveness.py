@@ -1,9 +1,9 @@
 import os
 import asyncio
 import subprocess
-import time
 import json
 import yaml
+import random
 from utils import extract_ip_from_connection
 
 # --- Load Configuration ---
@@ -11,27 +11,21 @@ with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 # --- Constants ---
-INPUT_DIR = "protocol_configs"
+INPUT_DIR = config['paths']['protocol_configs_dir']
 CANDIDATES_OUTPUT_FILE = "candidates.txt"
 STATE_FILE = "liveness_state.json"
 CONNECTION_TIMEOUT = config['settings']['check_liveness']['connection_timeout']
 LIVENESS_CHUNK_SIZE = config['settings']['check_liveness']['chunk_size']
-TOTAL_TIMEOUT_SECONDS = 50 * 60  # 50 minutes
-START_TIME = time.time()
-
-def is_timeout():
-    """Checks if the global script timeout has been reached."""
-    return (time.time() - START_TIME) > TOTAL_TIMEOUT_SECONDS
 
 def load_state():
-    """Loads the last tested index from the state file."""
+    """Loads the state, which includes indices of already tested configs."""
     if not os.path.exists(STATE_FILE):
-        return {"last_tested_index": 0}
+        return {"tested_indices": []}
     try:
         with open(STATE_FILE, 'r') as f:
             return json.load(f)
     except (json.JSONDecodeError, FileNotFoundError):
-        return {"last_tested_index": 0}
+        return {"tested_indices": []}
 
 def save_state(state):
     """Saves the current state to the state file."""
@@ -51,29 +45,24 @@ async def process_batch(batch_of_targets):
     """Processes a single batch of configs for liveness and returns live configs."""
     live_configs_in_batch = []
     
-    # Create tasks for all targets in the batch
     tasks = [check_port_open_curl(target['host'], target['port']) for target in batch_of_targets]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     for i, result in enumerate(results):
         target = batch_of_targets[i]
-        # Check if the task completed successfully and returned True
         if isinstance(result, bool) and result:
             live_configs_in_batch.append(target['config'])
             print(f"✅ Live | {target['config'][:60]}...")
-        # Optional: uncomment to see failed checks
-        # else:
-        #     print(f"❌ Dead | {target['config'][:60]}...")
             
     return live_configs_in_batch
 
 async def main():
-    """Main function to run the liveness check process."""
+    """Main function to run the liveness check process using stateful random sampling."""
     if not os.path.exists(INPUT_DIR):
         print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
         return
 
-    # 1. Load all configs from files into a single list
+    # 1. Load all configs from files
     all_configs = []
     for filename in sorted(os.listdir(INPUT_DIR)):
         if filename.endswith("_configs.txt"):
@@ -84,40 +73,29 @@ async def main():
     if not all_configs:
         print("No configs found to test. Exiting.")
         return
-    
-    total_configs = len(all_configs)
-    print(f"Loaded {total_configs} total configs from '{INPUT_DIR}'.")
-
-    # 2. Load the last tested index
-    state = load_state()
-    last_index = state.get("last_tested_index", 0)
-
-    # Ensure last_index is within bounds
-    if last_index >= total_configs:
-        last_index = 0
-
-    print(f"Starting check from index {last_index}. Chunk size: {LIVENESS_CHUNK_SIZE}.")
-
-    # 3. Determine the chunk of configs to test in this run
-    start_index = last_index
-    end_index = start_index + LIVENESS_CHUNK_SIZE
-    
-    configs_to_test_chunk = all_configs[start_index:end_index]
-
-    # Handle wrap-around if the end_index goes past the list end
-    if end_index > total_configs:
-        print("Wrapping around to the beginning of the list.")
-        remaining_count = end_index - total_configs
-        configs_to_test_chunk.extend(all_configs[:remaining_count])
-        next_index = remaining_count
-    else:
-        next_index = end_index
-    
-    # Update next_index for the case where it perfectly matches the total
-    if next_index == total_configs:
-        next_index = 0
         
-    print(f"This run will test {len(configs_to_test_chunk)} configs (from index {start_index} to {end_index % total_configs or total_configs}).")
+    total_configs = len(all_configs)
+    print(f"Loaded {total_configs} total configs.")
+
+    # 2. Load state and determine available configs to test
+    state = load_state()
+    tested_indices = set(state.get("tested_indices", []))
+    
+    all_indices = set(range(total_configs))
+    available_indices = list(all_indices - tested_indices)
+
+    # If all configs have been tested, start a new cycle
+    if not available_indices:
+        print("All configs have been tested in this cycle. Starting a new cycle.")
+        tested_indices = set()
+        available_indices = list(all_indices)
+
+    print(f"{len(available_indices)} configs remaining in this cycle. Taking a random sample of up to {LIVENESS_CHUNK_SIZE}.")
+
+    # 3. Take a random sample from the available configs
+    sample_size = min(LIVENESS_CHUNK_SIZE, len(available_indices))
+    sampled_indices = random.sample(available_indices, sample_size)
+    configs_to_test_chunk = [all_configs[i] for i in sampled_indices]
 
     # 4. Prepare valid targets for the batch
     valid_targets = []
@@ -125,38 +103,33 @@ async def main():
         host_port_str = extract_ip_from_connection(config)
         if host_port_str and ':' in host_port_str:
             try:
-                # rsplit is safer for IPv6 addresses in brackets
                 host, port_str = host_port_str.rsplit(':', 1)
                 port = int(port_str)
-                # Basic validation for host and port
                 if host and 1 <= port <= 65535:
                     valid_targets.append({'config': config, 'host': host, 'port': port})
             except (ValueError, IndexError):
-                # Handles cases where splitting or int conversion fails
                 continue
     
-    if not valid_targets:
-        print("No valid targets could be extracted from the current chunk.")
-        # Still save the state to advance the pointer
-        save_state({"last_tested_index": next_index})
-        return
+    # 5. Process the batch
+    live_configs = []
+    if valid_targets:
+        live_configs = await process_batch(valid_targets)
+    else:
+        print("No valid targets could be extracted from the random sample.")
 
-    # 5. Process the batch and get live configs
-    live_configs = await process_batch(valid_targets)
-    
-    # 6. Write the live configs to the candidates file
+    # 6. Write live configs to the candidates file
     if live_configs:
         print(f"\nFound {len(live_configs)} live candidates. Writing to '{CANDIDATES_OUTPUT_FILE}'.")
         with open(CANDIDATES_OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write("\n".join(live_configs))
     else:
-        print(f"\nNo live candidates found in this chunk. Clearing '{CANDIDATES_OUTPUT_FILE}'.")
-        # Create an empty file if no live configs are found
+        print(f"\nNo live candidates found in this sample. Clearing '{CANDIDATES_OUTPUT_FILE}'.")
         open(CANDIDATES_OUTPUT_FILE, 'w').close()
 
-    # 7. Save the new index for the next run
-    save_state({"last_tested_index": next_index})
-    print(f"State saved. Next run will start from index {next_index}.")
+    # 7. Update and save the state
+    newly_tested_indices = tested_indices.union(set(sampled_indices))
+    save_state({"tested_indices": list(newly_tested_indices)})
+    print(f"State saved. {len(newly_tested_indices)} configs tested in this cycle so far.")
     print("Liveness check process finished successfully.")
 
 if __name__ == "__main__":
