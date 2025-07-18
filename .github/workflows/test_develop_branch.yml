@@ -1,0 +1,74 @@
+name: Test Pipeline on Develop Branch
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests geoip2 jdatetime pytz pyyaml httpx
+
+      - name: Download Cached Dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Downloading cached GeoIP database..."
+          gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
+          
+          echo "Downloading cached Xray-core..."
+          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
+          
+          if [ -z "$LATEST_XRAY_TAG" ]; then
+            echo "::error::No cached Xray release found."
+            exit 1
+          fi
+          
+          echo "Using cached Xray version: $LATEST_XRAY_TAG"
+          gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
+          chmod +x xray
+
+      - name: Run Test Pipeline
+        run: |
+          echo "--- Running Test Data Pipeline ---"
+          # NOTE: This is where we will implement and test our new two-stage logic
+          python manage_sources.py
+          python merge_configs.py
+          python check_liveness.py
+          # The new exp_country.py step will be added here later
+          python create_rotating_sub.py
+          python generate_readme.py
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          MAXMIND_LICENSE_KEY: ${{ secrets.MAXMIND_LICENSE_KEY }}
+
+      - name: Commit and push test changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Test)"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "test: data update on develop branch"
+            git push
+          fi
