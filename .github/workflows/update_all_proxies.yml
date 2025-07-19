@@ -23,6 +23,7 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: pip install pyyaml httpx requests
+
       - name: Run Data Acquisition and Batching
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -100,3 +101,24 @@ jobs:
       - name: Merge, Generate, and Finalize
         run: |
           python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
+          python create_rotating_sub.py
+          python generate_readme.py
+      - name: Commit and Push Final Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Matrix)"
+          git add .
+          
+          # Check if there are changes to commit
+          if ! git diff --staged --quiet; then
+            # Step 1: Commit the generated changes locally
+            git commit -m "chore: data update via matrix workflow"
+            
+            # Step 2: Pull remote changes and rebase our local commit on top
+            git pull --rebase
+            
+            # Step 3: Push the final result
+            git push
+          else
+            echo "No changes to commit."
+          fi
