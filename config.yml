@@ -1,31 +1,46 @@
-# ================================================= #
-#     Central Configuration for V2RayAggregator     #
-# ================================================= #
+# ===============================================================
+# Project Configuration File for V2RayAggregator
+# ===============================================================
 
-# 1. Project-wide settings
 project:
   repo_owner: "MEHR1DAD"
   repo_name: "V2RayAggregator"
 
-# 2. File and Directory Paths
 paths:
-  output_dir: "subscription"
-  merged_configs: "merged_configs.txt"
+  # Path to the GeoIP database file
   geoip_database: "GeoLite2-City.mmdb"
+  # Path to the file containing discovered source URLs
   discovered_sources: "discovered_sources.txt"
-  crawled_urls_state: "crawled_urls.txt"
+  # Directory to save separated configs by protocol
+  protocol_configs_dir: "protocol_configs"
+  # Directory for final subscription files
+  output_dir: "subscription"
+  # Path for the combined subscription file (all configs)
+  merged_configs: "sub/merged.txt"
 
-# 3. URLs and API endpoints
 urls:
-  geoip_download: "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={}&suffix=tar.gz"
-  http_test: "https://labs.google.com/"
+  # URL template for downloading the GeoLite2-City database from MaxMind
+  geoip_download: "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={0}&suffix=tar.gz"
 
-# 4. Script-specific settings
+# ===============================================================
+# Settings for various scripts
+# ===============================================================
 settings:
-  request_timeout: 10
-  find_sources:
-    max_depth: 10
-    total_timeout_hours: 5
-  create_rotating_sub:
-    chunk_size: 100
+  # General request timeout for simple scripts like manage_sources
+  request_timeout: 15
 
+  # Settings for the incremental liveness check script
+  check_liveness:
+    connection_timeout: 5 # Timeout in seconds for each port check
+    chunk_size: 500       # Number of configs to test in each run
+
+  # Settings for the deep check and speed test script
+  exp_country:
+    request_timeout: 10   # Connection timeout for Xray
+    speed_test_timeout: 25 # Max time in seconds for the entire speed test (curl)
+    speed_test_url: "https://speed.cloudflare.com/__down?bytes=10000000" # 10MB file
+    batch_size: 100       # Number of configs to test concurrently for speed
+
+  # Settings for the final subscription file generator
+  create_rotating_sub:
+    chunk_size: 100       # Number of configs for the "Top N" list

@@ -1,0 +1,105 @@
+Merge branch 'master' into develop
+
+# Conflicts:
+#	README.md
+#	__pycache__/database.cpython-311.pyc
+#	__pycache__/utils.cpython-311.pyc
+#	aggregator_data.db
+#	summary.json
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please run
+#	git update-ref -d MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch develop
+# Your branch is up to date with 'origin/develop'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   GeoLite2-City.mmdb
+#	modified:   crawled_urls.txt
+#	modified:   subscription/AE_sub.txt
+#	modified:   subscription/AE_sub_100.txt
+#	new file:   subscription/AL_sub.txt
+#	new file:   subscription/AL_sub_100.txt
+#	modified:   subscription/AM_sub.txt
+#	modified:   subscription/AM_sub_100.txt
+#	modified:   subscription/AT_sub.txt
+#	modified:   subscription/AT_sub_100.txt
+#	modified:   subscription/AU_sub.txt
+#	modified:   subscription/AU_sub_100.txt
+#	modified:   subscription/BZ_sub.txt
+#	modified:   subscription/BZ_sub_100.txt
+#	modified:   subscription/CA_sub.txt
+#	modified:   subscription/CA_sub_100.txt
+#	modified:   subscription/CH_sub.txt
+#	modified:   subscription/CH_sub_100.txt
+#	modified:   subscription/CN_sub.txt
+#	modified:   subscription/CN_sub_100.txt
+#	modified:   subscription/CY_sub.txt
+#	modified:   subscription/CY_sub_100.txt
+#	modified:   subscription/CZ_sub.txt
+#	modified:   subscription/CZ_sub_100.txt
+#	modified:   subscription/DE_sub.txt
+#	modified:   subscription/DE_sub_100.txt
+#	modified:   subscription/FI_sub.txt
+#	modified:   subscription/FI_sub_100.txt
+#	modified:   subscription/FR_sub.txt
+#	modified:   subscription/FR_sub_100.txt
+#	modified:   subscription/GB_sub.txt
+#	modified:   subscription/GB_sub_100.txt
+#	modified:   subscription/HK_sub.txt
+#	modified:   subscription/HK_sub_100.txt
+#	new file:   subscription/IE_sub.txt
+#	new file:   subscription/IE_sub_100.txt
+#	modified:   subscription/IM_sub.txt
+#	modified:   subscription/IM_sub_100.txt
+#	modified:   subscription/IN_sub.txt
+#	modified:   subscription/IN_sub_100.txt
+#	modified:   subscription/IR_sub.txt
+#	modified:   subscription/IR_sub_100.txt
+#	new file:   subscription/IT_sub.txt
+#	new file:   subscription/IT_sub_100.txt
+#	modified:   subscription/JP_sub.txt
+#	modified:   subscription/JP_sub_100.txt
+#	modified:   subscription/KR_sub.txt
+#	modified:   subscription/KR_sub_100.txt
+#	modified:   subscription/KZ_sub.txt
+#	modified:   subscription/KZ_sub_100.txt
+#	modified:   subscription/LT_sub.txt
+#	modified:   subscription/LT_sub_100.txt
+#	modified:   subscription/NL_sub.txt
+#	modified:   subscription/NL_sub_100.txt
+#	new file:   subscription/PL_sub.txt
+#	new file:   subscription/PL_sub_100.txt
+#	new file:   subscription/PT_sub.txt
+#	new file:   subscription/PT_sub_100.txt
+#	modified:   subscription/RO_sub.txt
+#	modified:   subscription/RO_sub_100.txt
+#	modified:   subscription/RU_sub.txt
+#	modified:   subscription/RU_sub_100.txt
+#	modified:   subscription/SC_sub.txt
+#	modified:   subscription/SC_sub_100.txt
+#	modified:   subscription/SE_sub.txt
+#	modified:   subscription/SE_sub_100.txt
+#	modified:   subscription/SG_sub.txt
+#	modified:   subscription/SG_sub_100.txt
+#	modified:   subscription/SI_sub.txt
+#	modified:   subscription/SI_sub_100.txt
+#	modified:   subscription/TR_sub.txt
+#	modified:   subscription/TR_sub_100.txt
+#	new file:   subscription/TW_sub.txt
+#	new file:   subscription/TW_sub_100.txt
+#	modified:   subscription/US_sub.txt
+#	modified:   subscription/US_sub_100.txt
+#	new file:   subscription/VG_sub.txt
+#	new file:   subscription/VG_sub_100.txt
+#	new file:   subscription/ZA_sub.txt
+#	new file:   subscription/ZA_sub_100.txt

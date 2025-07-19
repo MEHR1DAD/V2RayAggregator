@@ -1,0 +1,121 @@
+name: Test Matrix Pipeline on Develop Branch
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # JOB 1: Prepares the work batches
+  prepare-work:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install pyyaml httpx requests
+
+      - name: Run Data Acquisition and Batching
+        id: prep
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          python manage_sources.py
+          python merge_configs.py
+          python prepare_batches.py
+          
+      - name: Upload Batch Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: work-batches
+          path: ci_batches/
+
+  # JOB 2: Runs tests in parallel using a HARDCODED matrix
+  run-tests:
+    needs: prepare-work
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # We are now using a static, hardcoded list to bypass the output issue
+        batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install requests geoip2 pyyaml httpx
+      - name: Download Cached Dependencies (Xray, GeoIP)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
+          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
+          if [ -z "$LATEST_XRAY_TAG" ]; then exit 1; fi
+          gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
+          chmod +x xray
+      - name: Download Batch Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: work-batches
+          path: ci_batches/
+      - name: Run Tests on Assigned Batch
+        run: |
+          BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
+          CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
+          DB_FILE="results_${{ matrix.batch_id }}.db"
+          python check_liveness.py --input $BATCH_FILE --output $CANDIDATES_FILE
+          python exp_country.py --input $CANDIDATES_FILE --db-file $DB_FILE
+      - name: Upload Result Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-result-${{ matrix.batch_id }}
+          path: results_${{ matrix.batch_id }}.db
+
+  # JOB 3: Merges all results and publishes
+  merge-results:
+    runs-on: ubuntu-latest
+    needs: run-tests
+    if: success() # Run this job even if some workers failed, as long as the job itself didn't get cancelled
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install pyyaml jdatetime pytz
+      - name: Download All Result Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: db_results/
+      - name: Merge, Generate, and Finalize
+        run: |
+          python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
+          python create_rotating_sub.py
+          python generate_readme.py
+      - name: Commit and Push Final Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Matrix)"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes detected.";
+          else
+            git commit -m "feat: update data via matrix workflow"
+            git push
+          fi
