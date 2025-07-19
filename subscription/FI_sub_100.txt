@@ -1,2 +1,1 @@
-vless://ed447de4-ebd3-4f1c-8339-c084e06ec588@all3.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com:443?encryption=none&security=tls&sni=ez.ez0535.com&fp=chrome&type=grpc&authority=&serviceName=%2F&mode=gun
-vless://3ab9cb9a-4ed8-426c-b42d-b3079c89df84@download.online24net.ir:2083?encryption=none&security=reality&sni=cdn-download.zula.ir&fp=chrome&pbk=AxIOXEujA6HwUz2QZnPM6O8llj2QVaI50lZXGUlibhs&sid=ea83a8b0&type=tcp&headerType=none
+vless://86e3084e-feac-4b2f-a09c-32259fefd31d@37.27.197.171:443?security=reality&sni=tgju.org&type=grpc&fp=chrome&pbk=QwodfkRohL7XiqgLfphqnxKrSkWFRvYBiYOJdC6WelY&sid=25d7da3d4b72

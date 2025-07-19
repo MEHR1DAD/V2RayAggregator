@@ -9,3 +9,10 @@ merged_configs.txt
 .DS_Store
 protocol_configs/
 GeoLite2-City.mmdb
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database file
+aggregator_data.db

@@ -1,1 +1,1 @@
-vless://97787cac-2572-47a2-a3d3-71364a32272d@45.85.119.102:80?security=none&type=ws&sni=v22.smartyticket.click&path=/graphql&encryption=none&headerType=none
+ss://96a1b724-68d2-4f4d-ab25-38ecd83577bc@45.12.30.46:2096?path=%2F&amp;security=tls&amp;encryption=none&amp;host=LhCgBjGr29.vElTrIxS.OrG&amp;fp=chrome&amp;type=ws&amp;sni=LhCgBjGr29.vElTrIxS.OrG
