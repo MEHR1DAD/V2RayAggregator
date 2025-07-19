@@ -5,11 +5,10 @@ import argparse
 def merge_databases(input_dir, output_db_path):
     """
     Merges data from multiple small SQLite databases into a single main database.
-    It reads all configs from the source databases and upserts them into the target.
+    It recursively finds all .db files in the input directory and upserts their data.
     """
     print("--- Starting Database Merge Process ---")
     
-    # Ensure the output database and its tables exist
     main_conn = sqlite3.connect(output_db_path)
     main_cursor = main_conn.cursor()
     main_cursor.execute('''
@@ -29,22 +28,25 @@ def merge_databases(input_dir, output_db_path):
         return
 
     total_merged_configs = 0
-    db_files = [f for f in os.listdir(input_dir) if f.endswith('.db')]
+    db_files_paths = []
+    
+    # Recursively find all .db files in the input directory and subdirectories
+    for root, dirs, files in os.walk(input_dir):
+        for file in files:
+            if file.endswith('.db'):
+                db_files_paths.append(os.path.join(root, file))
 
-    print(f"Found {len(db_files)} database files to merge in '{input_dir}'.")
+    print(f"Found {len(db_files_paths)} database files to merge in '{input_dir}'.")
 
-    for db_file in db_files:
-        source_db_path = os.path.join(input_dir, db_file)
+    for db_path in db_files_paths:
         try:
-            source_conn = sqlite3.connect(source_db_path)
+            source_conn = sqlite3.connect(db_path)
             source_cursor = source_conn.cursor()
             
-            # Fetch all configs from the source database
             source_cursor.execute("SELECT config, source_url, country_code, speed_kbps, last_tested FROM configs")
             configs_to_merge = source_cursor.fetchall()
             
             if configs_to_merge:
-                # Use executemany for an efficient bulk upsert
                 main_cursor.executemany('''
                     INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested)
                     VALUES (?, ?, ?, ?, ?)
@@ -55,12 +57,12 @@ def merge_databases(input_dir, output_db_path):
                         last_tested = excluded.last_tested
                 ''', configs_to_merge)
                 main_conn.commit()
-                print(f"  -> Merged {len(configs_to_merge)} configs from {db_file}.")
+                print(f"  -> Merged {len(configs_to_merge)} configs from {os.path.basename(db_path)}.")
                 total_merged_configs += len(configs_to_merge)
 
             source_conn.close()
         except sqlite3.Error as e:
-            print(f"  -> Error processing {db_file}: {e}")
+            print(f"  -> Error processing {os.path.basename(db_path)}: {e}")
 
     main_conn.close()
     print(f"\n--- Database merge finished. A total of {total_merged_configs} records were processed. ---")
