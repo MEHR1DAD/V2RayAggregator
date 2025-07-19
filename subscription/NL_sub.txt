@@ -1,1 +1,2 @@
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.211.135:8880?path=%2FChannel+id%3A+%40ShadowProxy66%3Fed%3D2560&security=none&encryption=none&host=reedfree8mahsang2.redorg.ir&type=ws
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.4.147:80?path=Telegram@Config_Rayegan/?ed=2560&security=none&encryption=none&host=redfree8.pooriashop.ir&type=ws
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880?allowInsecure=0&sni=cf.d3z.net&type=ws&host=cf.d3z.net&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
