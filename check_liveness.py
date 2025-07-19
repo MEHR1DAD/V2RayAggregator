@@ -4,6 +4,7 @@ import subprocess
 import json
 import yaml
 import random
+import time
 from utils import extract_ip_from_connection
 
 # --- Load Configuration ---
@@ -16,6 +17,13 @@ CANDIDATES_OUTPUT_FILE = "candidates.txt"
 STATE_FILE = "liveness_state.json"
 CONNECTION_TIMEOUT = config['settings']['check_liveness']['connection_timeout']
 LIVENESS_CHUNK_SIZE = config['settings']['check_liveness']['chunk_size']
+START_TIME = time.time()
+# Set a safe exit margin (53 minutes in seconds) before the hard 55-min timeout
+WORKFLOW_TIMEOUT_SECONDS = 53 * 60
+
+def is_approaching_timeout():
+    """Checks if the script is approaching the GitHub Actions timeout."""
+    return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 
 def load_state():
     """Loads the state, which includes indices of already tested configs."""
@@ -57,12 +65,11 @@ async def process_batch(batch_of_targets):
     return live_configs_in_batch
 
 async def main():
-    """Main function to run the liveness check process using stateful random sampling."""
+    """Main function to run the liveness check process using stateful random sampling and a graceful exit."""
     if not os.path.exists(INPUT_DIR):
         print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
         return
 
-    # 1. Load all configs from files
     all_configs = []
     for filename in sorted(os.listdir(INPUT_DIR)):
         if filename.endswith("_configs.txt"):
@@ -77,60 +84,67 @@ async def main():
     total_configs = len(all_configs)
     print(f"Loaded {total_configs} total configs.")
 
-    # 2. Load state and determine available configs to test
     state = load_state()
-    tested_indices = set(state.get("tested_indices", []))
+    tested_indices_in_cycle = set(state.get("tested_indices", []))
     
-    all_indices = set(range(total_configs))
-    available_indices = list(all_indices - tested_indices)
+    # This will hold all live configs found *in this specific run*
+    live_configs_this_run = []
 
-    # If all configs have been tested, start a new cycle
-    if not available_indices:
-        print("All configs have been tested in this cycle. Starting a new cycle.")
-        tested_indices = set()
-        available_indices = list(all_indices)
+    while True:
+        if is_approaching_timeout():
+            print("⏰ Approaching workflow timeout. Saving state and exiting gracefully.")
+            break
 
-    print(f"{len(available_indices)} configs remaining in this cycle. Taking a random sample of up to {LIVENESS_CHUNK_SIZE}.")
+        all_indices = set(range(total_configs))
+        available_indices = list(all_indices - tested_indices_in_cycle)
 
-    # 3. Take a random sample from the available configs
-    sample_size = min(LIVENESS_CHUNK_SIZE, len(available_indices))
-    sampled_indices = random.sample(available_indices, sample_size)
-    configs_to_test_chunk = [all_configs[i] for i in sampled_indices]
+        if not available_indices:
+            print("Cycle complete. All configs tested. Resetting cycle.")
+            tested_indices_in_cycle = set()
+            available_indices = list(all_indices)
 
-    # 4. Prepare valid targets for the batch
-    valid_targets = []
-    for config in configs_to_test_chunk:
-        host_port_str = extract_ip_from_connection(config)
-        if host_port_str and ':' in host_port_str:
-            try:
-                host, port_str = host_port_str.rsplit(':', 1)
-                port = int(port_str)
-                if host and 1 <= port <= 65535:
-                    valid_targets.append({'config': config, 'host': host, 'port': port})
-            except (ValueError, IndexError):
-                continue
-    
-    # 5. Process the batch
-    live_configs = []
-    if valid_targets:
-        live_configs = await process_batch(valid_targets)
-    else:
-        print("No valid targets could be extracted from the random sample.")
+        print(f"\n{len(available_indices)} configs remaining in this cycle. Processing a new batch.")
 
-    # 6. Write live configs to the candidates file
-    if live_configs:
-        print(f"\nFound {len(live_configs)} live candidates. Writing to '{CANDIDATES_OUTPUT_FILE}'.")
+        sample_size = min(LIVENESS_CHUNK_SIZE, len(available_indices))
+        if sample_size == 0:
+            break # Should not happen if logic is correct, but as a safeguard.
+            
+        sampled_indices = random.sample(available_indices, sample_size)
+        configs_to_test_chunk = [all_configs[i] for i in sampled_indices]
+
+        valid_targets = []
+        for config in configs_to_test_chunk:
+            host_port_str = extract_ip_from_connection(config)
+            if host_port_str and ':' in host_port_str:
+                try:
+                    host, port_str = host_port_str.rsplit(':', 1)
+                    port = int(port_str)
+                    if host and 1 <= port <= 65535:
+                        valid_targets.append({'config': config, 'host': host, 'port': port})
+                except (ValueError, IndexError):
+                    continue
+        
+        if valid_targets:
+            live_in_batch = await process_batch(valid_targets)
+            live_configs_this_run.extend(live_in_batch)
+        else:
+            print("No valid targets could be extracted from the current random sample.")
+
+        tested_indices_in_cycle.update(set(sampled_indices))
+        # Save state after every batch to ensure progress is not lost
+        save_state({"tested_indices": list(tested_indices_in_cycle)})
+        print(f"State saved. {len(tested_indices_in_cycle)} configs tested in this cycle so far.")
+
+    # Write all candidates found in this entire run to the output file
+    if live_configs_this_run:
+        print(f"\nFound a total of {len(live_configs_this_run)} live candidates in this run. Writing to '{CANDIDATES_OUTPUT_FILE}'.")
         with open(CANDIDATES_OUTPUT_FILE, 'w', encoding='utf-8') as f:
-            f.write("\n".join(live_configs))
+            f.write("\n".join(live_configs_this_run))
     else:
-        print(f"\nNo live candidates found in this sample. Clearing '{CANDIDATES_OUTPUT_FILE}'.")
+        print(f"\nNo live candidates found in this run. Clearing '{CANDIDATES_OUTPUT_FILE}'.")
         open(CANDIDATES_OUTPUT_FILE, 'w').close()
 
-    # 7. Update and save the state
-    newly_tested_indices = tested_indices.union(set(sampled_indices))
-    save_state({"tested_indices": list(newly_tested_indices)})
-    print(f"State saved. {len(newly_tested_indices)} configs tested in this cycle so far.")
-    print("Liveness check process finished successfully.")
+    print("Liveness check process finished.")
 
 if __name__ == "__main__":
     asyncio.run(main())
