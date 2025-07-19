@@ -7,10 +7,10 @@ import geoip2.database
 import yaml
 import re
 import time
-import argparse # Import argparse
+import argparse
+import sqlite3 # Moved import to the top of the file
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
-# We don't need database functions here anymore, as each worker writes to its own db
 
 # --- Load Configuration ---
 with open("config.yml", "r", encoding="utf-8") as f:
@@ -164,11 +164,6 @@ async def process_batch(batch, reader, start_port):
     return successful_in_batch
 
 async def main(input_path, db_path):
-    """
-    Main function to run speed tests on a given file of candidates and save
-    results to a worker-specific database.
-    """
-    # Each worker creates and manages its own database file
     initialize_worker_db(db_path)
     
     if not os.path.exists(GEOIP_DB):
@@ -205,7 +200,6 @@ async def main(input_path, db_path):
         
         successful_in_batch = await process_batch(batch, reader, start_port)
         if successful_in_batch:
-            # Upsert results into the worker's own database
             bulk_upsert_to_worker_db(db_path, successful_in_batch)
             
     reader.close()
@@ -218,6 +212,4 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    # We need to import sqlite3 here because it's used in the worker db functions
-    import sqlite3
     asyncio.run(main(args.input, args.db_file))
