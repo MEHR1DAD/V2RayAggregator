@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install Dependencies
-        run: pip install pyyaml
+        run: pip install pyyaml httpx requests
 
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
@@ -133,7 +133,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Matrix)"
           git add .
-          if git diff --stained --quiet; then
+          if git diff --staged --quiet; then
             echo "No changes detected.";
           else
             git commit -m "feat: update data via matrix workflow"
