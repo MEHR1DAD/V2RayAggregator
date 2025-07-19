@@ -6,6 +6,7 @@ from datetime import datetime
 import geoip2.database
 import yaml
 import re
+import time # Import time module
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 from database import initialize_db, bulk_update_configs
@@ -22,13 +23,14 @@ REQUEST_TIMEOUT = config['settings']['exp_country']['request_timeout']
 SPEED_TEST_URL = config['settings']['exp_country']['speed_test_url']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
+START_TIME = time.time()
+WORKFLOW_TIMEOUT_SECONDS = 53 * 60
 
-# List of modern, supported ciphers for Shadowsocks
-SUPPORTED_SS_CIPHERS = {
-    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
-    "aes-256-gcm", "aes-128-gcm", "chacha20-poly1305", "chacha20-ietf-poly1305"
-}
+def is_approaching_timeout():
+    """Checks if the script is approaching the GitHub Actions timeout."""
+    return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 
+# --- The parse_proxy_uri_to_xray_json function remains unchanged ---
 def parse_proxy_uri_to_xray_json(uri: str):
     """
     Parses a proxy URI and converts it into a valid Xray outbound configuration JSON object.
@@ -36,7 +38,6 @@ def parse_proxy_uri_to_xray_json(uri: str):
     """
     try:
         if uri.startswith("vless://"):
-            # Simplified VLESS parser
             match = re.match(r'vless://([^@]+)@([^:?#]+):(\d+)(?:\?([^#]*))?(?:#.*)?', uri)
             if not match: return None
             uuid, address, port, query = match.groups()
@@ -52,10 +53,6 @@ def parse_proxy_uri_to_xray_json(uri: str):
                     "wsSettings": {"path": params.get("path", "/")} if params.get("type") == "ws" else None,
                 }
             }
-        elif uri.startswith("vmess://"):
-            # Placeholder for your existing VMess parser logic
-            # For now, we'll skip these to ensure the pipeline runs
-            return None 
         elif uri.startswith("trojan://"):
             match = re.match(r'trojan://([^@]+)@([^:?#]+):(\d+)(?:\?([^#]*))?(?:#.*)?', uri)
             if not match: return None
@@ -71,18 +68,13 @@ def parse_proxy_uri_to_xray_json(uri: str):
                     "tlsSettings": {"serverName": params.get("sni", address)},
                 }
             }
-        elif uri.startswith("ss://"):
-            # Placeholder for your existing SS parser logic
-            return None
+        # Add other parsers (VMess, SS) here when ready
     except Exception:
         return None
     return None
 
+# --- The test_proxy_speed function remains unchanged ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    """
-    Tests a proxy's speed by downloading a file through it.
-    Returns speed in KB/s, or 0.0 if the test fails.
-    """
     config_path = f"temp_config_{port}.json"
     xray_process = None
     
@@ -104,9 +96,8 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             XRAY_PATH, '-c', config_path,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
-        await asyncio.sleep(2) # Give Xray time to start
+        await asyncio.sleep(2)
 
-        # Speed test with curl
         curl_cmd = [
             'curl', '--socks5-hostname', f'127.0.0.1:{port}',
             '-w', '%{speed_download}', '-o', '/dev/null', '-s',
@@ -139,8 +130,8 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         if os.path.exists(config_path):
             os.remove(config_path)
 
+# --- The process_batch function remains unchanged ---
 async def process_batch(batch, reader, start_port):
-    """Processes a batch of configs, tests their speed, and returns data for successful ones."""
     tasks = []
     for i, conn in enumerate(batch):
         tasks.append(test_proxy_speed(conn, start_port + i))
@@ -150,7 +141,7 @@ async def process_batch(batch, reader, start_port):
     successful_in_batch = []
     now = datetime.utcnow().isoformat()
     for conn, speed_kbps in zip(batch, results):
-        if speed_kbps > 1: # Consider speeds > 1 KB/s as successful
+        if speed_kbps > 1:
             host = extract_ip_from_connection(conn)
             ip = resolve_to_ip(host)
             country_code = get_country_code(ip, reader)
@@ -163,7 +154,7 @@ async def main():
     initialize_db()
     
     if not os.path.exists(GEOIP_DB):
-        print(f"GeoIP database not found at {GEOIP_DB}. Cannot proceed.")
+        print(f"GeoIP database not found. Cannot proceed.")
         return
     if not os.path.exists(CANDIDATES_INPUT_FILE):
         print(f"Candidates file '{CANDIDATES_INPUT_FILE}' not found. No configs to test.")
@@ -179,17 +170,22 @@ async def main():
         connections_to_test = f.read().strip().splitlines()
     
     if not connections_to_test:
-        print("No configs found in candidates file. Exiting.")
+        print("No configs in candidates file. Exiting.")
         return
         
     print(f"--- Starting Speed Test on {len(connections_to_test)} candidate configs ---")
 
     all_successful_configs = []
-    start_port = 10900 # Use a different port range to avoid conflicts
+    start_port = 10900
     
     for i in range(0, len(connections_to_test), BATCH_SIZE):
+        # The new graceful exit check
+        if is_approaching_timeout():
+            print("⏰ Approaching workflow timeout. Stopping speed tests to save results.")
+            break
+
         batch = connections_to_test[i:i+BATCH_SIZE]
-        print(f"--- Processing batch {i//BATCH_SIZE + 1} of {len(connections_to_test)//BATCH_SIZE + 1} ---")
+        print(f"--- Processing speed test batch {i//BATCH_SIZE + 1} ---")
         
         successful_in_batch = await process_batch(batch, reader, start_port)
         if successful_in_batch:
@@ -199,10 +195,10 @@ async def main():
         print(f"\nUpserting {len(all_successful_configs)} successfully tested configs into the database...")
         bulk_update_configs(all_successful_configs)
     else:
-        print("\nNo new working configs found to save in this run.")
+        print("\nNo new working configs were found or tested in this run.")
     
     reader.close()
-    print("\nSpeed test process finished successfully.")
+    print("\nSpeed test process finished.")
 
 if __name__ == "__main__":
     asyncio.run(main())
