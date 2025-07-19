@@ -109,7 +109,7 @@ jobs:
           git config --local user.name "GitHub Action (Matrix)"
           git add .
           
-          # Check if there are changes to commit
+          # Check if there are actual changes to commit
           if ! git diff --staged --quiet; then
             # Step 1: Commit the generated changes locally
             git commit -m "chore: data update via matrix workflow"
