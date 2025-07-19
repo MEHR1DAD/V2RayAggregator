@@ -9,6 +9,8 @@ import re
 import time
 import argparse
 import sqlite3
+import base64
+from urllib.parse import urlparse, unquote, parse_qs
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 
@@ -24,58 +26,102 @@ SPEED_TEST_URL = config['settings']['exp_country']['speed_test_url']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
 TASK_TIMEOUT = 60
-# Graceful exit logic constants
 START_TIME = time.time()
 WORKFLOW_TIMEOUT_SECONDS = 53 * 60
 
+# --- Helper functions for DB and timeout (unchanged) ---
 def is_approaching_timeout():
-    """Checks if the script is approaching the GitHub Actions timeout."""
     return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
-
 def initialize_worker_db(db_path):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS configs (
-            config TEXT PRIMARY KEY, source_url TEXT, country_code TEXT,
-            speed_kbps REAL, last_tested TEXT
-        )''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS configs (config TEXT PRIMARY KEY, source_url TEXT, country_code TEXT, speed_kbps REAL, last_tested TEXT)''')
     conn.commit()
     conn.close()
-
 def bulk_upsert_to_worker_db(db_path, configs_data):
     if not configs_data: return
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.executemany('''
-        INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?)
-        ON CONFLICT(config) DO UPDATE SET
-            speed_kbps = excluded.speed_kbps, last_tested = excluded.last_tested
-    ''', configs_data)
+    cursor.executemany('''INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?) ON CONFLICT(config) DO UPDATE SET speed_kbps = excluded.speed_kbps, last_tested = excluded.last_tested''', configs_data)
     conn.commit()
     conn.close()
 
+# --- THE BIG UPDATE: FULL PARSER FUNCTION ---
 def parse_proxy_uri_to_xray_json(uri: str):
-    # This function remains unchanged
+    """
+    Parses various proxy URIs (VLESS, VMess, SS, Trojan) into a valid Xray outbound configuration.
+    """
     try:
         if uri.startswith("vless://"):
-            match = re.match(r'vless://([^@]+)@([^:?#]+):(\d+)(?:\?([^#]*))?(?:#.*)?', uri)
-            if not match: return None
-            uuid, address, port, query = match.groups()
-            params = dict(p.split('=') for p in query.split('&')) if query else {}
-            return {"protocol": "vless", "settings": {"vnext": [{"address": address, "port": int(port), "users": [{"id": uuid, "flow": params.get("flow", "xtls-rprx-vision")}]}]}, "streamSettings": {"network": params.get("type", "tcp"), "security": params.get("security", "none"), "tlsSettings": {"serverName": params.get("sni", address)} if params.get("security") == "tls" else None, "wsSettings": {"path": params.get("path", "/")} if params.get("type") == "ws" else None}}
+            parsed = urlparse(uri)
+            params = parse_qs(parsed.query)
+            user_object = {"id": parsed.username, "flow": params.get("flow", [""])[0], "encryption": "none"}
+            return {
+                "protocol": "vless",
+                "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]},
+                "streamSettings": {
+                    "network": params.get("type", ["tcp"])[0],
+                    "security": params.get("security", ["none"])[0],
+                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security", ["none"])[0] == "tls" else None,
+                    "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type", ["ws"])[0] == "ws" else None,
+                }
+            }
+        elif uri.startswith("vmess://"):
+            decoded_json_str = base64.b64decode(uri.replace("vmess://", "")).decode('utf-8')
+            vmess_data = json.loads(decoded_json_str)
+            if not all(k in vmess_data for k in ['add', 'port', 'id']): return None
+            user_object = {"id": vmess_data.get("id"), "alterId": int(vmess_data.get("aid", 0)), "security": vmess_data.get("scy", "auto")}
+            return {
+                "protocol": "vmess",
+                "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]},
+                "streamSettings": {
+                    "network": vmess_data.get("net", "tcp"),
+                    "security": vmess_data.get("tls", "none"),
+                    "tlsSettings": {"serverName": vmess_data.get("sni")} if vmess_data.get("tls") == "tls" else None,
+                    "wsSettings": {"path": vmess_data.get("path")} if vmess_data.get("net") == "ws" else None,
+                }
+            }
         elif uri.startswith("trojan://"):
-            match = re.match(r'trojan://([^@]+)@([^:?#]+):(\d+)(?:\?([^#]*))?(?:#.*)?', uri)
-            if not match: return None
-            password, address, port, query = match.groups()
-            params = dict(p.split('=') for p in query.split('&')) if query else {}
-            return {"protocol": "trojan", "settings": {"servers": [{"address": address, "port": int(port), "password": password}]}, "streamSettings": {"network": params.get("type", "tcp"), "security": params.get("security", "tls"), "tlsSettings": {"serverName": params.get("sni", address)}}}
+            parsed = urlparse(uri)
+            params = parse_qs(parsed.query)
+            if not parsed.username: return None
+            return {
+                "protocol": "trojan",
+                "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]},
+                "streamSettings": {
+                    "network": params.get("type", ["tcp"])[0],
+                    "security": params.get("security", ["tls"])[0],
+                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}
+                }
+            }
+        elif uri.startswith("ss://"):
+            parsed = urlparse(uri)
+            if not parsed.username or not parsed.hostname: # Basic check
+                 # Handle base64 encoded ss links
+                encoded_part = uri.split("ss://")[1].split("#")[0]
+                try:
+                    decoded = base64.urlsafe_b64decode(encoded_part + '===').decode('utf-8')
+                    creds, server = decoded.rsplit('@', 1)
+                    method, password = creds.split(':', 1)
+                    hostname, port_str = server.rsplit(':', 1)
+                    port = int(port_str)
+                except Exception:
+                    return None
+            else:
+                user_info = unquote(parsed.username)
+                method, password = user_info.split(":", 1)
+                hostname, port = parsed.hostname, parsed.port
+            
+            return {
+                "protocol": "shadowsocks",
+                "settings": {"servers": [{"address": hostname, "port": port, "method": method, "password": password}]}
+            }
     except Exception:
         return None
     return None
 
+# --- test_proxy_speed and process_batch functions remain unchanged ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    # This function remains unchanged
     config_path = f"temp_config_{port}.json"
     xray_process = None
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
@@ -94,7 +140,7 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
                 return speed_bytes_per_sec / 1024
             except (ValueError, TypeError): return 0.0
         else: return 0.0
-    except Exception as e: return 0.0
+    except Exception: return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
             try:
@@ -122,6 +168,7 @@ async def process_batch(batch, reader, start_port):
                 print(f"✅ Success ({round(speed_kbps)} KB/s) | Country: {country_code} | Config: {conn[:40]}...")
     return successful_in_batch
 
+# --- main function remains unchanged ---
 async def main(input_path, db_path):
     initialize_worker_db(db_path)
     if not os.path.exists(GEOIP_DB): return
