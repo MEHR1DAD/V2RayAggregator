@@ -15,7 +15,6 @@ jobs:
   prepare-work:
     runs-on: ubuntu-latest
     outputs:
-      # We will output a JSON string array like "[0,1,2,3,4,5,6,7,8,9]"
       batch_matrix: ${{ steps.prep.outputs.batch_matrix }}
     steps:
       - name: Checkout Repository
@@ -25,13 +24,23 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install Dependencies
-        run: pip install pyyaml
+        run: pip install requests pyyaml httpx
 
-      - name: Create Batches and Generate Matrix
+      - name: Run Data Acquisition and Batching
         id: prep
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          # STEP 1: Acquire the data first
+          echo "--- Acquiring and preparing all configs ---"
+          python manage_sources.py
+          python merge_configs.py
+
+          # STEP 2: Now, create batches from the acquired data
+          echo "--- Creating parallel work batches ---"
           python prepare_batches.py
-          # Generate the JSON array string for the matrix
+          
+          # STEP 3: Generate the matrix for the next job
           count=$(ls -1q ci_batches/ | wc -l)
           if [ "$count" -gt 0 ]; then
             matrix=$(seq 0 $(($count - 1)) | jq -c -s '.')
@@ -50,12 +59,11 @@ jobs:
   # JOB 2: Runs tests in parallel using a matrix strategy
   run-tests:
     needs: prepare-work
-    if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null # Run only if batches were created
+    if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        # Directly use the JSON array string from the previous job
         batch_id: ${{ fromJson(needs.prepare-work.outputs.batch_matrix) }}
     
     steps:
@@ -89,9 +97,6 @@ jobs:
           BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
           CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
-
-          echo "--- Worker ${{ matrix.batch_id }} processing $BATCH_FILE ---"
-          
           python check_liveness.py --input $BATCH_FILE --output $CANDIDATES_FILE
           python exp_country.py --input $CANDIDATES_FILE --db-file $DB_FILE
 
