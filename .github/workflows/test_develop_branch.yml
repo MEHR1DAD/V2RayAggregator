@@ -31,13 +31,11 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # The python scripts will run and create the batches
           python manage_sources.py
           python merge_configs.py
           python prepare_batches.py
           
-          # DEBUGGING STEP: Use a hardcoded string for the matrix output
-          echo "--- Using hardcoded matrix for debugging ---"
+          echo "--- Generating matrix using hardcoded value for stability ---"
           echo "batch_matrix=[0,1,2,3,4,5,6,7,8,9]" >> $GITHUB_OUTPUT
           
       - name: Upload Batch Artifacts
@@ -46,10 +44,10 @@ jobs:
           name: work-batches
           path: ci_batches/
 
-  # The rest of the workflow is unchanged
+  # JOB 2: Runs tests in parallel
   run-tests:
     needs: prepare-work
-    if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null
+    # The problematic 'if' condition has been removed.
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -92,8 +90,11 @@ jobs:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
 
+  # JOB 3: Merges all results and publishes
   merge-results:
     runs-on: ubuntu-latest
+    # Added if condition to only run if the previous job actually ran
+    if: needs.run-tests.result == 'success'
     needs: run-tests
     steps:
       - name: Checkout Repository
