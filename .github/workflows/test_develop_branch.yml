@@ -15,7 +15,8 @@ jobs:
   prepare-work:
     runs-on: ubuntu-latest
     outputs:
-      num_batches: ${{ steps.prep.outputs.num_batches }}
+      # We will output a JSON string array like "[0,1,2,3,4,5,6,7,8,9]"
+      batch_matrix: ${{ steps.prep.outputs.batch_matrix }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -26,13 +27,19 @@ jobs:
       - name: Install Dependencies
         run: pip install pyyaml
 
-      - name: Create Batches
+      - name: Create Batches and Generate Matrix
         id: prep
         run: |
           python prepare_batches.py
-          # Count the number of created batch files to pass to the matrix
+          # Generate the JSON array string for the matrix
           count=$(ls -1q ci_batches/ | wc -l)
-          echo "num_batches=$count" >> $GITHUB_OUTPUT
+          if [ "$count" -gt 0 ]; then
+            matrix=$(seq 0 $(($count - 1)) | jq -c -s '.')
+          else
+            matrix="[]"
+          fi
+          echo "Generated Matrix: $matrix"
+          echo "batch_matrix=$matrix" >> $GITHUB_OUTPUT
           
       - name: Upload Batch Artifacts
         uses: actions/upload-artifact@v4
@@ -43,12 +50,13 @@ jobs:
   # JOB 2: Runs tests in parallel using a matrix strategy
   run-tests:
     needs: prepare-work
+    if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null # Run only if batches were created
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # Ensures all jobs run even if one fails
+      fail-fast: false
       matrix:
-        # Creates a matrix from 0 to (num_batches - 1)
-        batch_id: ${{ fromJson(format('[{0}]', join(range(0, needs.prepare-work.outputs.num_batches), ','))) }}
+        # Directly use the JSON array string from the previous job
+        batch_id: ${{ fromJson(needs.prepare-work.outputs.batch_matrix) }}
     
     steps:
       - name: Checkout Repository
@@ -77,16 +85,13 @@ jobs:
           path: ci_batches/
           
       - name: Run Tests on Assigned Batch
-        id: test
         run: |
-          # Define file names for this specific worker
           BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
           CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
 
           echo "--- Worker ${{ matrix.batch_id }} processing $BATCH_FILE ---"
           
-          # We need to modify scripts to accept file paths as arguments
           python check_liveness.py --input $BATCH_FILE --output $CANDIDATES_FILE
           python exp_country.py --input $CANDIDATES_FILE --db-file $DB_FILE
 
@@ -114,7 +119,6 @@ jobs:
       - name: Download All Result Artifacts
         uses: actions/download-artifact@v4
         with:
-          # Using a pattern to download all database results
           name: db-result-*
           path: db_results/
 
