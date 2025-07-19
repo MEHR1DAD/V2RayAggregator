@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # JOB 1: Prepares the work batches for parallel workers
+  # JOB 1: Prepares the work batches
   prepare-work:
     runs-on: ubuntu-latest
     outputs:
@@ -26,9 +26,6 @@ jobs:
       - name: Install Dependencies
         run: pip install pyyaml httpx requests
 
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
-
       - name: Run Data Acquisition and Batching
         id: prep
         env:
@@ -37,12 +34,19 @@ jobs:
           python manage_sources.py
           python merge_configs.py
           python prepare_batches.py
+          
+          # --- ALTERNATIVE MATRIX GENERATION (DEBUGGING) ---
+          echo "--- Generating matrix using bash loop ---"
           count=$(ls -1q ci_batches/ | wc -l)
+          matrix="["
           if [ "$count" -gt 0 ]; then
-            matrix=$(seq 0 $(($count - 1)) | jq -c -s '.')
-          else
-            matrix="[]"
+            for i in $(seq 0 $(($count - 1))); do
+              matrix+="$i,"
+            done
+            # Remove the last comma
+            matrix="${matrix%,}"
           fi
+          matrix+="]"
           echo "Generated Matrix: $matrix"
           echo "batch_matrix=$matrix" >> $GITHUB_OUTPUT
           
@@ -52,7 +56,7 @@ jobs:
           name: work-batches
           path: ci_batches/
 
-  # JOB 2: Runs tests in parallel
+  # The rest of the workflow is unchanged
   run-tests:
     needs: prepare-work
     if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null
@@ -97,7 +101,6 @@ jobs:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
 
-  # JOB 3: Merges all results and publishes
   merge-results:
     runs-on: ubuntu-latest
     needs: run-tests
@@ -125,7 +128,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Matrix)"
           git add .
-          # Corrected --staged from --stained
           if git diff --staged --quiet; then
             echo "No changes detected.";
           else
