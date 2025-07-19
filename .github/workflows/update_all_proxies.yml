@@ -100,23 +100,3 @@ jobs:
       - name: Merge, Generate, and Finalize
         run: |
           python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
-          python create_rotating_sub.py
-          python generate_readme.py
-      - name: Commit and Push Final Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action (Matrix)"
-          
-          # First, pull the latest changes from the remote repository
-          git pull --rebase
-          
-          # Now, add the new/changed files
-          git add .
-          
-          # Check for changes and commit/push if necessary
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: data update via matrix workflow"
-            git push
-          fi
