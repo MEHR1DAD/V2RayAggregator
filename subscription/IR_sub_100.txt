@@ -1,4 +1,1 @@
-vless://291aae36-685f-4416-9b90-de0ea254f9d4@v2test.bing-net.com:9820?security=none&encryption=none&host=varzesh3.com&headerType=http&type=tcp
-vless://e16c1f00-afa4-405f-a944-932f81e18e23@nv137.momdping.com:443?path=/&security=tls&encryption=none&type=ws&sni=nv137.momdping.com
-vless://59c70f20-100f-4e1d-aebd-02df489451df@85.133.234.80:443?security=none&type=tcp&host=www.p30day.ir&headerType=http
-vless://91511971-a8d3-4d9d-aa5d-0206c9609939@185.143.232.201:80?security=none&type=ws&path=%2F
+vless://bdd9b3a0-d57c-4de0-aaa9-53ba0241bffe@185.124.175.102:50325?security=none&type=tcp&host=anten.ir&path=%2F&headerType=http

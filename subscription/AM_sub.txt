@@ -1,1 +1,1 @@
-vless://97b11ee6-a62a-4e60-839c-de974a155089@188.164.159.179:443?security=tls&sni=ttgju.org&type=ws&host=hj-de.ttgju.org&path=%2Fhajmi%3Fed%3D2560&alpn=http%2F1.1
+vless://c8b6a94f-eb38-4b68-9ae7-fadc7d690e16@dlarm.kuckenpq.ir:32135?encryption=none&security=reality&sni=journalofbigdata.springeropen.com&fp=randomized&pbk=0nV4IrMDDWiuFhntmuTBnQT3Q2uPagsRV1p4KXRnzCk&sid=085753500f657097&type=grpc&authority=&serviceName=32135vless&mode=gun
