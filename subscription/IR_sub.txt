@@ -1,3 +1,3 @@
-vless://56480b5b-aa8e-414c-996c-838b1c60b55a@185.143.233.120:443?path=%2F%40Am20094-%40Am20094-%40Am20094&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=amirgeek.vijra.ir&fp=chrome&type=ws&sni=mydigipay.com
-vless://e3aad33a-a244-4dfc-9152-50cf00cdb229@iran24.fastbest.ir:2098?security=none&encryption=none&headerType=http&type=tcp
-vless://af9dacf8-94a7-4f39-9231-bfbb3b3b4676@sar8pj.de3.bbbbbbbbbbbb9.biz:10217?security=none&encryption=none&host=efvu5cgz.speedtest1.shatel.ir&headerType=http&type=tcp
+vless://002268b5-b3f7-456a-b4ec-cfbb927504fe@tn14.radmehrmax.ir:8088?encryption=none&security=none&type=tcp&headerType=http
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlRHOkB2MnJheV9zdWIiLA0KICAiYWRkIjogIjM3LjIwMi4yMjUuNzQiLA0KICAicG9ydCI6ICI0MDUyMSIsDQogICJpZCI6ICJiMzY4YTg2ZS02ZmJjLTQzMWMtOWYwNS02ZTFmYWI4OTY4NTgiLA0KICAiYWlkIjogIjAiLA0KICAic2N5IjogImF1dG8iLA0KICAibmV0IjogIndzIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIi8iLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIiwNCiAgImZwIjogIiINCn0
+vless://a778d6cf-818f-4f51-b4c5-a2967f385f10@tnl36.radvinmax.ir:8764?encryption=none&security=none&type=tcp&headerType=http

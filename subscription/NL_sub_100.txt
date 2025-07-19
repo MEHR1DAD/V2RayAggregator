@@ -1,5 +1,1 @@
-vless://badbc35d-a86b-412d-ac05-29ab54643c80@31.207.45.75:50443?&security=tls&fp=random&sni=mot.majusti.dpdns.org&type=ws&headerType=none&host=mot.majusti.dpdns.org&path=%2F%3Fed%3D2560
-vless://10b59513-ef76-4494-a925-305ec45dd3a4@77.246.100.169:2040?encryption=none&security=tls&sni=github.com&fp=chrome&type=tcp&headerType=none
-vless://504fa227-6493-4c4b-983c-4661c96a0e11@213.166.71.40:80?type=ws&encryption=none&host=vv.cscfwoker.fun&path=Telegram%F0%9F%87%A8%F0%9F%87%B3
-vless://7fed5bf9-a1de-41a0-ab89-694265c4895f@45.131.4.235:2086?security=none&type=ws&host=domain2025.dpdns.org&path=%2F%40vpnAndroid2.%40vpnAndroid2.%40vpnAndroid2.%40vpnAndroid2%3Fed%3D2560
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.149.12.183:2052?type=ws&host=redw.pooriam.ir&path=%2F
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@45.131.211.135:8880?path=%2FChannel+id%3A+%40ShadowProxy66%3Fed%3D2560&security=none&encryption=none&host=reedfree8mahsang2.redorg.ir&type=ws

@@ -1,1 +1,1 @@
-vless://0603385b-2d6f-4bfb-8f26-d26dbc85878d@45.82.101.5:443?security=tls&sni=revil.servehttp.com&alpn=http/1.1&fp=chrome&type=ws&path=/?ed%3D2048&host=revil.servehttp.com&encryption=none
+vless://38241740-70ce-447c-9f2e-34a3f7fd08a9@151.101.242.172:80?path=WEDBAZ%3Fed%3D2048&security=none&encryption=none&host=Finland.ss.ss&type=ws
