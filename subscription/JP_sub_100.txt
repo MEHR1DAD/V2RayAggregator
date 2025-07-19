@@ -1,2 +1,1 @@
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@156.238.18.191:8880?&sni=sg.laoyoutiao.link&type=ws&headerType=none&host=sg.laoyoutiao.link&path=%2FTelegram%40WangCai2%2F%3Fed%3D2048
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@156.238.18.112:8880?&type=ws&headerType=none&host=us.laoyoutiao.link&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40MxlShare%20%40WangCai2%20%2F%3Fed%3D2560
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@156.238.18.20:8880?type=ws&host=sg.laoyoutiao.link&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2048

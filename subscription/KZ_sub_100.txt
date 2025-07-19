@@ -1,1 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@38.107.234.38:57456
+vless://01970283-51b9-4ad4-96ef-9dfc8ee3dd74@194.76.18.109:2087?security=tls&sni=qauuf2.telzirrr.com.tr&type=grpc&serviceName=2087vless&fp=chrome

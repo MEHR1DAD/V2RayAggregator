@@ -1,1 +1,1 @@
-vless://96a1b724-68d2-4f4d-ab25-38ecd83577bc@45.12.31.41:2096?path=%2F&security=tls&alpn=h3%2Ch2&encryption=none&host=LhCgBjGr29.vElTrIxS.OrG&fp=chrome&type=ws&sni=LhCgBjGr29.vElTrIxS.OrG
+ss://96a1b724-68d2-4f4d-ab25-38ecd83577bc@45.12.30.46:2096?path=%2F&amp;security=tls&amp;encryption=none&amp;host=LhCgBjGr29.vElTrIxS.OrG&amp;fp=chrome&amp;type=ws&amp;sni=LhCgBjGr29.vElTrIxS.OrG

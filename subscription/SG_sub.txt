@@ -1,1 +1,5 @@
-vless://219d848d-60f2-4321-8275-72b9b575b37e@206.238.236.216:443?security=tls&sni=qaa.zhuk.us.kg&type=ws&host=qaa.zhuk.us.kg&path=%2F%3Fed%3D2560
+vless://966dc5ee-cd6e-4698-9116-50e6bd301bd9@168.138.165.109:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=buylite.music.apple.com&fp=chrome&pbk=kR-_5J2EPiB9nrdgyXjgzfJQnxQodkGeV_jgKOEnlEM&sid=fc814374abba&type=tcp&headerType=none
+vless://48eccebc-1e36-4c60-b088-55fb793f6688@27.50.48.186:2083?encryption=none&security=tls&sni=ngx.ambercc.filegear-sg.me&fp=chrome&type=ws&host=ngx.ambercc.filegear-sg.me&path=%2F
+vless://a13df940-020c-465f-bc89-ee5279b5cd6a@206.238.237.60:443?security=tls&sni=lw.ylka.us.kg&type=ws&path=%2F%3Fed%3D2560
+trojan://ttfang@160.22.79.166:443?sni=ttfang.fange.me
+vless://49dc19c3-e447-4422-9a54-35af28207a6e@18.143.64.158:60002?encryption=none&security=tls&sni=mihu.sorry.ip-ddns.com&fp=random&type=ws&host=mihu.sorry.ip-ddns.com&path=%2F%3Fed%3D2560

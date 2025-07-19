@@ -1,3 +1,1 @@
-vless://6f183280-b258-437a-a216-e83f7dece776@45.131.6.99:80?path=Telegram%40MARAMBASHI_MARAMBASHI_MARAMBASHI&security=none&encryption=none&host=901.dbodanwi.workers.dev&type=ws
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.131.7.213:8880?type=ws&host=jp.laoyoutiao.link
-vless://f14d0d37-9c0e-4376-9d33-94aba1859e47@a.nl.maviks.eu:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=maviks.eu&fp=chrome&pbk=fPSR5GZpxhOV6Rh7VzMtS4AeRN7ipyNX4waG9JzJzxQ&sid=21181028b56c8702&type=tcp&headerType=none
+vmess://ewogICAgImFkZCI6ICI0NS4xNDkuMTIuNzkiLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICJvYmRpaS5jZmQiLAogICAgImlkIjogIjA1NjQxY2Y1LTU4ZDItNGJhNC1hOWYxLWIzY2RhMGIxZmIxZCIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9saW5rd3MjIiwKICAgICJwb3J0IjogNDQzLAogICAgInBzIjogIvCfj4FSRUxBWS00NS4xNDkuMTIuNzktMTMzMSIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9

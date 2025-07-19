@@ -1,3 +1,1 @@
-vless://4eff2388-2092-4b0a-aa74-0e464889ffaf@109.73.206.92:443?security=reality&sni=google.com&type=tcp&fp=chrome&pbk=cTm0TIKL9qK550XICK2YroOSr1u-f12h5UmBw2EAr2c
-vless://31a27ed1-2ec6-4ab5-95b6-3e213e59e0a9@45.8.211.141:2087?security=tls&sni=Tp3993VbRi.ScOrPiOnBiGpLaY.oRg&type=ws&host=Tp3993VbRi.ScOrPiOnBiGpLaY.oRg&path=%2F&fp=chrome&alpn=h2%2Chttp%2F1.1
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@185.148.105.20:8880?allowInsecure=0&sni=ip.langmanshanxi.top&type=ws&host=ip.langmanshanxi.top&path=/Telegram@节点狂魔2/?ed=2560
+vless://4eff2388-2092-4b0a-aa74-0e464889ffaf@109.73.206.90:443?encryption=none&security=reality&sni=google.com&fp=chrome&pbk=cTm0TIKL9qK550XICK2YroOSr1u-f12h5UmBw2EAr2c&type=tcp&headerType=none

@@ -1,1 +1,1 @@
-vless://cd73bd3a-fbf0-44eb-b8f1-7d9b70dee0da@lon5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpIbzE3bHUwUXlTVmkyOXlTSFloM1JI@89.185.84.185:443
