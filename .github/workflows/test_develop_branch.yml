@@ -1,4 +1,4 @@
-name: Test Pipeline on Develop Branch
+name: Test Matrix Pipeline on Develop Branch
 
 on:
   push:
@@ -11,73 +11,127 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test-pipeline:
+  # JOB 1: Prepares the work batches for parallel workers
+  prepare-work:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    outputs:
+      num_batches: ${{ steps.prep.outputs.num_batches }}
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install pyyaml
 
-      - name: Install dependencies
+      - name: Create Batches
+        id: prep
         run: |
-          python -m pip install --upgrade pip
-          pip install requests geoip2 jdatetime pytz pyyaml httpx
+          python prepare_batches.py
+          # Count the number of created batch files to pass to the matrix
+          count=$(ls -1q ci_batches/ | wc -l)
+          echo "num_batches=$count" >> $GITHUB_OUTPUT
+          
+      - name: Upload Batch Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: work-batches
+          path: ci_batches/
 
-      - name: Download Cached Dependencies
+  # JOB 2: Runs tests in parallel using a matrix strategy
+  run-tests:
+    needs: prepare-work
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Ensures all jobs run even if one fails
+      matrix:
+        # Creates a matrix from 0 to (num_batches - 1)
+        batch_id: ${{ fromJson(format('[{0}]', join(range(0, needs.prepare-work.outputs.num_batches), ','))) }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install requests geoip2 pyyaml httpx
+
+      - name: Download Cached Dependencies (Xray, GeoIP)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Downloading cached GeoIP database..."
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
-          
-          echo "Downloading cached Xray-core..."
           LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
-          
-          if [ -z "$LATEST_XRAY_TAG" ]; then
-            echo "::error::No cached Xray release found."
-            exit 1
-          fi
-          
-          echo "Using cached Xray version: $LATEST_XRAY_TAG"
+          if [ -z "$LATEST_XRAY_TAG" ]; then exit 1; fi
           gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
           chmod +x xray
 
-      - name: Run Staged Testing and Generation Pipeline
+      - name: Download Batch Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: work-batches
+          path: ci_batches/
+          
+      - name: Run Tests on Assigned Batch
+        id: test
         run: |
-          echo "--- Running Main Data Pipeline ---"
+          # Define file names for this specific worker
+          BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
+          CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
+          DB_FILE="results_${{ matrix.batch_id }}.db"
+
+          echo "--- Worker ${{ matrix.batch_id }} processing $BATCH_FILE ---"
           
-          echo "==> STAGE 1: Managing sources..."
-          python manage_sources.py
-          
-          echo "==> STAGE 2: Merging configs..."
-          python merge_configs.py
-          
-          echo "==> STAGE 3: Running incremental liveness check..."
-          python check_liveness.py
-          
-          echo "==> STAGE 4: Running speed test on live candidates..."
-          python exp_country.py
-          
-          echo "==> STAGE 5: Generating subscription files and README..."
+          # We need to modify scripts to accept file paths as arguments
+          python check_liveness.py --input $BATCH_FILE --output $CANDIDATES_FILE
+          python exp_country.py --input $CANDIDATES_FILE --db-file $DB_FILE
+
+      - name: Upload Result Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-result-${{ matrix.batch_id }}
+          path: results_${{ matrix.batch_id }}.db
+
+  # JOB 3: Merges all results and publishes the final output
+  merge-results:
+    runs-on: ubuntu-latest
+    needs: run-tests
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install pyyaml jdatetime pytz
+
+      - name: Download All Result Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          # Using a pattern to download all database results
+          name: db-result-*
+          path: db_results/
+
+      - name: Merge, Generate, and Finalize
+        run: |
+          python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
           python create_rotating_sub.py
           python generate_readme.py
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          MAXMIND_LICENSE_KEY: ${{ secrets.MAXMIND_LICENSE_KEY }}
 
-      - name: Commit and push test changes
+      - name: Commit and Push Final Changes
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action (Test)"
+          git config --local user.name "GitHub Action (Matrix)"
           git add .
           if git diff --staged --quiet; then
-            echo "No changes detected. Skipping commit."
+            echo "No changes detected.";
           else
-            git commit -m "test: data update on develop branch"
+            git commit -m "feat: update data via matrix workflow"
             git push
           fi
