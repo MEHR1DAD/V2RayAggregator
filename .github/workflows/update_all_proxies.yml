@@ -106,12 +106,17 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Matrix)"
+          
+          # First, pull the latest changes from the remote repository
+          git pull --rebase
+          
+          # Now, add the new/changed files
           git add .
+          
+          # Check for changes and commit/push if necessary
           if git diff --staged --quiet; then
-            echo "No changes detected."
+            echo "No changes to commit."
           else
-            # Pull latest changes before pushing to avoid conflicts
-            git pull --rebase
             git commit -m "chore: data update via matrix workflow"
             git push
           fi
