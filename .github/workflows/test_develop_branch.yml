@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # JOB 1: Prepares the work batches
+  # JOB 1 is unchanged and correct
   prepare-work:
     runs-on: ubuntu-latest
     outputs:
@@ -25,7 +25,8 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: pip install pyyaml httpx requests
-
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Run Data Acquisition and Batching
         id: prep
         env:
@@ -34,26 +35,28 @@ jobs:
           python manage_sources.py
           python merge_configs.py
           python prepare_batches.py
-          
-          echo "--- Generating matrix using hardcoded value for stability ---"
-          echo "batch_matrix=[0,1,2,3,4,5,6,7,8,9]" >> $GITHUB_OUTPUT
-          
+          count=$(ls -1q ci_batches/ | wc -l)
+          if [ "$count" -gt 0 ]; then
+            matrix=$(seq 0 $(($count - 1)) | jq -c -s '.')
+          else
+            matrix="[]"
+          fi
+          echo "batch_matrix=$matrix" >> $GITHUB_OUTPUT
       - name: Upload Batch Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: work-batches
           path: ci_batches/
 
-  # JOB 2: Runs tests in parallel
+  # JOB 2 is unchanged and correct
   run-tests:
     needs: prepare-work
-    # The problematic 'if' condition has been removed.
+    if: fromJson(needs.prepare-work.outputs.batch_matrix)[0] != null
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         batch_id: ${{ fromJson(needs.prepare-work.outputs.batch_matrix) }}
-    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -90,12 +93,11 @@ jobs:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
 
-  # JOB 3: Merges all results and publishes
+  # JOB 3 is now fixed
   merge-results:
     runs-on: ubuntu-latest
-    # Added if condition to only run if the previous job actually ran
-    if: needs.run-tests.result == 'success'
     needs: run-tests
+    if: needs.run-tests.result == 'success'
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -108,7 +110,7 @@ jobs:
       - name: Download All Result Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: db-result-*
+          # By removing 'name', it downloads ALL artifacts
           path: db_results/
       - name: Merge, Generate, and Finalize
         run: |
