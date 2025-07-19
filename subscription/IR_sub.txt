@@ -1,4 +1,4 @@
-vless://cc3211e3-3aee-4990-82b6-de945ed4512b@tnl15.radnikmax.ir:8098?encryption=none&security=none&type=tcp&headerType=http
-vmess://eyJhZGQiOiJJci5hbWlybWF6YW5pLmlyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjZhZmY0ZjljLTRlZWEtNDUzMC04Y2ZmLTA2ZGRhZjFjZDEzZiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiMTkwMSIsInBzIjoiSVJcdWQ4M2NcdWRkZWVcdWQ4M2NcdWRkZjcgfCBJci5hbWlybWF6YW5pLmlyLTE5MDEgfCA1MjguODhtcyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
-vless://e127d8da-1ebd-4239-859f-7a51f9a72356@uk.iranis.art:8080?security=none&encryption=none&headerType=http&type=tcp
-vless://f4dc9c44-4dc3-4647-b215-7d9c78a53231@tnl15.radnikmax.ir:8098?encryption=none&security=none&type=tcp&headerType=http
+vless://46aea670-5e6c-40af-9b99-95585dd71cc3@185.143.234.200:443?encryption=none&security=tls&sni=cafeamiran.com&fp=randomized&type=ws&host=cafeamiran.com&path=%2F%3Fed%3D443
+vless://b41d5ac0-ed33-47cd-84c5-406471554f5d@ir-1.parsroute.net:15015?type=tcp&amp;security=none
+vmess://eyJhZGQiOiJncjEubnNwYXkudG9wIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjlkY2RhYjVkLTZkNjgtNGZiNS04NWYyLTNlNzlmMDAxMjYwMSIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiMzU2MDAiLCJwcyI6Ilvwn4eu8J+Ht110Lm1lL0NvbmZpZ3NIdWIiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
+vless://1e3e92fc-c406-4661-9347-79aa0865ed9b@s15.leader21.top:5054?type=ws&amp;encryption=none&amp;security=none&amp;host=s15.leader21.top&amp;path=/http

@@ -1,2 +1,2 @@
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.231.205.181:8880?mode=gun&amp;security=none&amp;encryption=none&amp;type=grpc
-vless://4a1abb8d-812e-41d8-b398-4cba9933805d@129.151.254.48:443?security=tls&sni=server17.aibox.tv&type=ws&host=server17.aibox.tv&path=%2Fws%2F
+vless://6b690c69-7301-44c4-81e8-9d5d7e8263a6@51.38.98.69:443?encryption=none&security=reality&sni=yahoo.com&fp=chrome&pbk=-3sZE2OPDhkNtxufF2YqPmoa5hqVna5zalfJfrUiMm0&sid=ecd6615548c2bddb&type=tcp&headerType=none
+vless://a13df940-020c-465f-bc89-ee5279b5cd6a@51.38.44.17:443?security=tls&sni=dy.ylks.xyz&type=ws&path=%2Fblue

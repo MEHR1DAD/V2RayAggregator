@@ -1,3 +1,1 @@
-vless://9511b1c6-b399-40b8-929f-6da5ba09c27e@139.162.242.230:443?type=tcp&security=reality&pbk=YjmaRnmWtCbc49_jSDjMIaYsxVv9pI7tUmz3Dxjlfmw&fp=chrome&sni=laquadrature.net&sid=b0d1e7f6&spx=%2Flaquadrature.net.&flow=xtls-rprx-vision
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.174:8880?encryption=none&security=tls&type=ws&sni=kjgx.laoyoutiao.link&host=kjgx.laoyoutiao.link&path=telegram%40wangcai2%2f%3fed%3d2560
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.130:8880?encryption=none&security=none&sni=Telegram-channel-WangCai2&allowInsecure=1&type=ws&host=kjgx.laoyoutiao.link&path=%2F
+vless://cd73bd3a-fbf0-44eb-b8f1-7d9b70dee0da@lon5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
