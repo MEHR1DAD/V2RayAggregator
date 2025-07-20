@@ -77,11 +77,16 @@ def parse_proxy_uri_to_xray_json(uri: str):
     except Exception: return None
     return None
 
-# --- UPDATED test_proxy_speed with AGGRESSIVE LOGGING ---
+# --- FINAL DEBUG VERSION of test_proxy_speed ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
-    xray_stderr_output = "" # To store Xray's stderr
+    
+    # Check for xray binary before anything else
+    if not (os.path.exists(XRAY_PATH) and os.access(XRAY_PATH, os.X_OK)):
+        print(f"DEBUG: Xray binary not found or not executable at {XRAY_PATH}")
+        return 0.0
+
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
     if not outbound_config: return 0.0
 
@@ -89,23 +94,24 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
     
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
+        
+        # Start Xray and give it a moment to initialize
+        print(f"DEBUG: Starting Xray on port {port}...")
         xray_process = await asyncio.create_subprocess_exec(XRAY_PATH, '-c', config_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         await asyncio.sleep(2)
 
+        # Check if Xray is still running before attempting curl
+        if xray_process.returncode is not None:
+            print(f"DEBUG: Xray process exited prematurely with code {xray_process.returncode}")
+            xray_stderr = await xray_process.stderr.read()
+            print(f"  -> Xray stderr: {xray_stderr.decode('utf-8', errors='ignore').strip()}")
+            return 0.0
+        
+        print(f"DEBUG: Xray seems to be running. Attempting speed test with curl...")
         curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), SPEED_TEST_URL]
         
         proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        
-        # Read stderr from Xray while curl is running
-        if xray_process.stderr:
-            xray_stderr_task = asyncio.create_task(xray_process.stderr.read())
-        else:
-            xray_stderr_task = None
-
         stdout, stderr = await proc.communicate()
-        
-        if xray_stderr_task:
-            xray_stderr_output = (await xray_stderr_task).decode('utf-8', errors='ignore').strip()
 
         if proc.returncode == 0 and stdout:
             try:
@@ -113,11 +119,9 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
                 return speed_bytes_per_sec / 1024
             except (ValueError, TypeError): return 0.0
         else:
-            print(f"DEBUG: Speed test failed for {proxy_config[:50]}...")
+            print(f"DEBUG: Curl failed for {proxy_config[:50]}...")
             print(f"  -> Curl return code: {proc.returncode}")
-            print(f"  -> Curl stdout: {stdout.decode('utf-8', errors='ignore').strip()}")
             print(f"  -> Curl stderr: {stderr.decode('utf-8', errors='ignore').strip()}")
-            print(f"  -> Xray stderr: {xray_stderr_output}")
             return 0.0
             
     except Exception as e:
