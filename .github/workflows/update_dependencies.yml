@@ -3,42 +3,31 @@ name: Update External Dependencies
 on:
   workflow_dispatch:
   schedule:
+    # Run once daily at 03:00 UTC
     - cron: '0 3 * * *'
 
 jobs:
-  update-xray-assets:
-    name: Check and Cache Xray Assets (geoip.dat, geosite.dat)
+  update-xray-package:
+    name: Check and Cache Full Xray Package
     runs-on: ubuntu-latest
     steps:
-      - name: Download latest assets
-        run: |
-          wget -q -O geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
-          wget -q -O geosite.dat https://github.com/v2fly/v2dat/releases/latest/download/geosite.dat
-      - name: Create or Update Assets Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: deps/xray-assets-latest
-          name: "Latest Xray Assets (geoip & geosite)"
-          body: "Automated cache of the latest geoip.dat and geosite.dat files."
-          files: |
-            geoip.dat
-            geosite.dat
-
-  update-xray-binary:
-    name: Check and Cache Xray-core Binary
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download latest Xray binary
+      - name: Download and Extract Xray Package
         run: |
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -o -q xray.zip xray
+          unzip -o -q xray.zip xray geoip.dat geosite.dat
           chmod +x ./xray
+
       - name: Get Xray Version
         id: xray_version
         run: echo "VERSION=$(./xray --version | head -n 1 | awk '{print $2}')" >> $GITHUB_OUTPUT
-      - name: Create New Binary Release if it does not exist
+
+      - name: Create New Release if it does not exist
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: deps/xray-${{ steps.xray_version.outputs.VERSION }}
-          name: "Xray-core v${{ steps.xray_version.outputs.VERSION }}"
-          files: ./xray
+          tag_name: deps/xray-pkg-${{ steps.xray_version.outputs.VERSION }}
+          name: "Xray Package v${{ steps.xray_version.outputs.VERSION }}"
+          body: "Automated cache of Xray binary with geoip.dat and geosite.dat."
+          files: |
+            ./xray
+            ./geoip.dat
+            ./geosite.dat
