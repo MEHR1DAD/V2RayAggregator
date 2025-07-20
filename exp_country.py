@@ -46,41 +46,47 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- THE BIG UPDATE: FULL PARSER FUNCTION ---
+# --- ROBUST PARSER FUNCTION ---
 def parse_proxy_uri_to_xray_json(uri: str):
     """
     Parses various proxy URIs (VLESS, VMess, SS, Trojan) into a valid Xray outbound configuration.
+    This version is more robust against common formatting issues.
     """
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
-            user_object = {"id": parsed.username, "flow": params.get("flow", [""])[0], "encryption": "none"}
-            return {
-                "protocol": "vless",
-                "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]},
-                "streamSettings": {
-                    "network": params.get("type", ["tcp"])[0],
-                    "security": params.get("security", ["none"])[0],
-                    "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]} if params.get("security", ["none"])[0] == "tls" else None,
-                    "wsSettings": {"path": params.get("path", ["/"])[0]} if params.get("type", ["ws"])[0] == "ws" else None,
-                }
+            user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}
+            stream_settings = {
+                "network": params.get("type", ["tcp"])[0],
+                "security": params.get("security", ["none"])[0]
             }
+            if stream_settings["security"] == "tls":
+                stream_settings["tlsSettings"] = {"serverName": params.get("sni", [parsed.hostname])[0]}
+            if stream_settings["network"] == "ws":
+                stream_settings["wsSettings"] = {"path": params.get("path", ["/"])[0], "headers": {"Host": params.get("host", [parsed.hostname])[0]}}
+            return {"protocol": "vless", "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]}, "streamSettings": stream_settings}
+
         elif uri.startswith("vmess://"):
-            decoded_json_str = base64.b64decode(uri.replace("vmess://", "")).decode('utf-8')
+            encoded_part = uri.replace("vmess://", "").strip()
+            # Add padding if required
+            padding = len(encoded_part) % 4
+            if padding:
+                encoded_part += "=" * (4 - padding)
+            decoded_json_str = base64.b64decode(encoded_part).decode('utf-8')
             vmess_data = json.loads(decoded_json_str)
             if not all(k in vmess_data for k in ['add', 'port', 'id']): return None
             user_object = {"id": vmess_data.get("id"), "alterId": int(vmess_data.get("aid", 0)), "security": vmess_data.get("scy", "auto")}
-            return {
-                "protocol": "vmess",
-                "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]},
-                "streamSettings": {
-                    "network": vmess_data.get("net", "tcp"),
-                    "security": vmess_data.get("tls", "none"),
-                    "tlsSettings": {"serverName": vmess_data.get("sni")} if vmess_data.get("tls") == "tls" else None,
-                    "wsSettings": {"path": vmess_data.get("path")} if vmess_data.get("net") == "ws" else None,
-                }
+            stream_settings = {
+                "network": vmess_data.get("net", "tcp"),
+                "security": vmess_data.get("tls", "none"),
             }
+            if stream_settings["security"] == "tls":
+                 stream_settings["tlsSettings"] = {"serverName": vmess_data.get("sni", vmess_data.get("host", vmess_data.get("add")))}
+            if stream_settings["network"] == "ws":
+                stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
+            return {"protocol": "vmess", "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]}, "streamSettings": stream_settings}
+
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
@@ -89,34 +95,28 @@ def parse_proxy_uri_to_xray_json(uri: str):
                 "protocol": "trojan",
                 "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]},
                 "streamSettings": {
-                    "network": params.get("type", ["tcp"])[0],
-                    "security": params.get("security", ["tls"])[0],
+                    "network": "tcp", "security": "tls",
                     "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}
                 }
             }
         elif uri.startswith("ss://"):
-            parsed = urlparse(uri)
-            if not parsed.username or not parsed.hostname: # Basic check
-                 # Handle base64 encoded ss links
-                encoded_part = uri.split("ss://")[1].split("#")[0]
-                try:
-                    decoded = base64.urlsafe_b64decode(encoded_part + '===').decode('utf-8')
-                    creds, server = decoded.rsplit('@', 1)
-                    method, password = creds.split(':', 1)
-                    hostname, port_str = server.rsplit(':', 1)
-                    port = int(port_str)
-                except Exception:
-                    return None
-            else:
-                user_info = unquote(parsed.username)
-                method, password = user_info.split(":", 1)
-                hostname, port = parsed.hostname, parsed.port
+            encoded_part = uri.split("ss://")[1].split("#")[0].strip()
+            try:
+                # Try URL-safe base64 first
+                decoded = base64.urlsafe_b64decode(encoded_part + '===').decode('utf-8')
+            except (ValueError, TypeError):
+                # Fallback to standard base64
+                padding = len(encoded_part) % 4
+                if padding: encoded_part += "=" * (4 - padding)
+                decoded = base64.b64decode(encoded_part).decode('utf-8')
             
-            return {
-                "protocol": "shadowsocks",
-                "settings": {"servers": [{"address": hostname, "port": port, "method": method, "password": password}]}
-            }
-    except Exception:
+            creds, server = decoded.rsplit('@', 1)
+            method, password = creds.split(':', 1)
+            hostname, port_str = server.rsplit(':', 1)
+            return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
+
+    except Exception as e:
+        # print(f"Failed to parse URI {uri[:30]}... Error: {e}")
         return None
     return None
 
