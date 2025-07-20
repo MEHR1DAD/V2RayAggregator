@@ -39,20 +39,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests geoip2 pyyaml httpx
-      - name: Download Cached Dependencies (Xray, GeoIP, Assets)
+      - name: Download Cached Dependencies
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Download GeoIP.mmdb
+          # Download GeoIP.mmdb for our script
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
           
-          # Download Xray Assets
-          gh release download deps/xray-assets-latest --repo ${{ github.repository }}
+          # Download the complete Xray package (binary + assets)
+          LATEST_XRAY_PKG_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-pkg-")) | .tagName' | head -n 1)
+          if [ -z "$LATEST_XRAY_PKG_TAG" ]; then echo "::error::No cached Xray package found."; exit 1; fi
           
-          # Download Xray Binary
-          LATEST_XRAY_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-")) | .tagName' | head -n 1)
-          if [ -z "$LATEST_XRAY_TAG" ]; then exit 1; fi
-          gh release download "$LATEST_XRAY_TAG" --repo ${{ github.repository }} --pattern 'xray' --clobber
+          echo "Using cached Xray package: $LATEST_XRAY_PKG_TAG"
+          gh release download "$LATEST_XRAY_PKG_TAG" --repo ${{ github.repository }}
           chmod +x xray
           
           echo "All dependencies downloaded:"
