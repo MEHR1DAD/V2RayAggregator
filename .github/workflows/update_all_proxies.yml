@@ -45,14 +45,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
-          
           LATEST_XRAY_PKG_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-pkg-")) | .tagName' | head -n 1)
           if [ -z "$LATEST_XRAY_PKG_TAG" ]; then echo "::error::No cached Xray package found."; exit 1; fi
-          
           echo "Using cached Xray package: $LATEST_XRAY_PKG_TAG"
-          # Add --clobber flag to overwrite existing files
           gh release download "$LATEST_XRAY_PKG_TAG" --repo ${{ github.repository }} --clobber
-          
           chmod +x xray
           echo "All dependencies downloaded:"
           ls -l xray *.dat *.mmdb
@@ -60,6 +56,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { name: work-batches, path: ci_batches/ }
       - name: Run Tests on Assigned Batch
+        env:
+          # This is the critical fix: Force Xray to look for assets in the current directory
+          XRAY_LOCATION_ASSET: .
         run: |
           BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
           CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
