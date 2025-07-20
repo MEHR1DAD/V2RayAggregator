@@ -46,6 +46,7 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 def parse_proxy_uri_to_xray_json(uri: str):
+    # This function is now robust and complete
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query); user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}; stream_settings = {"network": params.get("type", ["tcp"])[0], "security": params.get("security", ["none"])[0]};
@@ -76,16 +77,15 @@ def parse_proxy_uri_to_xray_json(uri: str):
     except Exception: return None
     return None
 
-# --- UPDATED test_proxy_speed with VERBOSE LOGGING ---
+# --- UPDATED test_proxy_speed with AGGRESSIVE LOGGING ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
+    xray_stderr_output = "" # To store Xray's stderr
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
-    if not outbound_config:
-        # This is not an error, just an unsupported protocol
-        return 0.0
+    if not outbound_config: return 0.0
 
-    xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
+    xray_config = {"log": {"loglevel": "info"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
     
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
@@ -95,28 +95,33 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), SPEED_TEST_URL]
         
         proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        # Read stderr from Xray while curl is running
+        if xray_process.stderr:
+            xray_stderr_task = asyncio.create_task(xray_process.stderr.read())
+        else:
+            xray_stderr_task = None
+
         stdout, stderr = await proc.communicate()
+        
+        if xray_stderr_task:
+            xray_stderr_output = (await xray_stderr_task).decode('utf-8', errors='ignore').strip()
 
         if proc.returncode == 0 and stdout:
             try:
                 speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
                 return speed_bytes_per_sec / 1024
-            except (ValueError, TypeError):
-                return 0.0
+            except (ValueError, TypeError): return 0.0
         else:
-            # --- START OF DEBUG LOGGING ---
             print(f"DEBUG: Speed test failed for {proxy_config[:50]}...")
-            if stderr:
-                print(f"  -> Curl stderr: {stderr.decode('utf-8').strip()}")
-            if xray_process:
-                xray_stderr = await xray_process.stderr.read()
-                if xray_stderr:
-                    print(f"  -> Xray stderr: {xray_stderr.decode('utf-8').strip()}")
-            # --- END OF DEBUG LOGGING ---
+            print(f"  -> Curl return code: {proc.returncode}")
+            print(f"  -> Curl stdout: {stdout.decode('utf-8', errors='ignore').strip()}")
+            print(f"  -> Curl stderr: {stderr.decode('utf-8', errors='ignore').strip()}")
+            print(f"  -> Xray stderr: {xray_stderr_output}")
             return 0.0
             
     except Exception as e:
-        print(f"DEBUG: An unexpected exception occurred during speed test for {proxy_config[:50]}... Error: {e}")
+        print(f"DEBUG: An unexpected exception occurred during speed test. Error: {e}")
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
