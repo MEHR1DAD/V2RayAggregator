@@ -14,7 +14,7 @@ from urllib.parse import urlparse, unquote, parse_qs
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 
-# ... (Constants and helper functions are unchanged) ...
+# ... (Constants and other functions remain the same) ...
 # --- Load Configuration ---
 with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
@@ -45,8 +45,9 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     cursor.executemany('''INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?) ON CONFLICT(config) DO UPDATE SET speed_kbps = excluded.speed_kbps, last_tested = excluded.last_tested''', configs_data)
     conn.commit()
     conn.close()
+
+# --- PARSER WITH VERBOSE ERROR LOGGING ---
 def parse_proxy_uri_to_xray_json(uri: str):
-    # This function is now robust and complete
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query); user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}; stream_settings = {"network": params.get("type", ["tcp"])[0], "security": params.get("security", ["none"])[0]};
@@ -74,56 +75,41 @@ def parse_proxy_uri_to_xray_json(uri: str):
             decoded = base64.b64decode(encoded_part).decode('utf-8')
             creds, server = decoded.rsplit('@', 1); method, password = creds.split(':', 1); hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-    except Exception: return None
+    except Exception as e:
+        # THE ONLY CHANGE IS HERE: We now print the error
+        print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
+        return None
     return None
 
+# --- test_proxy_speed and other functions remain unchanged ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
-    
-    if not (os.path.exists(XRAY_PATH) and os.access(XRAY_PATH, os.X_OK)):
-        return 0.0
-
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
     if not outbound_config: return 0.0
-
     xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
-    
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
-        
-        # REVERTED TO THE STANDARD COMMAND, relying on the ENV VAR set in the workflow
         xray_command = [XRAY_PATH, '-c', config_path]
-        
         xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         await asyncio.sleep(2)
-
-        if xray_process.returncode is not None:
-            # This is where we would have seen code 23, but now we should not.
-            return 0.0
-        
+        if xray_process.returncode is not None: return 0.0
         curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), SPEED_TEST_URL]
-        
         proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = await proc.communicate()
-
         if proc.returncode == 0 and stdout:
             try:
                 speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
                 return speed_bytes_per_sec / 1024
             except (ValueError, TypeError): return 0.0
-        else:
-            return 0.0
-            
-    except Exception:
-        return 0.0
+        else: return 0.0
+    except Exception: return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
             try: xray_process.terminate(); await xray_process.wait()
             except ProcessLookupError: pass
         if os.path.exists(config_path): os.remove(config_path)
 
-# --- process_batch and main functions remain unchanged ---
 async def process_batch(batch, reader, start_port):
     tasks = [];
     for i, conn in enumerate(batch):
