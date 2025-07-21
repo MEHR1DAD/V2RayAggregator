@@ -77,33 +77,29 @@ def parse_proxy_uri_to_xray_json(uri: str):
     except Exception: return None
     return None
 
-# --- FINAL, FINAL DEBUG VERSION of test_proxy_speed ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
     
     if not (os.path.exists(XRAY_PATH) and os.access(XRAY_PATH, os.X_OK)):
-        print(f"DEBUG: Xray binary not found or not executable at {XRAY_PATH}")
         return 0.0
 
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
     if not outbound_config: return 0.0
 
-    xray_config = {"log": {"loglevel": "info"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
+    xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
     
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
         
-        # THE FINAL FIX: Use the -assetpath flag directly in the command
-        xray_command = [XRAY_PATH, '-assetpath', '.', '-c', config_path]
+        # REVERTED TO THE STANDARD COMMAND, relying on the ENV VAR set in the workflow
+        xray_command = [XRAY_PATH, '-c', config_path]
         
         xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         await asyncio.sleep(2)
 
         if xray_process.returncode is not None:
-            print(f"DEBUG: Xray process exited prematurely with code {xray_process.returncode}")
-            xray_stderr = await xray_process.stderr.read()
-            print(f"  -> Xray stderr: {xray_stderr.decode('utf-8', errors='ignore').strip()}")
+            # This is where we would have seen code 23, but now we should not.
             return 0.0
         
         curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), SPEED_TEST_URL]
@@ -119,8 +115,7 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         else:
             return 0.0
             
-    except Exception as e:
-        print(f"DEBUG: An unexpected exception occurred during speed test. Error: {e}")
+    except Exception:
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
