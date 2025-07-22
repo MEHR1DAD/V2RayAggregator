@@ -14,7 +14,6 @@ from urllib.parse import urlparse, unquote, parse_qs
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 
-# ... (Constants and other functions remain the same) ...
 # --- Load Configuration ---
 with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
@@ -30,6 +29,7 @@ TASK_TIMEOUT = 60
 START_TIME = time.time()
 WORKFLOW_TIMEOUT_SECONDS = 53 * 60
 
+# --- Helper functions for DB and timeout (unchanged) ---
 def is_approaching_timeout():
     return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 def initialize_worker_db(db_path):
@@ -46,7 +46,7 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- PARSER WITH VERBOSE ERROR LOGGING ---
+# --- FINAL ROBUST PARSER FUNCTION ---
 def parse_proxy_uri_to_xray_json(uri: str):
     try:
         if uri.startswith("vless://"):
@@ -54,6 +54,7 @@ def parse_proxy_uri_to_xray_json(uri: str):
             if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": params.get("sni", [parsed.hostname])[0]}
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": params.get("path", ["/"])[0], "headers": {"Host": params.get("host", [parsed.hostname])[0]}}
             return {"protocol": "vless", "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]}, "streamSettings": stream_settings}
+        
         elif uri.startswith("vmess://"):
             encoded_part = uri.replace("vmess://", "").strip(); padding = len(encoded_part) % 4;
             if padding: encoded_part += "=" * (4 - padding)
@@ -63,21 +64,36 @@ def parse_proxy_uri_to_xray_json(uri: str):
             if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": vmess_data.get("sni", vmess_data.get("host", vmess_data.get("add")))}
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
             return {"protocol": "vmess", "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]}, "streamSettings": stream_settings}
+
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query)
             if not parsed.username: return None
             return {"protocol": "trojan", "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]}, "streamSettings": {"network": "tcp", "security": "tls", "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}}}
+
         elif uri.startswith("ss://"):
-            encoded_part = uri.split("ss://")[1].split("#")[0].strip()
-            try: decoded = base64.urlsafe_b64decode(encoded_part + '===').decode('utf-8')
-            except (ValueError, TypeError): padding = len(encoded_part) % 4;
-            if padding: encoded_part += "=" * (4 - padding)
-            decoded = base64.b64decode(encoded_part).decode('utf-8')
-            creds, server = decoded.rsplit('@', 1); method, password = creds.split(':', 1); hostname, port_str = server.rsplit(':', 1)
-            return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-    except Exception as e:
-        # THE ONLY CHANGE IS HERE: We now print the error
-        print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
+            # This logic handles both legacy and modern ss links
+            if '@' not in uri:
+                # Base64 only part, no user info
+                encoded_part = uri.split("ss://")[1].split("#")[0].strip()
+                padding = len(encoded_part) % 4
+                if padding: encoded_part += "=" * (4 - padding)
+                decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8')
+                creds, server = decoded.rsplit('@', 1)
+                method, password = creds.split(':', 1)
+                hostname, port_str = server.rsplit(':', 1)
+                port = int(port_str)
+            else:
+                # Standard URI format
+                parsed = urlparse(uri)
+                encoded_user_info = parsed.username
+                decoded_user_info = base64.urlsafe_b64decode(encoded_user_info + '===').decode('utf-8')
+                method, password = decoded_user_info.split(":", 1)
+                hostname, port = parsed.hostname, parsed.port
+
+            return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": port, "method": method, "password": password}]}}
+
+    except Exception:
+        # Silently fail on any parsing error
         return None
     return None
 
@@ -109,7 +125,6 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             try: xray_process.terminate(); await xray_process.wait()
             except ProcessLookupError: pass
         if os.path.exists(config_path): os.remove(config_path)
-
 async def process_batch(batch, reader, start_port):
     tasks = [];
     for i, conn in enumerate(batch):
