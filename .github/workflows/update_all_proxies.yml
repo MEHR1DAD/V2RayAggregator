@@ -36,7 +36,6 @@ jobs:
         run: |
           python manage_sources.py
           python merge_configs.py
-          # The two scripts now work in sequence with a fixed intermediate file
           python check_liveness.py --output live_candidates.txt
           python exp_country.py --input live_candidates.txt
           python create_rotating_sub.py
@@ -46,10 +45,17 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull --rebase
           git add .
+          
+          # Check if there are actual changes to commit
           if ! git diff --staged --quiet; then
+            # Step 1: Commit the generated changes locally
             git commit -m "chore: data update"
+            
+            # Step 2: Pull remote changes and rebase our local commit on top
+            git pull --rebase
+            
+            # Step 3: Push the final result
             git push
           else
             echo "No changes to commit."
