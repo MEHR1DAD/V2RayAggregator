@@ -12,12 +12,13 @@ with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 # --- Constants ---
+INPUT_DIR = config['paths']['protocol_configs_dir']
 CONNECTION_TIMEOUT = config['settings']['check_liveness']['connection_timeout']
 LIVENESS_CHUNK_SIZE = config['settings']['check_liveness']['chunk_size']
 TASK_TIMEOUT = 15
-# Graceful exit logic constants
 START_TIME = time.time()
-WORKFLOW_TIMEOUT_SECONDS = 53 * 60
+# UPDATED: Set timeout to 170 minutes for the 3-hour cycle
+WORKFLOW_TIMEOUT_SECONDS = 170 * 60
 
 def is_approaching_timeout():
     """Checks if the script is approaching the GitHub Actions timeout."""
@@ -48,22 +49,38 @@ async def process_batch(batch_of_targets):
             print(f"✅ Live | {target['config'][:60]}...")
     return live_configs_in_batch
 
-async def main(input_path, output_path):
-    if not os.path.exists(input_path):
+async def main(output_path):
+    """
+    Main function to run liveness check on all configs found in the protocol_configs directory.
+    """
+    if not os.path.exists(INPUT_DIR):
+        print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
         open(output_path, 'w').close()
         return
-    with open(input_path, 'r', encoding='utf-8') as f:
-        configs_to_test = f.read().strip().splitlines()
-    if not configs_to_test:
+
+    all_configs = []
+    for filename in sorted(os.listdir(INPUT_DIR)):
+        if filename.endswith("_configs.txt"):
+            file_path = os.path.join(INPUT_DIR, filename)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                all_configs.extend(f.read().strip().splitlines())
+
+    if not all_configs:
+        print("No configs found to test. Exiting.")
         open(output_path, 'w').close()
         return
-    print(f"Worker processing {len(configs_to_test)} configs from '{input_path}'.")
+        
+    print(f"Processing {len(all_configs)} total configs...")
+    
     live_configs_this_run = []
-    for i in range(0, len(configs_to_test), LIVENESS_CHUNK_SIZE):
+    
+    for i in range(0, len(all_configs), LIVENESS_CHUNK_SIZE):
         if is_approaching_timeout():
-            print("⏰ Approaching workflow timeout. Stopping liveness checks for this worker.")
+            print("⏰ Approaching workflow timeout. Stopping liveness checks.")
             break
-        chunk = configs_to_test[i:i+LIVENESS_CHUNK_SIZE]
+            
+        chunk = all_configs[i:i+LIVENESS_CHUNK_SIZE]
+        
         valid_targets = []
         for config in chunk:
             host_port_str = extract_ip_from_connection(config)
@@ -75,21 +92,24 @@ async def main(input_path, output_path):
                         valid_targets.append({'config': config, 'host': host, 'port': port})
                 except (ValueError, IndexError):
                     continue
+        
         if valid_targets:
             live_in_batch = await process_batch(valid_targets)
             live_configs_this_run.extend(live_in_batch)
+
     if live_configs_this_run:
-        print(f"\nWorker found {len(live_configs_this_run)} live candidates. Writing to '{output_path}'.")
+        print(f"\nFound {len(live_configs_this_run)} live candidates. Writing to '{output_path}'.")
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write("\n".join(live_configs_this_run))
     else:
-        print(f"\nWorker found no live candidates. Creating empty output file '{output_path}'.")
+        print(f"\nFound no live candidates. Creating empty output file '{output_path}'.")
         open(output_path, 'w').close()
-    print("Liveness check worker finished successfully.")
+
+    print("Liveness check process finished successfully.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run liveness check on a specific batch of configs.")
-    parser.add_argument('--input', required=True)
-    parser.add_argument('--output', required=True)
+    parser = argparse.ArgumentParser(description="Run liveness check on all configs from the configs directory.")
+    # No --input argument needed for this version
+    parser.add_argument('--output', required=True, help="Path to the output file to save live candidates.")
     args = parser.parse_args()
-    asyncio.run(main(args.input, args.output))
+    asyncio.run(main(args.output))
