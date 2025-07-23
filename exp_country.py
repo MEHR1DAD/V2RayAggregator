@@ -29,9 +29,8 @@ TASK_TIMEOUT = 60
 START_TIME = time.time()
 WORKFLOW_TIMEOUT_SECONDS = 53 * 60
 
-# --- Helper functions ---
-def is_approaching_timeout():
-    return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
+# --- Helper functions (unchanged) ---
+def is_approaching_timeout(): return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 def initialize_worker_db(db_path):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -46,7 +45,7 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- PARSER WITH VERBOSE ERROR LOGGING ---
+# --- FINAL, MOST ROBUST PARSER ---
 def parse_proxy_uri_to_xray_json(uri: str):
     try:
         if uri.startswith("vless://"):
@@ -54,40 +53,47 @@ def parse_proxy_uri_to_xray_json(uri: str):
             if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": params.get("sni", [parsed.hostname])[0]}
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": params.get("path", ["/"])[0], "headers": {"Host": params.get("host", [parsed.hostname])[0]}}
             return {"protocol": "vless", "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]}, "streamSettings": stream_settings}
+        
         elif uri.startswith("vmess://"):
-            encoded_part = uri.replace("vmess://", "").strip(); padding = len(encoded_part) % 4;
+            encoded_part = uri.replace("vmess://", "").strip(); padding = len(encoded_part) % 4
             if padding: encoded_part += "=" * (4 - padding)
-            decoded_json_str = base64.b64decode(encoded_part).decode('utf-8'); vmess_data = json.loads(decoded_json_str)
+            # THE FIX IS HERE: ignore UTF-8 errors
+            decoded_json_str = base64.b64decode(encoded_part).decode('utf-8', errors='ignore'); vmess_data = json.loads(decoded_json_str)
             if not all(k in vmess_data for k in ['add', 'port', 'id']): return None
             user_object = {"id": vmess_data.get("id"), "alterId": int(vmess_data.get("aid", 0)), "security": vmess_data.get("scy", "auto")}; stream_settings = {"network": vmess_data.get("net", "tcp"),"security": vmess_data.get("tls", "none")}
             if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": vmess_data.get("sni", vmess_data.get("host", vmess_data.get("add")))}
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
             return {"protocol": "vmess", "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]}, "streamSettings": stream_settings}
+
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query)
             if not parsed.username: return None
             return {"protocol": "trojan", "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]}, "streamSettings": {"network": "tcp", "security": "tls", "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}}}
+
         elif uri.startswith("ss://"):
-            if '@' not in uri.split("ss://")[1]:
-                encoded_part = uri.split("ss://")[1].split("#")[0].strip()
-                padding = len(encoded_part) % 4
-                if padding: encoded_part += "=" * (4 - padding)
-                decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8')
-                creds, server = decoded.rsplit('@', 1)
+            uri_no_fragment = uri.split("#")[0]
+            if '@' not in uri_no_fragment:
+                encoded_part = uri_no_fragment.replace("ss://", "").strip()
             else:
-                parsed = urlparse(uri)
-                encoded_user_info = unquote(parsed.username)
-                padding = len(encoded_user_info) % 4
-                if padding: encoded_user_info += "=" * (4 - padding)
-                decoded_user_info = base64.urlsafe_b64decode(encoded_user_info).decode('utf-8')
-                creds = decoded_user_info
-                server = f"{parsed.hostname}:{parsed.port}"
+                parsed = urlparse(uri_no_fragment)
+                encoded_part = parsed.username
+            
+            padding = len(encoded_part) % 4
+            if padding: encoded_part += "=" * (4 - padding)
+            # THE FIX IS HERE: ignore UTF-8 errors
+            decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8', errors='ignore')
+
+            if '@' not in uri_no_fragment:
+                 creds, server = decoded.rsplit('@', 1)
+                 hostname, port_str = server.rsplit(':', 1)
+            else:
+                 creds = decoded
+                 hostname, port_str = parsed.hostname, str(parsed.port)
+
             method, password = creds.split(":", 1)
-            hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-    except Exception as e:
-        # THE CRITICAL DEBUG LINE
-        print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
+
+    except Exception:
         return None
     return None
 
@@ -136,7 +142,6 @@ async def process_batch(batch, reader, start_port):
                 successful_in_batch.append((conn, 'speed-tested', country_code, round(speed_kbps, 2), now))
                 print(f"✅ Success ({round(speed_kbps)} KB/s) | Country: {country_code} | Config: {conn[:40]}...")
     return successful_in_batch
-
 async def main(input_path, db_path):
     initialize_worker_db(db_path)
     if not os.path.exists(GEOIP_DB): return
@@ -162,7 +167,6 @@ async def main(input_path, db_path):
             bulk_upsert_to_worker_db(db_path, successful_in_batch)
     reader.close()
     print("\nSpeed test worker finished.")
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run speed test on a batch of configs.")
     parser.add_argument('--input', required=True); parser.add_argument('--db-file', required=True);
