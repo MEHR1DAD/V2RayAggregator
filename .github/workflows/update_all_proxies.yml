@@ -33,8 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # INCREASED TO 20 WORKERS
-        batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -47,21 +46,19 @@ jobs:
           gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
           LATEST_XRAY_PKG_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-pkg-")) | .tagName' | head -n 1)
           if [ -z "$LATEST_XRAY_PKG_TAG" ]; then echo "::error::No cached Xray package found."; exit 1; fi
-          echo "Using cached Xray package: $LATEST_XRAY_PKG_TAG"
           gh release download "$LATEST_XRAY_PKG_TAG" --repo ${{ github.repository }} --clobber
           chmod +x xray
       - name: Download Batch Artifacts
         uses: actions/download-artifact@v4
         with: { name: work-batches, path: ci_batches/ }
-      - name: Run Tests on Assigned Batch
+      - name: Run Worker on Assigned Batch
         env:
           XRAY_LOCATION_ASSET: .
         run: |
           BATCH_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
-          CANDIDATES_FILE="candidates_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
-          python check_liveness.py --input $BATCH_FILE --output $CANDIDATES_FILE
-          python exp_country.py --input $CANDIDATES_FILE --db-file $DB_FILE
+          # Calling the new unified worker script
+          python test_worker.py --input $BATCH_FILE --db-file $DB_FILE
       - uses: actions/upload-artifact@v4
         with:
           name: db-result-${{ matrix.batch_id }}
