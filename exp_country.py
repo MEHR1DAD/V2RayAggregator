@@ -27,8 +27,9 @@ SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
 TASK_TIMEOUT = 60
 START_TIME = time.time()
-WORKFLOW_TIMEOUT_SECONDS = 170 * 60
+WORKFLOW_TIMEOUT_SECONDS = 53 * 60
 
+# --- Helper functions ---
 def is_approaching_timeout():
     return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 def initialize_worker_db(db_path):
@@ -44,6 +45,8 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     cursor.executemany('''INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?) ON CONFLICT(config) DO UPDATE SET speed_kbps = excluded.speed_kbps, last_tested = excluded.last_tested''', configs_data)
     conn.commit()
     conn.close()
+
+# --- PARSER WITH VERBOSE ERROR LOGGING ---
 def parse_proxy_uri_to_xray_json(uri: str):
     try:
         if uri.startswith("vless://"):
@@ -82,10 +85,13 @@ def parse_proxy_uri_to_xray_json(uri: str):
             method, password = creds.split(":", 1)
             hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-    except Exception:
+    except Exception as e:
+        # THE CRITICAL DEBUG LINE
+        print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
         return None
     return None
 
+# --- test_proxy_speed and other functions remain unchanged ---
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
@@ -159,7 +165,5 @@ async def main(input_path, db_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run speed test on a batch of configs.")
-    parser.add_argument('--input', required=True)
-    parser.add_argument('--db-file', required=True)
-    args = parser.parse_args()
-    asyncio.run(main(args.input, args.db_file))
+    parser.add_argument('--input', required=True); parser.add_argument('--db-file', required=True);
+    args = parser.parse_args(); asyncio.run(main(args.input, args.db_file))
