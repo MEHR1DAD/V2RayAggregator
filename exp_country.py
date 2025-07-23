@@ -45,7 +45,7 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- FINAL, MOST ROBUST PARSER ---
+# --- FINAL PARSER WITH VERBOSE LOGGING ---
 def parse_proxy_uri_to_xray_json(uri: str):
     try:
         if uri.startswith("vless://"):
@@ -55,9 +55,8 @@ def parse_proxy_uri_to_xray_json(uri: str):
             return {"protocol": "vless", "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]}, "streamSettings": stream_settings}
         
         elif uri.startswith("vmess://"):
-            encoded_part = uri.replace("vmess://", "").strip(); padding = len(encoded_part) % 4
+            encoded_part = uri.split("#")[0].replace("vmess://", "").strip(); padding = len(encoded_part) % 4
             if padding: encoded_part += "=" * (4 - padding)
-            # THE FIX IS HERE: ignore UTF-8 errors
             decoded_json_str = base64.b64decode(encoded_part).decode('utf-8', errors='ignore'); vmess_data = json.loads(decoded_json_str)
             if not all(k in vmess_data for k in ['add', 'port', 'id']): return None
             user_object = {"id": vmess_data.get("id"), "alterId": int(vmess_data.get("aid", 0)), "security": vmess_data.get("scy", "auto")}; stream_settings = {"network": vmess_data.get("net", "tcp"),"security": vmess_data.get("tls", "none")}
@@ -72,28 +71,28 @@ def parse_proxy_uri_to_xray_json(uri: str):
 
         elif uri.startswith("ss://"):
             uri_no_fragment = uri.split("#")[0]
-            if '@' not in uri_no_fragment:
+            if '@' not in uri_no_fragment.split("ss://")[1]:
                 encoded_part = uri_no_fragment.replace("ss://", "").strip()
+                padding = len(encoded_part) % 4
+                if padding: encoded_part += "=" * (4 - padding)
+                decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8', errors='ignore')
+                creds, server = decoded.rsplit('@', 1)
+                hostname, port_str = server.rsplit(':', 1)
             else:
                 parsed = urlparse(uri_no_fragment)
-                encoded_part = parsed.username
-            
-            padding = len(encoded_part) % 4
-            if padding: encoded_part += "=" * (4 - padding)
-            # THE FIX IS HERE: ignore UTF-8 errors
-            decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8', errors='ignore')
-
-            if '@' not in uri_no_fragment:
-                 creds, server = decoded.rsplit('@', 1)
-                 hostname, port_str = server.rsplit(':', 1)
-            else:
-                 creds = decoded
-                 hostname, port_str = parsed.hostname, str(parsed.port)
-
+                encoded_user_info = unquote(parsed.username)
+                padding = len(encoded_user_info) % 4
+                if padding: encoded_user_info += "=" * (4 - padding)
+                decoded_user_info = base64.urlsafe_b64decode(encoded_user_info).decode('utf-8', errors='ignore')
+                creds = decoded_user_info
+                server = f"{parsed.hostname}:{parsed.port}"
             method, password = creds.split(":", 1)
+            hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-
-    except Exception:
+    
+    except Exception as e:
+        # THE CRITICAL DEBUG LINE
+        print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
         return None
     return None
 
@@ -125,7 +124,6 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             try: xray_process.terminate(); await xray_process.wait()
             except ProcessLookupError: pass
         if os.path.exists(config_path): os.remove(config_path)
-
 async def process_batch(batch, reader, start_port):
     tasks = [];
     for i, conn in enumerate(batch):
