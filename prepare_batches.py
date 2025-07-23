@@ -11,10 +11,13 @@ with open("config.yml", "r", encoding="utf-8") as f:
 INPUT_DIR = config['paths']['protocol_configs_dir']
 OUTPUT_BATCH_DIR = "ci_batches"
 # INCREASED TO 20
-NUM_BATCHES = 20 
+NUM_BATCHES = 20
 
 def create_batches():
-    # ... (rest of the code is unchanged) ...
+    """
+    Reads all configs, shuffles them, and divides them into a fixed
+    number of batch files for parallel processing in the CI/CD pipeline.
+    """
     print("--- Starting Batch Preparation ---")
     if not os.path.exists(INPUT_DIR):
         print(f"Input directory '{INPUT_DIR}' not found. Exiting.")
