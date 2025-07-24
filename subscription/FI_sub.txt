@@ -1,1 +1,2 @@
+vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2052?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

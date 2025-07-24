@@ -1,1 +1,1 @@
-vless://9a058397-e454-410c-a866-b9baf7503dd7@tel5.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
+vless://394f6981-a782-4779-9a85-e6cf22935d93@tlv-il.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

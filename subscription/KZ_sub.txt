@@ -1,1 +1,1 @@
-vless://83213e65-9a49-446a-a8ce-6eaa7f78d111@194.76.18.4:2083?security=tls&sni=IrAn.HARchi.monsteR.&type=grpc&serviceName=Qqwetyioodaoajskxj&fp=chrome&alpn=http/1.1
+vless://394f6981-a782-4779-9a85-e6cf22935d93@kz-2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
