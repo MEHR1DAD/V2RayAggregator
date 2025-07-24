@@ -65,9 +65,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      # <<< FIX: کتابخانه requests اضافه شد
+      # <<< FIX: کتابخانه‌های requests و geoip2 اضافه شدند
       - name: Install Dependencies
-        run: pip install pyyaml requests
+        run: pip install pyyaml requests geoip2-database
 
       - name: Download Batch Artifacts
         uses: actions/download-artifact@v4
@@ -138,6 +138,7 @@ jobs:
   merge-and-publish:
     runs-on: ubuntu-latest
     needs: run-speed-tests
+    # این job همیشه اجرا می‌شود، حتی اگر بعضی از تست‌ها فیل شده باشند
     if: success() || failure()
     steps:
       - uses: actions/checkout@v4
