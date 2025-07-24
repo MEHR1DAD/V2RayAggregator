@@ -10,6 +10,7 @@ import time
 import argparse
 import sqlite3
 import base64
+from urllib.parse import urlparse, parse_qs, unquote # <<< FIX: Added missing imports
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 
@@ -86,7 +87,6 @@ def parse_proxy_uri_to_xray_json(uri: str):
             hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
     except Exception as e:
-        # This is our crucial debug log
         print(f"DEBUG: Parser failed for URI {uri[:40]}... Error: {e}")
         return None
     return None
@@ -166,3 +166,4 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run full test (liveness + speed) on a batch of configs.")
     parser.add_argument('--input', required=True); parser.add_argument('--db-file', required=True);
     args = parser.parse_args(); asyncio.run(main(args.input, args.db_file))
+
