@@ -65,7 +65,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      # <<< FIX: اسم پکیج به geoip2 تغییر کرد
       - name: Install Dependencies
         run: pip install pyyaml requests geoip2
 
@@ -103,29 +102,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
-      # <<< FIX: اسم پکیج به geoip2 تغییر کرد
       - name: Install Dependencies
         run: pip install requests geoip2 pyyaml httpx
 
-      - name: Download Cached GeoIP DB
-        uses: actions/cache@v4
-        with:
-          path: GeoLite2-City.mmdb
-          key: ${{ runner.os }}-geoip
-
+      # <<< FIX: مرحله دانلود ابزارهای لازم اضافه شد
+      - name: Download Prerequisite Tools (Xray & GeoIP)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # دانلود کردن دیتابیس GeoIP
+          wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+          # دانلود کردن آخرین نسخه Xray
+          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -o -q xray.zip xray
+          chmod +x xray
+          echo "Xray and GeoIP are ready."
+      
       - name: Download Live Candidates Artifact
         uses: actions/download-artifact@v4
         with:
           name: live-candidates-${{ matrix.batch_id }}
       
       - name: Run Speed Test on Live Candidates
-        env:
-            XRAY_LOCATION_ASSET: ./xray # Assuming xray is at the root
         run: |
-          # Note: Xray executable is expected to be in the root from a previous step/workflow
-          # If not, you need to add a step to download it.
-          chmod +x xray
           CANDIDATES_FILE="live_candidates_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
           python test_worker.py --input $CANDIDATES_FILE --db-file $DB_FILE
