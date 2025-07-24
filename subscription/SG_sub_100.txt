@@ -1,5 +1,7 @@
-vless://966dc5ee-cd6e-4698-9116-50e6bd301bd9@168.138.165.109:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=buylite.music.apple.com&fp=chrome&pbk=kR-_5J2EPiB9nrdgyXjgzfJQnxQodkGeV_jgKOEnlEM&sid=fc814374abba&type=tcp&headerType=none
-vless://48eccebc-1e36-4c60-b088-55fb793f6688@27.50.48.186:2083?encryption=none&security=tls&sni=ngx.ambercc.filegear-sg.me&fp=chrome&type=ws&host=ngx.ambercc.filegear-sg.me&path=%2F
-vless://a13df940-020c-465f-bc89-ee5279b5cd6a@206.238.237.60:443?security=tls&sni=lw.ylka.us.kg&type=ws&path=%2F%3Fed%3D2560
-trojan://ttfang@160.22.79.166:443?sni=ttfang.fange.me
-vless://49dc19c3-e447-4422-9a54-35af28207a6e@18.143.64.158:60002?encryption=none&security=tls&sni=mihu.sorry.ip-ddns.com&fp=random&type=ws&host=mihu.sorry.ip-ddns.com&path=%2F%3Fed%3D2560
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyZGYzOTNlZi1iNWZhLTRmZmQtOWFmMy03NjEwMzRiZjMzZTM=@192.53.172.74:30013
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjOTc2NzIxYS1lMzkwLTRkYmYtYjRmOS03MmMzZmViOTU5NGM%3D@45.76.180.205:31298
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyZGYzOTNlZi1iNWZhLTRmZmQtOWFmMy03NjEwMzRiZjMzZTM%3D@192.53.172.74:30013
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyOTgxNTExYy1iZWNiLTRiNTMtOGE4OS01N2NkM2M5N2IzMjg%3D@45.76.180.205:31368
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyOTgxNTExYy1iZWNiLTRiNTMtOGE4OS01N2NkM2M5N2IzMjg@45.76.180.205:31368
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjOTc2NzIxYS1lMzkwLTRkYmYtYjRmOS03MmMzZmViOTU5NGM=@45.76.180.205:31298
+vless://cf41da32-42c9-45b0-90da-c948ad1aa69c@51.79.140.122:443?path=/SaronetVPN_TelEgrAm.suPpuRt&security=none&encryption=none&type=ws

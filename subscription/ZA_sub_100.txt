@@ -1,1 +1,1 @@
-trojan://6884d714-d3c4-4b49-aa20-767ea92837d6@160.123.255.134:443?sni=icecream.955850.xyz
+vless://394f6981-a782-4779-9a85-e6cf22935d93@jnb-sa.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

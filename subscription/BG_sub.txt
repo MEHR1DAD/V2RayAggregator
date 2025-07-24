@@ -1,0 +1,2 @@
+vless://75167e23-8086-4ed1-b87b-6b2baa0ce5a2@dl3.downloadrigan.ip-ddns.com:33727?path=%2F&security=none&encryption=none&type=ws
+vless://75167e23-8086-4ed1-b87b-6b2baa0ce5a2@dl3.downloadrigan.ip-ddns.com:33727?path=/&security=none&encryption=none&type=ws

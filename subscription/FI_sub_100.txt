@@ -1,1 +1,1 @@
-vless://86e3084e-feac-4b2f-a09c-32259fefd31d@37.27.197.171:443?security=reality&sni=tgju.org&type=grpc&fp=chrome&pbk=QwodfkRohL7XiqgLfphqnxKrSkWFRvYBiYOJdC6WelY&sid=25d7da3d4b72
+vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

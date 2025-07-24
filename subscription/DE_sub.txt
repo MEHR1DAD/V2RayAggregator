@@ -1,2 +1,6 @@
-vless://0ae41d09-04d2-4739-be46-61b00be9cc9c@s.tehdrantolidi.ir:80?path=/?ed=2087&security=none&encryption=none&host=ip-info-2.tehdrantolidi.ir&type=ws
-vless://1a0099d2-d33b-4492-a87b-18af802860b4@de3.hosmci.com:8880?security=none&encryption=none&seed=Hs5xtwTnIM&headerType=wireguard&type=kcp
+vless://b8bd42a9-551f-419d-b70d-4aefdd2cb074@204.10.194.78:443?security=tls&sni=yfnl1.xn--4gq62f52gppi29k.com&fp=safari&type=tcp&flow=xtls-rprx-vision&encryption=none
+vless://96457dda-f79a-4087-89d6-dc973fdf41cc@182910.www.11338899.servers801.ir:2096?path=/fscsxfVgdzhrefjgsBgaa?ed=80&security=none&encryption=none&host=45f4d22d.Mareza.pages.dev&type=ws
+vless://b8bd42a9-551f-419d-b70d-4aefdd2cb074@204.10.194.78:443?security=tls&sni=yfnl1.xn--4gq62f52gppi29k.com&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none
+vless://394f6981-a782-4779-9a85-e6cf22935d93@de1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://598a6cea-dfd2-4e97-9415-4571f742bf18@zzyd6dhd5.pet0er23mh21qq.com:8080?security=none&type=tcp&packetEncoding=xudp&encryption=none
+vless://96457dda-f79a-4087-89d6-dc973fdf41cc@182910.www.11338899.servers801.ir:2096?path=/fscsxfVgdzhrefjgsBgaa?ed=80&security=&encryption=none&host=45f4d22d.Mareza.pages.dev&type=ws
