@@ -1,46 +1,39 @@
-# ===============================================================
-# Project Configuration File for V2RayAggregator
-# ===============================================================
+# ===============================================
+# مرکز فرماندهی تنظیمات پروژه
+# ===============================================
 
 project:
-  repo_owner: "MEHR1DAD"
-  repo_name: "V2RayAggregator"
+  repo_owner: YourGitHubUsername # نام کاربری گیت‌هاب خود را وارد کنید
+  repo_name: YourRepoName       # نام ریپازیتوری خود را وارد کنید
 
 paths:
-  # Path to the GeoIP database file
-  geoip_database: "GeoLite2-City.mmdb"
-  # Path to the file containing discovered source URLs
-  discovered_sources: "discovered_sources.txt"
-  # Directory to save separated configs by protocol
+  # مسیر فایل‌ها و پوشه‌های اصلی
   protocol_configs_dir: "protocol_configs"
-  # Directory for final subscription files
+  merged_configs: "merged_configs.txt"
+  discovered_sources: "discovered_sources.txt"
   output_dir: "subscription"
-  # Path for the combined subscription file (all configs)
-  merged_configs: "sub/merged.txt"
 
-urls:
-  # URL template for downloading the GeoLite2-City database from MaxMind
-  geoip_download: "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={0}&suffix=tar.gz"
-
-# ===============================================================
-# Settings for various scripts
-# ===============================================================
 settings:
-  # General request timeout for simple scripts like manage_sources
-  request_timeout: 15
+  # زمان‌بندی سراسری برای خروج هوشمند
+  # این عدد بر حسب دقیقه است. (۱۷۰ دقیقه = ۲ ساعت و ۵۰ دقیقه)
+  global_timeout_minutes: 170
 
-  # Settings for the incremental liveness check script
+  # تنظیمات عمومی درخواست‌های شبکه
+  request_timeout: 10
+
+  # تنظیمات اسکریپت تست زنده بودن
   check_liveness:
-    connection_timeout: 5 # Timeout in seconds for each port check
-    chunk_size: 500       # Number of configs to test in each run
+    connection_timeout: 5
+    chunk_size: 100
 
-  # Settings for the deep check and speed test script
+  # تنظیمات اسکریپت تست سرعت
   exp_country:
-    request_timeout: 10   # Connection timeout for Xray
-    speed_test_timeout: 25 # Max time in seconds for the entire speed test (curl)
-    speed_test_url: "https://speed.cloudflare.com/__down?bytes=10000000" # 10MB file
-    batch_size: 100       # Number of configs to test concurrently for speed
-
-  # Settings for the final subscription file generator
+    request_timeout: 5
+    speed_test_url: "https://speed.cloudflare.com/__down?bytes=5000000" # 5MB test file
+    speed_test_timeout: 15
+    batch_size: 50
+  
+  # تنظیمات اسکریپت ساخت لینک‌های اشتراک
   create_rotating_sub:
-    chunk_size: 100       # Number of configs for the "Top N" list
+    chunk_size: 100
+
