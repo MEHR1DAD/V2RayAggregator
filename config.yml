@@ -1,39 +1,39 @@
-# ===============================================
-# مرکز فرماندهی تنظیمات پروژه
-# ===============================================
-
+# ====================================================================
+# تنظیمات کلی پروژه
+# ====================================================================
 project:
-  repo_owner: YourGitHubUsername # نام کاربری گیت‌هاب خود را وارد کنید
-  repo_name: YourRepoName       # نام ریپازیتوری خود را وارد کنید
+  repo_owner: 'MEHRDAD-H'
+  repo_name: 'V2RayAggregator'
 
 paths:
-  # مسیر فایل‌ها و پوشه‌های اصلی
-  protocol_configs_dir: "protocol_configs"
-  merged_configs: "merged_configs.txt"
-  discovered_sources: "discovered_sources.txt"
-  output_dir: "subscription"
+  merged_configs: 'merged_configs.txt'
+  protocol_configs_dir: 'protocol_configs'
+  discovered_sources: 'discovered_sources.txt'
+  # مسیر جدید برای فایل‌های اشتراک نهایی
+  output_dir: 'subscription'
 
 settings:
-  # زمان‌بندی سراسری برای خروج هوشمند
-  # این عدد بر حسب دقیقه است. (۱۷۰ دقیقه = ۲ ساعت و ۵۰ دقیقه)
+  # زمان‌بندی خروج هوشمند برای کل ورک‌فلو (بر حسب دقیقه)
   global_timeout_minutes: 170
-
-  # تنظیمات عمومی درخواست‌های شبکه
+  
+  # یک مهلت زمانی عمومی برای درخواست‌های شبکه
   request_timeout: 10
 
-  # تنظیمات اسکریپت تست زنده بودن
-  check_liveness:
-    connection_timeout: 5
-    chunk_size: 100
-
-  # تنظیمات اسکریپت تست سرعت
-  exp_country:
-    request_timeout: 5
-    speed_test_url: "https://speed.cloudflare.com/__down?bytes=5000000" # 5MB test file
-    speed_test_timeout: 15
-    batch_size: 50
-  
-  # تنظیمات اسکریپت ساخت لینک‌های اشتراک
   create_rotating_sub:
     chunk_size: 100
 
+  check_liveness:
+    # مهلت زمانی برای تست اتصال یک پورت
+    connection_timeout: 5
+    # تعداد کانفیگ برای تست همزمان در هر بچ
+    chunk_size: 200
+
+  exp_country:
+    request_timeout: 10
+    # FIX: Using a list of URLs to make speed testing more resilient
+    speed_test_urls:
+      - "http://cachefly.cachefly.net/100mb.test"
+      - "http://speedtest.tele2.net/100MB.zip"
+      - "https://freetestdata.com/wp-content/uploads/2021/09/100MB.zip"
+    speed_test_timeout: 30
+    batch_size: 50
