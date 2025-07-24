@@ -17,7 +17,8 @@ LIVENESS_CHUNK_SIZE = config['settings']['check_liveness']['chunk_size']
 TASK_TIMEOUT = 15
 # Graceful exit logic constants
 START_TIME = time.time()
-WORKFLOW_TIMEOUT_SECONDS = 53 * 60
+# <<< FIX: حالا زمان‌بندی از فایل کانفیگ خوانده می‌شود
+WORKFLOW_TIMEOUT_SECONDS = config['settings']['global_timeout_minutes'] * 60
 
 def is_approaching_timeout():
     """Checks if the script is approaching the GitHub Actions timeout."""
