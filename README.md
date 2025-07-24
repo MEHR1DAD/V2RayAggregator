@@ -11,7 +11,7 @@
 
 [![Update-Status](https://img.shields.io/github/actions/workflow/status/YourGitHubUsername/YourRepoName/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/YourGitHubUsername/YourRepoName/actions/workflows/update_all_proxies.yml)
 [![Configs-Count](https://img.shields.io/badge/Configs-0-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://raw.githubusercontent.com/YourGitHubUsername/YourRepoName/master/merged_configs.txt)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Thursday%2002%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2015%3A44-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/YourGitHubUsername/YourRepoName/commits/main)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Thursday%2002%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2015%3A50-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/YourGitHubUsername/YourRepoName/commits/main)
 
 </div>
 
