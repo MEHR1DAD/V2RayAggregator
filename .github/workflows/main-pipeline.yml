@@ -65,9 +65,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      # <<< FIX: کتابخانه‌های requests و geoip2 اضافه شدند
+      # <<< FIX: اسم پکیج به geoip2 تغییر کرد
       - name: Install Dependencies
-        run: pip install pyyaml requests geoip2-database
+        run: pip install pyyaml requests geoip2
 
       - name: Download Batch Artifacts
         uses: actions/download-artifact@v4
@@ -103,25 +103,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests geoip2-database pyyaml httpx
-
-      - name: Download Cached Dependencies
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release download deps/geoip-latest --repo ${{ github.repository }} --pattern '*.mmdb' --clobber
-          LATEST_XRAY_PKG_TAG=$(gh release list --repo ${{ github.repository }} --limit 50 --json tagName --jq '.[] | select(.tagName | startswith("deps/xray-pkg-")) | .tagName' | head -n 1)
-          if [ -z "$LATEST_XRAY_PKG_TAG" ]; then echo "::error::No cached Xray package found."; exit 1; fi
-          gh release download "$LATEST_XRAY_PKG_TAG" --repo ${{ github.repository }} --clobber
-          chmod +x xray
       
+      # <<< FIX: اسم پکیج به geoip2 تغییر کرد
+      - name: Install Dependencies
+        run: pip install requests geoip2 pyyaml httpx
+
+      - name: Download Cached GeoIP DB
+        uses: actions/cache@v4
+        with:
+          path: GeoLite2-City.mmdb
+          key: ${{ runner.os }}-geoip
+
       - name: Download Live Candidates Artifact
         uses: actions/download-artifact@v4
         with:
           name: live-candidates-${{ matrix.batch_id }}
       
       - name: Run Speed Test on Live Candidates
+        env:
+            XRAY_LOCATION_ASSET: ./xray # Assuming xray is at the root
         run: |
+          # Note: Xray executable is expected to be in the root from a previous step/workflow
+          # If not, you need to add a step to download it.
+          chmod +x xray
           CANDIDATES_FILE="live_candidates_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
           python test_worker.py --input $CANDIDATES_FILE --db-file $DB_FILE
