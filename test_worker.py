@@ -30,7 +30,7 @@ REQUEST_TIMEOUT = config['settings']['exp_country']['request_timeout']
 SPEED_TEST_URLS = config['settings']['exp_country']['speed_test_urls']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
-TASK_TIMEOUT = 60 # Increased to 60s for the whole task
+TASK_TIMEOUT = 60
 START_TIME = time.time()
 
 
@@ -55,16 +55,13 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
 
 # --- Parser function remains unchanged ---
 def parse_proxy_uri_to_xray_json(uri: str):
-    # This parser is now robust from previous steps.
     try:
         if uri.startswith("vless://"):
-            # ... (parser logic)
             parsed = urlparse(uri); params = parse_qs(parsed.query); user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}; stream_settings = {"network": params.get("type", ["tcp"])[0], "security": params.get("security", ["none"])[0]};
             if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": params.get("sni", [parsed.hostname])[0]}
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": params.get("path", ["/"])[0], "headers": {"Host": params.get("host", [parsed.hostname])[0]}}
             return {"protocol": "vless", "settings": {"vnext": [{"address": parsed.hostname, "port": parsed.port, "users": [user_object]}]}, "streamSettings": stream_settings}
         elif uri.startswith("vmess://"):
-            # ... (parser logic)
             encoded_part = uri.replace("vmess://", "").strip(); padding = len(encoded_part) % 4;
             if padding: encoded_part += "=" * (4 - padding)
             decoded_json_str = base64.b64decode(encoded_part).decode('utf-8'); vmess_data = json.loads(decoded_json_str)
@@ -74,12 +71,10 @@ def parse_proxy_uri_to_xray_json(uri: str):
             if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
             return {"protocol": "vmess", "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]}, "streamSettings": stream_settings}
         elif uri.startswith("trojan://"):
-            # ... (parser logic)
             parsed = urlparse(uri); params = parse_qs(parsed.query)
             if not parsed.username: return None
             return {"protocol": "trojan", "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]}, "streamSettings": {"network": "tcp", "security": "tls", "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}}}
         elif uri.startswith("ss://"):
-            # ... (parser logic)
             uri_no_fragment = uri.split("#")[0]
             if '@' in uri_no_fragment:
                 parsed = urlparse(uri_no_fragment); encoded_user_info = unquote(parsed.username); padding = len(encoded_user_info) % 4
@@ -98,14 +93,13 @@ def parse_proxy_uri_to_xray_json(uri: str):
         return None
     return None
 
+# test_proxy_speed now uses the corrected logic passed into it
 async def test_proxy_speed(proxy_config: str, port: int) -> float:
     config_path = f"temp_config_{port}.json"
     xray_process = None
     
-    # DEBUG LOG 1: Check if parser fails
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
     if not outbound_config:
-        print(f"DEBUG: Parser failed for {proxy_config[:40]}...")
         return 0.0
 
     xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
@@ -114,22 +108,17 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
         
         xray_command = [XRAY_PATH, '-c', config_path]
-        xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         await asyncio.sleep(2)
         
         if xray_process.returncode is not None:
-            # DEBUG LOG 2: Check if Xray fails to start
-            xray_stderr = await xray_process.stderr.read()
-            print(f"DEBUG: Xray failed to start for {proxy_config[:40]}. Error: {xray_stderr.decode()}")
             return 0.0
 
         speed_test_url = random.choice(SPEED_TEST_URLS)
-        # DEBUG LOG 3: Log which URL is being used
-        print(f"DEBUG: Testing {proxy_config[:40]} with URL {speed_test_url}")
         
         curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
-        proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = await proc.communicate()
+        proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+        stdout, _ = await proc.communicate()
         
         if proc.returncode == 0 and stdout:
             try:
@@ -138,12 +127,8 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
             except (ValueError, TypeError):
                 return 0.0
         else:
-            # DEBUG LOG 4: Log the actual curl error
-            print(f"DEBUG: curl command failed for {proxy_config[:40]}. Exit code: {proc.returncode}, Error: {stderr.decode()}")
             return 0.0
-    except Exception as e:
-        # DEBUG LOG 5: Log any other unexpected exception
-        print(f"DEBUG: An unexpected error occurred for {proxy_config[:40]}: {e}")
+    except Exception:
         return 0.0
     finally:
         if xray_process and xray_process.returncode is None:
@@ -155,7 +140,6 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
         if os.path.exists(config_path):
             os.remove(config_path)
 
-# --- process_batch and main remain unchanged, but will now produce debug logs ---
 async def process_batch(batch, reader, start_port):
     tasks = []
     for i, conn in enumerate(batch):
@@ -170,12 +154,19 @@ async def process_batch(batch, reader, start_port):
     for conn, result in zip(batch, results):
         if isinstance(result, float) and result > 1:
             speed_kbps = result
-            host = extract_ip_from_connection(conn)
+            
+            # <<< --- FIX IS HERE --- >>>
+            host_port_str = extract_ip_from_connection(conn)
+            if not host_port_str or ':' not in host_port_str:
+                continue
+            
+            host, _ = host_port_str.rsplit(':', 1)
+            # <<< --- END OF FIX --- >>>
+
             ip = await asyncio.to_thread(resolve_to_ip, host)
             if not ip:
-                # DEBUG LOG 6: Log DNS resolution failure
-                print(f"DEBUG: DNS resolution failed for host {host}")
-                continue
+                continue # Skip if DNS resolution fails
+
             country_code = await asyncio.to_thread(get_country_code, ip, reader)
             
             if country_code:
@@ -218,7 +209,6 @@ async def main(input_path, db_path):
     
     reader.close()
     print("\nSpeed test worker finished.")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run speed test on a batch of configs.")
