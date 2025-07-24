@@ -9,9 +9,9 @@
 
 <div align="center">
 
-[![Update-Status](https://img.shields.io/github/actions/workflow/status/MEHR1DAD/V2RayAggregator/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/update_all_proxies.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-0-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/sub/merged.txt)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Thursday%2002%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2013%3A26-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
+[![Update-Status](https://img.shields.io/github/actions/workflow/status/YourGitHubUsername/YourRepoName/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/YourGitHubUsername/YourRepoName/actions/workflows/update_all_proxies.yml)
+[![Configs-Count](https://img.shields.io/badge/Configs-0-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://raw.githubusercontent.com/YourGitHubUsername/YourRepoName/master/merged_configs.txt)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Thursday%2002%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2015%3A44-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/YourGitHubUsername/YourRepoName/commits/main)
 
 </div>
 
@@ -37,7 +37,7 @@
 <p dir="rtl">این لینک شامل **0** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
 
 ```
-https://raw.githubusercontent.com/MEHR1DAD/V2RayAggregator/master/sub/merged.txt
+https://raw.githubusercontent.com/YourGitHubUsername/YourRepoName/master/merged_configs.txt
 ```
 
 ---
