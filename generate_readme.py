@@ -111,7 +111,7 @@ def generate_files():
 
 <div align="center">
 
-[![Update-Status](https://img.shields.io/github/actions/workflow/status/{REPO_OWNER}/{REPO_NAME}/update_all_proxies.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/update_all_proxies.yml)
+[![Update-Status](https://img.shields.io/github/actions/workflow/status/{REPO_OWNER}/{REPO_NAME}/main-pipeline.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status)](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)
 [![Configs-Count](https://img.shields.io/badge/Configs-{total_configs_count:,}-blueviolet?style=for-the-badge&logo=server&logoColor=white)]({ALL_CONFIGS_URL})
 [![Last-Update](https://img.shields.io/badge/Last%20Update-{encoded_date}-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{REPO_OWNER}/{REPO_NAME}/commits/main)
 
