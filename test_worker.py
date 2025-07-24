@@ -27,7 +27,8 @@ SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
 TASK_TIMEOUT = 60
 START_TIME = time.time()
-WORKFLOW_TIMEOUT_SECONDS = 170 * 60 # Using the 3-hour cycle timeout
+# <<< FIX: حالا زمان‌بندی از فایل کانفیگ خوانده می‌شود
+WORKFLOW_TIMEOUT_SECONDS = config['settings']['global_timeout_minutes'] * 60
 
 # --- Helper functions ---
 def is_approaching_timeout(): return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
@@ -166,4 +167,3 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run full test (liveness + speed) on a batch of configs.")
     parser.add_argument('--input', required=True); parser.add_argument('--db-file', required=True);
     args = parser.parse_args(); asyncio.run(main(args.input, args.db_file))
-
