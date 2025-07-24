@@ -10,7 +10,7 @@ import time
 import argparse
 import sqlite3
 import base64
-# FIX: All necessary imports are now included
+import random # <-- Import the random library
 from urllib.parse import urlparse, unquote, parse_qs
 
 from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
@@ -27,14 +27,15 @@ WORKFLOW_TIMEOUT_SECONDS = GLOBAL_TIMEOUT_MINUTES * 60
 GEOIP_DB = "GeoLite2-City.mmdb"
 XRAY_PATH = './xray'
 REQUEST_TIMEOUT = config['settings']['exp_country']['request_timeout']
-SPEED_TEST_URL = config['settings']['exp_country']['speed_test_url']
+# FIX: Get the LIST of speed test URLs
+SPEED_TEST_URLS = config['settings']['exp_country']['speed_test_urls']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
-TASK_TIMEOUT = 60 # Timeout for a single speed test task
+TASK_TIMEOUT = 60
 START_TIME = time.time()
 
 
-# --- Helper functions ---
+# --- Helper functions (initialize_worker_db, bulk_upsert_to_worker_db) remain unchanged ---
 def is_approaching_timeout():
     return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 
@@ -53,7 +54,7 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- FINAL ROBUST PARSER FUNCTION ---
+# --- Parser function remains unchanged ---
 def parse_proxy_uri_to_xray_json(uri: str):
     try:
         if uri.startswith("vless://"):
@@ -69,71 +70,50 @@ def parse_proxy_uri_to_xray_json(uri: str):
         
         elif uri.startswith("vmess://"):
             try:
-                # Handle potential Base64 decoding errors
                 encoded_part = uri.replace("vmess://", "").strip()
                 padding = len(encoded_part) % 4
                 if padding:
                     encoded_part += "=" * (4 - padding)
                 decoded_json_str = base64.b64decode(encoded_part).decode('utf-8')
                 vmess_data = json.loads(decoded_json_str)
-            except (json.JSONDecodeError, UnicodeDecodeError, Exception):
-                 return None # Fail silently if JSON is malformed
-
-            if not all(k in vmess_data for k in ['add', 'port', 'id']):
-                return None
-                
+            except Exception:
+                 return None
+            if not all(k in vmess_data for k in ['add', 'port', 'id']): return None
             user_object = {"id": vmess_data.get("id"), "alterId": int(vmess_data.get("aid", 0)), "security": vmess_data.get("scy", "auto")}
             stream_settings = {"network": vmess_data.get("net", "tcp"), "security": vmess_data.get("tls", "none")}
-            
-            if stream_settings["security"] == "tls":
-                stream_settings["tlsSettings"] = {"serverName": vmess_data.get("sni", vmess_data.get("host", vmess_data.get("add")))}
-            if stream_settings["network"] == "ws":
-                stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
-            
+            if stream_settings["security"] == "tls": stream_settings["tlsSettings"] = {"serverName": vmess_data.get("sni", vmess_data.get("host", vmess_data.get("add")))}
+            if stream_settings["network"] == "ws": stream_settings["wsSettings"] = {"path": vmess_data.get("path", "/"), "headers": {"Host": vmess_data.get("host", vmess_data.get("add"))}}
             return {"protocol": "vmess", "settings": {"vnext": [{"address": vmess_data.get("add"), "port": int(vmess_data.get("port")), "users": [user_object]}]}, "streamSettings": stream_settings}
 
         elif uri.startswith("trojan://"):
             parsed = urlparse(uri)
             params = parse_qs(parsed.query)
-            if not parsed.username:
-                return None
+            if not parsed.username: return None
             return {"protocol": "trojan", "settings": {"servers": [{"address": parsed.hostname, "port": parsed.port, "password": parsed.username}]}, "streamSettings": {"network": "tcp", "security": "tls", "tlsSettings": {"serverName": params.get("sni", [parsed.hostname])[0]}}}
 
         elif uri.startswith("ss://"):
             uri_no_fragment = uri.split("#")[0]
-            # Pattern for Base64 encoded part: method:password@hostname:port
             if '@' in uri_no_fragment:
-                # Standard URI format: ss://<base64_encoded_user_info>@<hostname>:<port>
                 parsed = urlparse(uri_no_fragment)
                 encoded_user_info = unquote(parsed.username)
                 padding = len(encoded_user_info) % 4
-                if padding:
-                    encoded_user_info += "=" * (4 - padding)
+                if padding: encoded_user_info += "=" * (4 - padding)
                 decoded_user_info = base64.urlsafe_b64decode(encoded_user_info).decode('utf-8', errors='ignore')
                 creds = decoded_user_info
                 server = f"{parsed.hostname}:{parsed.port}"
             else:
-                # Legacy format: ss://<base64_encoded_full>
                 encoded_part = uri_no_fragment.replace("ss://", "").strip()
                 padding = len(encoded_part) % 4
-                if padding:
-                    encoded_part += "=" * (4 - padding)
+                if padding: encoded_part += "=" * (4 - padding)
                 decoded = base64.urlsafe_b64decode(encoded_part).decode('utf-8', errors='ignore')
-                # Check if decoded part is in the expected format
-                if '@' not in decoded:
-                    return None
+                if '@' not in decoded: return None
                 creds, server = decoded.rsplit('@', 1)
             
-            # Split credentials and server parts safely
-            if ":" not in creds or ":" not in server:
-                 return None
+            if ":" not in creds or ":" not in server: return None
             method, password = creds.split(":", 1)
             hostname, port_str = server.rsplit(':', 1)
-
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-
     except Exception:
-        # Silently fail on any parsing error
         return None
     return None
 
@@ -142,46 +122,30 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
     xray_process = None
     
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
-    if not outbound_config:
-        return 0.0
+    if not outbound_config: return 0.0
 
-    xray_config = {
-        "log": {"loglevel": "warning"},
-        "inbounds": [{
-            "port": port,
-            "listen": "127.0.0.1",
-            "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": False}
-        }],
-        "outbounds": [outbound_config]
-    }
+    xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
     
     try:
-        with open(config_path, 'w') as f:
-            json.dump(xray_config, f)
+        with open(config_path, 'w') as f: json.dump(xray_config, f)
         
         xray_command = [XRAY_PATH, '-c', config_path]
         xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        await asyncio.sleep(2)
         
-        await asyncio.sleep(2) # Give Xray time to start
-        
-        if xray_process.returncode is not None:
-            return 0.0 # Xray failed to start
+        if xray_process.returncode is not None: return 0.0
 
-        curl_cmd = [
-            'curl', '--socks5-hostname', f'127.0.0.1:{port}',
-            '-w', '%{speed_download}', '-o', '/dev/null', '-s',
-            '--connect-timeout', str(REQUEST_TIMEOUT),
-            '--max-time', str(SPEED_TEST_TIMEOUT),
-            SPEED_TEST_URL
-        ]
+        # FIX: Randomly choose a URL from the list for each test
+        speed_test_url = random.choice(SPEED_TEST_URLS)
+        
+        curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
         proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = await proc.communicate()
         
         if proc.returncode == 0 and stdout:
             try:
                 speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
-                return (speed_bytes_per_sec * 8) / 1024 # Return speed in Kbps
+                return (speed_bytes_per_sec * 8) / 1024
             except (ValueError, TypeError):
                 return 0.0
         else:
@@ -194,10 +158,11 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
                 xray_process.terminate()
                 await xray_process.wait()
             except ProcessLookupError:
-                pass # Process already finished
+                pass
         if os.path.exists(config_path):
             os.remove(config_path)
 
+# --- process_batch and main functions remain mostly unchanged, but will now use the resilient test function ---
 async def process_batch(batch, reader, start_port):
     tasks = []
     for i, conn in enumerate(batch):
@@ -213,7 +178,8 @@ async def process_batch(batch, reader, start_port):
         if isinstance(result, float) and result > 1:
             speed_kbps = result
             host = extract_ip_from_connection(conn)
-            ip = await asyncio.to_thread(resolve_to_ip, host) # Run blocking DNS in a thread
+            # Run blocking I/O in a separate thread to not block the event loop
+            ip = await asyncio.to_thread(resolve_to_ip, host)
             country_code = await asyncio.to_thread(get_country_code, ip, reader) if ip else None
             
             if country_code:
@@ -224,8 +190,7 @@ async def process_batch(batch, reader, start_port):
 
 async def main(input_path, db_path):
     initialize_worker_db(db_path)
-    if not os.path.exists(GEOIP_DB) or not os.path.exists(input_path):
-        return
+    if not os.path.exists(GEOIP_DB) or not os.path.exists(input_path): return
 
     try:
         reader = geoip2.database.Reader(GEOIP_DB)
