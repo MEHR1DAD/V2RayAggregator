@@ -82,17 +82,7 @@
                 }
             }
 
-            function displayMainSubscription(url, count) {
-                mainSubContainer.innerHTML = `
-                    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 card">
-                        <h2 class="text-2xl font-bold text-center mb-4">🌐 لینک جامع (همه کانفیگ‌ها)</h2>
-                        <p class="text-center text-gray-400 mb-4">این لینک شامل <b>${count.toLocaleString('fa-IR')}</b> کانفیگ از تمام کشورها است.</p>
-                        <div class="flex flex-col sm:flex-row gap-2">
-                            <button class="copy-btn flex-grow bg-purple-600 hover:bg-purple-700" data-link="${url}">کپی لینک</button>
-                            <button class="qr-btn bg-gray-700 hover:bg-gray-600" data-link="${url}" data-title="لینک جامع">نمایش QR Code</button>
-                        </div>
-                    </div>`;
-            }
+            
 
             function displayCountries(data) {
                 countriesGrid.innerHTML = '';
