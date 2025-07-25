@@ -2,7 +2,7 @@
 # تنظیمات کلی پروژه
 # ====================================================================
 project:
-  repo_owner: 'MEHRDAD-H'
+  repo_owner: 'MEHR1DAD'
   repo_name: 'V2RayAggregator'
 
 paths:
@@ -32,8 +32,8 @@ settings:
     request_timeout: 10
     # FIX: Using a list of URLs to make speed testing more resilient
     speed_test_urls:
-      - "http://cachefly.cachefly.net/100mb.test"
-      - "http://speedtest.tele2.net/100MB.zip"
-      - "https://freetestdata.com/wp-content/uploads/2021/09/100MB.zip"
+      - "https://speed.cloudflare.com/__down?bytes=5000000"
+      - "https://speed.cloudflare.com/__down?bytes=5000000"
+      - "https://speed.cloudflare.com/__down?bytes=5000000"
     speed_test_timeout: 30
     batch_size: 50
