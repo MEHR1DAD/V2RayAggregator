@@ -9,9 +9,9 @@
 
 <div align="center">
 
-[![Main Proxy Pipeline](https://github.com/MEHRDAD-H/V2RayAggregator/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/MEHRDAD-H/V2RayAggregator/actions/workflows/main-pipeline.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-914-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHRDAD-H/V2RayAggregator)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Friday%2003%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2013%3A10-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHRDAD-H/V2RayAggregator/commits/main)
+[![Main Proxy Pipeline](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml)
+[![Configs-Count](https://img.shields.io/badge/Configs-1,012-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Friday%2003%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2016%3A15-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
 
 </div>
 
@@ -34,10 +34,10 @@
 <div align="center">
 
 ### 🌐 لینک جامع (همه کانفیگ‌ها)
-<p dir="rtl">این لینک شامل **914** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
+<p dir="rtl">این لینک شامل **1,012** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/merged_configs.txt 
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/merged_configs.txt 
 ```
 
 ---
@@ -51,7 +51,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/merged_config
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 159)
+    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 174)
   </div>
 </summary>
 
@@ -67,7 +67,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/merged_config
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/US_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/US_sub.txt
 ```
 </div>
 
@@ -75,7 +75,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/US_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/US_sub_100.txt
 ```
 </div>
 
@@ -85,7 +85,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇬🇧 بریتانیا</b> (تعداد کل: 134)
+    <b>🇬🇧 بریتانیا</b> (تعداد کل: 154)
   </div>
 </summary>
 
@@ -101,7 +101,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/GB_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/GB_sub.txt
 ```
 </div>
 
@@ -109,7 +109,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/GB_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/GB_sub_100.txt
 ```
 </div>
 
@@ -119,7 +119,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇷 فرانسه</b> (تعداد کل: 129)
+    <b>🇫🇷 فرانسه</b> (تعداد کل: 141)
   </div>
 </summary>
 
@@ -135,7 +135,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub.txt
 ```
 </div>
 
@@ -143,7 +143,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub_100.txt
 ```
 </div>
 
@@ -153,7 +153,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇷 ایران</b> (تعداد کل: 92)
+    <b>🇮🇷 ایران</b> (تعداد کل: 107)
   </div>
 </summary>
 
@@ -169,7 +169,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IR_sub.txt
 ```
 </div>
 
@@ -177,7 +177,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IR_sub_100.txt
 ```
 </div>
 
@@ -187,7 +187,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 50)
+    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 59)
   </div>
 </summary>
 
@@ -203,7 +203,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/KR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/KR_sub.txt
 ```
 </div>
 
@@ -211,7 +211,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/KR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/KR_sub_100.txt
 ```
 </div>
 
@@ -221,7 +221,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 49)
+    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 55)
   </div>
 </summary>
 
@@ -237,7 +237,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub.txt
 ```
 </div>
 
@@ -245,7 +245,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub_100.txt
 ```
 </div>
 
@@ -255,7 +255,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇯🇵 ژاپن</b> (تعداد کل: 48)
+    <b>🇯🇵 ژاپن</b> (تعداد کل: 53)
   </div>
 </summary>
 
@@ -271,7 +271,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub.txt
 ```
 </div>
 
@@ -279,7 +279,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub_100.txt
 ```
 </div>
 
@@ -305,7 +305,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/TR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/TR_sub.txt
 ```
 </div>
 
@@ -313,7 +313,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/TR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/TR_sub_100.txt
 ```
 </div>
 
@@ -323,7 +323,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇧🇷 برزیل</b> (تعداد کل: 29)
+    <b>🇩🇪 آلمان</b> (تعداد کل: 30)
   </div>
 </summary>
 
@@ -339,7 +339,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/BR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/DE_sub.txt
 ```
 </div>
 
@@ -347,7 +347,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/BR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/DE_sub_100.txt
 ```
 </div>
 
@@ -357,7 +357,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇩🇪 آلمان</b> (تعداد کل: 28)
+    <b>🇧🇷 برزیل</b> (تعداد کل: 30)
   </div>
 </summary>
 
@@ -373,7 +373,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/DE_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/BR_sub.txt
 ```
 </div>
 
@@ -381,7 +381,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/DE_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/BR_sub_100.txt
 ```
 </div>
 
@@ -391,7 +391,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇸🇪 سوئد</b> (تعداد کل: 24)
+    <b>🇸🇪 سوئد</b> (تعداد کل: 25)
   </div>
 </summary>
 
@@ -407,7 +407,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/SE_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SE_sub.txt
 ```
 </div>
 
@@ -415,7 +415,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/SE_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SE_sub_100.txt
 ```
 </div>
 
@@ -425,7 +425,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇱🇻 لتونی</b> (تعداد کل: 21)
+    <b>🇱🇻 لتونی</b> (تعداد کل: 24)
   </div>
 </summary>
 
@@ -441,7 +441,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/LV_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/LV_sub.txt
 ```
 </div>
 
@@ -449,7 +449,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/LV_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/LV_sub_100.txt
 ```
 </div>
 
@@ -459,7 +459,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇮 فنلاند</b> (تعداد کل: 21)
+    <b>🇫🇮 فنلاند</b> (تعداد کل: 22)
   </div>
 </summary>
 
@@ -475,7 +475,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub.txt
 ```
 </div>
 
@@ -483,7 +483,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub_100.txt
 ```
 </div>
 
@@ -509,7 +509,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/NL_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/NL_sub.txt
 ```
 </div>
 
@@ -517,7 +517,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/NL_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/NL_sub_100.txt
 ```
 </div>
 
@@ -543,7 +543,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/SG_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SG_sub.txt
 ```
 </div>
 
@@ -551,7 +551,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/SG_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SG_sub_100.txt
 ```
 </div>
 
@@ -561,7 +561,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇳 هند</b> (تعداد کل: 11)
+    <b>🇮🇳 هند</b> (تعداد کل: 12)
   </div>
 </summary>
 
@@ -577,7 +577,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IN_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IN_sub.txt
 ```
 </div>
 
@@ -585,7 +585,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IN_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IN_sub_100.txt
 ```
 </div>
 
@@ -611,7 +611,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub.txt
 ```
 </div>
 
@@ -619,7 +619,41 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
+    <b>🇦🇺 استرالیا</b> (تعداد کل: 9)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AU_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AU_sub_100.txt
 ```
 </div>
 
@@ -645,7 +679,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AM_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AM_sub.txt
 ```
 </div>
 
@@ -653,41 +687,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AM_sub_100.txt
-```
-</div>
-
-</div>
-</details>
-
-<details>
-<summary>
-  <div dir="rtl" align="right">
-    <b>🇦🇺 استرالیا</b> (تعداد کل: 7)
-  </div>
-</summary>
-
-<div dir="rtl">
-<br>
-
-<p>
-- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
-- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
-</p>
-
-<p><b>لینک کامل:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AU_sub.txt
-```
-</div>
-
-<p><b>لینک ۱۰۰تایی:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AU_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AM_sub_100.txt
 ```
 </div>
 
@@ -713,7 +713,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CH_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CH_sub.txt
 ```
 </div>
 
@@ -721,7 +721,41 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CH_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CH_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
+    <b>🇰🇿 قزاقستان</b> (تعداد کل: 4)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/KZ_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/KZ_sub_100.txt
 ```
 </div>
 
@@ -747,7 +781,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/TW_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/TW_sub.txt
 ```
 </div>
 
@@ -755,41 +789,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/TW_sub_100.txt
-```
-</div>
-
-</div>
-</details>
-
-<details>
-<summary>
-  <div dir="rtl" align="right">
-    <b>🇰🇿 قزاقستان</b> (تعداد کل: 3)
-  </div>
-</summary>
-
-<div dir="rtl">
-<br>
-
-<p>
-- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
-- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
-</p>
-
-<p><b>لینک کامل:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/KZ_sub.txt
-```
-</div>
-
-<p><b>لینک ۱۰۰تایی:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/KZ_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/TW_sub_100.txt
 ```
 </div>
 
@@ -815,7 +815,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CL_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CL_sub.txt
 ```
 </div>
 
@@ -823,7 +823,41 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CL_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CL_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
+    <b>🇦🇪 امارات</b> (تعداد کل: 3)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AE_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AE_sub_100.txt
 ```
 </div>
 
@@ -849,7 +883,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/MD_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/MD_sub.txt
 ```
 </div>
 
@@ -857,7 +891,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/MD_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/MD_sub_100.txt
 ```
 </div>
 
@@ -883,7 +917,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/BG_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/BG_sub.txt
 ```
 </div>
 
@@ -891,7 +925,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/BG_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/BG_sub_100.txt
 ```
 </div>
 
@@ -917,7 +951,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/ZA_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ZA_sub.txt
 ```
 </div>
 
@@ -925,7 +959,41 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/ZA_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ZA_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
+    <b>🏳️ VN</b> (تعداد کل: 1)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub_100.txt
 ```
 </div>
 
@@ -951,7 +1019,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/UA_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/UA_sub.txt
 ```
 </div>
 
@@ -959,7 +1027,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/UA_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/UA_sub_100.txt
 ```
 </div>
 
@@ -985,7 +1053,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/RU_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/RU_sub.txt
 ```
 </div>
 
@@ -993,7 +1061,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/RU_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/RU_sub_100.txt
 ```
 </div>
 
@@ -1019,7 +1087,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/PL_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/PL_sub.txt
 ```
 </div>
 
@@ -1027,7 +1095,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/PL_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/PL_sub_100.txt
 ```
 </div>
 
@@ -1053,7 +1121,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/LT_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/LT_sub.txt
 ```
 </div>
 
@@ -1061,7 +1129,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/LT_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/LT_sub_100.txt
 ```
 </div>
 
@@ -1087,7 +1155,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IT_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IT_sub.txt
 ```
 </div>
 
@@ -1095,7 +1163,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IT_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IT_sub_100.txt
 ```
 </div>
 
@@ -1121,7 +1189,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IL_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IL_sub.txt
 ```
 </div>
 
@@ -1129,7 +1197,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/IL_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/IL_sub_100.txt
 ```
 </div>
 
@@ -1155,7 +1223,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/ES_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ES_sub.txt
 ```
 </div>
 
@@ -1163,7 +1231,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/ES_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ES_sub_100.txt
 ```
 </div>
 
@@ -1189,7 +1257,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CZ_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CZ_sub.txt
 ```
 </div>
 
@@ -1197,7 +1265,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CZ_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CZ_sub_100.txt
 ```
 </div>
 
@@ -1223,7 +1291,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CN_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CN_sub.txt
 ```
 </div>
 
@@ -1231,7 +1299,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/CN_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CN_sub_100.txt
 ```
 </div>
 
@@ -1257,7 +1325,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AR_sub.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AR_sub.txt
 ```
 </div>
 
@@ -1265,7 +1333,7 @@ https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/
 <div align="center">
 
 ```
-https://github.com/MEHRDAD-H/V2RayAggregator/raw/refs/heads/master/subscription/AR_sub_100.txt
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/AR_sub_100.txt
 ```
 </div>
 
