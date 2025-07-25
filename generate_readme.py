@@ -67,8 +67,8 @@ REPO_OWNER = config['project']['repo_owner']
 REPO_NAME = config['project']['repo_name']
 ALL_CONFIGS_FILE = config['paths']['merged_configs'] 
 
-# --- Corrected URL Generation using the standard raw link format ---
-BASE_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master"
+# --- DEFINITIVELY CORRECTED URL Generation using your provided format ---
+BASE_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/raw/refs/heads/master"
 ALL_CONFIGS_URL = f"{BASE_URL}/{ALL_CONFIGS_FILE}"
 SUBSCRIPTION_URL_BASE = f"{BASE_URL}/subscription"
 
@@ -122,8 +122,8 @@ def generate_files():
     # --- Generate Full README.md ---
     encoded_date = quote(readme_update_time)
     
-    # Corrected Badge using the proper Markdown image syntax
-    badge_md = f"![Update-Status](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg)"
+    # Corrected Badge using the exact Markdown you provided
+    badge_markdown = f"[![Main Proxy Pipeline](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)"
     
     readme_content = f"""
 <div dir="rtl" align="center">
@@ -136,7 +136,7 @@ def generate_files():
 
 <div align="center">
 
-[{badge_md}](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)
+{badge_markdown}
 [![Configs-Count](https://img.shields.io/badge/Configs-{total_configs_count:,}-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/{REPO_OWNER}/{REPO_NAME})
 [![Last-Update](https://img.shields.io/badge/Last%20Update-{encoded_date}-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{REPO_OWNER}/{REPO_NAME}/commits/main)
 
