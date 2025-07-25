@@ -1,0 +1,51 @@
+name: Discover New Sources
+
+on:
+  # هر روز ساعت ۱ بامداد به وقت UTC اجرا می‌شود
+  schedule:
+    - cron: '0 1 * * *'
+  # امکان اجرای دستی را هم فراهم می‌کند
+  workflow_dispatch:
+
+jobs:
+  discover:
+    name: Discover New Sources
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Discovery Script
+        env:
+          # مهم: این توکن برای جستجو در API گیت‌هاب ضروری است
+          # شما باید یک سکرت به نام GH_PAT در تنظیمات ریپازیتوری خود بسازید
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python find_sources.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Source Discovery)"
+          # فقط فایل‌های مربوط به خروجی اسکریپت را اضافه کن
+          git add ${{ env.OUTPUT_FILE }} ${{ env.CRAWLED_URLS_STATE_FILE }}
+          
+          # چک کن آیا تغییری برای کامیت وجود دارد یا نه
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(data): update discovered and crawled sources"
+            git pull --rebase
+            git push
+          else
+            echo "No new sources or crawled URLs to commit."
+          fi
+        env:
+          OUTPUT_FILE: "discovered_sources.txt"
+          CRAWLED_URLS_STATE_FILE: "crawled_urls.txt"
