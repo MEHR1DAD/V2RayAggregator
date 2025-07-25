@@ -26,7 +26,6 @@
             <input type="text" id="search-input" placeholder="جستجوی کشور..." class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
         </div>
 
-        <div id="main-sub-container" class="mb-12"></div>
         <div id="countries-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
         <div id="loading" class="text-center py-12">
@@ -46,7 +45,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const countriesGrid = document.getElementById('countries-grid');
-            const mainSubContainer = document.getElementById('main-sub-container');
             const searchInput = document.getElementById('search-input');
             const loadingIndicator = document.getElementById('loading');
             const lastUpdateEl = document.getElementById('last-update');
@@ -67,9 +65,6 @@
                     const updatedAt = new Date(data.last_update);
                     lastUpdateEl.textContent = `آخرین بروزرسانی: ${updatedAt.toLocaleString('fa-IR', { dateStyle: 'long', timeStyle: 'short' })}`;
 
-                    // Display Main Subscription
-                    displayMainSubscription(data.merged_configs_url, data.merged_configs_count);
-
                     // Display Countries
                     allCountryData = data.countries;
                     displayCountries(allCountryData);
@@ -80,18 +75,6 @@
                 } finally {
                     loadingIndicator.style.display = 'none';
                 }
-            }
-
-            function displayMainSubscription(url, count) {
-                mainSubContainer.innerHTML = `
-                    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 card">
-                        <h2 class="text-2xl font-bold text-center mb-4">🌐 لینک جامع (همه کانفیگ‌ها)</h2>
-                        <p class="text-center text-gray-400 mb-4">این لینک شامل <b>${count.toLocaleString('fa-IR')}</b> کانفیگ از تمام کشورها است.</p>
-                        <div class="flex flex-col sm:flex-row gap-2">
-                            <button class="copy-btn flex-grow bg-purple-600 hover:bg-purple-700" data-link="${url}">کپی لینک</button>
-                            <button class="qr-btn bg-gray-700 hover:bg-gray-600" data-link="${url}" data-title="لینک جامع">نمایش QR Code</button>
-                        </div>
-                    </div>`;
             }
 
             function displayCountries(data) {
@@ -135,7 +118,6 @@
             }
 
             countriesGrid.addEventListener('click', handleGridClick);
-            mainSubContainer.addEventListener('click', handleGridClick);
 
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase();
