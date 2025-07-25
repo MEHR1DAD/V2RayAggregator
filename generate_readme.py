@@ -122,8 +122,8 @@ def generate_files():
     # --- Generate Full README.md ---
     encoded_date = quote(readme_update_time)
     
-    # Corrected Badge URL using the .svg link
-    badge_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg"
+    # Corrected Badge using the proper Markdown image syntax
+    badge_md = f"![Update-Status](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg)"
     
     readme_content = f"""
 <div dir="rtl" align="center">
@@ -136,7 +136,7 @@ def generate_files():
 
 <div align="center">
 
-[![Update-Status]({badge_url})](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)
+[{badge_md}](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)
 [![Configs-Count](https://img.shields.io/badge/Configs-{total_configs_count:,}-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/{REPO_OWNER}/{REPO_NAME})
 [![Last-Update](https://img.shields.io/badge/Last%20Update-{encoded_date}-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{REPO_OWNER}/{REPO_NAME}/commits/main)
 
