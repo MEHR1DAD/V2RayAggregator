@@ -3,6 +3,7 @@ ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206WDB4SnM3Qm40eVh4ZVBiUWhmc0txYzBDaUFpNWE3dGN
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&allowInsecure=1&fp=chrome&type=tcp&packetEncoding=xudp&encryption=none
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ams1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://42f64a47-7b67-417c-8445-e5a823c9ec4a@185.209.21.36:41569?path=/&security=none&encryption=none&host=tgju.org&type=ws
 vless://42f64a47-7b67-417c-8445-e5a823c9ec4a@185.209.21.36:41569?type=ws&path=%2F&host=tgju.org&security=none
 vless://42f64a47-7b67-417c-8445-e5a823c9ec4a@185.209.21.36:41569?type=ws&path=/&host=tgju.org&security=none
 vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@188.119.112.3:2052?encryption=none&security=none&type=ws&host=vkvd127.mycdn.me&path=%2F

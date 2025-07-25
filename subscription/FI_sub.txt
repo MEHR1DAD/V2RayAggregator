@@ -13,6 +13,7 @@ vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.188:2082?security=&encryp
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.190:2052?security=&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.190:2052?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.190:2082?security=&encryption=none&type=ws
+vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.193:2052?encryption=none&type=ws&path=%2f
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.193:2052?security=&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.193:2052?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.193:2082?encryption=none&security=none&type=ws&path=%2F
