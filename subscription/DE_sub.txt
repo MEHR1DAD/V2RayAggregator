@@ -12,6 +12,7 @@ vless://b8bd42a9-551f-419d-b70d-4aefdd2cb074@204.10.194.78:443?security=tls&sni=
 vless://b8bd42a9-551f-419d-b70d-4aefdd2cb074@204.10.194.78:443?security=tls&sni=yfnl1.xn--4gq62f52gppi29k.com&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none
 vless://b8bd42a9-551f-419d-b70d-4aefdd2cb074@204.10.194.78:443?security=tls&sni=yfnl1.xn--4gq62f52gppi29k.com&fp=safari&type=tcp&flow=xtls-rprx-vision&encryption=none
 vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?encryption=none&amp;security=none&amp;type=tcp&amp;headerType=none
+vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?encryption=none&security=none&type=tcp&headerType=none
 vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?security=&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?type=ws&amp;security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?type=ws&security=none

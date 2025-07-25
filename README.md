@@ -10,8 +10,8 @@
 <div align="center">
 
 [![Main Proxy Pipeline](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-1,087-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Friday%2003%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2017%3A55-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
+[![Configs-Count](https://img.shields.io/badge/Configs-1,117-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Friday%2003%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2019%3A06-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
 
 </div>
 
@@ -46,7 +46,7 @@
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 186)
+    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 199)
   </div>
 </summary>
 
@@ -80,7 +80,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/U
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇬🇧 بریتانیا</b> (تعداد کل: 163)
+    <b>🇬🇧 بریتانیا</b> (تعداد کل: 165)
   </div>
 </summary>
 
@@ -114,7 +114,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/G
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇷 فرانسه</b> (تعداد کل: 148)
+    <b>🇫🇷 فرانسه</b> (تعداد کل: 151)
   </div>
 </summary>
 
@@ -148,7 +148,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/F
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇷 ایران</b> (تعداد کل: 117)
+    <b>🇮🇷 ایران</b> (تعداد کل: 118)
   </div>
 </summary>
 
@@ -182,7 +182,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/I
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 66)
+    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 67)
   </div>
 </summary>
 
@@ -216,7 +216,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/K
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 62)
+    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 63)
   </div>
 </summary>
 
@@ -284,7 +284,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/J
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇹🇷 ترکیه</b> (تعداد کل: 36)
+    <b>🇹🇷 ترکیه</b> (تعداد کل: 37)
   </div>
 </summary>
 
@@ -318,7 +318,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/T
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇩🇪 آلمان</b> (تعداد کل: 32)
+    <b>🇩🇪 آلمان</b> (تعداد کل: 33)
   </div>
 </summary>
 
@@ -352,7 +352,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/D
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇧🇷 برزیل</b> (تعداد کل: 31)
+    <b>🇧🇷 برزیل</b> (تعداد کل: 32)
   </div>
 </summary>
 
@@ -386,7 +386,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/B
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇸🇪 سوئد</b> (تعداد کل: 28)
+    <b>🇸🇪 سوئد</b> (تعداد کل: 29)
   </div>
 </summary>
 
@@ -411,6 +411,40 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/S
 
 ```
 https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SE_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
+    <b>🇫🇮 فنلاند</b> (تعداد کل: 27)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub_100.txt
 ```
 </div>
 
@@ -454,41 +488,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/L
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇮 فنلاند</b> (تعداد کل: 25)
-  </div>
-</summary>
-
-<div dir="rtl">
-<br>
-
-<p>
-- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
-- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
-</p>
-
-<p><b>لینک کامل:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub.txt
-```
-</div>
-
-<p><b>لینک ۱۰۰تایی:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FI_sub_100.txt
-```
-</div>
-
-</div>
-</details>
-
-<details>
-<summary>
-  <div dir="rtl" align="right">
-    <b>🇳🇱 هلند</b> (تعداد کل: 21)
+    <b>🇳🇱 هلند</b> (تعداد کل: 22)
   </div>
 </summary>
 
@@ -556,7 +556,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/S
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇳 هند</b> (تعداد کل: 13)
+    <b>🇮🇳 هند</b> (تعداد کل: 14)
   </div>
 </summary>
 
@@ -896,6 +896,40 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/B
 <details>
 <summary>
   <div dir="rtl" align="right">
+    <b>🏳️ VN</b> (تعداد کل: 2)
+  </div>
+</summary>
+
+<div dir="rtl">
+<br>
+
+<p>
+- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
+- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
+</p>
+
+<p><b>لینک کامل:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub.txt
+```
+</div>
+
+<p><b>لینک ۱۰۰تایی:</b></p>
+<div align="center">
+
+```
+https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub_100.txt
+```
+</div>
+
+</div>
+</details>
+
+<details>
+<summary>
+  <div dir="rtl" align="right">
     <b>🇲🇩 مولداوی</b> (تعداد کل: 2)
   </div>
 </summary>
@@ -955,40 +989,6 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/Z
 
 ```
 https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ZA_sub_100.txt
-```
-</div>
-
-</div>
-</details>
-
-<details>
-<summary>
-  <div dir="rtl" align="right">
-    <b>🏳️ VN</b> (تعداد کل: 1)
-  </div>
-</summary>
-
-<div dir="rtl">
-<br>
-
-<p>
-- **لینک کامل:** شامل تمام کانفیگ‌های موجود برای این کشور.<br>
-- **لینک ۱۰۰تایی:** یک لیست چرخشی شامل ۱۰۰ کانفیگ رندوم که هر ساعت به‌روز می‌شود. (<b>پیشنهاد شده</b>)
-</p>
-
-<p><b>لینک کامل:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub.txt
-```
-</div>
-
-<p><b>لینک ۱۰۰تایی:</b></p>
-<div align="center">
-
-```
-https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/VN_sub_100.txt
 ```
 </div>
 

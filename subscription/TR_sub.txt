@@ -1,5 +1,6 @@
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ist1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=%2Fassets%3Fed%3D2560&security=tls&alpn=h3&encryption=none&host=nginx-z.pages.dev&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
+vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=%2Fassets%3Fed%3D2560&security=tls&encryption=none&host=NGINX-Z.pages.DEV&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=/&security=tls&alpn=h3&encryption=none&host=nginx-z.pages.dev&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=/assets?ed=2560&security=tls&encryption=none&host=NGINX-Z.pages.DEV&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?security=tls&sni=NGINX-Z.pages.DEV&fp=chrome&type=ws&path=/&host=NGINX-Z.pages.DEV&encryption=none
