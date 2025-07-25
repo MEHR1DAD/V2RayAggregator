@@ -1,11 +1,11 @@
+vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=chrome%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
+vmess://eyJhZGQiOiI1MS43OS44Ni4xODIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTA5NTdjYTYtZjYxMy00MDE3LWZmM2MtZWZmZDFkYTg4NzFhIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0MjYxMCIsInBzIjoi8J+HqPCfh6YiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
+vmess://eyJ0eXBlIjoibm9uZSIsInNjeSI6ImF1dG8iLCJpZCI6ImUwOTU3Y2E2LWY2MTMtNDAxNy1mZjNjLWVmZmQxZGE4ODcxYSIsInBvcnQiOiI0MjYxMCIsIm5ldCI6InRjcCIsImFkZCI6IjUxLjc5Ljg2LjE4MiIsInBzIjoiQ29uZmlnJUYwJTlGJTg3JUE4JUYwJTlGJTg3JUE2JTQwRG9faXRmb3J5b3UifQ==
+vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&type=ws&path=%2Fvless%2F
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=/vless/&security=tls&encryption=none&host=/?BIA_TELEGRAM@MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&encryption=none&type=ws&path=/vless/&sni=ov-canada3.09vpn.com&fp=chrome
-vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=chrome%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
-vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&type=ws&path=%2Fvless%2F
+vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=random&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
+vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=chrome&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
 vmess://eyJhZGQiOiJvdi1jYW5hZGEzLjA5dnBuLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiIxYTA2ZmU2MC0wOTMzLTRiNjYtYjkyNy05MzdhNWUwMTVjNTAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvdm1lc3MvIiwicG9ydCI6Ijg0NDMiLCJwcyI6Ilvwn4eo8J+Hpl10Lm1lL0NvbmZpZ3NIdWIiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=%2Fvless%2F&security=tls&encryption=none&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
-vmess://eyJhZGQiOiI1MS43OS44Ni4xODIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZTA5NTdjYTYtZjYxMy00MDE3LWZmM2MtZWZmZDFkYTg4NzFhIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI0MjYxMCIsInBzIjoi8J+HqPCfh6YiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
-vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=random&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
-vmess://eyJ0eXBlIjoibm9uZSIsInNjeSI6ImF1dG8iLCJpZCI6ImUwOTU3Y2E2LWY2MTMtNDAxNy1mZjNjLWVmZmQxZGE4ODcxYSIsInBvcnQiOiI0MjYxMCIsIm5ldCI6InRjcCIsImFkZCI6IjUxLjc5Ljg2LjE4MiIsInBzIjoiQ29uZmlnJUYwJTlGJTg3JUE4JUYwJTlGJTg3JUE2JTQwRG9faXRmb3J5b3UifQ==
-vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?security=tls&sni=ov-canada3.09vpn.com&fp=chrome&type=ws&path=/vless/&host=ov-canada3.09vpn.com&encryption=none
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=/vless/&security=tls&encryption=none&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
