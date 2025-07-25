@@ -7,8 +7,12 @@ import time
 # ====================================================================
 # تنظیمات اسکریپت
 # ====================================================================
-# استفاده از حروف الفبا و اعداد به عنوان کلیدواژه برای جستجوی جامع
-SEARCH_CHARACTERS = 'abcdefghijklmnopqrstuvwxyz0123456789'
+# کلیدواژه‌های جستجوی جامع در گیت‌هاب
+SEARCH_KEYWORDS = [
+    'vless', 'vmess', 'trojan', 'ss', 'ssr', 
+    'subscribe', 'v2ray', 'proxy list', 'proxies', 'clash'
+    'sub', 'hysteria', 'hysteria2', 'socks', 'wireguard'
+] + list('abcdefghijklmnopqrstuvwxyz0123456789')
 
 EXISTING_SOURCES_FILE = "merge_configs.py"
 OUTPUT_FILE = "discovered_sources.txt"
@@ -23,6 +27,7 @@ TOTAL_TIMEOUT_SECONDS = 5 * 60 * 60  # تایم‌اوت کلی ۵ ساعت
 # --- متغیرهای سراسری ---
 START_TIME = time.time()
 URL_REGEX = re.compile(r'https?://raw\.githubusercontent\.com/[^\s"\'`<>]+')
+GENERAL_URL_REGEX = re.compile(r'https?://[^\s"\'`<>]+')
 PROXY_PROTOCOL_REGEX = re.compile(r'^(vmess|vless|ss|ssr|trojan|hysteria|hysteria2|tuic|brook|socks|wireguard)://')
 
 # ====================================================================
@@ -35,76 +40,76 @@ def clean_url(url):
     except ValueError:
         return url
 
-def extract_urls_from_script(file_path):
-    """URLها را فقط از داخل لیست urls در فایل پایتون استخراج می‌کند."""
+def extract_urls_from_file(file_path):
+    """تمام URLهای موجود در یک فایل متنی را با استفاده از رجکس استخراج می‌کند."""
     urls = set()
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-        match = re.search(r'urls\s*=\s*\[(.*?)\]', content, re.DOTALL)
-        if match:
-            urls_str = match.group(1)
-            found_urls = re.findall(r'https?://[^\s",]+', urls_str)
+            found_urls = GENERAL_URL_REGEX.findall(content)
             urls.update(found_urls)
     except FileNotFoundError:
         print(f"Warning: {file_path} not found.")
     return urls
 
 def is_timeout():
-    """چک می‌کند که آیا زمان کلی اسکریپت تمام شده است یا نه"""
+    """چک می‌کند که آیا زمان کلی اسکریپت تمام شده است یا نه."""
     if time.time() - START_TIME > TOTAL_TIMEOUT_SECONDS:
         print("⏰ Global timeout reached. Finalizing the process...")
         return True
     return False
 
 def load_state(file_path):
-    """مجموعه‌ای از URLها را از یک فایل متنی ساده بارگذاری می‌کند"""
-    urls = set()
-    if os.path.exists(file_path):
-        with open(file_path, "r", encoding="utf-8") as f:
-            for line in f:
-                urls.add(line.strip())
-    return urls
+    """مجموعه‌ای از URLها را از یک فایل متنی ساده بارگذاری می‌کند."""
+    if not os.path.exists(file_path):
+        return set()
+    with open(file_path, "r", encoding="utf-8") as f:
+        return {line.strip() for line in f}
 
 def save_state(urls, file_path):
-    """مجموعه‌ای از URLها را در یک فایل مشخص ذخیره می‌کند"""
+    """مجموعه‌ای از URLها را در یک فایل مشخص ذخیره می‌کند."""
     with open(file_path, "w", encoding="utf-8") as f:
         if urls:
             for url in sorted(list(urls)):
                 f.write(url + "\n")
 
 def search_github_paginated(query, token):
-    """
-    در API گیت‌هاب جستجو کرده و با استفاده از صفحه‌بندی، تمام نتایج ممکن را برمی‌گرداند.
-    """
+    """در API گیت‌هاب جستجو کرده و با استفاده از صفحه‌بندی، تمام نتایج ممکن را برمی‌گرداند."""
     headers = {"Accept": "application/vnd.github.v3+json"}
-    if token: headers["Authorization"] = f"token {token}"
+    if token:
+        headers["Authorization"] = f"token {token}"
     
     all_items = []
-    for page in range(1, 11): # حداکثر ۱۰ صفحه (۱۰۰۰ نتیجه) برای هر کوئری
+    # کوئری جستجو برای پیدا کردن فایل‌هایی که حاوی کلمه کلیدی هستند
+    search_query = f'"{query}" in:file extension:txt extension:md extension:json'
+    
+    for page in range(1, 11):  # حداکثر ۱۰ صفحه (۱۰۰۰ نتیجه) برای هر کوئری
         if is_timeout(): break
         
-        # کوئری جستجو برای پیدا کردن فایل‌های .txt که حاوی کاراکتر مورد نظر هستند
-        params = {"q": f'"{query}" in:file extension:txt', "per_page": 100, "page": page}
+        params = {"q": search_query, "per_page": 100, "page": page}
         
         try:
             response = requests.get("https://api.github.com/search/code", headers=headers, params=params, timeout=30)
             response.raise_for_status()
-            items = response.json().get("items", [])
+            data = response.json()
+            items = data.get("items", [])
             
             if not items: break
             
             all_items.extend(items)
-            time.sleep(1) # وقفه کوتاه بین هر صفحه
+            
+            # اگر هنوز نتایج وجود دارد، کمی صبر کن
+            if data.get("total_count", 0) > len(all_items):
+                time.sleep(2) # وقفه برای جلوگیری از محدودیت نرخ
 
         except requests.RequestException as e:
-            print(f"   -> Error during GitHub API request: {e}")
+            print(f"    -> Error during GitHub API request for query '{query}': {e}")
             break
             
     return all_items
 
 def process_url_recursively(url, final_sources, visited_urls, depth):
-    """یک URL را به صورت بازگشتی بررسی می‌کند"""
+    """یک URL را به صورت بازگشتی بررسی می‌کند."""
     if (depth > MAX_DEPTH or url in visited_urls or is_timeout() or
             not url.startswith("https://raw.githubusercontent.com/")):
         return
@@ -120,7 +125,7 @@ def process_url_recursively(url, final_sources, visited_urls, depth):
     except requests.RequestException:
         return
 
-    if any(line.strip().startswith(tuple(p + '://' for p in PROXY_PROTOCOL_REGEX.pattern.strip('^()$').split('|'))) for line in content.splitlines()):
+    if PROXY_PROTOCOL_REGEX.search(content):
         print(f"{indent}  -> ✅ Found direct configs. Adding to final list.")
         final_sources.add(url)
         return
@@ -133,38 +138,39 @@ def process_url_recursively(url, final_sources, visited_urls, depth):
             process_url_recursively(new_url, final_sources, visited_urls, depth + 1)
 
 def main():
-    """تابع اصلی برای اجرای کل فرآیند"""
+    """تابع اصلی برای اجرای کل فرآیند."""
     if not GITHUB_TOKEN:
-        print("❌ ERROR: GH_PAT environment variable is not set."); return
+        print("❌ ERROR: GH_PAT environment variable is not set. Exiting.")
+        return
 
     final_sources = set()
     visited_urls = set()
     try:
         print("1. Loading previous state...")
-        existing_urls_in_config = extract_urls_from_script(EXISTING_SOURCES_FILE)
+        existing_urls_in_project = extract_urls_from_file(EXISTING_SOURCES_FILE)
         crawled_urls = load_state(CRAWLED_URLS_STATE_FILE)
-        visited_urls = existing_urls_in_config.union(crawled_urls)
-        print(f"Loaded {len(crawled_urls)} previously crawled URLs.")
+        visited_urls = existing_urls_in_project.union(crawled_urls)
+        print(f"Loaded {len(visited_urls)} previously known or crawled URLs.")
 
-        print("\n2. Searching GitHub for initial seed URLs using alphabet and numbers...")
+        print("\n2. Searching GitHub for initial seed URLs...")
         initial_seed_urls = set()
-        for char in SEARCH_CHARACTERS:
+        for keyword in SEARCH_KEYWORDS:
             if is_timeout(): break
-            print(f"\n--- Searching for files containing character: '{char}' ---")
+            print(f"\n--- Searching for files containing keyword: '{keyword}' ---")
             
-            search_results = search_github_paginated(char, GITHUB_TOKEN)
+            search_results = search_github_paginated(keyword, GITHUB_TOKEN)
             
             for item in search_results:
                 raw_url = item.get("html_url").replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
                 cleaned_url = clean_url(unquote(raw_url))
                 initial_seed_urls.add(cleaned_url)
             
-            print(f"Found {len(search_results)} items for this character.")
-            # وقفه ۲ ثانیه‌ای بین هر کاراکتر برای جلوگیری از محدودیت نرخ
-            time.sleep(2)
+            print(f"Found {len(search_results)} items. Total unique seeds: {len(initial_seed_urls)}")
+            time.sleep(3) # وقفه بیشتر بین هر کلمه کلیدی
         
-        print(f"\n3. Starting deep crawl from a total of {len(initial_seed_urls)} unique seed URLs...")
-        for url in list(initial_seed_urls):
+        crawl_targets = initial_seed_urls - visited_urls
+        print(f"\n3. Starting deep crawl from {len(crawl_targets)} new unique seed URLs...")
+        for url in list(crawl_targets):
             if is_timeout(): break
             process_url_recursively(url, final_sources, visited_urls, depth=1)
 
@@ -173,12 +179,11 @@ def main():
         save_state(visited_urls, CRAWLED_URLS_STATE_FILE)
         print(f"Saved {len(visited_urls)} total crawled URLs to '{CRAWLED_URLS_STATE_FILE}'.")
 
-        new_final_sources = final_sources - existing_urls_in_config
-        
-        all_discovered = load_state(OUTPUT_FILE).union(new_final_sources)
-        save_state(all_discovered, OUTPUT_FILE)
+        new_final_sources = final_sources - existing_urls_in_project
         
         if new_final_sources:
+            all_discovered = load_state(OUTPUT_FILE).union(new_final_sources)
+            save_state(all_discovered, OUTPUT_FILE)
             print(f"\nDiscovered {len(new_final_sources)} new final source URLs in this run!")
             print(f"✅ Successfully updated '{OUTPUT_FILE}'.")
         else:
