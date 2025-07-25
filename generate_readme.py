@@ -67,8 +67,8 @@ REPO_OWNER = config['project']['repo_owner']
 REPO_NAME = config['project']['repo_name']
 ALL_CONFIGS_FILE = config['paths']['merged_configs'] 
 
-# --- Corrected URL Generation ---
-BASE_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/raw/master"
+# --- Corrected URL Generation using the standard raw link format ---
+BASE_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/master"
 ALL_CONFIGS_URL = f"{BASE_URL}/{ALL_CONFIGS_FILE}"
 SUBSCRIPTION_URL_BASE = f"{BASE_URL}/subscription"
 
@@ -122,8 +122,8 @@ def generate_files():
     # --- Generate Full README.md ---
     encoded_date = quote(readme_update_time)
     
-    # Corrected Badge URL
-    badge_url = f"https://img.shields.io/github/actions/workflow/status/{REPO_OWNER}/{REPO_NAME}/main-pipeline.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Update%20Status"
+    # Corrected Badge URL using the .svg link
+    badge_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg"
     
     readme_content = f"""
 <div dir="rtl" align="center">
@@ -159,6 +159,15 @@ def generate_files():
 ## 📥 لینک‌های اشتراک (Subscription Links)
 
 <div align="center">
+
+### 🌐 لینک جامع (همه کانفیگ‌ها)
+<p dir="rtl">این لینک شامل **{total_configs_count:,}** کانفیگ از تمام کشورها است. (ممکن است برای برخی کلاینت‌ها سنگین باشد)</p>
+
+```
+{ALL_CONFIGS_URL} 
+```
+
+---
 
 ### 🌍 لینک‌های تفکیک شده بر اساس کشور
 <p dir="rtl">
