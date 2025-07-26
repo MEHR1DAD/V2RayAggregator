@@ -2,6 +2,7 @@ ss://YWVzLTEyOC1nY206MTYyNjI5ZDctY2IxNy00M2IxLTgyYzktZjljN2FlNmNiYTcw@82.180.146
 ss://YWVzLTEyOC1nY206MTYyNjI5ZDctY2IxNy00M2IxLTgyYzktZjljN2FlNmNiYTcw@82.180.146.173:30607?prefix=%16%03%01%00%C2%A8%01%01
 ss://YWVzLTEyOC1nY206OTM0OTg1MzktNzgzOC00ODM2LWI5YjMtODMxMWZmYzc5YmNm@82.180.146.173:35652
 ss://YWVzLTEyOC1nY206OTM0OTg1MzktNzgzOC00ODM2LWI5YjMtODMxMWZmYzc5YmNm@82.180.146.173:35652?prefix=%16%03%01%00%C2%A8%01%01
+vless://1fe213b9-9031-4720-95cc-b58c805a7b4b@109.248.161.223:21860?encryption=none&security=none&type=ws&host=Zula.ir&path=%2F
 vless://1fe213b9-9031-4720-95cc-b58c805a7b4b@109.248.161.223:21860?path=%2F&security=&encryption=none&host=Zula.ir&type=ws
 vless://1fe213b9-9031-4720-95cc-b58c805a7b4b@109.248.161.223:21860?path=/&security=none&encryption=none&host=Zula.ir&type=ws
 vless://394f6981-a782-4779-9a85-e6cf22935d93@blr-in.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

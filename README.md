@@ -10,8 +10,8 @@
 <div align="center">
 
 [![Main Proxy Pipeline](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/MEHR1DAD/V2RayAggregator/actions/workflows/main-pipeline.yml)
-[![Configs-Count](https://img.shields.io/badge/Configs-1,455-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator)
-[![Last-Update](https://img.shields.io/badge/Last%20Update-Saturday%2004%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2010%3A13-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
+[![Configs-Count](https://img.shields.io/badge/Configs-1,554-blueviolet?style=for-the-badge&logo=server&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator)
+[![Last-Update](https://img.shields.io/badge/Last%20Update-Saturday%2004%20Mordad%201404%D8%8C%20%D8%B3%D8%A7%D8%B9%D8%AA%2016%3A25-informational?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/MEHR1DAD/V2RayAggregator/commits/main)
 
 </div>
 
@@ -46,7 +46,7 @@
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 262)
+    <b>🇺🇸 ایالات متحده</b> (تعداد کل: 276)
   </div>
 </summary>
 
@@ -80,7 +80,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/U
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇬🇧 بریتانیا</b> (تعداد کل: 218)
+    <b>🇬🇧 بریتانیا</b> (تعداد کل: 242)
   </div>
 </summary>
 
@@ -114,7 +114,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/G
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇷 فرانسه</b> (تعداد کل: 189)
+    <b>🇫🇷 فرانسه</b> (تعداد کل: 202)
   </div>
 </summary>
 
@@ -148,7 +148,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/F
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇷 ایران</b> (تعداد کل: 176)
+    <b>🇮🇷 ایران</b> (تعداد کل: 185)
   </div>
 </summary>
 
@@ -182,7 +182,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/I
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 91)
+    <b>🇰🇷 کره جنوبی</b> (تعداد کل: 100)
   </div>
 </summary>
 
@@ -216,7 +216,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/K
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 77)
+    <b>🇭🇰 هنگ کنگ</b> (تعداد کل: 83)
   </div>
 </summary>
 
@@ -250,7 +250,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/H
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇯🇵 ژاپن</b> (تعداد کل: 73)
+    <b>🇯🇵 ژاپن</b> (تعداد کل: 80)
   </div>
 </summary>
 
@@ -318,7 +318,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/T
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇧🇷 برزیل</b> (تعداد کل: 45)
+    <b>🇧🇷 برزیل</b> (تعداد کل: 47)
   </div>
 </summary>
 
@@ -352,7 +352,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/B
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇩🇪 آلمان</b> (تعداد کل: 36)
+    <b>🇩🇪 آلمان</b> (تعداد کل: 42)
   </div>
 </summary>
 
@@ -386,7 +386,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/D
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇫🇮 فنلاند</b> (تعداد کل: 34)
+    <b>🇫🇮 فنلاند</b> (تعداد کل: 38)
   </div>
 </summary>
 
@@ -420,7 +420,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/F
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇸🇪 سوئد</b> (تعداد کل: 31)
+    <b>🇸🇪 سوئد</b> (تعداد کل: 33)
   </div>
 </summary>
 
@@ -488,7 +488,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/L
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇳🇱 هلند</b> (تعداد کل: 26)
+    <b>🇳🇱 هلند</b> (تعداد کل: 27)
   </div>
 </summary>
 
@@ -522,7 +522,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/N
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇮🇳 هند</b> (تعداد کل: 23)
+    <b>🇮🇳 هند</b> (تعداد کل: 24)
   </div>
 </summary>
 
@@ -692,7 +692,7 @@ https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/A
 <details>
 <summary>
   <div dir="rtl" align="right">
-    <b>🇰🇿 قزاقستان</b> (تعداد کل: 5)
+    <b>🇰🇿 قزاقستان</b> (تعداد کل: 6)
   </div>
 </summary>
 
