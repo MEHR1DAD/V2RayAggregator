@@ -1,6 +1,7 @@
 import httpx
 import asyncio
 import os
+import time
 from database import get_active_sources
 from collections import defaultdict
 
@@ -8,6 +9,10 @@ from collections import defaultdict
 OUTPUT_DIR = "protocol_configs"
 REQUEST_TIMEOUT = 10
 KNOWN_PROTOCOLS = {"vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hysteria2", "tuic", "socks", "wireguard"}
+
+# --- Batch Processing Settings ---
+BATCH_SIZE = 100
+DELAY_BETWEEN_BATCHES = 5  # seconds
 # --- End of Constants ---
 
 async def fetch_one(client, url):
@@ -20,26 +25,16 @@ async def fetch_one(client, url):
         print(f"Error fetching {url}: {e}")
         return []
 
-async def fetch_and_separate_configs(urls):
-    """Fetches all configs and separates them by protocol."""
-    configs_by_protocol = defaultdict(set)
-    
-    async with httpx.AsyncClient() as client:
-        tasks = [fetch_one(client, url) for url in urls]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-
+def process_results(results, configs_by_protocol):
+    """Processes fetched results and separates them by protocol."""
     for result in results:
         if isinstance(result, list):
             for config in result:
-                clean_config = config.strip()
-                clean_config = clean_config.split('#')[0]
-
+                clean_config = config.strip().split('#')[0]
                 if '://' in clean_config:
                     protocol = clean_config.split('://')[0].lower()
                     if protocol in KNOWN_PROTOCOLS:
                         configs_by_protocol[protocol].add(clean_config)
-    
-    return configs_by_protocol
 
 def save_separated_configs(configs_by_protocol):
     """Saves the separated configs into different files."""
@@ -64,20 +59,41 @@ async def main():
     """Main function to run the process."""
     urls = get_active_sources()
     
-    if urls:
-        print(f"Loaded {len(urls)} active sources from database.")
-        print("Fetching and separating all sources concurrently...")
+    if not urls:
+        print("No active sources found in database. Exiting.")
+        return
+
+    print(f"Loaded {len(urls)} active sources from database.")
+    print(f"Fetching and separating sources in batches of {BATCH_SIZE}...")
+    
+    configs_by_protocol = defaultdict(set)
+    
+    # --- New Batch Processing Loop ---
+    for i in range(0, len(urls), BATCH_SIZE):
+        batch_urls = urls[i:i + BATCH_SIZE]
+        print(f"\n--- Processing batch {i // BATCH_SIZE + 1} of {len(urls) // BATCH_SIZE + 1} ({len(batch_urls)} URLs) ---")
+
+        async with httpx.AsyncClient() as client:
+            tasks = [fetch_one(client, url) for url in batch_urls]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
         
-        configs_by_protocol = await fetch_and_separate_configs(urls)
+        process_results(results, configs_by_protocol)
         
         total_fetched = sum(len(s) for s in configs_by_protocol.values())
-        print(f"Fetched {total_fetched} unique configurations for {len(configs_by_protocol)} protocols.")
-        
-        save_separated_configs(configs_by_protocol)
-        
-        print("\nSeparation process finished successfully.")
-    else:
-        print("No active sources found in database. Exiting.")
+        print(f"Batch finished. Total unique configs fetched so far: {total_fetched}")
+
+        # Add delay between batches
+        if i + BATCH_SIZE < len(urls):
+            print(f"Waiting for {DELAY_BETWEEN_BATCHES} seconds before next batch...")
+            await asyncio.sleep(DELAY_BETWEEN_BATCHES)
+
+    total_fetched = sum(len(s) for s in configs_by_protocol.values())
+    print(f"\nFinished fetching all batches. Fetched a total of {total_fetched} unique configurations for {len(configs_by_protocol)} protocols.")
+    
+    save_separated_configs(configs_by_protocol)
+    
+    print("\nSeparation process finished successfully.")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
