@@ -156,12 +156,12 @@ jobs:
           python-version: '3.11'
       - run: pip install pyyaml jdatetime pytz
 
+      # --- بخش اصلاح شده ---
       - name: Download All Result Artifacts
         uses: actions/download-artifact@v4
         with:
           path: db_results/
-          pattern: db-result-develop-*
-          name: db-result-develop
+          pattern: db-result-develop-* # این خط به تنهایی کافیست
 
       - name: Merge, Generate, and Finalize
         run: |
