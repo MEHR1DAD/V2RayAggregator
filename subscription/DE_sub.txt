@@ -1,6 +1,7 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpEWFFvY2JwSUk2Y01nTnVNSzV4Q2xR@85.208.139.158:25607?type=tcp
 vless://0a673567-58b0-49e5-a00f-b41cb1b65d6a@jskwjsaldowjsadk.store:45293?type=ws&path=%2F&security=none
 vless://0a673567-58b0-49e5-a00f-b41cb1b65d6a@jskwjsaldowjsadk.store:45293?type=ws&path=/&security=none
+vless://12fd53ec-9184-41a0-8ab5-1910ad8d6e8d@gr.dnszone.top:45500?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@de1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=none&encryption=none&type=ws
 vless://598a6cea-dfd2-4e97-9415-4571f742bf18@zzyd6dhd5.pet0er23mh21qq.com:8080?security=&encryption=none&headerType=none&type=tcp
