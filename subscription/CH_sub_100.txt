@@ -1,5 +1,5 @@
-vless://394f6981-a782-4779-9a85-e6cf22935d93@zrh-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://96457dda-f79a-4087-89d6-dc973fdf41cc@d270391091093100193938819293819w6.servers801.ir:2096?path=/fscsxfVgdzhrefjgsBgaa?ed=80&security=&encryption=none&host=45f4d22d.Mareza.pages.dev&type=ws
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZODQraFRkK3lPdm02ZThsTWlNbThyOXBmeG5HbTRxendwRXhVYmRkM3EwPQ==@d1.marzano5.one:8080
 vless://96457dda-f79a-4087-89d6-dc973fdf41cc@d270391091093100193938819293819w6.servers801.ir:8443?path=/45f4d22d.Mareza.pages.dev?ed=80&security=tls&encryption=none&host=45f4d22d.mareza.pages.dev&type=ws&sni=115794818s.servers801.ir
 vless://96457dda-f79a-4087-89d6-dc973fdf41cc@d270391091093100193938819293819w6.servers801.ir:8443?path=%2F45f4d22d.Mareza.pages.dev%3Fed%3D80&security=tls&encryption=none&host=45f4d22d.mareza.pages.dev&type=ws&sni=115794818s.servers801.ir
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZODQraFRkK3lPdm02ZThsTWlNbThyOXBmeG5HbTRxendwRXhVYmRkM3EwPQ==@d1.marzano5.one:8080
+vless://394f6981-a782-4779-9a85-e6cf22935d93@zrh-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://96457dda-f79a-4087-89d6-dc973fdf41cc@d270391091093100193938819293819w6.servers801.ir:2096?path=/fscsxfVgdzhrefjgsBgaa?ed=80&security=&encryption=none&host=45f4d22d.Mareza.pages.dev&type=ws
