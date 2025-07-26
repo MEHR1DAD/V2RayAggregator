@@ -19,13 +19,12 @@ from utils import extract_ip_from_connection, resolve_to_ip, get_country_code
 with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
-# --- Use the unified timeout from config.yml ---
+# --- Constants ---
 GLOBAL_TIMEOUT_MINUTES = config['settings'].get('global_timeout_minutes', 170)
 WORKFLOW_TIMEOUT_SECONDS = GLOBAL_TIMEOUT_MINUTES * 60
-
-# --- Constants ---
 GEOIP_DB = "GeoLite2-City.mmdb"
 XRAY_PATH = './xray'
+HYSTERIA_PATH = './hysteria' # path to hysteria client
 REQUEST_TIMEOUT = config['settings']['exp_country']['request_timeout']
 SPEED_TEST_URLS = config['settings']['exp_country']['speed_test_urls']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
@@ -34,7 +33,7 @@ TASK_TIMEOUT = 60
 START_TIME = time.time()
 
 
-# --- Helper functions remain unchanged ---
+# --- Helper functions ---
 def is_approaching_timeout():
     return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 
@@ -53,8 +52,30 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     conn.commit()
     conn.close()
 
-# --- Parser function remains unchanged ---
+# --- Parser functions ---
+def parse_hysteria2_uri_to_json(uri: str):
+    try:
+        parsed = urlparse(uri)
+        params = parse_qs(parsed.query)
+        
+        hysteria_config = {
+            "server": f"{parsed.hostname}:{parsed.port}",
+            "auth": parsed.username or "",
+            "tls": {
+                "sni": params.get("sni", [parsed.hostname])[0],
+                "insecure": "insecure" in params and params["insecure"][0] == "1"
+            },
+            # Assuming SOCKS5 proxy for testing
+            "socks5": { 
+                "listen": "" # Will be filled in later
+            }
+        }
+        return hysteria_config
+    except Exception:
+        return None
+
 def parse_proxy_uri_to_xray_json(uri: str):
+    # This function remains unchanged for xray protocols
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query); user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}; stream_settings = {"network": params.get("type", ["tcp"])[0], "security": params.get("security", ["none"])[0]};
@@ -93,11 +114,24 @@ def parse_proxy_uri_to_xray_json(uri: str):
         return None
     return None
 
-# test_proxy_speed now uses the corrected logic passed into it
-async def test_proxy_speed(proxy_config: str, port: int) -> float:
-    config_path = f"temp_config_{port}.json"
-    xray_process = None
+# --- Speed Test Functions ---
+async def run_speed_test_with_curl(port: int):
+    speed_test_url = random.choice(SPEED_TEST_URLS)
+    curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
+    proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL)
+    stdout, _ = await proc.communicate()
     
+    if proc.returncode == 0 and stdout:
+        try:
+            speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
+            return (speed_bytes_per_sec * 8) / 1024  # Convert to Kbps
+        except (ValueError, TypeError):
+            return 0.0
+    return 0.0
+
+async def test_xray_speed(proxy_config: str, port: int):
+    config_path = f"temp_xray_config_{port}.json"
+    process = None
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
     if not outbound_config:
         return 0.0
@@ -107,43 +141,62 @@ async def test_proxy_speed(proxy_config: str, port: int) -> float:
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
         
-        xray_command = [XRAY_PATH, '-c', config_path]
-        xray_process = await asyncio.create_subprocess_exec(*xray_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        command = [XRAY_PATH, '-c', config_path]
+        process = await asyncio.create_subprocess_exec(*command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         await asyncio.sleep(2)
         
-        if xray_process.returncode is not None:
-            return 0.0
-
-        speed_test_url = random.choice(SPEED_TEST_URLS)
-        
-        curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
-        proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-        stdout, _ = await proc.communicate()
-        
-        if proc.returncode == 0 and stdout:
-            try:
-                speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
-                return (speed_bytes_per_sec * 8) / 1024
-            except (ValueError, TypeError):
-                return 0.0
-        else:
-            return 0.0
+        if process.returncode is not None: return 0.0
+        return await run_speed_test_with_curl(port)
     except Exception:
         return 0.0
     finally:
-        if xray_process and xray_process.returncode is None:
-            try:
-                xray_process.terminate()
-                await xray_process.wait()
-            except ProcessLookupError:
-                pass
-        if os.path.exists(config_path):
-            os.remove(config_path)
+        if process and process.returncode is None:
+            try: process.terminate(); await process.wait()
+            except ProcessLookupError: pass
+        if os.path.exists(config_path): os.remove(config_path)
+
+async def test_hysteria2_speed(proxy_config: str, port: int):
+    config_path = f"temp_hysteria_config_{port}.json"
+    process = None
+    hysteria_config = parse_hysteria2_uri_to_json(proxy_config)
+    if not hysteria_config:
+        return 0.0
+
+    hysteria_config["socks5"]["listen"] = f"127.0.0.1:{port}"
+    
+    try:
+        with open(config_path, 'w') as f: json.dump(hysteria_config, f)
+        
+        command = [HYSTERIA_PATH, "client", "-c", config_path]
+        process = await asyncio.create_subprocess_exec(*command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        await asyncio.sleep(2)
+        
+        if process.returncode is not None: return 0.0
+        return await run_speed_test_with_curl(port)
+    except Exception:
+        return 0.0
+    finally:
+        if process and process.returncode is None:
+            try: process.terminate(); await process.wait()
+            except ProcessLookupError: pass
+        if os.path.exists(config_path): os.remove(config_path)
+
+# --- Dispatcher and Batch Processing ---
+async def test_proxy(proxy_config: str, port: int):
+    """Dispatcher function to select the correct speed test."""
+    protocol = proxy_config.split("://")[0]
+    if protocol in ["vless", "vmess", "trojan", "ss"]:
+        return await test_xray_speed(proxy_config, port)
+    elif protocol == "hysteria2":
+        return await test_hysteria2_speed(proxy_config, port)
+    else:
+        # For now, other protocols are not speed-tested
+        return 0.0
 
 async def process_batch(batch, reader, start_port):
     tasks = []
     for i, conn in enumerate(batch):
-        task = asyncio.wait_for(test_proxy_speed(conn, start_port + i), timeout=TASK_TIMEOUT)
+        task = asyncio.wait_for(test_proxy(conn, start_port + i), timeout=TASK_TIMEOUT)
         tasks.append(task)
     
     results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -152,27 +205,20 @@ async def process_batch(batch, reader, start_port):
     now = datetime.utcnow().isoformat()
     
     for conn, result in zip(batch, results):
-        if isinstance(result, float) and result > 1:
-            speed_kbps = result
-            
-            # <<< --- FIX IS HERE --- >>>
+        if isinstance(result, float) and result > 1: # Speed in Kbps
             host_port_str = extract_ip_from_connection(conn)
-            if not host_port_str or ':' not in host_port_str:
-                continue
+            if not host_port_str or ':' not in host_port_str: continue
             
             host, _ = host_port_str.rsplit(':', 1)
-            # <<< --- END OF FIX --- >>>
-
             ip = await asyncio.to_thread(resolve_to_ip, host)
-            if not ip:
-                continue # Skip if DNS resolution fails
+            if not ip: continue
 
             country_code = await asyncio.to_thread(get_country_code, ip, reader)
             
             if country_code:
-                successful_in_batch.append((conn, 'speed-tested', country_code, round(speed_kbps, 2), now))
-                print(f"✅ Success ({round(speed_kbps)} Kbps) | Country: {country_code} | Config: {conn[:40]}...")
-                
+                successful_in_batch.append((conn, 'speed-tested', country_code, round(result, 2), now))
+                print(f"✅ Success ({round(result)} Kbps) | Country: {country_code} | Config: {conn[:40]}...")
+            
     return successful_in_batch
 
 async def main(input_path, db_path):
@@ -182,23 +228,20 @@ async def main(input_path, db_path):
     try:
         reader = geoip2.database.Reader(GEOIP_DB)
     except Exception as e:
-        print(f"Error loading GeoIP database: {e}")
-        return
+        print(f"Error loading GeoIP database: {e}"); return
 
     with open(input_path, 'r', encoding='utf-8') as f:
         connections_to_test = f.read().strip().splitlines()
     
     if not connections_to_test:
-        reader.close()
-        return
+        reader.close(); return
 
     print(f"--- Worker starting Speed Test on {len(connections_to_test)} candidates ---")
     start_port = 10900
     
     for i in range(0, len(connections_to_test), BATCH_SIZE):
         if is_approaching_timeout():
-            print("⏰ Approaching workflow timeout. Stopping speed tests for this worker.")
-            break
+            print("⏰ Approaching workflow timeout. Stopping speed tests for this worker."); break
         
         batch = connections_to_test[i:i + BATCH_SIZE]
         print(f"--- Processing speed test batch {i//BATCH_SIZE + 1} ---")
