@@ -1,8 +1,9 @@
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?type=ws&amp;security=none
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security=&encryption=none&type=ws
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security=none&encryption=none&type=ws
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?path=%2F&security=none&encryption=none&type=ws
-vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&security=none
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?encryption=none&security=none&type=ws&path=%2F
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?path=/&security=none&encryption=none&type=ws
-vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security=&encryption=none&type=ws
-vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?type=ws&amp;security=none
-vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security=none&encryption=none&type=ws
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?type=ws&security=none
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&security=none
