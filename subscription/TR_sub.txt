@@ -1,4 +1,6 @@
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ist1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?encryption=none&security=tls&sni=NGINX-Z.pages.DEV&alpn=h3&fp=chrome&type=ws&host=nginx-z.pages.dev&path=/assets?ed=2560
+vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?encryption=none&security=tls&sni=NGINX-Z.pages.DEV&alpn=h3&type=ws&host=nginx-z.pages.dev&path=%2F
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=%2F&security=tls&alpn=h3&encryption=none&host=nginx-z.pages.dev&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=%2Fassets%3Fed%3D2560&security=tls&alpn=h3&encryption=none&host=nginx-z.pages.dev&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=%2Fassets%3Fed%3D2560&security=tls&encryption=none&host=NGINX-Z.pages.DEV&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
@@ -8,6 +10,7 @@ vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=/&security=tls
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?path=/assets?ed=2560&security=tls&encryption=none&host=NGINX-Z.pages.DEV&fp=chrome&type=ws&sni=NGINX-Z.pages.DEV
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?security=tls&sni=NGINX-Z.pages.DEV&fp=chrome&type=ws&path=/&host=NGINX-Z.pages.DEV&encryption=none
 vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?security=tls&sni=NGINX-Z.pages.DEV&fp=random&type=ws&path=/&host=NGINX-Z.pages.DEV&encryption=none
+vless://75fde681-ec64-4654-86fa-30732e8e179c@62.3.12.185:443?security=tls&sni=NGINX-Z.pages.DEV&type=ws&host=nginx-z.pages.dev&path=%2F&alpn=h3
 vless://96457dda-f79a-4087-89d6-dc973fdf41cc@242488292719828919.m.www.servers801.ir:2096?security=none&type=ws&headerType=&path=%2FfscsxfVgdzhrefjgsBgaa%3Fed%3D80&host=45f4d22d.Mareza.pages.dev
 vmess://eyJhZGQiOiAiMjEzLjE0Mi4xNTAuMjI3IiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICIzYzNlMGNkYS03MDlhLTQzOGMtYTQ4YS05OWIzOGY4ZGRjNjgiLCAibmV0IjogIndzIiwgInBhdGgiOiAiLyIsICJwb3J0IjogIjg0NDMiLCAicHMiOiAi4pqh77iPVGVsZWdyYW0gPSBAU09Ta2V5TkVUIiwgInNjeSI6ICJhdXRvIiwgInNuaSI6ICIiLCAidGxzIjogIiIsICJ0eXBlIjogIi0tLSIsICJ2IjogIjIifQ==
 vmess://eyJhZGQiOiAiMjEzLjE0Mi4xNTAuMjI3IiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICIzYzNlMGNkYS03MDlhLTQzOGMtYTQ4YS05OWIzOGY4ZGRjNjgiLCAibmV0IjogIndzIiwgInBhdGgiOiAiLyIsICJwb3J0IjogIjg0NDMiLCAicHMiOiAiXHVkODNjXHVkZGY5XHVkODNjXHVkZGY3VFJfMjk2X0BTdXJmYm9hcmR2MnJheSIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICItLS0iLCAidiI6ICIyIn0=

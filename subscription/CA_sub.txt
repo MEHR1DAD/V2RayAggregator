@@ -1,3 +1,4 @@
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHeVo1WG8waHQ0MXZZbVczSDQ@149.28.255.6:816
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=%2Fvless%2F&security=tls&encryption=none&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=/vless/&security=tls&encryption=none&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
 vless://d4af3edf-0a58-492e-b6c8-b3f3238df7c1@51.222.158.243:8443?path=/vless/&security=tls&encryption=none&host=/?BIA_TELEGRAM@MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI&fp=chrome&type=ws&sni=ov-canada3.09vpn.com
