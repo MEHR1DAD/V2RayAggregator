@@ -106,15 +106,24 @@ jobs:
       - name: Install Dependencies
         run: pip install requests geoip2 pyyaml httpx
 
-      - name: Download Prerequisite Tools (Xray & GeoIP)
+      # --- بخش اصلاح شده ---
+      - name: Download Prerequisite Tools (Xray, Hysteria2 & GeoIP)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # دانلود کردن دیتابیس GeoIP
           wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+          
+          # دانلود کردن آخرین نسخه Xray
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
           unzip -o -q xray.zip xray
           chmod +x xray
-          echo "Xray and GeoIP are ready."
+
+          # دانلود کلاینت Hysteria2
+          wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria
+          chmod +x hysteria
+          
+          echo "Xray, Hysteria2, and GeoIP are ready."
       
       - name: Download Live Candidates Artifact
         uses: actions/download-artifact@v4
@@ -151,8 +160,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: db_results/
-          pattern: db-result-develop-* # فقط آرتیفکت‌های مربوط به develop را دانلود کن
-          name: db-result-develop # نامی که در زمان دانلود استفاده می‌شود
+          pattern: db-result-develop-*
+          name: db-result-develop
 
       - name: Merge, Generate, and Finalize
         run: |
