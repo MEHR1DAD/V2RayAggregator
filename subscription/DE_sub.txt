@@ -8,6 +8,7 @@ vless://394f6981-a782-4779-9a85-e6cf22935d93@de1.fromblancwithlove.com:8443?encr
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&encryption=none&headerType=none&type=tcp
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=none&encryption=none&type=ws
+vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=none&type=ws&headerType=&path=&host=
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://598a6cea-dfd2-4e97-9415-4571f742bf18@zzyd6dhd5.pet0er23mh21qq.com:8080?security=&encryption=none&headerType=none&type=tcp
 vless://598a6cea-dfd2-4e97-9415-4571f742bf18@zzyd6dhd5.pet0er23mh21qq.com:8080?security=none&type=tcp&packetEncoding=xudp&encryption=none
@@ -22,6 +23,7 @@ vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?encryption=non
 vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?encryption=none&security=none&type=tcp&headerType=none
 vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?security=&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?encryption=none&security=none&type=ws&path=%2F
+vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?security=&encryption=none&type=ws
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?security=none&encryption=none&type=ws
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?type=ws&amp;security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?type=ws&security=none
