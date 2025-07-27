@@ -65,13 +65,13 @@ def parse_hysteria2_uri_to_json(uri: str):
                 "sni": params.get("sni", [parsed.hostname])[0],
                 "insecure": "insecure" in params and params["insecure"][0] == "1"
             },
-            # Assuming SOCKS5 proxy for testing
             "socks5": { 
                 "listen": "" # Will be filled in later
             }
         }
         return hysteria_config
-    except Exception:
+    except Exception as e:
+        print(f"[HY2-DEBUG] Failed to parse URI: {uri[:50]}... Error: {e}")
         return None
 
 def parse_proxy_uri_to_xray_json(uri: str):
@@ -118,8 +118,8 @@ def parse_proxy_uri_to_xray_json(uri: str):
 async def run_speed_test_with_curl(port: int):
     speed_test_url = random.choice(SPEED_TEST_URLS)
     curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
-    proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL)
-    stdout, _ = await proc.communicate()
+    proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    stdout, stderr = await proc.communicate()
     
     if proc.returncode == 0 and stdout:
         try:
@@ -127,6 +127,9 @@ async def run_speed_test_with_curl(port: int):
             return (speed_bytes_per_sec * 8) / 1024  # Convert to Kbps
         except (ValueError, TypeError):
             return 0.0
+    # Print curl errors if any
+    if stderr:
+        print(f"[CURL-DEBUG] Curl failed for port {port}. Error: {stderr.decode('utf-8', errors='ignore').strip()}")
     return 0.0
 
 async def test_xray_speed(proxy_config: str, port: int):
@@ -156,6 +159,7 @@ async def test_xray_speed(proxy_config: str, port: int):
         if os.path.exists(config_path): os.remove(config_path)
 
 async def test_hysteria2_speed(proxy_config: str, port: int):
+    print(f"[HY2-DEBUG] Starting test for {proxy_config[:50]}...")
     config_path = f"temp_hysteria_config_{port}.json"
     process = None
     hysteria_config = parse_hysteria2_uri_to_json(proxy_config)
@@ -168,16 +172,33 @@ async def test_hysteria2_speed(proxy_config: str, port: int):
         with open(config_path, 'w') as f: json.dump(hysteria_config, f)
         
         command = [HYSTERIA_PATH, "client", "-c", config_path]
-        process = await asyncio.create_subprocess_exec(*command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        await asyncio.sleep(2)
+        print(f"[HY2-DEBUG] Executing command: {' '.join(command)}")
         
-        if process.returncode is not None: return 0.0
+        process = await asyncio.create_subprocess_exec(
+            *command, 
+            stdout=asyncio.subprocess.PIPE, 
+            stderr=asyncio.subprocess.PIPE
+        )
+        await asyncio.sleep(3) # Increased sleep time for hysteria2
+        
+        if process.returncode is not None:
+            stdout, stderr = await process.communicate()
+            print(f"[HY2-DEBUG] Hysteria client failed to start for port {port}.")
+            if stderr:
+                print(f"[HY2-ERROR] {stderr.decode('utf-8', errors='ignore').strip()}")
+            return 0.0
+
         return await run_speed_test_with_curl(port)
-    except Exception:
+    except Exception as e:
+        print(f"[HY2-DEBUG] Exception during test for port {port}: {e}")
         return 0.0
     finally:
         if process and process.returncode is None:
-            try: process.terminate(); await process.wait()
+            try: 
+                process.terminate()
+                stdout, stderr = await process.communicate()
+                if stderr:
+                    print(f"[HY2-SHUTDOWN-ERROR] {stderr.decode('utf-8', errors='ignore').strip()}")
             except ProcessLookupError: pass
         if os.path.exists(config_path): os.remove(config_path)
 
@@ -190,7 +211,6 @@ async def test_proxy(proxy_config: str, port: int):
     elif protocol == "hysteria2":
         return await test_hysteria2_speed(proxy_config, port)
     else:
-        # For now, other protocols are not speed-tested
         return 0.0
 
 async def process_batch(batch, reader, start_port):
