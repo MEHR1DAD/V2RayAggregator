@@ -1,3 +1,4 @@
 vless://75167e23-8086-4ed1-b87b-6b2baa0ce5a2@dl3.downloadrigan.ip-ddns.com:33727?encryption=none&security=none&type=ws&path=/
 vless://75167e23-8086-4ed1-b87b-6b2baa0ce5a2@dl3.downloadrigan.ip-ddns.com:33727?path=%2F&security=none&encryption=none&type=ws
 vless://75167e23-8086-4ed1-b87b-6b2baa0ce5a2@dl3.downloadrigan.ip-ddns.com:33727?path=/&security=none&encryption=none&type=ws
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@147.78.140.20:8880?path=%2F&security=&encryption=none&host=us.laoyoutiao.link&type=ws&sni=us.laoyoutiao.link
