@@ -9,6 +9,7 @@ vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305/?type=tcp&encr
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?encryption=none&security=none&type=tcp&headerType=none
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?encryption=none&security=none&type=tcp&headerType=none&host=%2FJOKERRVPN_BIA_CHANEL%40JOKERRVPN
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=&encryption=none&headerType=none&type=tcp
+vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=&encryption=none&host=%2FJOKERRVPN_BIA_CHANEL%40JOKERRVPN&headerType=none&type=tcp
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=none&encryption=none&headerType=none&type=tcp
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=none&encryption=none&host=%2FJOKERRVPN_BIA_CHANEL%40JOKERRVPN&headerType=none&type=tcp
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=none&encryption=none&host=/JOKERRVPN_BIA_CHANEL@JOKERRVPN&headerType=none&type=tcp
