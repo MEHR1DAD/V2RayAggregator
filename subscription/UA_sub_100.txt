@@ -1,2 +1,2 @@
-vless://394f6981-a782-4779-9a85-e6cf22935d93@ua1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=&encryption=none&headerType=none&type=tcp
+vless://394f6981-a782-4779-9a85-e6cf22935d93@ua1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none

@@ -1,5 +1,6 @@
 vless://196c0767-9b0d-441a-b585-d012e25cdf79@p1.grootvip.eu:443?type=ws&path=%2F&host=telewebion.com&security=tls&fp=chrome&alpn=h3%2Ch2%2Chttp%2F1.1&sni=p1.grootvip.eu
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@65.109.202.24:10925?encryption=none&type=ws&path=%2F&security=none
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@65.109.202.24:10925?type=ws&security=none
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?type=ws&amp;security=none
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?type=ws&security=none
