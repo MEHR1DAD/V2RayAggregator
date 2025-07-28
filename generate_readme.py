@@ -6,10 +6,6 @@ from urllib.parse import quote
 import yaml
 import json
 import pycountry
-import country_converter as coco
-
-# --- کتابخانه تبدیل کد کشور به پرچم ---
-cc = coco.CountryConverter()
 
 # --- دیکشنری برای ترجمه‌های فارسی با کیفیت بالا (اختیاری) ---
 # هر کشوری که در این لیست نباشد، نام انگلیسی آن به صورت خودکار استفاده خواهد شد
@@ -35,17 +31,24 @@ PERSIAN_COUNTRY_NAMES = {
     "XX": "مکان نامشخص"
 }
 
+def get_country_flag_emoji(country_code):
+    """
+    Converts a two-letter country code to its corresponding flag emoji.
+    """
+    if not country_code or len(country_code) != 2:
+        return "🏴‍☠️"
+    
+    country_code = country_code.upper()
+    return "".join(chr(ord(c) + 127397) for c in country_code)
+
 def get_country_info(country_code):
     """
     اطلاعات کشور (نام و پرچم) را به صورت خودکار دریافت می‌کند.
-    ابتدا ترجمه فارسی را چک می‌کند، اگر نبود از نام انگلیسی استفاده می‌کند.
     """
     country_code = country_code.upper()
     
-    # پرچم را به صورت خودکار از کد کشور تولید می‌کند
-    flag = cc.convert(names=[country_code], to='emoji', not_found="🏴‍☠️")
+    flag = get_country_flag_emoji(country_code)
     
-    # نام کشور را پیدا می‌کند
     if country_code in PERSIAN_COUNTRY_NAMES:
         name = PERSIAN_COUNTRY_NAMES[country_code]
     else:
@@ -53,9 +56,8 @@ def get_country_info(country_code):
             country = pycountry.countries.get(alpha_2=country_code)
             name = country.name if country else country_code
         except (AttributeError, KeyError):
-            name = country_code # اگر کد کشور استاندارد نباشد، خود کد را نمایش بده
+            name = country_code
 
-    # مدیریت حالت خاص برای مکان نامشخص
     if country_code == "XX":
         name = "مکان نامشخص"
         flag = "🏴‍☠️"
