@@ -15,9 +15,7 @@ with open("config.yml", "r", encoding="utf-8") as f:
 CONNECTION_TIMEOUT = config['settings']['check_liveness']['connection_timeout']
 LIVENESS_CHUNK_SIZE = config['settings']['check_liveness']['chunk_size']
 TASK_TIMEOUT = 15
-# Graceful exit logic constants
 START_TIME = time.time()
-# <<< FIX: حالا زمان‌بندی از فایل کانفیگ خوانده می‌شود
 WORKFLOW_TIMEOUT_SECONDS = config['settings']['global_timeout_minutes'] * 60
 
 def is_approaching_timeout():
@@ -27,14 +25,12 @@ def is_approaching_timeout():
 async def check_port_open_curl(host, port):
     """
     Checks if a TCP port is open on a host using curl's telnet feature.
-    This is a lightweight way to check for liveness without a full handshake.
     """
     command = ['curl', '--connect-timeout', str(CONNECTION_TIMEOUT), '-v', f'telnet://{host}:{port}']
     process = await asyncio.create_subprocess_exec(
         *command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
     )
     await process.wait()
-    # curl exits with 0 if it successfully "connects" (port is open)
     return process.returncode == 0
 
 async def process_batch(batch_of_targets):
@@ -53,10 +49,9 @@ async def process_batch(batch_of_targets):
     
     for i, result in enumerate(results):
         target = batch_of_targets[i]
-        # Check if the result is a successful boolean (not an exception)
         if isinstance(result, bool) and result:
             live_configs_in_batch.append(target['config'])
-            print(f"✅ Live | {target['config'][:60]}...")
+            print(f"✅ Live (TCP Check) | {target['config'][:60]}...")
             
     return live_configs_in_batch
 
@@ -85,22 +80,29 @@ async def main(input_path, output_path):
             break
             
         chunk = configs_to_test[i:i+LIVENESS_CHUNK_SIZE]
-        valid_targets = []
+        tcp_targets = []
         
         for config in chunk:
+            # --- START OF HYSTERIA2 FIX ---
+            # Automatically consider hysteria2 configs as "live" for the next stage
+            if config.strip().startswith("hysteria2://"):
+                live_configs_this_run.append(config)
+                print(f"✅ Live (UDP Bypass) | {config[:60]}...")
+                continue
+            # --- END OF HYSTERIA2 FIX ---
+
             host_port_str = extract_ip_from_connection(config)
             if host_port_str and ':' in host_port_str:
                 try:
                     host, port_str = host_port_str.rsplit(':', 1)
                     port = int(port_str)
                     if host and 1 <= port <= 65535:
-                        valid_targets.append({'config': config, 'host': host, 'port': port})
+                        tcp_targets.append({'config': config, 'host': host, 'port': port})
                 except (ValueError, IndexError):
-                    # Ignore configs with invalid port or format
                     continue
                     
-        if valid_targets:
-            live_in_batch = await process_batch(valid_targets)
+        if tcp_targets:
+            live_in_batch = await process_batch(tcp_targets)
             live_configs_this_run.extend(live_in_batch)
 
     if live_configs_this_run:
