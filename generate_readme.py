@@ -5,56 +5,63 @@ import jdatetime
 from urllib.parse import quote
 import yaml
 import json
+import pycountry
+import country_converter as coco
 
-# --- Helper for Country Information ---
-# This map is now expanded to include all detected countries
-COUNTRY_INFO_MAP = {
-    # Tier 1
-    "US": {"name": "ایالات متحده", "flag": "🇺🇸"},
-    "FR": {"name": "فرانسه", "flag": "🇫🇷"},
-    "GB": {"name": "بریتانیا", "flag": "🇬🇧"},
-    "IR": {"name": "ایران", "flag": "🇮🇷"},
-    "KR": {"name": "کره جنوبی", "flag": "🇰🇷"},
-    "JP": {"name": "ژاپن", "flag": "🇯🇵"},
-    "HK": {"name": "هنگ کنگ", "flag": "🇭🇰"},
-    "DE": {"name": "آلمان", "flag": "🇩🇪"},
-    "NL": {"name": "هلند", "flag": "🇳🇱"},
-    "CA": {"name": "کانادا", "flag": "🇨🇦"},
-    "SG": {"name": "سنگاپور", "flag": "🇸🇬"},
-    # Tier 2
-    "TR": {"name": "ترکیه", "flag": "🇹🇷"},
-    "BR": {"name": "برزیل", "flag": "🇧🇷"},
-    "LV": {"name": "لتونی", "flag": "🇱🇻"},
-    "SE": {"name": "سوئد", "flag": "🇸🇪"},
-    "IN": {"name": "هند", "flag": "🇮🇳"},
-    "AU": {"name": "استرالیا", "flag": "🇦🇺"},
-    "CH": {"name": "سوئیس", "flag": "🇨🇭"},
-    "AE": {"name": "امارات", "flag": "🇦🇪"},
-    # Tier 3 (Others)
-    "AM": {"name": "ارمنستان", "flag": "🇦🇲"},
-    "AR": {"name": "آرژانتین", "flag": "🇦🇷"},
-    "BG": {"name": "بلغارستان", "flag": "🇧🇬"},
-    "CL": {"name": "شیلی", "flag": "🇨🇱"},
-    "CN": {"name": "چین", "flag": "🇨🇳"},
-    "CZ": {"name": "جمهوری چک", "flag": "🇨🇿"},
-    "ES": {"name": "اسپانیا", "flag": "🇪🇸"},
-    "FI": {"name": "فنلاند", "flag": "🇫🇮"},
-    "IL": {"name": "اسرائیل", "flag": "🇮🇱"},
-    "IT": {"name": "ایتالیا", "flag": "🇮🇹"},
-    "KZ": {"name": "قزاقستان", "flag": "🇰🇿"},
-    "LT": {"name": "لیتوانی", "flag": "🇱🇹"},
-    "MD": {"name": "مولداوی", "flag": "🇲🇩"},
-    "PL": {"name": "لهستان", "flag": "🇵🇱"},
-    "RU": {"name": "روسیه", "flag": "🇷🇺"},
-    "TW": {"name": "تایوان", "flag": "🇹🇼"},
-    "UA": {"name": "اوکراین", "flag": "🇺🇦"},
-    "ZA": {"name": "آفریقای جنوبی", "flag": "🇿🇦"},
-    "XX": {"name": "مکان نامشخص", "flag": "🏴‍☠️"},
+# --- کتابخانه تبدیل کد کشور به پرچم ---
+cc = coco.CountryConverter()
+
+# --- دیکشنری برای ترجمه‌های فارسی با کیفیت بالا (اختیاری) ---
+# هر کشوری که در این لیست نباشد، نام انگلیسی آن به صورت خودکار استفاده خواهد شد
+PERSIAN_COUNTRY_NAMES = {
+    "US": "ایالات متحده", "FR": "فرانسه", "GB": "بریتانیا", "IR": "ایران",
+    "KR": "کره جنوبی", "JP": "ژاپن", "HK": "هنگ کنگ", "DE": "آلمان",
+    "NL": "هلند", "CA": "کانادا", "SG": "سنگاپور", "TR": "ترکیه",
+    "BR": "برزیل", "LV": "لتونی", "SE": "سوئد", "IN": "هند",
+    "AU": "استرالیا", "CH": "سوئیس", "AE": "امارات", "AM": "ارمنستان",
+    "AR": "آرژانتین", "BG": "بلغارستان", "CL": "شیلی", "CN": "چین",
+    "CZ": "جمهوری چک", "ES": "اسپانیا", "FI": "فنلاند", "IL": "اسرائیل",
+    "IT": "ایتالیا", "KZ": "قزاقستان", "LT": "لیتوانی", "MD": "مولداوی",
+    "PL": "لهستان", "RU": "روسیه", "TW": "تایوان", "UA": "اوکراین",
+    "ZA": "آفریقای جنوبی", "CY": "قبرس", "JO": "اردن", "SI": "اسلوونی",
+    "ID": "اندونزی", "LU": "لوکزامبورگ", "AT": "اتریش", "PH": "فیلیپین",
+    "IM": "جزیره من", "SC": "سیشل", "EE": "استونی", "NZ": "نیوزلند",
+    "SA": "عربستان سعودی", "MY": "مالزی", "PT": "پرتغال", "MX": "مکزیک",
+    "MT": "مالت", "HR": "کرواسی", "BA": "بوسنی و هرزگوین", "EC": "اکوادور",
+    "TH": "تایلند", "RS": "صربستان", "PY": "پاراگوئه", "PR": "پورتوریکو",
+    "PE": "پرو", "NO": "نروژ", "MK": "مقدونیه شمالی", "IS": "ایسلند",
+    "GT": "گواتمالا", "GR": "یونان", "CR": "کاستاریکا", "CO": "کلمبیا",
+    "BZ": "بلیز", "BH": "بحرین", "RO": "رومانی", "VN": "ویتنام",
+    "XX": "مکان نامشخص"
 }
 
 def get_country_info(country_code):
-    """Gets country info from the map, falls back to a default if not found."""
-    return COUNTRY_INFO_MAP.get(country_code.upper(), {"name": country_code, "flag": "🏳️"})
+    """
+    اطلاعات کشور (نام و پرچم) را به صورت خودکار دریافت می‌کند.
+    ابتدا ترجمه فارسی را چک می‌کند، اگر نبود از نام انگلیسی استفاده می‌کند.
+    """
+    country_code = country_code.upper()
+    
+    # پرچم را به صورت خودکار از کد کشور تولید می‌کند
+    flag = cc.convert(names=[country_code], to='emoji', not_found="🏴‍☠️")
+    
+    # نام کشور را پیدا می‌کند
+    if country_code in PERSIAN_COUNTRY_NAMES:
+        name = PERSIAN_COUNTRY_NAMES[country_code]
+    else:
+        try:
+            country = pycountry.countries.get(alpha_2=country_code)
+            name = country.name if country else country_code
+        except (AttributeError, KeyError):
+            name = country_code # اگر کد کشور استاندارد نباشد، خود کد را نمایش بده
+
+    # مدیریت حالت خاص برای مکان نامشخص
+    if country_code == "XX":
+        name = "مکان نامشخص"
+        flag = "🏴‍☠️"
+        
+    return {"name": name, "flag": flag}
+
 
 from database import get_countries_with_config_counts
 
@@ -67,7 +74,6 @@ REPO_OWNER = config['project']['repo_owner']
 REPO_NAME = config['project']['repo_name']
 ALL_CONFIGS_FILE = config['paths']['merged_configs'] 
 
-# --- DEFINITIVELY CORRECTED URL Generation using your provided format ---
 BASE_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/raw/refs/heads/master"
 ALL_CONFIGS_URL = f"{BASE_URL}/{ALL_CONFIGS_FILE}"
 SUBSCRIPTION_URL_BASE = f"{BASE_URL}/subscription"
@@ -122,7 +128,6 @@ def generate_files():
     # --- Generate Full README.md ---
     encoded_date = quote(readme_update_time)
     
-    # Corrected Badge using the exact Markdown you provided
     badge_markdown = f"[![Main Proxy Pipeline](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml/badge.svg)](https://github.com/{REPO_OWNER}/{REPO_NAME}/actions/workflows/main-pipeline.yml)"
     
     readme_content = f"""
@@ -159,8 +164,6 @@ def generate_files():
 ## 📥 لینک‌های اشتراک (Subscription Links)
 
 <div align="center">
-
-
 
 ---
 
