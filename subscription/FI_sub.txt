@@ -21,6 +21,7 @@ vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@65.109.202.24:10925/?type=ws&encryp
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@65.109.202.24:10925?type=ws&security=none
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?encryption=none&security=none&type=ws&path=%2F
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?type=ws&amp;security=none
+vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?type=ws&remarks=美国26 [614ms]
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@wolf560.royalmt.life:10925?type=ws&security=none
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2052/?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2052?encryption=none&security=none&type=ws&path=%2F
@@ -30,6 +31,7 @@ vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2052?type=ws&encrypti
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082/?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?encryption=none&security=none&type=ws&path=%2F
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?encryption=none&security=none&type=ws&path=/
+vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?security=&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?security=none&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?security=none&encryption=none&type=ws&path=%2f
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:8080?encryption=none&security=none&type=httpupgrade&path=%2F
@@ -43,6 +45,7 @@ vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:2082?security=&encryp
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:2082?security=none&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:2082?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:2086?encryption=none&security=none&type=httpupgrade&path=%2F
+vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:8080?security=&encryption=none&type=httpupgrade
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.187:8880?security=&encryption=none&type=httpupgrade
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.188:2082/?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.188:2082?encryption=none&security=none&type=ws&path=%2F
@@ -84,5 +87,6 @@ vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?security=&encryp
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?security=none&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:8080/?type=httpupgrade&encryption=none&flow=
+vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:8880?encryption=none&security=none&type=httpupgrade&path=%2F
 vmess://eyJhZGQiOiJ4cmF5dnBuLnRvcCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYTQzNzBlMS1iNDZhLTRiYjAtOTgyZS1kZjEzODQ1MDg3NDgiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIyNDEyIiwicHMiOiJAdnBuY2xhc2hmYSAtIDI5NlxuIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
 vmess://eyJhZGQiOiJ5dHJydHAzZTY2NWIucGV5bWFucmlidmFyLnh5eiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0Ijoid3d3LmJpbmcuY29tIiwiaWQiOiIxZDkwMDExMi1lYzNlLTQ1OGMtOTVmOC1kZDQ3NzAxZmRlNWYiLCJuZXQiOiJ3cyIsInBhdGgiOiIxZDkwMDExMi1lYzNlLTQ1OGMtOTVmOC1kZDQ3NzAxZmRlNWYtdm0iLCJwb3J0IjoiMjA1MiIsInBzIjoi2qnYp9mG2KfZhC7Yudi22YjYtNmI8J+RiPCfkZF2MnJheU5HX3JpYnZhcvCfkZHwn5GGIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
