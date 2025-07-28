@@ -10,6 +10,7 @@ vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&amp
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&encryption=none&headerType=none&type=tcp
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&encryption=none&type=tcp&headerType=none
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:8710?security=none&type=tcp&headerType=&path=&host=
+vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?encryption=none&security=none&type=ws&path=%2F
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?encryption=none&security=none&type=ws&path=/
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=&encryption=none&type=ws
 vless://3f9f37a6-8d0c-4ccc-9449-a533db0eacaa@165.22.76.53:9387?security=none&encryption=none&type=ws
@@ -34,6 +35,7 @@ vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?encryption=non
 vless://c372b7b3-f0b9-4769-fef8-f2a1e3f293c3@171.22.173.206:28931?security=&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://d2480c11-3d57-4184-b6ca-da1007f6c7db@5.75.202.231:2082?encryption=none&security=none&type=ws&host=refersion.com&path=%2F
 vless://d2480c11-3d57-4184-b6ca-da1007f6c7db@5.75.202.231:2082?encryption=none&security=none&type=ws&host=refersion.com&path=/
+vless://d2480c11-3d57-4184-b6ca-da1007f6c7db@5.75.202.231:2082?encryption=none&type=ws&host=refersion.com&path=%2F&security=none
 vless://d6a5ea60-1ea9-4c02-9678-39fbd6a052b7@mnxexflix2348.blacklike.ir:8080?security=none&type=ws&headerType=&path=&host=
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?encryption=none&security=none&type=ws&path=%2F
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@5.75.193.170:53624?security=&encryption=none&type=ws
