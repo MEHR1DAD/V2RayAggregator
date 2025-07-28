@@ -110,7 +110,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install pyyaml jdatetime pytz
+      - run: pip install pyyaml jdatetime pytz pycountry country-converter
 
       - name: Download All Result Artifacts
         uses: actions/download-artifact@v4
