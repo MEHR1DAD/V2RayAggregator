@@ -43,4 +43,6 @@ vless://319f5e9f-a4f3-4938-9f56-c60d7709e077@212.183.88.29:8443?security=tls&sni
 vless://319f5e9f-a4f3-4938-9f56-c60d7709e077@212.183.88.29:8880?encryption=none&security=none&type=ws&host=bitter-sun-b1aa.h-175.workers.dev&path=%2FH4m3Pft6hw4sgqlF%3Fed%3D2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@212.183.88.213:8880?security=none&encryption=none&host=jp.laoyoutiao.link&type=ws
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@212.183.88.213:8880?security=none&type=ws&host=jp.laoyoutiao.link
+vmess://eyJhZGQiOiJjdXN0b21lcnMudGVsZS1zaG9wLXRvby5zdHVkaW8iLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZGQxZjVlMzYtZmIwNS00NWZkLWI5MGQtMzhmYjNiZWY1ZTU5IiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzMzIwMyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwicHMiOiIlRjAlOUYlODclQTYlRjAlOUYlODclQjkrQVQrJTdDKyVGMCU5RiU5NCU5MytWTUVTUyslN0MrJTQwdjJyYXluZ2NvbmZpaWcrJTIzMTMifQ
