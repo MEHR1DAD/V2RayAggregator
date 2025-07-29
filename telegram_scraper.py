@@ -5,7 +5,8 @@ import asyncio
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
-from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel
+# --- تغییر: اضافه کردن موجودیت‌های جدید برای شناسایی ---
+from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, MessageEntityCode, MessageEntityPre, Channel
 from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 
@@ -24,7 +25,7 @@ SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 # --- عبارات منظم (Regex) ---
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
 SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
-TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})') # حداقل ۵ کاراکتر برای نام کانال
+TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 
 def load_targets(filename):
     if not os.path.exists(filename):
@@ -35,7 +36,6 @@ def load_targets(filename):
     return list(targets)
 
 def save_targets(filename, targets):
-    """لیست کانال‌ها را در فایل ذخیره می‌کند و از تکرار جلوگیری می‌کند."""
     with open(filename, 'w', encoding='utf-8') as f:
         for target in sorted(list(set(targets))):
             f.write(target + '\n')
@@ -65,7 +65,12 @@ async def process_messages(messages_iterator):
             text_to_process += message.text + "\n"
         if message.entities:
             for ent in message.entities:
-                if isinstance(ent, (MessageEntityTextUrl, MessageEntityUrl)):
+                # --- بخش جدید: اضافه کردن شناسایی متن‌های Monospace ---
+                if isinstance(ent, (MessageEntityCode, MessageEntityPre)):
+                    # استخراج متن از داخل بلوک کد
+                    code_text = message.text[ent.offset : ent.offset + ent.length]
+                    text_to_process += code_text + "\n"
+                elif isinstance(ent, (MessageEntityTextUrl, MessageEntityUrl)):
                     url = ent.url if isinstance(ent, MessageEntityTextUrl) else message.text[ent.offset:ent.offset+ent.length]
                     text_to_process += url + "\n"
         
@@ -93,7 +98,7 @@ async def main():
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (with Auto-Discovery) ---")
+    print("--- Starting Advanced Telegram Scraper (with Monospace Support) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
@@ -167,12 +172,10 @@ async def main():
             for source in sorted(list(total_found_sources)): f.write(source + "\n")
         print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
     
-    # --- بخش جدید: اضافه کردن خودکار کانال‌های جدید ---
     if total_discovered_channels:
         current_targets = set(load_targets(TARGET_ENTITIES_FILE))
         newly_discovered = set()
         for channel in total_discovered_channels:
-            # فیلتر کردن ربات‌ها و کانال‌هایی که از قبل وجود دارند
             if not channel.lower().endswith('bot') and channel not in current_targets:
                 newly_discovered.add(channel)
 
