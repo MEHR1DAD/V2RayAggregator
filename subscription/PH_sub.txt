@@ -20,6 +20,7 @@ vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.125:2087?&security=tls&fp=
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.125:2087?security=tls&sni=vle.amclubsapp.dpdns.org&fp=randomized&type=ws&path=/?ed%3D2560&host=vle.amclubsapp.dpdns.org&encryption=none
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.200:443?&security=tls&fp=randomized&sni=vle.amclubsapp.dpdns.org&type=ws&headerType=none&host=vle.amclubsapp.dpdns.org&path=%2F%3Fed%3D2560%26PROT_TYPE%3Dvless%26NAT64%3Dtrue
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.200:443?security=tls&sni=vle.amclubsdns.dpdns.org&fp=randomized&type=ws&path=/?ed%3D2560&host=vle.amclubsdns.dpdns.org&encryption=none
+vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.54:2096/?type=ws&encryption=none&flow=&host=vle.amclubsapp.dpdns.org&path=%2F&security=tls&sni=vle.amclubsapp.dpdns.org
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.54:2096/?type=ws&encryption=none&host=vle.amclubsapp.dpdns.org&path=%2F&security=tls&sni=vle.amclubsapp.dpdns.org
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.54:2096?&security=tls&fp=randomized&sni=vle.amclubsapp.dpdns.org&type=ws&headerType=none&host=vle.amclubsapp.dpdns.org&path=%2F%3Fed%3D2560%26PROT_TYPE%3Dvless%26NAT64%3Dtrue
 vless://d6b8011a-c725-435a-9fec-bf6d3530392c@154.83.2.54:2096?encryption=none&security=tls&sni=vle.amclubsapp.dpdns.org&type=ws&host=vle.amclubsapp.dpdns.org&path=%2F
