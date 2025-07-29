@@ -8,11 +8,8 @@ from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel, C
 from telethon.tl.functions.channels import GetForumTopicsRequest
 
 # --- تنظیمات اصلی ---
-# لیست اولیه کانال‌ها و گروه‌های عمومی برای شروع
-TARGET_ENTITIES = [
-    'wbnet',
-    # 'نام_گروه_با_تاپیک'
-]
+# نام فایلی که لیست کانال‌ها و گروه‌ها از آن خوانده می‌شود
+TARGET_ENTITIES_FILE = "telegram_targets.txt"
 
 # --- نام فایل‌های خروجی و فایل وضعیت ---
 DIRECT_CONFIGS_FILE = "telegram_direct_configs.txt"
@@ -28,6 +25,16 @@ SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
 SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
 TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]+)')
+
+def load_targets(filename):
+    """لیست کانال‌ها را از فایل متنی می‌خواند."""
+    if not os.path.exists(filename):
+        print(f"Warning: Target file '{filename}' not found. No channels to process.")
+        return []
+    with open(filename, 'r', encoding='utf-8') as f:
+        # خطوط خالی و خطوطی که با # شروع می‌شوند (کامنت) نادیده گرفته می‌شوند
+        targets = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+    return targets
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -83,6 +90,10 @@ async def main():
     if not all([API_ID, API_HASH, SESSION_STRING]):
         print("FATAL ERROR: Telegram API credentials not found in environment variables.")
         return
+    
+    target_entities = load_targets(TARGET_ENTITIES_FILE)
+    if not target_entities:
+        return
 
     print("--- Starting Advanced Telegram Scraper (with Topic Support) ---")
     
@@ -96,7 +107,7 @@ async def main():
         me = await client.get_me()
         print(f"Successfully logged in as: {me.first_name}")
 
-        for entity_name in TARGET_ENTITIES:
+        for entity_name in target_entities:
             print(f"\nProcessing entity: {entity_name}")
             try:
                 entity = await client.get_entity(entity_name)
@@ -152,8 +163,8 @@ async def main():
         print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
     
     if total_discovered_channels:
-        print("\n🔎 Discovered new potential Telegram channels (please review and add them manually to TARGET_ENTITIES):")
-        for channel in total_discovered_channels - set(TARGET_ENTITIES):
+        print("\n🔎 Discovered new potential Telegram channels (please review and add them manually to the target file):")
+        for channel in total_discovered_channels - set(target_entities):
             print(f"  - {channel}")
     
     save_state(state)
