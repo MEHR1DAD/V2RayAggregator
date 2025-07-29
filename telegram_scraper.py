@@ -2,21 +2,24 @@ import os
 import re
 import json
 import asyncio
+import base64
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel
 from telethon.tl.functions.channels import GetForumTopicsRequest
+from telethon.errors.rpcerrorlist import FloodWaitError
 
 # --- تنظیمات اصلی ---
 TARGET_ENTITIES_FILE = "telegram_targets.txt"
 DIRECT_CONFIGS_FILE = "telegram_direct_configs.txt"
 SOURCE_LINKS_FILE = "telegram_source_links.txt"
 STATE_FILE = "telegram_scraper_state.json"
+DELAY_BETWEEN_CHANNELS = 30 # ثانیه تأخیر بین هر کانال
 
 # --- متغیرهای استخراج شده از گیت‌هاب سکرت ---
 API_ID = os.getenv('TELEGRAM_API_ID')
 API_HASH = os.getenv('TELEGRAM_API_HASH')
-SESSION_STRING = os.getenv('TELEGRAM_SESSION')
+ENCODED_SESSION = os.getenv('TELEGRAM_SESSION')
 
 # --- عبارات منظم (Regex) ---
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
@@ -47,6 +50,7 @@ async def process_messages(messages_iterator):
     last_message_id = 0
 
     async for message in messages_iterator:
+        if not message: continue
         if message.id > last_message_id:
             last_message_id = message.id
 
@@ -76,8 +80,14 @@ async def process_messages(messages_iterator):
     return found_configs, found_sources, discovered_channels, last_message_id
 
 async def main():
-    if not all([API_ID, API_HASH, SESSION_STRING]):
+    if not all([API_ID, API_HASH, ENCODED_SESSION]):
         print("FATAL ERROR: Telegram API credentials or session string not found in environment variables.")
+        return
+        
+    try:
+        SESSION_STRING = base64.b64decode(ENCODED_SESSION).decode('utf-8')
+    except Exception as e:
+        print(f"FATAL ERROR: Could not decode the session string. Is the secret correct? Error: {e}")
         return
 
     target_entities = load_targets(TARGET_ENTITIES_FILE)
@@ -93,8 +103,8 @@ async def main():
             me = await client.get_me()
             print(f"Successfully logged in as: {me.first_name}")
 
-            for entity_name in target_entities:
-                print(f"\nProcessing entity: {entity_name}")
+            for i, entity_name in enumerate(target_entities):
+                print(f"\nProcessing entity: {entity_name} ({i+1}/{len(target_entities)})")
                 try:
                     entity = await client.get_entity(entity_name)
                     
@@ -129,10 +139,23 @@ async def main():
                         total_discovered_channels.update(channels)
                         if new_last_id > last_message_id:
                             state[state_key] = new_last_id
+                
+                except FloodWaitError as e:
+                    print(f"  -> FLOOD WAIT: Telegram asked us to wait for {e.seconds} seconds. Waiting...")
+                    await asyncio.sleep(e.seconds)
                 except Exception as e:
                     print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
+
+                # --- FIX: اضافه کردن تأخیر بین هر کانال ---
+                if i < len(target_entities) - 1:
+                    print(f"\n--- Waiting for {DELAY_BETWEEN_CHANNELS} seconds before next channel to avoid flood limits ---")
+                    await asyncio.sleep(DELAY_BETWEEN_CHANNELS)
+
     except ValueError as e:
         print(f"FATAL ERROR: The session string is invalid or corrupted. Please regenerate it. Error: {e}")
+        return
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
         return
 
     if total_found_configs:
@@ -146,8 +169,11 @@ async def main():
         print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
     
     if total_discovered_channels:
-        print("\n🔎 Discovered new potential Telegram channels (please review and add them manually to the target file):")
-        for channel in total_discovered_channels - set(target_entities): print(f"  - {channel}")
+        current_targets = set(load_targets(TARGET_ENTITIES_FILE))
+        newly_discovered = total_discovered_channels - current_targets
+        if newly_discovered:
+            print("\n🔎 Discovered new potential Telegram channels (please review and add them manually to the target file):")
+            for channel in newly_discovered: print(f"  - {channel}")
     
     save_state(state)
     print("\n--- Advanced Telegram Scraper Finished ---")
