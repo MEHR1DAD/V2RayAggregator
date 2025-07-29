@@ -1,0 +1,45 @@
+name: Generate Telegram Session String
+
+on:
+  workflow_dispatch: # این ورک‌فلو فقط به صورت دستی اجرا می‌شود
+
+jobs:
+  generate:
+    name: Generate Session String
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Telethon
+        run: pip install telethon
+
+      - name: Create Session Generator Script
+        run: |
+          cat << 'EOF' > generate_session.py
+          import asyncio
+          from telethon.sync import TelegramClient
+          from telethon.sessions import StringSession
+
+          API_ID = input("Please enter your API ID: ")
+          API_HASH = input("Please enter your API HASH: ")
+
+          async def main():
+              async with TelegramClient(StringSession(), API_ID, API_HASH) as client:
+                  session_string = client.session.save()
+                  print("\n\n--- Your Session String ---")
+                  print(session_string)
+                  print("--- Copy the line above ---")
+
+          if __name__ == "__main__":
+              asyncio.run(main())
+          EOF
+
+      - name: Run Interactive Session Generator
+        run: python generate_session.py
