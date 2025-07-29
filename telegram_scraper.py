@@ -2,7 +2,6 @@ import os
 import re
 import json
 import asyncio
-import base64
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel
@@ -17,8 +16,7 @@ STATE_FILE = "telegram_scraper_state.json"
 # --- متغیرهای استخراج شده از گیت‌هاب سکرت ---
 API_ID = os.getenv('TELEGRAM_API_ID')
 API_HASH = os.getenv('TELEGRAM_API_HASH')
-# --- تغییر: ما رشته کد شده Base64 را می‌خوانیم ---
-ENCODED_SESSION = os.getenv('TELEGRAM_SESSION')
+SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 
 # --- عبارات منظم (Regex) ---
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
@@ -78,17 +76,10 @@ async def process_messages(messages_iterator):
     return found_configs, found_sources, discovered_channels, last_message_id
 
 async def main():
-    if not all([API_ID, API_HASH, ENCODED_SESSION]):
-        print("FATAL ERROR: Telegram API credentials not found in environment variables.")
+    if not all([API_ID, API_HASH, SESSION_STRING]):
+        print("FATAL ERROR: Telegram API credentials or session string not found in environment variables.")
         return
 
-    # --- تغییر: رمزگشایی رشته Session در داخل پایتون ---
-    try:
-        SESSION_STRING = base64.b64decode(ENCODED_SESSION).decode('utf-8')
-    except Exception as e:
-        print(f"FATAL ERROR: Could not decode the session string. Is the secret correct? Error: {e}")
-        return
-        
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
@@ -97,26 +88,40 @@ async def main():
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
 
-    async with TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH) as client:
-        me = await client.get_me()
-        print(f"Successfully logged in as: {me.first_name}")
+    try:
+        async with TelegramClient(StringSession(SESSION_STRING), int(API_ID), API_HASH) as client:
+            me = await client.get_me()
+            print(f"Successfully logged in as: {me.first_name}")
 
-        for entity_name in target_entities:
-            print(f"\nProcessing entity: {entity_name}")
-            try:
-                entity = await client.get_entity(entity_name)
-                
-                if isinstance(entity, Channel) and entity.megagroup and entity.forum:
-                    print(f"  -> This is a Supergroup with Topics. Fetching topics...")
-                    topics = await client(GetForumTopicsRequest(channel=entity))
+            for entity_name in target_entities:
+                print(f"\nProcessing entity: {entity_name}")
+                try:
+                    entity = await client.get_entity(entity_name)
                     
-                    for topic in topics.topics:
-                        topic_id = topic.id
-                        state_key = f"{entity.id}_{topic_id}"
-                        last_message_id = state.get(state_key, 0)
-                        print(f"    -> Processing Topic: '{topic.title}' since message ID: {last_message_id}")
+                    if isinstance(entity, Channel) and entity.megagroup and entity.forum:
+                        print(f"  -> This is a Supergroup with Topics. Fetching topics...")
+                        topics = await client(GetForumTopicsRequest(channel=entity))
                         
-                        messages_iterator = client.iter_messages(entity, reply_to=topic_id, min_id=last_message_id)
+                        for topic in topics.topics:
+                            topic_id = topic.id
+                            state_key = f"{entity.id}_{topic_id}"
+                            last_message_id = state.get(state_key, 0)
+                            print(f"    -> Processing Topic: '{topic.title}' since message ID: {last_message_id}")
+                            
+                            messages_iterator = client.iter_messages(entity, reply_to=topic_id, min_id=last_message_id)
+                            configs, sources, channels, new_last_id = await process_messages(messages_iterator)
+                            
+                            total_found_configs.update(configs)
+                            total_found_sources.update(sources)
+                            total_discovered_channels.update(channels)
+                            if new_last_id > last_message_id:
+                                state[state_key] = new_last_id
+                    else:
+                        state_key = str(entity.id)
+                        last_message_id = state.get(state_key, 0)
+                        print(f"  -> This is a standard channel/group. Processing since message ID: {last_message_id}")
+                        
+                        messages_iterator = client.iter_messages(entity, min_id=last_message_id)
                         configs, sources, channels, new_last_id = await process_messages(messages_iterator)
                         
                         total_found_configs.update(configs)
@@ -124,21 +129,11 @@ async def main():
                         total_discovered_channels.update(channels)
                         if new_last_id > last_message_id:
                             state[state_key] = new_last_id
-                else:
-                    state_key = str(entity.id)
-                    last_message_id = state.get(state_key, 0)
-                    print(f"  -> This is a standard channel/group. Processing since message ID: {last_message_id}")
-                    
-                    messages_iterator = client.iter_messages(entity, min_id=last_message_id)
-                    configs, sources, channels, new_last_id = await process_messages(messages_iterator)
-                    
-                    total_found_configs.update(configs)
-                    total_found_sources.update(sources)
-                    total_discovered_channels.update(channels)
-                    if new_last_id > last_message_id:
-                        state[state_key] = new_last_id
-            except Exception as e:
-                print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
+                except Exception as e:
+                    print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
+    except ValueError as e:
+        print(f"FATAL ERROR: The session string is invalid or corrupted. Please regenerate it. Error: {e}")
+        return
 
     if total_found_configs:
         with open(DIRECT_CONFIGS_FILE, "a", encoding="utf-8") as f:
