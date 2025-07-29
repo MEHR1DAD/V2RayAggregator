@@ -2,7 +2,6 @@ import os
 import re
 import json
 import asyncio
-import base64
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel
@@ -19,7 +18,7 @@ DELAY_BETWEEN_CHANNELS = 30 # ثانیه تأخیر بین هر کانال
 # --- متغیرهای استخراج شده از گیت‌هاب سکرت ---
 API_ID = os.getenv('TELEGRAM_API_ID')
 API_HASH = os.getenv('TELEGRAM_API_HASH')
-ENCODED_SESSION = os.getenv('TELEGRAM_SESSION')
+SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 
 # --- عبارات منظم (Regex) ---
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
@@ -80,16 +79,10 @@ async def process_messages(messages_iterator):
     return found_configs, found_sources, discovered_channels, last_message_id
 
 async def main():
-    if not all([API_ID, API_HASH, ENCODED_SESSION]):
+    if not all([API_ID, API_HASH, SESSION_STRING]):
         print("FATAL ERROR: Telegram API credentials or session string not found in environment variables.")
         return
         
-    try:
-        SESSION_STRING = base64.b64decode(ENCODED_SESSION).decode('utf-8')
-    except Exception as e:
-        print(f"FATAL ERROR: Could not decode the session string. Is the secret correct? Error: {e}")
-        return
-
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
@@ -146,7 +139,6 @@ async def main():
                 except Exception as e:
                     print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
 
-                # --- FIX: اضافه کردن تأخیر بین هر کانال ---
                 if i < len(target_entities) - 1:
                     print(f"\n--- Waiting for {DELAY_BETWEEN_CHANNELS} seconds before next channel to avoid flood limits ---")
                     await asyncio.sleep(DELAY_BETWEEN_CHANNELS)
