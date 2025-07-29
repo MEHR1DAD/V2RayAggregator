@@ -2,6 +2,7 @@ import os
 import re
 import json
 import asyncio
+from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, Channel
@@ -23,15 +24,21 @@ SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 # --- عبارات منظم (Regex) ---
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
 SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
-TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]+)')
+TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})') # حداقل ۵ کاراکتر برای نام کانال
 
 def load_targets(filename):
     if not os.path.exists(filename):
         print(f"Warning: Target file '{filename}' not found. No channels to process.")
         return []
     with open(filename, 'r', encoding='utf-8') as f:
-        targets = [line.strip() for line in f if line.strip() and not line.startswith('#')]
-    return targets
+        targets = {line.strip() for line in f if line.strip() and not line.startswith('#')}
+    return list(targets)
+
+def save_targets(filename, targets):
+    """لیست کانال‌ها را در فایل ذخیره می‌کند و از تکرار جلوگیری می‌کند."""
+    with open(filename, 'w', encoding='utf-8') as f:
+        for target in sorted(list(set(targets))):
+            f.write(target + '\n')
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -86,7 +93,7 @@ async def main():
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (with Topic Support) ---")
+    print("--- Starting Advanced Telegram Scraper (with Auto-Discovery) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
@@ -103,9 +110,9 @@ async def main():
                     
                     if isinstance(entity, Channel) and entity.megagroup and entity.forum:
                         print(f"  -> This is a Supergroup with Topics. Fetching topics...")
-                        topics = await client(GetForumTopicsRequest(channel=entity))
+                        topics_result = await client(GetForumTopicsRequest(channel=entity, offset_date=datetime.now(), offset_id=0, offset_topic=0, limit=100))
                         
-                        for topic in topics.topics:
+                        for topic in topics_result.topics:
                             topic_id = topic.id
                             state_key = f"{entity.id}_{topic_id}"
                             last_message_id = state.get(state_key, 0)
@@ -160,12 +167,20 @@ async def main():
             for source in sorted(list(total_found_sources)): f.write(source + "\n")
         print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
     
+    # --- بخش جدید: اضافه کردن خودکار کانال‌های جدید ---
     if total_discovered_channels:
         current_targets = set(load_targets(TARGET_ENTITIES_FILE))
-        newly_discovered = total_discovered_channels - current_targets
+        newly_discovered = set()
+        for channel in total_discovered_channels:
+            # فیلتر کردن ربات‌ها و کانال‌هایی که از قبل وجود دارند
+            if not channel.lower().endswith('bot') and channel not in current_targets:
+                newly_discovered.add(channel)
+
         if newly_discovered:
-            print("\n🔎 Discovered new potential Telegram channels (please review and add them manually to the target file):")
-            for channel in newly_discovered: print(f"  - {channel}")
+            print(f"\n🔎 Discovered {len(newly_discovered)} new channels. Appending to target file...")
+            updated_targets = list(current_targets.union(newly_discovered))
+            save_targets(TARGET_ENTITIES_FILE, updated_targets)
+            print(f"✅ Successfully updated '{TARGET_ENTITIES_FILE}'.")
     
     save_state(state)
     print("\n--- Advanced Telegram Scraper Finished ---")
