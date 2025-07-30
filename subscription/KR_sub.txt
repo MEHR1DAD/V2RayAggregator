@@ -8,6 +8,7 @@ ss://YWVzLTI1Ni1nY206Tml6bkx2b0l1eQ%3D%3D@220.124.31.130:19378
 ss://YWVzLTI1Ni1nY206Tml6bkx2b0l1eQ==@220.124.31.130:19378
 ss://YWVzLTI1Ni1nY206Tml6bkx2b0l1eQ@220.124.31.130:19378
 vless://06e4425e-a8cb-4b63-929f-2105604ab0a9@115.94.98.93:50000?encryption=none&security=tls&sni=1c.ylks0033.dpdns.org&alpn=h3&fp=random&allowInsecure=1&type=ws&host=1c.ylks0033.dpdns.org&path=%2F%3Fed%3D2560
+vless://06e4425e-a8cb-4b63-929f-2105604ab0a9@115.94.98.93:50000?encryption=none&security=tls&sni=hc.ylks0033.dpdns.org&type=ws&host=hc.ylks0033.dpdns.org&path=%2F%3Fed%3D2560
 vless://06e4425e-a8cb-4b63-929f-2105604ab0a9@131.186.17.132:443?encryption=none&security=tls&sni=hx.ylks0033.dpdns.org&type=ws&host=hx.ylks0033.dpdns.org&path=%2F%3Fed%3D2560
 vless://e6d8d743-a9bc-48c9-be99-8f3cc94d16e1@ako.pagate.top:443?allowInsecure=0&sni=ako.pagate.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls
 vless://e6d8d743-a9bc-48c9-be99-8f3cc94d16e1@ako.pagate.top:443?security=tls&sni=ako.pagate.top&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none
@@ -15,6 +16,7 @@ vless://e6d8d743-a9bc-48c9-be99-8f3cc94d16e1@ako.pagate.top:443?security=tls&sni
 vless://e6d8d743-a9bc-48c9-be99-8f3cc94d16e1@ako.pagate.top:443?type=tcp&encryption=none&security=tls&path=%2f&flow=xtls-rprx-vision&sni=ako.pagate.top
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@119.202.158.65:10001?encryption=none&security=tls&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=Telegram%40WangCai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@124.57.36.207:34599?security=tls&sni=jp.laoyoutiao.link&allowInsecure=1&fp=chrome&type=ws&path=/Telegram@WangCai2/?ed%3D2560&host=jp.laoyoutiao.link&encryption=none
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@131.186.22.50:443?encryption=none&security=tls&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=telegram%40wangcai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@14.36.181.53:18765?encryption=none&security=tls&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2Ftelegram%40wangcai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@14.36.181.53:18765?encryption=none&security=tls&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2Ftelegram%F0%9F%87%A8%F0%9F%87%B3%40wangcai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@14.36.181.53:18765?security=tls&sni=jp.laoyoutiao.link&type=ws&path=/telegram%F0%9F%87%A8%F0%9F%87%B3@wangcai2/?ed%3D2560&host=jp.laoyoutiao.link&encryption=none

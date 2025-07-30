@@ -66,6 +66,7 @@ vless://21911efc-b47c-47db-8316-aa07a793c067@ov-germany5.09vpn.com:80?path=/vles
 vless://29d2d8ee-a277-43c8-b94b-67cec1c55c80@193.176.179.65:7600?encryption=none&type=raw&headerType=none&security=none
 vless://2a2d5f5d-6acb-438f-ba25-f3cbc6614b63@ov-france2.09vpn.com:80?encryption=none&type=ws&path=%2Fvless%2F&security=none
 vless://2ac2a3ac-49ec-4cf1-90fd-252b7fad9fbe@51.195.119.204:80/?path=%2Fvless%2F&security=none&encryption=none&host=---%@v2xay&type=ws
+vless://2ac2a3ac-49ec-4cf1-90fd-252b7fad9fbe@51.195.119.204:80/?path=%2Fvless%2F&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
 vless://2ac2a3ac-49ec-4cf1-90fd-252b7fad9fbe@51.195.119.204:80?encryption=none&security=none&type=ws&host=---%40External_Net---%40External_Net---%40External_Net---%40External_Net---%40External_Net&path=%2Fvless%2F
 vless://2ac2a3ac-49ec-4cf1-90fd-252b7fad9fbe@51.195.119.204:80?path=%2Fvless%2F&security=none&encryption=none&host=---%@v2xay&type=ws
 vless://2ac2a3ac-49ec-4cf1-90fd-252b7fad9fbe@51.195.119.204:80?path=%2Fvless%2F&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
@@ -78,6 +79,7 @@ vless://332b3cc2-21dc-4ffa-9ab7-7d46a665b5fe@193.42.60.131:47664?path=%2F&securi
 vless://366dec87-0be5-4e37-8741-8522b97a13ad@ov-unitedkingdom2.09vpn.com:8443?encryption=none&type=ws&path=%2Fvless%2F&security=tls
 vless://366dec87-0be5-4e37-8741-8522b97a13ad@ov-unitedkingdom2.09vpn.com:8443?security=tls&sni=ov-unitedkingdom2.09vpn.com&fp=random&type=ws&path=/vless/&host=ov-unitedkingdom2.09vpn.com&encryption=none
 vless://394f6981-a782-4779-9a85-e6cf22935d93@cdg-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://401374e6-df77-41fb-f638-dad8184f175b@141.11.202.193:443/?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@141.11.202.193:443/?type=grpc&encryption=none&flow=&security=tls&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@141.11.202.193:443/?type=grpc&encryption=none&flow=&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@141.11.202.193:443?encryption=none&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc
@@ -899,3 +901,4 @@ vmess://eyJhZGQiOiJvdi1nZXJtYW55Ny4wOXZwbi5jb20iLCJhaWQiOjAsImlkIjoiOGI3ZWM5OGQt
 vmess://eyJhZGQiOiJvdi1nZXJtYW55Ny4wOXZwbi5jb20iLCJhaWQiOjAsImlkIjoiOGI3ZWM5OGQtYzI5MS00MDM0LTk3MTktZTZkNjIwNTE2MzZhIiwicG9ydCI6IjgwIiwic2N5IjoiYXV0byIsInYiOiIyIiwibmV0Ijoid3MiLCJob3N0IjoiZ29vZ2xlLmNvbSIsInBhdGgiOiIvdm1lc3MvIiwidGxzIjoibm9uZSIsInBzIjoiW/Cfh6nwn4eqXSBbdm0tbm8td3NdIFsyNTA3MjktMTcyOTU5LjI0OF0ifQo=
 vmess://eyJhZGQiOiJvdi1nZXJtYW55Ny4wOXZwbi5jb20iLCJhaWQiOjAsImlkIjoiOGI3ZWM5OGQtYzI5MS00MDM0LTk3MTktZTZkNjIwNTE2MzZhIiwicG9ydCI6IjgwIiwic2N5IjoiYXV0byIsInYiOiIyIiwibmV0Ijoid3MiLCJob3N0IjoiZ29vZ2xlLmNvbSIsInBhdGgiOiIvdm1lc3MvIiwidGxzIjoibm9uZSIsInBzIjoiW/Cfh6nwn4eqXSBbdm0tbm8td3NdIFsyNTA3MjktMjMwNDEyLjUzMF0ifQo=
 vmess://eyJhZGQiOiJvdi1nZXJtYW55Ny4wOXZwbi5jb20iLCJhaWQiOjAsImlkIjoiOGI3ZWM5OGQtYzI5MS00MDM0LTk3MTktZTZkNjIwNTE2MzZhIiwicG9ydCI6IjgwIiwic2N5IjoiYXV0byIsInYiOiIyIiwibmV0Ijoid3MiLCJob3N0IjoiZ29vZ2xlLmNvbSIsInBhdGgiOiIvdm1lc3MvIiwidGxzIjoibm9uZSIsInBzIjoiW/Cfh6nwn4eqXSBbdm0tbm8td3NdIFsyNTA3MzAtMTM1ODE3Ljc5OF0ifQo=
+vmess://eyJhZGQiOiJvdi1nZXJtYW55Ny4wOXZwbi5jb20iLCJhaWQiOjAsImlkIjoiOGI3ZWM5OGQtYzI5MS00MDM0LTk3MTktZTZkNjIwNTE2MzZhIiwicG9ydCI6IjgwIiwic2N5IjoiYXV0byIsInYiOiIyIiwibmV0Ijoid3MiLCJob3N0IjoiZ29vZ2xlLmNvbSIsInBhdGgiOiIvdm1lc3MvIiwidGxzIjoibm9uZSIsInBzIjoiW/Cfh6nwn4eqXSBbdm0tbm8td3NdIFsyNTA3MzAtMTcyOTUzLjYyNF0ifQo=
