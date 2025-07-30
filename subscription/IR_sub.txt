@@ -2,6 +2,7 @@ vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217/?type=tc
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?security=&encryption=none&headerType=none&type=tcp
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?type=tcp&security=none
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=none&security=none&fp=chrome&allowInsecure=1&type=ws&path=%2F
+vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=none&security=none&fp=chrome&allowInsecure=1&type=ws&path=/
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=none&security=none&type=ws&path=/
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=/&security=&encryption=none&type=ws
@@ -48,7 +49,9 @@ vless://b54b4029-43df-4068-8e0d-ce8f524ba5e9@194.180.11.193:53740?mode=gun&secur
 vless://e893762a-fb1b-4bc5-aad0-64d6a72c9bd1@193.151.140.34:443?security=none&encryption=none&headerType=none&type=tcp
 vless://e893762a-fb1b-4bc5-aad0-64d6a72c9bd1@193.151.140.34:443?type=tcp&security=none
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80/?path=/?Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI?ed=2560&security=none&encryption=none&type=ws
+vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80/?type=ws&encryption=none&path=%2F
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80/?type=ws&encryption=none&path=/
+vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80?encryption=none&path=%2F&security=none&type=ws
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80?encryption=none&security=none&type=ws&path=%2F
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80?encryption=none&security=none&type=ws&path=%2F%3FJoin---PevezaVPN---Join---PevezaVPN---Join---PevezaVPN---Join---PevezaVPN%3Fed
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@62.60.192.209:80?encryption=none&security=none&type=ws&path=%2F%3FJoin---PevezaVPN---Join---PevezaVPN---Join---PevezaVPN---Join---PevezaVPN%3Fed%3D2560
@@ -267,6 +270,8 @@ vmess://eyJhZGQiOiIzNy4yMDIuMjI1Ljc0IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhv
 vmess://eyJhZGQiOiIzNy4yMDIuMjI1Ljc0IiwiaG9zdCI6IiIsInBvcnQiOiI0MDUyMSIsInNlcnZpY2VOYW1lIjoibm9uZSIsImFpZCI6IjAiLCJtb2RlIjoiIiwic2VlZCI6IiIsInBzIjoiVGVsZWdyYW06QGtpbmdfdjJyYWF5IiwiZXh0cmEiOiIiLCJwYXRoIjoiXC8iLCJzbmkiOiIiLCJpZCI6ImIzNjhhODZlLTZmYmMtNDMxYy05ZjA1LTZlMWZhYjg5Njg1OCIsImRldmljZUlEIjoiIiwiZnAiOiIiLCJmcmFnbWVudCI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJoZWFkZXJUeXBlIjoiIiwidGxzIjoibm9uZSIsIm5ldCI6IndzIiwiYWxwbiI6IiJ9
 vmess://eyJhZGQiOiJ1ay5yaXpwaW5nLmlyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJjb2xvcmxpYi5jb20iLCJpZCI6ImZlYzA2NGQ3LWE3OTAtNGFhOS04YWIwLWJhODg1YTk0MDAzNiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDQ1NSIsInBzIjoiW/Cfh67wn4e3XXQubWUvQ29uZmlnc0h1YiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJ1ay5yaXpwaW5nLmlyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJjb2xvcmxpYi5jb20iLCJpZCI6ImZlYzA2NGQ3LWE3OTAtNGFhOS04YWIwLWJhODg1YTk0MDAzNiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDQ1NSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwicHMiOiJcdWQ4M2NcdWRkZWVcdWQ4M2NcdWRkZjdJUiB8IFx1ZDgzZFx1ZGZlMiB8IFx1MmI1MDNZRUQifQ==
+vmess://eyJhZGQiOiJzMS5kbnM0d2FyZHMuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjFlMTBmMjhjLTgzNDItNGQ4Yy05NjRmLTMyNjI0ZjZjNWNjNSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOiIyMDg3Iiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJwcyI6Ilx1ZDgzY1x1ZGRlOVx1ZDgzY1x1ZGRlYSBERSB8IFx1ZDgzZFx1ZGQxMyBWTUVTUyB8IEB2MnJheWNoIFsyMF0ifQ
+vmess://eyJhZGQiOiJzMS5kbnM0d2FyZHMuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjFlMTBmMjhjLTgzNDItNGQ4Yy05NjRmLTMyNjI0ZjZjNWNjNSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOiIyMDg3IiwicHMiOiJcdWQ4M2NcdWRkZTlcdWQ4M2NcdWRkZWEgREUgfCBcdWQ4M2RcdWRkMTMgVk1FU1MgfCBAdjJyYXljaCBbMjBdIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ
 vmess://eyJhZGQiOiJzMy5kbnM0d2FyZHMuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA3Y2FiNTEyLTk3YjItNDg3Mi03NjQyLTFjNWE5MDM1ZWRhYSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjIwODkiLCJwcyI6InQubWUvQmV0VjJyYXkgKDY0MzEpIERFICDwn4ep8J+HqiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJzMy5kbnM0d2FyZHMuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImIxNzU0NjU4LWNmODEtNGY1Zi0zOGI0LTBmYjc2ZjFiYjVhYSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjIwODkiLCJwcyI6InQubWUvQmV0VjJyYXkgKDY0MzIpIERFICDwn4ep8J+HqiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJzMy5kbnM0d2FyZHMuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImM3ODc5MTZjLTZhZDctNGExYi1mNTM4LTVhYzU2NmU4ZTg0OCIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjIwODkiLCJwcyI6InQubWUvQmV0VjJyYXkgKDY0MjgpIERFICDwn4ep8J+HqiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=

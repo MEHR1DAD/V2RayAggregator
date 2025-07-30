@@ -142,6 +142,7 @@ vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=&encr
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&allowInsecure=1&fp=chrome&type=tcp&packetEncoding=xudp&encryption=none
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&encryption=none&headerType=none&type=tcp
+vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&path=%2f
 vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&type=tcp
 vless://1aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=%2F&host=tgju.org&security=none
 vless://1aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=/&host=tgju.org&security=none
@@ -188,6 +189,7 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.244.38:443?security=tls&sni=pq
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.68:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.68:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.68:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
+vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.70:443/?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.70:443/?type=grpc&encryption=none&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.70:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.70:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
@@ -196,7 +198,9 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.245.70:443?security=tls&sni=pq
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.246.60:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.246.60:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@5.10.246.60:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
+vless://41627b93-4faa-4179-a129-c350291df966@MAHXRAYSHOVPN.sashabike.ir:2095?path=/?ed=80&security=none&encryption=none&host=германе.сервер.ффф.ппп.mahxray.news.&type=ws
 vless://41627b93-4faa-4179-a129-c350291df966@MAHXRAYSHOVPN.sashabike.ir:2096?path=%2F%3Fed%3D1024&security=tls&alpn=http%2F1.1&encryption=none&host=redfox.mahxray.news&fp=chrome&type=ws&sni=redfox.mahxray.news
+vless://41627b93-4faa-4179-a129-c350291df966@mahxrayshovpn.sashabike.ir:2096?encryption=none&security=tls&sni=redfox.mahxray.news&fp=chrome&type=ws&host=redfox.mahxray.news&path=/?ed=1024
 vless://41627b93-4faa-4179-a129-c350291df966@mahxrayshovpn.sashabike.ir:2096?encryption=none&security=tls&sni=redfox.mahxray.news&type=ws&host=redfox.mahxray.news&path=%2F%3Fed%3D1024
 vless://41627b93-4faa-4179-a129-c350291df966@mahxrayshovpn.sashabike.ir:2096?encryption=none&type=ws&host=redfox.mahxray.news&path=%2F%3Fed%3D1024&security=tls&alpn=http%2F1.1&fp=chrome&sni=redfox.mahxray.news
 vless://41627b93-4faa-4179-a129-c350291df966@mahxrayshovpn.sashabike.ir:2096?security=tls&sni=redfox.mahxray.news&fp=chrome&type=ws&path=/?ed%3D1024&host=redfox.mahxray.news&encryption=none
@@ -246,6 +250,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.131.6.148:8880?security=none&typ
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.131.7.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳&allowInsecure=0
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.149.12.148:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.149.12.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳&allowInsecure=0
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.149.12.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.149.12.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@5.10.245.148:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@5.10.247.148:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
@@ -256,6 +261,7 @@ vless://6f183280-b258-437a-a216-e83f7dece776@45.131.210.102:80?encryption=none&s
 vless://78a9bf4f-3bec-48b2-b98f-a3f8151506ac@europeless.duckdns.org:443?security=tls&sni=europeless.duckdns.org&fp=random&type=ws&path=/getupdates&host=europeless.duckdns.org&encryption=none
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443/?type=ws&encryption=none&flow=&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F%40rayan_config&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?encryption=none&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG&type=ws&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F%40rayan_config
+vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?path=%2F%40rayan_config&security=tls&encryption=none&host=rAyAn-12.LeIlA.DpDnS.OrG&type=ws&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?path=/@Rayan_Config&security=tls&encryption=none&host=rayan-12.leila.dpdns.org&fp=chrome&type=ws&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?path=/@rayan_config&security=tls&encryption=none&host=rAyAn-12.LeIlA.DpDnS.OrG&type=ws&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG&fp=chrome&type=ws&path=/@Rayan_Config&host=rAyAn-12.LeIlA.DpDnS.OrG&encryption=none
@@ -309,16 +315,21 @@ vless://a396b860-11b7-4af3-9950-146caf79735e@45.131.6.254:2053?path=%2Fproxy_mtm
 vless://a396b860-11b7-4af3-9950-146caf79735e@45.131.6.254:2053?security=tls&sni=gGHDFa.pAgeS.Dev&fp=chrome&type=ws&path=/&host=gGHDFa.pAgeS.Dev&encryption=none
 vless://a396b860-11b7-4af3-9950-146caf79735e@45.131.6.254:2053?security=tls&sni=gGHDFa.pAgeS.Dev&fp=randomized&type=ws&path=/proxy_mtm---proxy_mtm---proxy_mtm---proxy_mtm---proxy_mtm?ed%3D2560&host=gGHDFa.pAgeS.Dev&encryption=none
 vless://af483643-0a6d-427e-a9bb-1eb84d27a60d@79.137.195.203:8080?path=/TELEGRAM_CHANEL_JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN?ed=2048&security=&encryption=none&host=joker.ahang-alpha.ir&type=ws
+vless://b590cb9f-869c-4610-badb-922cc145b70b@mx.soft98speedtest.ir:2053?type=ws&path=/scer&security=none
 vless://cdb15365-1ccb-4d5a-a5d9-6fb08d3c75ac@45.131.209.41:80?encryption=none&security=none&sni=mahdihector.kewojod243.workers.dev&type=ws&host=mahdihector.kewojod243.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
 vless://d342d11e-d424-4583-b36e-524ab1f0afa4@185.18.184.66:80?allowInsecure=1&sni=hello.96xckkzx.workers.dev&type=ws&host=hello.96xckkzx.workers.dev&path=%2F%3Fed%3D2048
 vless://d342d11e-d424-4583-b36e-524ab1f0afa4@185.18.184.66:80?type=ws&encryption=none&host=hello.96xckkzx.workers.dev&path=%2F%3Fed%3D2048
 vless://d6ff33a6-03bf-4338-8a63-62ab284a9466@45.131.5.111:80?security=none&sni=feng4.l1ut8bi9.workers.dev&type=ws&host=feng4.l1ut8bi9.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
+vless://df99b3d2-70c2-4339-d29b-a2536db16fdf@79.137.195.203:8080?path=/TELEGRAM_BYA_CHANEL_JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN-JKVPN?ed=2048&security=&encryption=none&host=joker.ahang-alpha.ir&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880/?type=ws&encryption=none&flow=&host=vngsupply.ip-ddns.com&path=%2FJ5aLQOY1R9ONWYCM
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?encryption=none&security=none&type=ws&host=vngsupply.ip-ddns.com&path=/j5alqoy1r9onwycm?ed=
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=%2FJ5aLQOY1R9ONWYCM%3Fed%3D%23Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI%3Fed%3D2560&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=%2FJ5aLQOY1R9ONWYCM&security=&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=%2FJ5aLQOY1R9ONWYCM&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=%2Ftelegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Eternal_Connect&security=&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=/J5aLQOY1R9ONWYCM&security=&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=/J5aLQOY1R9ONWYCM&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=/telegram: @Eternal_Connect - telegram: @Eternal_Connect - telegram: @Eternal_Connect - telegram: @Eternal_Connect&security=&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?type=ws&host=vngsupply.ip-ddns.com&path=/J5aLQOY1R9ONWYCM&security=none
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880/?type=ws&encryption=none&flow=&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880?encryption=none&security=none&type=ws&host=VngSuPpLY.IP-DdnS.com&path=%2F
@@ -406,4 +417,5 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.246.213:8880?sni=jp.laoyoutiao
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.246.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.247.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vmess://eyJ2IjogIjIiLCAicHMiOiAiUGFuZGEtSEstMDUgWzQ0Nm1zXSIsICJhZGQiOiAiYzkwczUucG9ydGFibGVzdWJtYXJpbmVzLmNvbSIsICJwb3J0IjogIjI2MTEzIiwgImlkIjogImQ1ZmQ1NDVjLWFiMWYtNDg2NC05MmRkLWUzNGNiZjQ2NWU1YiIsICJhaWQiOiAiMCIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAidm1lc3MiLCAidGxzIjogIiJ9
+vmess://eyJhZGQiOiI4OS4xNjkuMTMuNjAiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYjlkM2M0MTQtODljYy00NTVkLWI3MTctMTBjN2NhMTY2NWExIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyODgzOCIsInBzIjoiW/Cfh7Pwn4exXXQubWUvQ29uZmlnc0h1YiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
 vmess://eyJhZGQiOiJyb290LmFkbWluYWxpLWNvbmZlZy5zYnMiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiM2MzNDc2MzEtMzliZC00N2JiLWEyM2QtNzJlY2I0MWI2NDhjIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI1NjcwMiIsInBzIjoiW/Cfh7Pwn4exXXQubWUvQ29uZmlnc0h1YiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJub25lIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
