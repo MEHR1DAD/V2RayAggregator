@@ -11,6 +11,7 @@ vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?type=ws&amp;secu
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:10065?type=ws&security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:12065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:12065?type=ws&security=none
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?security=none&encryption=none&type=ws
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?type=ws&security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?encryption=none&security=none&type=ws&path=%2F

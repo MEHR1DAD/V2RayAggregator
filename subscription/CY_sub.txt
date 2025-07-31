@@ -15,6 +15,7 @@ vless://48300e8d-4f24-483b-a817-f5e894f06b68@www.csgo.com:2053?path=%2F%3Fed%3D2
 vless://48300e8d-4f24-483b-a817-f5e894f06b68@www.csgo.com:2096?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=companypdf9.pages.dev&type=ws&sni=companypdf9.pages.dev
 vless://48300e8d-4f24-483b-a817-f5e894f06b68@www.csgo.com:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=companypdf9.pages.dev&type=ws&sni=companypdf9.pages.dev
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@154.92.9.148:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@154.92.9.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.177:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
@@ -47,6 +48,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.85.59.213:8880?type=ws&host=jp.
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.85.59.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.150.115.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.150.115.63:8880?security=none&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=kjgx.laoyoutiao.link&fp=random&type=ws&host=kjgx.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=ld.laoyoutiao.link&fp=random&type=ws&host=ld.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=sg.laoyoutiao.link&fp=random&type=ws&host=sg.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=us.laoyoutiao.link&fp=random&type=ws&host=us.laoyoutiao.link&path=%2F%3Fed%3D2560
