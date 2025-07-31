@@ -53,10 +53,12 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryp
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=sg.laoyoutiao.link&fp=random&type=ws&host=sg.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=us.laoyoutiao.link&fp=random&type=ws&host=us.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn1.langmanshanxi.top:443?encryption=none&security=tls&sni=yd.laoyoutiao.link&fp=random&type=ws&host=yd.laoyoutiao.link&path=%2F%3Fed%3D2560
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn3.langmanshanxi.top:443?encryption=none&security=tls&sni=kjgx.laoyoutiao.link&fp=random&type=ws&host=kjgx.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn3.langmanshanxi.top:443?encryption=none&security=tls&sni=ld.laoyoutiao.link&fp=random&type=ws&host=ld.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn3.langmanshanxi.top:443?encryption=none&security=tls&sni=sg.laoyoutiao.link&fp=random&type=ws&host=sg.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn3.langmanshanxi.top:443?encryption=none&security=tls&sni=us.laoyoutiao.link&fp=random&type=ws&host=us.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdn3.langmanshanxi.top:443?encryption=none&security=tls&sni=yd.laoyoutiao.link&fp=random&type=ws&host=yd.laoyoutiao.link&path=%2F%3Fed%3D2560
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdns.langmanshanxi.top:443?encryption=none&security=tls&sni=jp.laoyoutiao.link&fp=random&type=ws&host=jp.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdns.langmanshanxi.top:443?encryption=none&security=tls&sni=kjgx.laoyoutiao.link&fp=random&type=ws&host=kjgx.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdns.langmanshanxi.top:443?encryption=none&security=tls&sni=ld.laoyoutiao.link&fp=random&type=ws&host=ld.laoyoutiao.link&path=%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@cfcdns.langmanshanxi.top:443?encryption=none&security=tls&sni=sg.laoyoutiao.link&fp=random&type=ws&host=sg.laoyoutiao.link&path=%2F%3Fed%3D2560
