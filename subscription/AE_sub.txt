@@ -38,6 +38,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@103.245.229.148:8880?security=none&
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@103.245.229.177:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@181.214.1.177:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2&fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@181.214.1.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@94.140.0.177:8880?type=ws&host=ip.langmanshanxi.top&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@94.140.0.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3
 vless://6f6af4b5-950f-404b-93ed-5307b16f9e4a@31.58.144.49:2053?path=/telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY?ed=2560&security=&encryption=none&host=chess.com&type=ws
 vless://6f6af4b5-950f-404b-93ed-5307b16f9e4a@binex.tv.jaricopen.fun:2053?path=%2Ftelegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY-telegram%2C%40BINEXTIFY%3Fed%3D2560&security=none&encryption=none&host=chess.com&type=ws
@@ -57,6 +58,7 @@ vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190/?path=%2F%3Fed%3
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190/?path=%2F%3Fed%3D2560%2F%3FJOKERRVPN_BIA_CHANEL%40JOKERRVPN&security=none&encryption=none&type=ws
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190/?path=%2F%3Fed%3D2560&security=&encryption=none&type=ws
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190/?path=%2F%3Fed%3D2560&security=none&encryption=none&type=ws
+vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190/?type=ws&encryption=none&path=%2F%3Fed%3D2560
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?encryption=none&security=none&type=ws&path=%2F
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?encryption=none&security=none&type=ws&path=%2F%3Fed%3D2560
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?encryption=none&security=none&type=ws&path=%2F%3Fed%3D2560%2F%3FJOKERRVPN_BIA_CHANEL%40JOKERRVPN
@@ -74,6 +76,7 @@ vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?path=/?ed=2560/?
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880/?path=%2F&security=none&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880/?security=none&encryption=none&type=ws&host=VngSuPpLY.IP-DdnS.com&path=/
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880/?type=ws&channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-encryption=none&flow=&host=VngSuPpLY.IP-DdnS.com&path=%2F
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880/?type=ws&encryption=none&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880?path=%2F&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880?path=%2F&security=none&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880?path=%2FEtb1L6YUdZFZuTOr%3Fed%3D2560&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws

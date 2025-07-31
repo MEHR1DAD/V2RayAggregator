@@ -4,6 +4,7 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@194.59.5.251:8880?type=ws&host=cf.d
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@194.76.18.251:8880?encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&security=none&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@194.76.18.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@31.43.179.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@31.43.179.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@31.43.179.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram
 vless://01cdc537-5fc9-4c09-8c58-016837f8bfd9@91.224.74.124:22369?encryption=none&type=ws&path=%2F&security=none
 vless://01cdc537-5fc9-4c09-8c58-016837f8bfd9@91.224.74.124:22369?path=%2F&security=none&encryption=none&type=ws

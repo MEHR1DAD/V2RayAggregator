@@ -16,6 +16,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxUld3WGh3ZkFCNWdBRW96VTRHMlBn@193.29.139.143
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxUld3WGh3ZkFCNWdBRW96VTRHMlBn@193.29.139.164:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxUld3WGh3ZkFCNWdBRW96VTRHMlBn@193.29.139.175:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6STdraU5aMFVmVjljWEI3M2E0blJE@164.92.156.41:24206
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMTVNOaDIxVHJYalIyb2syNVEybkU4RU5UMnpvQm1QdmthM1JDQ1VBSFpFTENuV29la1ZqdmFmODlxd2NSa2RieEVmZXAyYmMyYVV0bW54cXZGMWF5UVJlejFKSGpVTGo%3D@exchange.gameaurela.click:52952
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMTVNOaDIxVHJYalIyb2syNVEybkU4RU5UMnpvQm1QdmthM1JDQ1VBSFpFTENuV29la1ZqdmFmODlxd2NSa2RieEVmZXAyYmMyYVV0bW54cXZGMWF5UVJlejFKSGpVTGo@141.98.4.67:52952
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpNQXRVWGh1UnMzZjVIVkYzQk9Rbmdu@147.45.114.160:45651
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@193.29.139.138:443
@@ -117,6 +118,7 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.207.199.251:8880?path=%2FTelegr
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.207.199.251:8880?security=none&sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=%2F
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.207.199.251:8880?security=none&sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram---MTMVPN---Telegram---MTMVPN---Telegram---MTMVPN---Telegram---MTMVPN---Telegram---MTMVPN
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2F
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2F
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880?&sni=cf.d3z.net&type=ws&headerType=none&host=cf.d3z.net&path=%2FTelegramU0001F1E8U0001F1F3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880?allowInsecure=0&sni=cf.d3z.net&type=ws&host=cf.d3z.net&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.248.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
@@ -124,6 +126,7 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@194.152.44.251:8880?eh=Sec-WebSocke
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@194.152.44.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.131.4.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880/?path=%2FTelegram%40WangCai2%2F%3Fed%3D2560&security=none&encryption=none&host=cf.d3z.net&type=ws
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram%40WangCai2%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880?&type=ws&headerType=none&host=cf.d3z.net&path=%2FTelegram%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=cf.d3z.net&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3%2520%40WangCai2%2520%2F&security=none&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880?encryption=none&security=none&sni=cf.d3z.net&type=ws&host=cf.d3z.net&path=%2FTelegram%40WangCai2%2F%3Fed%3D2560
@@ -134,6 +137,7 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880?path=%2FTelegram
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.149.12.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.244.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram&allowInsecure=0
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.245.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.245.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.245.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.245.251:8880?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@5.10.247.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
@@ -151,6 +155,7 @@ vless://0cd276a5-4501-413a-acf8-b51c54894f02@179.61.219.170:22934?security=none&
 vless://1aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=%2F&host=tgju.org&security=none
 vless://1aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=/&host=tgju.org&security=none
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80/?type=ws&encryption=none&flow=&host=zoomgov.vipren.biz.id&path=%2F193.123.81.105%3D443
+vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80/?type=ws&encryption=none&host=zoomgov.vipren.biz.id&path=%2F193.123.81.105%3D443
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?path=%2F193.123.81.105%3D443&security=&encryption=none&host=zoomgov.vipren.biz.id&type=ws
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?path=%2F193.123.81.105%3D443&security=none&encryption=none&host=zoomgov.vipren.biz.id&type=ws
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?path=/193.123.81.105=443&security=&encryption=none&host=zoomgov.vipren.biz.id&type=ws
@@ -158,6 +163,7 @@ vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?path=/193.123.81.105
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?type=ws&host=zoomgov.vipren.biz.id&path=%2F193.123.81.105%3D443
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?type=ws&host=zoomgov.vipren.biz.id&path=/193.123.81.105%3D443
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.4.85:80?type=ws&host=zoomgov.vipren.biz.id&path=/193.123.81.105=443
+vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.7.0:80/?type=ws&encryption=none&host=zoomgov.vipren.biz.id&path=%2F193.123.81.105%3D443
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.7.0:80?path=%2F193.123.81.105%3D443&security=&encryption=none&host=zoomgov.vipren.biz.id&type=ws
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@45.131.7.0:80?path=%2F193.123.81.105%3D443&security=none&encryption=none&host=zoomgov.vipren.biz.id&type=ws
 vless://260c4900-69a9-465c-8c3a-272eb1b4ec00@45.131.7.7:8080?sni=ShaHrAmcOnfIgWoRKERcjsA9898.CoNfIGshaHrAmcOnfIg.woRKeRs.dev&type=ws&host=ShaHrAmcOnfIgWoRKERcjsA9898.CoNfIGshaHrAmcOnfIg.woRKeRs.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
@@ -167,6 +173,7 @@ vless://2aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?path=%2F&securi
 vless://2aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=%2F&host=tgju.org&security=none
 vless://2aacf869-d0e3-4b3e-9b63-396bd9d79c51@185.209.21.36:41569?type=ws&path=/&host=tgju.org&security=none
 vless://2b4bed25-a5ef-439d-93b1-395b7bcec58b@45.131.208.238:80?sni=workerr.dimon22287.workers.dev&type=ws&host=workerr.dimon22287.workers.dev&path=Telegram%40WangCai2
+vless://2b4bed25-a5ef-439d-93b1-395b7bcec58b@45.131.6.232:80?sni=workerr.dimon22287.workers.dev&type=ws&host=workerr.dimon22287.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ams1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.131.208.67:443?security=tls&sni=pqh36v4.hiddendom.shop&fp=random&type=grpc&serviceName=%2F&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.131.208.67:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
@@ -263,6 +270,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@5.10.247.177:8880?security=none&typ
 vless://63005378-e32e-4e23-bc6e-84812f147a6f@37.153.171.107:443?path=/--JoiN--@FREEV2RNG--Bia--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG?ed=2560&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=configmr.pages.dev&fp=randomized&type=ws&sni=ConFIgmr.PaGeS.dEV
 vless://63005378-e32e-4e23-bc6e-84812f147a6f@37.153.171.107:443?path=/--JoiN--@FREEV2RNG--Bia--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG--@FREEV2RNG?ed=2560&security=tls&alpn=h2,http/1.1&encryption=none&host=configmr.pages.dev&fp=chrome&type=ws&sni=ConFIgmr.PaGeS.dEV
 vless://6f183280-b258-437a-a216-e83f7dece776@45.131.210.102:80?encryption=none&security=none&sni=901.dbodanwi.workers.dev&type=ws&host=901.dbodanwi.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
+vless://6f183280-b258-437a-a216-e83f7dece776@45.131.7.0:80?encryption=none&security=none&sni=901.dbodanwi.workers.dev&type=ws&host=901.dbodanwi.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
 vless://78a9bf4f-3bec-48b2-b98f-a3f8151506ac@europeless.duckdns.org:443?security=tls&sni=europeless.duckdns.org&fp=random&type=ws&path=/getupdates&host=europeless.duckdns.org&encryption=none
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443/?type=ws&encryption=none&flow=&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F%40rayan_config&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.131.208.14:443?encryption=none&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG&type=ws&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F%40rayan_config
@@ -327,7 +335,10 @@ vless://a396b860-11b7-4af3-9950-146caf79735e@45.131.6.254:2053?security=tls&sni=
 vless://af483643-0a6d-427e-a9bb-1eb84d27a60d@79.137.195.203:8080?path=/TELEGRAM_CHANEL_JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN?ed=2048&security=&encryption=none&host=joker.ahang-alpha.ir&type=ws
 vless://b590cb9f-869c-4610-badb-922cc145b70b@mx.soft98speedtest.ir:2053?security=none&type=ws&path=/scer&packetEncoding=xudp&encryption=none
 vless://b590cb9f-869c-4610-badb-922cc145b70b@mx.soft98speedtest.ir:2053?type=ws&path=/scer&security=none
+vless://bb3d7e47-d294-4c39-b890-5c9c35b14479@85.17.55.50:40011?type=ws&path=%2F&host=&security=none
+vless://ca9fdfc9-7a4d-4245-9871-39583eff2b4f@holanx.blacklike.ir:9008?security=none&type=ws&headerType=&path=%2F%3Fed%3D2048&host=skyroom.online
 vless://cdb15365-1ccb-4d5a-a5d9-6fb08d3c75ac@45.131.209.41:80?encryption=none&security=none&sni=mahdihector.kewojod243.workers.dev&type=ws&host=mahdihector.kewojod243.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
+vless://cdb15365-1ccb-4d5a-a5d9-6fb08d3c75ac@45.131.210.83:80?sni=mahdihector.kewojod243.workers.dev&type=ws&host=mahdihector.kewojod243.workers.dev&allowInsecure=1
 vless://d342d11e-d424-4583-b36e-524ab1f0afa4@185.18.184.66:80?allowInsecure=1&sni=hello.96xckkzx.workers.dev&type=ws&host=hello.96xckkzx.workers.dev&path=%2F%3Fed%3D2048
 vless://d342d11e-d424-4583-b36e-524ab1f0afa4@185.18.184.66:80?type=ws&encryption=none&host=hello.96xckkzx.workers.dev&path=%2F%3Fed%3D2048
 vless://d6ff33a6-03bf-4338-8a63-62ab284a9466@45.131.5.111:80?security=none&sni=feng4.l1ut8bi9.workers.dev&type=ws&host=feng4.l1ut8bi9.workers.dev&path=Telegram%40WangCai2%2F%3Fed%3D2048
@@ -345,6 +356,7 @@ vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?path=/telegram: 
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?security=none&type=ws&path=/J5aLQOY1R9ONWYCM&host=vngsupply.ip-ddns.com&packetEncoding=xudp&encryption=none
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.209.36:8880?type=ws&host=vngsupply.ip-ddns.com&path=/J5aLQOY1R9ONWYCM&security=none
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880/?type=ws&encryption=none&flow=&host=VngSuPpLY.IP-DdnS.com&path=%2F
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880/?type=ws&encryption=none&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880?encryption=none&security=none&type=ws&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880?path=%2FEtb1L6YUdZFZuTOr%3Fed%3D2560%2F%3F%40vpnserverrr_%40vpnserverrr_vpnserverrr_%40vpnserverrr_%40vpnserverrr&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.211.248:8880?path=%2FEtb1L6YUdZFZuTOr%3Fed%3D2560%2F%3F%40vpnserverrr_%40vpnserverrr_vpnserverrr_%40vpnserverrr_%40vpnserverrr&security=none&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
@@ -355,6 +367,7 @@ vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.5.134:8880?path=%2F6TvG8D6Hi
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.167:8880?path=%2FJ5aLQOY1R9ONWYCM%3Fed%3D%23Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI%3Fed%3D2560&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880/?path=/Etb1L6YUdZFZuTOr?ed=2560/?JOKERRVPNBIA_CHANEL@JOKERRVPN&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880/?type=ws&encryption=none&flow=&host=VngSuPpLY.IP-DdnS.com&path=%2F
+vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880/?type=ws&encryption=none&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880?encryption=none&security=none&type=ws&host=VngSuPpLY.IP-DdnS.com&path=%2F
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880?path=%2F&security=none&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.131.6.87:8880?path=%2FEtb1L6YUdZFZuTOr%3Fed%3D2560%2F%3FJOKERRVPNBIA_CHANEL%40JOKERRVPN&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
@@ -364,6 +377,7 @@ vless://ee7e1ff9-5fd1-48d8-d8cb-cffa376c9ec8@79.137.195.203:8080?path=/TELEGRAM_
 vless://f366e744-abcd-4b5b-bd5e-2bd97b6443bf@45.131.5.244:2086?encryption=none&security=none&type=ws&host=fva64rbmjfkfznnptk6imz6sihrno35m4csom83admge5tfxniwduyuyt954fdh.ks3om.workers.Dev&path=%2F@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1%3Fed%3D2560
 vless://f366e744-abcd-4b5b-bd5e-2bd97b6443bf@45.131.5.244:2086?security=none&type=ws&host=fva64rbmjfkfznnptk6imz6sihrno35m4csom83admge5tfxniwduyuyt954fdh.ks3om.workers.Dev&path=%2F%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%3Fed%3D2560
 vless://f366e744-abcd-4b5b-bd5e-2bd97b6443bf@45.131.5.58:2086?type=ws&host=fva64rbmjfkfznnptk6imz6sihrno35m4csom83admge5tfxniwduyuyt954fdh.ks3om.workers.Dev&path=%2F%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%3Fed%3D2560
+vless://f366e744-abcd-4b5b-bd5e-2bd97b6443bf@45.131.5.91:2086?security=none&type=ws&host=fva64rbmjfkfznnptk6imz6sihrno35m4csom83admge5tfxniwduyuyt954fdh.ks3om.workers.Dev&path=%2F%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%40AZARBAYJAB1%3Fed%3D2560
 vless://f9cafa6b-1032-42d1-b29f-8d0566583749@free-nl.vpnkey.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision
 vless://fa21d241-c67d-4f5b-e631-be01ab1d8eea@79.137.195.203:8080?path=/TELEGRAM_CHANEL_JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN-JOKERRVPN?ed=2048&security=none&encryption=none&host=joker.ahang-alpha.ir&type=ws
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.176.24.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
@@ -428,6 +442,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.149.12.63:8880?allowInsecure=0&s
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.149.12.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.149.12.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.149.12.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.244.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.244.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.245.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@5.10.245.20:8880?security=&allowInsecure=1&fp=chrome&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3%20@MxlShare%20@WangCai2%20/?ed%3D2560&host=us.laoyoutiao.link&encryption=none
@@ -441,6 +456,8 @@ vmess://eyJ2IjogIjIiLCAicHMiOiAiUGFuZGEtSEstMDUgWzQ0Nm1zXSIsICJhZGQiOiAiYzkwczUu
 vmess://eyJhZGQiOiAiNDYuMjQzLjMuNDIiLCAiYWlkIjogIjAiLCAiYWxwbiI6ICIiLCAiZnAiOiAiIiwgImhvc3QiOiAiIiwgImlkIjogIjhmZDE2MTcxLThjNzgtNDc1Yy04MGZlLWE2ZjY2YjMxMGJmMyIsICJuZXQiOiAid3MiLCAicGF0aCI6ICIvIiwgInBvcnQiOiAiMjU4MDgiLCAicHMiOiAiXHVkODNkXHVkZDI1Sm9pbitUZWxlZ3JhbTpARmFyYWhfVlBOXHVkODNkXHVkZmUzIiwgInNjeSI6ICJhdXRvIiwgInNuaSI6ICIiLCAidGxzIjogIiIsICJ0eXBlIjogIi0tLSIsICJ2IjogIjIifQ==
 vmess://eyJhZGQiOiAiODkuMTY5LjEzLjYwIiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICJiOWQzYzQxNC04OWNjLTQ1NWQtYjcxNy0xMGM3Y2ExNjY1YTEiLCAibmV0IjogIndzIiwgInBhdGgiOiAiLyIsICJwb3J0IjogIjI4ODM4IiwgInBzIjogIlx1ZDgzZFx1ZGQyNUpvaW4rVGVsZWdyYW06QEZhcmFoX1ZQTlx1ZDgzZFx1ZGZlMyIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICItLS0iLCAidiI6ICIyIn0=
 vmess://eyJhZGQiOiI0Ni4yNDMuMy40MiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI4ZmQxNjE3MS04Yzc4LTQ3NWMtODBmZS1hNmY2NmIzMTBiZjMiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6IjI1ODA4IiwicHMiOiJAQWJsTmV0NyDwn4eu8J+HtyDZhtiqINmF2YTbjCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiLS0tIiwidiI6IjIifQ==
+vmess://eyJhZGQiOiI0Ni4yNDMuMy40MiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI4ZmQxNjE3MS04Yzc4LTQ3NWMtODBmZS1hNmY2NmIzMTBiZjMiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6IjI1ODA4IiwicHMiOiLwn6q8NjBAb25lY2xpY2t2cG5rZXlzIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9
+vmess://eyJhZGQiOiI4OS4xNjkuMTMuNjAiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYjlkM2M0MTQtODljYy00NTVkLWI3MTctMTBjN2NhMTY2NWExIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyODgzOCIsInBzIjoi8J+qvDYzQG9uZWNsaWNrdnBua2V5cyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ
 vmess://eyJhZGQiOiI4OS4xNjkuMTMuNjAiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYjlkM2M0MTQtODljYy00NTVkLWI3MTctMTBjN2NhMTY2NWExIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyODgzOCIsInBzIjoiQEFibE5ldDcg8J+HrvCfh7cg2YbYqiDZhdmE24wiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiI4OS4xNjkuMTMuNjAiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiYjlkM2M0MTQtODljYy00NTVkLWI3MTctMTBjN2NhMTY2NWExIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyODgzOCIsInBzIjoiW/Cfh7Pwn4exXXQubWUvQ29uZmlnc0h1YiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
 vmess://eyJhZGQiOiJyb290LmFkbWluYWxpLWNvbmZlZy5zYnMiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiM2MzNDc2MzEtMzliZC00N2JiLWEyM2QtNzJlY2I0MWI2NDhjIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiI1NjcwMiIsInBzIjoiW/Cfh7Pwn4exXXQubWUvQ29uZmlnc0h1YiIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJub25lIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
