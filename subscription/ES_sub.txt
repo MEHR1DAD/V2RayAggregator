@@ -69,4 +69,5 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.168:8880?encryption=none
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.20:8880?security=&type=ws&path=Telegram&host=us.laoyoutiao.link&encryption=none
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.20:8880?security=none&type=ws&host=us.laoyoutiao.link&path=Telegram
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.213:8880?type=ws&host=jp.laoyoutiao.link
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.63:8880?encryption=none&security=none&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2FTelegram
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
