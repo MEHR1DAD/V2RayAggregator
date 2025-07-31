@@ -49,6 +49,7 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.176:443?security=tls&sni=
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.176:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.208:443?security=tls&sni=pqh36v4.hiddendom.shop&fp=random&type=grpc&serviceName=%2F&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.208:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
+vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.80:443/?type=grpc&encryption=none&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.80:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.191.80:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.60.74.149:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
@@ -66,6 +67,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.189.177:8880/?type=ws&encrypt
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.189.177:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.189.177:8880?encryption=none&host=ip.langmanshanxi.top&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2+%2F%3Fed%3D2560&type=ws
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.189.177:8880?type=ws&host=ip.langmanshanxi.top&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.189.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.190.177:8880?allowInsecure=1&sni=ip.langmanshanxi.top&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.190.177:8880?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=ip.langmanshanxi.top&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3%2520%40WangCai2%2520%2F&security=none&type=ws
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.53.190.177:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2&fp=chrome
@@ -84,6 +86,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.188.213:8880?type=ws&host=jp.
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.188.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.189.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.189.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.189.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram @WangCai2 /?ed=2560fp=chrome
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.189.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳 @WangCai2 /?ed=2560fp=chrome
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.189.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@92.53.190.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2

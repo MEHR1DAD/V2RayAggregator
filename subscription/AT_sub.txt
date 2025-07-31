@@ -43,6 +43,7 @@ vless://319f5e9f-a4f3-4938-9f56-c60d7709e077@212.183.88.29:8443?encryption=none&
 vless://319f5e9f-a4f3-4938-9f56-c60d7709e077@212.183.88.29:8443?security=tls&sni=BItteR-SUN-B1Aa.H-175.wOrKERs.dEV&fp=randomized&type=ws&path=/ahHAGYp42CsZGSAq?ed%3D2560&host=BItteR-SUN-B1Aa.H-175.wOrKERs.dEV&encryption=none
 vless://319f5e9f-a4f3-4938-9f56-c60d7709e077@212.183.88.29:8880?encryption=none&security=none&type=ws&host=bitter-sun-b1aa.h-175.workers.dev&path=%2FH4m3Pft6hw4sgqlF%3Fed%3D2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.148:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.177:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.177:8880?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=ip.langmanshanxi.top&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3%2520%40WangCai2%2520%2F&security=none&type=ws
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@212.183.88.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
