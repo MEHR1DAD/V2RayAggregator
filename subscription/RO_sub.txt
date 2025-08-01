@@ -17,6 +17,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@45.85.119.177:8880?ed=2560&eh=Sec-W
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.12.31.8:443?path=/@Rayan_Config&security=tls&encryption=none&host=rayan-12.leila.dpdns.org&fp=chrome&type=ws&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.12.31.8:443?security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG&fp=chrome&type=ws&path=/@Rayan_Config&host=rAyAn-12.LeIlA.DpDnS.OrG&encryption=none
 vless://863b3a17-bb45-493b-ad98-898b490e540c@45.12.30.146:2082?path=%2F%3Fed%3D2590&security=none&encryption=none&host=n10.asmdns.net&type=ws
+vless://863b3a17-bb45-493b-ad98-898b490e540c@45.12.30.146:2082?path=/?ed=2590&security=none&encryption=none&host=n10.asmdns.net&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.12.30.69:8880?path=%2F1ycR2zb3KeELWRha%3Fed%3D2560&security=none&encryption=none&host=VngSuPpLY.IP-Ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.12.31.109:8880?path=%2FfgvtHUpS6R8Rv8s5%3Fed%3D%23Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI%3Fed%3D2560&security=&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.85.119.151:8880?encryption=none&security=none&type=ws&host=vngsupply.ip-ddns.com&path=%2Fj5alqoy1r9onwycm%3Fed%3D%23join---marambashi---join---marambashi---join---marambashi---join---marambashi%3Fed%3D2560

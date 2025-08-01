@@ -10,6 +10,7 @@ vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=non
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=/&security=&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=/&security=none&encryption=none&type=ws
+vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?encryption=none&security=none&type=ws&path=/
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?path=/&security=none&encryption=none&type=ws
 vless://50df86c0-f05c-4486-b800-7e1dca975f65@37.202.235.8:20000?encryption=none&type=raw&headerType=none&security=none
@@ -41,6 +42,7 @@ vless://981d217a-17c5-4e9f-9147-8c9ad3c0707b@l23.magicnetwork.info:28995?securit
 vless://981d217a-17c5-4e9f-9147-8c9ad3c0707b@l23.magicnetwork.info:28995?security=none&encryption=none&headerType=none&type=tcp
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040/?type=ws&encryption=none&flow=&path=%2F
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040/?type=ws&encryption=none&path=%2F
+vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&fp=chrome&allowInsecure=1&type=ws&path=/
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&fp=chrome&type=ws&path=%2F
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&fp=chrome&type=ws&path=/
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&type=ws&headertype=none&path=%2F
@@ -66,6 +68,7 @@ vless://cc942c9c-9a93-473f-bb76-aa64b9912622@37.202.235.48:10000?type=tcp&amp;se
 vless://cc942c9c-9a93-473f-bb76-aa64b9912622@37.202.235.48:10000?type=tcp&security=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?encryption=none&security=tls&sni=cs2.pishima.ir&fp=chrome&type=tcp&headerType=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?encryption=none&security=tls&sni=cs2.pishima.ir&fp=random&type=tcp&headerType=none
+vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?encryption=none&security=tls&sni=cs2.pishima.ir&type=tcp&headerType=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&encryption=none&headerType=none&fp=chrome&type=tcp&sni=cs2.pishima.ir
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&encryption=none&headerType=none&fp=random&type=tcp&sni=cs2.pishima.ir
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&sni=cs2.pishima.ir&fp=random&type=tcp&encryption=none
@@ -113,6 +116,7 @@ vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@meli1.dashvili.ir:80?path=/&securit
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@meli1.dashvili.ir:80?path=/&security=none&encryption=none&type=ws
 vless://f5f2458c-5fcb-4820-82c2-2997492c54d5@meli1.dashvili.ir:80?type=ws&security=&path=/&encryption=none
 vless://f6084282-a665-4f90-ac0e-b2d61347aa34@tun.abrha.site:805?security=none&encryption=none&headerType=none&type=tcp
+vless://f7322a53-0931-47fd-a133-233dbb7d43f3@irr1.topsflag.sbs:2094?encryption=none&security=none&type=tcp&headerType=none
 vless://f7322a53-0931-47fd-a133-233dbb7d43f3@irr1.topsflag.sbs:2094?type=tcp&security=none
 vless://fd374109-b4df-4a60-a3dc-4949adefdca8@45.159.148.232:2097?type=ws&host=www.speedtest.net&path=%2FDwonloadAhng&security=none
 vless://fd374109-b4df-4a60-a3dc-4949adefdca8@45.159.148.232:2097?type=ws&host=www.speedtest.net&path=/DwonloadAhng&security=none
