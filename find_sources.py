@@ -10,7 +10,7 @@ import time
 # کلیدواژه‌های جستجوی جامع در گیت‌هاب
 SEARCH_KEYWORDS = [
     'vless', 'vmess', 'trojan', 'ss', 'ssr', 
-    'subscribe', 'v2ray', 'proxy list', 'proxies', 'clash'
+    'subscribe', 'v2ray', 'proxy list', 'proxies', 'clash',
     'sub', 'hysteria', 'hysteria2', 'socks', 'wireguard'
 ] + list('abcdefghijklmnopqrstuvwxyz0123456789')
 
