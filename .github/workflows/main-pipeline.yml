@@ -10,32 +10,51 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # --- مرحله ۱: تقسیم منابع اولیه بین کارگرها ---
+  # --- مرحله ۱: ادغام منابع و تقسیم بین کارگرها ---
   dispatch-sources:
     name: Dispatch Sources for Parallel Processing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Split sources into chunks
+
+      - name: Merge All Source Links and Create Chunks
+        id: merge_and_split
         run: |
-          # ادغام تمام منابع پیدا شده در یک فایل
-          cat telegram_source_links.txt discovered_sources.txt > all_sources.txt 2>/dev/null || true
+          # ایجاد فایل‌های خالی در صورت عدم وجود برای جلوگیری از خطا
+          touch telegram_source_links.txt discovered_sources.txt
+
+          # ادغام تمام منابع پیدا شده (لینک‌های اشتراک) در یک فایل
+          echo "Merging source links from GitHub and Telegram..."
+          cat telegram_source_links.txt discovered_sources.txt > all_sources.txt
+          
+          # حذف خطوط خالی و شمارش منابع منحصر به فرد
+          sed -i '/^$/d' all_sources.txt
+          sort -u -o all_sources.txt all_sources.txt
+          
+          total_lines=$(wc -l < all_sources.txt)
+          echo "Total unique source links to process: $total_lines"
+          
+          if [ $total_lines -eq 0 ]; then
+            echo "No sources found to split."
+            echo "has_sources=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "has_sources=true" >> $GITHUB_OUTPUT
           
           # تقسیم فایل به ۲۰ قسمت با پسوند عددی دو رقمی
           mkdir -p source_chunks
-          total_lines=$(wc -l < all_sources.txt)
-          if [ $total_lines -eq 0 ]; then
-            echo "No sources found to split."
-            exit 0
-          fi
           lines_per_chunk=$(( (total_lines + 19) / 20 ))
           split -l $lines_per_chunk -d -a 2 --additional-suffix=.txt all_sources.txt source_chunks/chunk_
+
       - name: Upload source chunks
+        if: steps.merge_and_split.outputs.has_sources == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: source-chunks
@@ -44,6 +63,8 @@ jobs:
   # --- مرحله ۲: پردازش موازی منابع توسط ۲۰ کارگر ---
   process-sources:
     needs: dispatch-sources
+    # این جاب فقط در صورتی اجرا می‌شود که منابعی برای پردازش وجود داشته باشد
+    if: needs.dispatch-sources.outputs.has_sources == 'true'
     name: Process Sources (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
     strategy:
@@ -70,6 +91,7 @@ jobs:
           padded_id=$(printf "%02d" ${{ matrix.batch_id }})
           CHUNK_FILE="source_chunks/chunk_${padded_id}.txt"
           if [ -f "$CHUNK_FILE" ]; then
+            # این اسکریپت‌ها باید طوری نوشته شوند که با ورودی خالی هم به درستی کار کنند
             python manage_sources.py --input $CHUNK_FILE --output active_sources_${{ matrix.batch_id }}.txt
             python merge_configs.py --input active_sources_${{ matrix.batch_id }}.txt --output-dir protocol_configs_${{ matrix.batch_id }}
             echo "processed=true" >> $GITHUB_OUTPUT
@@ -86,7 +108,9 @@ jobs:
   # --- مرحله ۳: ادغام نتایج و ساخت بچ‌های نهایی برای تست ---
   merge-and-batch:
     name: Merge Results and Create Test Batches
+    # این جاب همیشه اجرا می‌شود تا کانفیگ‌های مستقیم تلگرام را پردازش کند
     needs: process-sources
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -102,12 +126,17 @@ jobs:
           pattern: partial-protocol-configs-*
       - name: Merge and Batch
         run: |
+          # ادغام کانفیگ‌های استخراج شده از لینک‌های اشتراک
           python merge_and_batch.py --input-dir partial_configs --output-dir protocol_configs
           
+          # *** پل ارتباطی برای کانفیگ‌های مستقیم تلگرام ***
+          # اضافه کردن کانفیگ‌های مستقیمی که از تلگرام استخراج شده‌اند به لیست نهایی
+          echo "Adding direct configs from Telegram..."
           if [ -f "telegram_direct_configs.txt" ]; then
             cat telegram_direct_configs.txt >> protocol_configs/telegram_direct.txt
           fi
           
+          # آماده‌سازی بچ‌های نهایی برای تست سرعت
           python prepare_batches.py --input-dir protocol_configs
       - name: Upload final test batches
         uses: actions/upload-artifact@v4
@@ -117,7 +146,6 @@ jobs:
 
   # --- مرحله ۴: تست سرعت موازی ---
   run-speed-tests:
-    # --- FIX: وابستگی به جاب صحیح اصلاح شد ---
     needs: merge-and-batch
     runs-on: ubuntu-latest
     strategy:
@@ -183,7 +211,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Main Pipeline)"
           
-          # پاک کردن فایل‌های منبع پردازش شده
+          # پاک کردن فایل‌های منبع پردازش شده تلگرام برای جلوگیری از پردازش مجدد
+          echo "Cleaning up processed Telegram source files..."
           echo "" > telegram_direct_configs.txt
           echo "" > telegram_source_links.txt
           
