@@ -56,6 +56,7 @@ vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?security=none&
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?security=none&type=ws&path=%2F
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?security=none&type=ws&path=/&packetEncoding=xudp&encryption=none
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?type=ws&fp=chrome
+vless://a90a8e5b-8561-4799-9de5-a7c35662cfa2@vip1.zxhost.sbs:80?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://b54b4029-43df-4068-8e0d-ce8f524ba5e9@194.180.11.193:53740?encryption=none&type=grpc&security=none
 vless://b54b4029-43df-4068-8e0d-ce8f524ba5e9@194.180.11.193:53740?mode=gun&security=none&encryption=none&type=grpc
 vless://c9032a96-614a-4e8c-bc01-c96aa2ef749c@zarin8i.alireza031.pw:26734?path=%2F&security=none&encryption=none&type=ws

@@ -32,5 +32,6 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.108.213:8880?sni=jp.laoyoutia
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.108.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.108.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.110.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.110.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.110.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.80.110.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
