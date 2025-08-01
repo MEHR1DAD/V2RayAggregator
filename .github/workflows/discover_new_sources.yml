@@ -7,6 +7,10 @@ on:
   # امکان اجرای دستی را هم فراهم می‌کند
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   discover:
     name: Discover New Sources
@@ -27,7 +31,6 @@ jobs:
       - name: Run Discovery Script
         env:
           # مهم: این توکن برای جستجو در API گیت‌هاب ضروری است
-          # شما باید یک سکرت به نام GH_PAT در تنظیمات ریپازیتوری خود بسازید
           GH_PAT: ${{ secrets.GH_PAT }}
         run: python find_sources.py
 
@@ -35,10 +38,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Source Discovery)"
-          # فقط فایل‌های مربوط به خروجی اسکریپت را اضافه کن
-          git add ${{ env.OUTPUT_FILE }} ${{ env.CRAWLED_URLS_STATE_FILE }}
+          # --- اصلاح: نام فایل‌ها به صورت مستقیم نوشته شده است ---
+          git add discovered_sources.txt crawled_urls.txt
           
-          # چک کن آیا تغییری برای کامیت وجود دارد یا نه
           if ! git diff --staged --quiet; then
             git commit -m "chore(data): update discovered and crawled sources"
             git pull --rebase
@@ -46,6 +48,3 @@ jobs:
           else
             echo "No new sources or crawled URLs to commit."
           fi
-        env:
-          OUTPUT_FILE: "discovered_sources.txt"
-          CRAWLED_URLS_STATE_FILE: "crawled_urls.txt"
