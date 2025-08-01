@@ -18,6 +18,7 @@ vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?security=none&en
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:13065?type=ws&security=none
+vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@92.223.2.119:20000?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?encryption=none&security=none&type=ws&path=%2F
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?encryption=none&security=none&type=ws&path=/
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?path=%2F&security=none&encryption=none&type=ws
@@ -27,6 +28,8 @@ vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:11065?type=ws&security=none
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?type=ws&amp;security=none
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?type=ws&security=none
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.168:8880/?type=ws&encryption=none&host=kjgx.laoyoutiao.link&path=Telegram%40WangCai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
