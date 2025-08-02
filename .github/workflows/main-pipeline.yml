@@ -1,7 +1,8 @@
-name: Main Proxy Pipeline (Parallel Processing)
+name: Main Proxy Pipeline (Integrated)
 
 on:
   schedule:
+    # هر ۳ ساعت یک‌بار اجرا می‌شود
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
@@ -14,26 +15,24 @@ jobs:
   dispatch-sources:
     name: Dispatch Sources for Parallel Processing
     runs-on: ubuntu-latest
+    # خروج امن: این جاب نباید بیشتر از ۱۰ دقیقه طول بکشد
+    timeout-minutes: 10
+    outputs:
+      has_sources: ${{ steps.merge_and_split.outputs.has_sources }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
       - name: Merge All Source Links and Create Chunks
         id: merge_and_split
         run: |
-          # ایجاد فایل‌های خالی در صورت عدم وجود برای جلوگیری از خطا
+          # برای جلوگیری از خطا، فایل‌های ورودی را در صورت عدم وجود ایجاد می‌کنیم
           touch telegram_source_links.txt discovered_sources.txt
 
-          # ادغام تمام منابع پیدا شده (لینک‌های اشتراک) در یک فایل
           echo "Merging source links from GitHub and Telegram..."
           cat telegram_source_links.txt discovered_sources.txt > all_sources.txt
           
-          # حذف خطوط خالی و شمارش منابع منحصر به فرد
+          # حذف خطوط خالی و تکراری برای داشتن لیست تمیز
           sed -i '/^$/d' all_sources.txt
           sort -u -o all_sources.txt all_sources.txt
           
@@ -48,7 +47,6 @@ jobs:
           
           echo "has_sources=true" >> $GITHUB_OUTPUT
           
-          # تقسیم فایل به ۲۰ قسمت با پسوند عددی دو رقمی
           mkdir -p source_chunks
           lines_per_chunk=$(( (total_lines + 19) / 20 ))
           split -l $lines_per_chunk -d -a 2 --additional-suffix=.txt all_sources.txt source_chunks/chunk_
@@ -60,38 +58,31 @@ jobs:
           name: source-chunks
           path: source_chunks/
 
-  # --- مرحله ۲: پردازش موازی منابع توسط ۲۰ کارگر ---
+  # --- مرحله ۲: پردازش موازی لینک‌های اشتراک ---
   process-sources:
     needs: dispatch-sources
-    # این جاب فقط در صورتی اجرا می‌شود که منابعی برای پردازش وجود داشته باشد
     if: needs.dispatch-sources.outputs.has_sources == 'true'
     name: Process Sources (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
+    # خروج امن: هر بچ پردازش نباید بیشتر از ۶۰ دقیقه طول بکشد
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install Dependencies
-        run: pip install pyyaml httpx requests
-      - name: Download source chunks
-        uses: actions/download-artifact@v4
-        with:
-          name: source-chunks
-          path: source_chunks/
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install pyyaml httpx requests
+      - uses: actions/download-artifact@v4
+        with: { name: source-chunks, path: source_chunks/ }
       - name: Run Data Acquisition
         id: acquisition
         run: |
           padded_id=$(printf "%02d" ${{ matrix.batch_id }})
           CHUNK_FILE="source_chunks/chunk_${padded_id}.txt"
           if [ -f "$CHUNK_FILE" ]; then
-            # این اسکریپت‌ها باید طوری نوشته شوند که با ورودی خالی هم به درستی کار کنند
             python manage_sources.py --input $CHUNK_FILE --output active_sources_${{ matrix.batch_id }}.txt
             python merge_configs.py --input active_sources_${{ matrix.batch_id }}.txt --output-dir protocol_configs_${{ matrix.batch_id }}
             echo "processed=true" >> $GITHUB_OUTPUT
@@ -105,32 +96,26 @@ jobs:
           name: partial-protocol-configs-${{ matrix.batch_id }}
           path: protocol_configs_${{ matrix.batch_id }}/
 
-  # --- مرحله ۳: ادغام نتایج و ساخت بچ‌های نهایی برای تست ---
+  # --- مرحله ۳: ادغام نتایج و آماده‌سازی برای تست سرعت ---
   merge-and-batch:
-    name: Merge Results and Create Test Batches
-    # این جاب همیشه اجرا می‌شود تا کانفیگ‌های مستقیم تلگرام را پردازش کند
+    name: Merge and Prepare for Speed Test
     needs: process-sources
     if: always()
     runs-on: ubuntu-latest
+    # خروج امن: این جاب نباید بیشتر از ۱۵ دقیقه طول بکشد
+    timeout-minutes: 15
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Download all partial configs
-        uses: actions/download-artifact@v4
-        with:
-          path: partial_configs
-          pattern: partial-protocol-configs-*
-      - name: Merge and Batch
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - uses: actions/download-artifact@v4
+        with: { path: partial_configs, pattern: partial-protocol-configs-* }
+      - name: Merge All Configs and Create Batches
         run: |
-          # ادغام کانفیگ‌های استخراج شده از لینک‌های اشتراک
+          # ادغام کانفیگ‌های استخراج شده از لینک‌ها
           python merge_and_batch.py --input-dir partial_configs --output-dir protocol_configs
           
-          # *** پل ارتباطی برای کانفیگ‌های مستقیم تلگرام ***
-          # اضافه کردن کانفیگ‌های مستقیمی که از تلگرام استخراج شده‌اند به لیست نهایی
+          # اضافه کردن کانفیگ‌های مستقیم تلگرام
           echo "Adding direct configs from Telegram..."
           if [ -f "telegram_direct_configs.txt" ]; then
             cat telegram_direct_configs.txt >> protocol_configs/telegram_direct.txt
@@ -138,16 +123,16 @@ jobs:
           
           # آماده‌سازی بچ‌های نهایی برای تست سرعت
           python prepare_batches.py --input-dir protocol_configs
-      - name: Upload final test batches
-        uses: actions/upload-artifact@v4
-        with:
-          name: work-batches
-          path: ci_batches/
+      - uses: actions/upload-artifact@v4
+        with: { name: work-batches, path: ci_batches/ }
 
   # --- مرحله ۴: تست سرعت موازی ---
   run-speed-tests:
     needs: merge-and-batch
+    name: Speed Test (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
+    # خروج امن: این جاب حیاتی نباید بیشتر از ۱۸۰ دقیقه (۳ ساعت) طول بکشد
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       matrix:
@@ -155,22 +140,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install Dependencies
-        run: pip install requests geoip2 pyyaml httpx
+        with: { python-version: '3.11' }
+      - run: pip install requests geoip2 pyyaml httpx
       - name: Download Prerequisite Tools
         run: |
           wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
           wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
           unzip -o -q xray.zip xray && chmod +x xray
           wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria && chmod +x hysteria
-          echo "All tools are ready."
-      - name: Download Config Batch Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: work-batches
-          path: ci_batches/
+      - uses: actions/download-artifact@v4
+        with: { name: work-batches, path: ci_batches/ }
       - name: Run Speed Test on Assigned Batch
         run: |
           CONFIG_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
@@ -178,29 +157,24 @@ jobs:
           if [ -f "$CONFIG_FILE" ]; then
             python test_worker.py --input "$CONFIG_FILE" --db-file "$DB_FILE"
           fi
-      - name: Upload Result Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: db-result-${{ matrix.batch_id }}
-          path: results_${{ matrix.batch_id }}.db
+      - uses: actions/upload-artifact@v4
+        with: { name: db-result-${{ matrix.batch_id }}, path: results_${{ matrix.batch_id }}.db }
   
-  # --- مرحله ۵: ادغام نهایی و انتشار ---
+  # --- مرحله ۵: ادغام نهایی، انتشار و پاکسازی ---
   merge-and-publish:
     name: Merge, Publish, and Cleanup
     runs-on: ubuntu-latest
     needs: run-speed-tests
-    if: success() || failure()
+    if: always()
+    # خروج امن: این جاب نباید بیشتر از ۱۵ دقیقه طول بکشد
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+        with: { python-version: '3.11' }
       - run: pip install pyyaml jdatetime pytz pycountry
-      - name: Download All Result Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: db_results/
-          pattern: db-result-*
+      - uses: actions/download-artifact@v4
+        with: { path: db_results/, pattern: db-result-* }
       - name: Merge, Generate, and Finalize
         run: |
           python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
@@ -211,10 +185,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Main Pipeline)"
           
-          # پاک کردن فایل‌های منبع پردازش شده تلگرام برای جلوگیری از پردازش مجدد
-          echo "Cleaning up processed Telegram source files..."
+          # پاک کردن فایل‌های منبع پردازش شده برای جلوگیری از پردازش مجدد
+          echo "Cleaning up processed source files..."
           echo "" > telegram_direct_configs.txt
           echo "" > telegram_source_links.txt
+          echo "" > discovered_sources.txt
           
           git add .
           if ! git diff --staged --quiet; then
