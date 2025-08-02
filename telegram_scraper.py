@@ -2,10 +2,10 @@ import os
 import re
 import json
 import asyncio
+import time # اضافه کردن ماژول زمان
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
-# --- تغییر: اضافه کردن موجودیت‌های جدید برای شناسایی ---
 from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, MessageEntityCode, MessageEntityPre, Channel
 from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
@@ -26,6 +26,20 @@ SESSION_STRING = os.getenv('TELEGRAM_SESSION')
 CONFIG_REGEX = re.compile(r'(vmess|vless|ss|ssr|trojan|hysteria2?)://[^\s"`<]+')
 SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
 TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
+
+# =================================================================
+# *** بخش جدید: مدیریت خروج امن بر اساس زمان ***
+# =================================================================
+# زمان شروع اجرای اسکریپت
+START_TIME = time.time()
+# مهلت زمانی بر حسب ثانیه (۵ ساعت و ۴۵ دقیقه) تا ۱۵ دقیقه قبل از ۶ ساعت خارج شود
+WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 45 * 60 
+
+def is_approaching_timeout():
+    """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
+    elapsed_time = time.time() - START_TIME
+    return elapsed_time >= WORKFLOW_TIMEOUT_SECONDS
+# =================================================================
 
 def load_targets(filename):
     if not os.path.exists(filename):
@@ -65,9 +79,7 @@ async def process_messages(messages_iterator):
             text_to_process += message.text + "\n"
         if message.entities:
             for ent in message.entities:
-                # --- بخش جدید: اضافه کردن شناسایی متن‌های Monospace ---
                 if isinstance(ent, (MessageEntityCode, MessageEntityPre)):
-                    # استخراج متن از داخل بلوک کد
                     code_text = message.text[ent.offset : ent.offset + ent.length]
                     text_to_process += code_text + "\n"
                 elif isinstance(ent, (MessageEntityTextUrl, MessageEntityUrl)):
@@ -86,7 +98,7 @@ async def process_messages(messages_iterator):
                 found_configs.update(CONFIG_REGEX.findall(file_text))
                 found_sources.update(SOURCE_LINK_REGEX.findall(file_text))
             except Exception as e:
-                print(f"    -> Could not download or process attachment: {e}")
+                print(f"   -> Could not download or process attachment: {e}")
 
     return found_configs, found_sources, discovered_channels, last_message_id
 
@@ -98,7 +110,7 @@ async def main():
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (with Monospace Support) ---")
+    print("--- Starting Advanced Telegram Scraper (with Graceful Shutdown) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
@@ -109,6 +121,14 @@ async def main():
             print(f"Successfully logged in as: {me.first_name}")
 
             for i, entity_name in enumerate(target_entities):
+                # =================================================================
+                # *** چک کردن زمان قبل از شروع پردازش هر کانال ***
+                # =================================================================
+                if is_approaching_timeout():
+                    print("\n⏰ Approaching workflow timeout. Saving state and exiting gracefully...")
+                    break # خروج از حلقه اصلی
+                # =================================================================
+
                 print(f"\nProcessing entity: {entity_name} ({i+1}/{len(target_entities)})")
                 try:
                     entity = await client.get_entity(entity_name)
@@ -121,7 +141,7 @@ async def main():
                             topic_id = topic.id
                             state_key = f"{entity.id}_{topic_id}"
                             last_message_id = state.get(state_key, 0)
-                            print(f"    -> Processing Topic: '{topic.title}' since message ID: {last_message_id}")
+                            print(f"   -> Processing Topic: '{topic.title}' since message ID: {last_message_id}")
                             
                             messages_iterator = client.iter_messages(entity, reply_to=topic_id, min_id=last_message_id)
                             configs, sources, channels, new_last_id = await process_messages(messages_iterator)
@@ -151,6 +171,10 @@ async def main():
                 except Exception as e:
                     print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
 
+                # ذخیره کردن وضعیت بعد از پردازش هر کانال (چک‌پوینت)
+                print(f"  -> Checkpoint: Saving progress after processing '{entity_name}'...")
+                save_state(state)
+
                 if i < len(target_entities) - 1:
                     print(f"\n--- Waiting for {DELAY_BETWEEN_CHANNELS} seconds before next channel to avoid flood limits ---")
                     await asyncio.sleep(DELAY_BETWEEN_CHANNELS)
@@ -160,33 +184,38 @@ async def main():
         return
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-        return
-
-    if total_found_configs:
-        with open(DIRECT_CONFIGS_FILE, "a", encoding="utf-8") as f:
-            for config in sorted(list(total_found_configs)): f.write(config + "\n")
-        print(f"\n✅ Appended {len(total_found_configs)} new direct configs to '{DIRECT_CONFIGS_FILE}'")
-
-    if total_found_sources:
-        with open(SOURCE_LINKS_FILE, "a", encoding="utf-8") as f:
-            for source in sorted(list(total_found_sources)): f.write(source + "\n")
-        print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
     
-    if total_discovered_channels:
-        current_targets = set(load_targets(TARGET_ENTITIES_FILE))
-        newly_discovered = set()
-        for channel in total_discovered_channels:
-            if not channel.lower().endswith('bot') and channel not in current_targets:
-                newly_discovered.add(channel)
+    finally:
+        # این بخش همیشه اجرا می‌شود، چه با خطا و چه بدون خطا
+        print("\n--- Finalizing process ---")
+        # ذخیره نهایی فایل‌های خروجی
+        if total_found_configs:
+            with open(DIRECT_CONFIGS_FILE, "a", encoding="utf-8") as f:
+                for config in sorted(list(total_found_configs)): f.write(config + "\n")
+            print(f"✅ Appended {len(total_found_configs)} new direct configs to '{DIRECT_CONFIGS_FILE}'")
 
-        if newly_discovered:
-            print(f"\n🔎 Discovered {len(newly_discovered)} new channels. Appending to target file...")
-            updated_targets = list(current_targets.union(newly_discovered))
-            save_targets(TARGET_ENTITIES_FILE, updated_targets)
-            print(f"✅ Successfully updated '{TARGET_ENTITIES_FILE}'.")
-    
-    save_state(state)
-    print("\n--- Advanced Telegram Scraper Finished ---")
+        if total_found_sources:
+            with open(SOURCE_LINKS_FILE, "a", encoding="utf-8") as f:
+                for source in sorted(list(total_found_sources)): f.write(source + "\n")
+            print(f"✅ Appended {len(total_found_sources)} new source links to '{SOURCE_LINKS_FILE}'")
+        
+        if total_discovered_channels:
+            current_targets = set(load_targets(TARGET_ENTITIES_FILE))
+            newly_discovered = set()
+            for channel in total_discovered_channels:
+                if not channel.lower().endswith('bot') and channel not in current_targets:
+                    newly_discovered.add(channel)
+
+            if newly_discovered:
+                print(f"\n🔎 Discovered {len(newly_discovered)} new channels. Appending to target file...")
+                updated_targets = list(current_targets.union(newly_discovered))
+                save_targets(TARGET_ENTITIES_FILE, updated_targets)
+                print(f"✅ Successfully updated '{TARGET_ENTITIES_FILE}'.")
+        
+        # ذخیره نهایی و قطعی وضعیت
+        save_state(state)
+        print("✅ Final state saved.")
+        print("\n--- Telegram Scraper Finished ---")
 
 if __name__ == "__main__":
     asyncio.run(main())
