@@ -15,7 +15,6 @@ jobs:
   dispatch-sources:
     name: Dispatch Sources for Parallel Processing
     runs-on: ubuntu-latest
-    # خروج امن: این جاب نباید بیشتر از ۱۰ دقیقه طول بکشد
     timeout-minutes: 10
     outputs:
       has_sources: ${{ steps.merge_and_split.outputs.has_sources }}
@@ -26,27 +25,19 @@ jobs:
       - name: Merge All Source Links and Create Chunks
         id: merge_and_split
         run: |
-          # برای جلوگیری از خطا، فایل‌های ورودی را در صورت عدم وجود ایجاد می‌کنیم
           touch telegram_source_links.txt discovered_sources.txt
-
           echo "Merging source links from GitHub and Telegram..."
           cat telegram_source_links.txt discovered_sources.txt > all_sources.txt
-          
-          # حذف خطوط خالی و تکراری برای داشتن لیست تمیز
           sed -i '/^$/d' all_sources.txt
           sort -u -o all_sources.txt all_sources.txt
-          
           total_lines=$(wc -l < all_sources.txt)
           echo "Total unique source links to process: $total_lines"
-          
           if [ $total_lines -eq 0 ]; then
             echo "No sources found to split."
             echo "has_sources=false" >> $GITHUB_OUTPUT
             exit 0
           fi
-          
           echo "has_sources=true" >> $GITHUB_OUTPUT
-          
           mkdir -p source_chunks
           lines_per_chunk=$(( (total_lines + 19) / 20 ))
           split -l $lines_per_chunk -d -a 2 --additional-suffix=.txt all_sources.txt source_chunks/chunk_
@@ -64,7 +55,6 @@ jobs:
     if: needs.dispatch-sources.outputs.has_sources == 'true'
     name: Process Sources (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
-    # خروج امن: هر بچ پردازش نباید بیشتر از ۶۰ دقیقه طول بکشد
     timeout-minutes: 60
     strategy:
       fail-fast: false
@@ -73,10 +63,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install pyyaml httpx requests
       - uses: actions/download-artifact@v4
-        with: { name: source-chunks, path: source_chunks/ }
+        with:
+          name: source-chunks
+          path: source_chunks/
       - name: Run Data Acquisition
         id: acquisition
         run: |
@@ -102,36 +95,34 @@ jobs:
     needs: process-sources
     if: always()
     runs-on: ubuntu-latest
-    # خروج امن: این جاب نباید بیشتر از ۱۵ دقیقه طول بکشد
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - uses: actions/download-artifact@v4
-        with: { path: partial_configs, pattern: partial-protocol-configs-* }
+        with:
+          path: partial_configs
+          pattern: partial-protocol-configs-*
       - name: Merge All Configs and Create Batches
         run: |
-          # ادغام کانفیگ‌های استخراج شده از لینک‌ها
           python merge_and_batch.py --input-dir partial_configs --output-dir protocol_configs
-          
-          # اضافه کردن کانفیگ‌های مستقیم تلگرام
           echo "Adding direct configs from Telegram..."
           if [ -f "telegram_direct_configs.txt" ]; then
             cat telegram_direct_configs.txt >> protocol_configs/telegram_direct.txt
           fi
-          
-          # آماده‌سازی بچ‌های نهایی برای تست سرعت
           python prepare_batches.py --input-dir protocol_configs
       - uses: actions/upload-artifact@v4
-        with: { name: work-batches, path: ci_batches/ }
+        with:
+          name: work-batches
+          path: ci_batches/
 
   # --- مرحله ۴: تست سرعت موازی ---
   run-speed-tests:
     needs: merge-and-batch
     name: Speed Test (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
-    # خروج امن: این جاب حیاتی نباید بیشتر از ۱۸۰ دقیقه (۳ ساعت) طول بکشد
     timeout-minutes: 180
     strategy:
       fail-fast: false
@@ -140,7 +131,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install requests geoip2 pyyaml httpx
       - name: Download Prerequisite Tools
         run: |
@@ -149,7 +141,9 @@ jobs:
           unzip -o -q xray.zip xray && chmod +x xray
           wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria && chmod +x hysteria
       - uses: actions/download-artifact@v4
-        with: { name: work-batches, path: ci_batches/ }
+        with:
+          name: work-batches
+          path: ci_batches/
       - name: Run Speed Test on Assigned Batch
         run: |
           CONFIG_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
@@ -158,7 +152,9 @@ jobs:
             python test_worker.py --input "$CONFIG_FILE" --db-file "$DB_FILE"
           fi
       - uses: actions/upload-artifact@v4
-        with: { name: db-result-${{ matrix.batch_id }}, path: results_${{ matrix.batch_id }}.db }
+        with:
+          name: db-result-${{ matrix.batch_id }}
+          path: results_${{ matrix.batch_id }}.db
   
   # --- مرحله ۵: ادغام نهایی، انتشار و پاکسازی ---
   merge-and-publish:
@@ -166,15 +162,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: run-speed-tests
     if: always()
-    # خروج امن: این جاب نباید بیشتر از ۱۵ دقیقه طول بکشد
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install pyyaml jdatetime pytz pycountry
       - uses: actions/download-artifact@v4
-        with: { path: db_results/, pattern: db-result-* }
+        with:
+          path: db_results/
+          pattern: db-result-*
       - name: Merge, Generate, and Finalize
         run: |
           python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
@@ -184,13 +182,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Main Pipeline)"
-          
-          # پاک کردن فایل‌های منبع پردازش شده برای جلوگیری از پردازش مجدد
           echo "Cleaning up processed source files..."
           echo "" > telegram_direct_configs.txt
           echo "" > telegram_source_links.txt
           echo "" > discovered_sources.txt
-          
           git add .
           if ! git diff --staged --quiet; then
             git commit -m "feat(auto): update proxy configurations and cleanup sources"
