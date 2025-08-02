@@ -2,7 +2,6 @@ name: Main Proxy Pipeline (Integrated)
 
 on:
   schedule:
-    # هر ۳ ساعت یک‌بار اجرا می‌شود
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
@@ -75,9 +74,11 @@ jobs:
         run: |
           padded_id=$(printf "%02d" ${{ matrix.batch_id }})
           CHUNK_FILE="source_chunks/chunk_${padded_id}.txt"
+          OUTPUT_DIR="protocol_configs_${{ matrix.batch_id }}" # تعریف مسیر خروجی منحصر به فرد
           if [ -f "$CHUNK_FILE" ]; then
+            # اسکریپت‌ها حالا خروجی را در مسیر درست ذخیره می‌کنند
             python manage_sources.py --input $CHUNK_FILE --output active_sources_${{ matrix.batch_id }}.txt
-            python merge_configs.py --input active_sources_${{ matrix.batch_id }}.txt --output-dir protocol_configs_${{ matrix.batch_id }}
+            python merge_configs.py --output-dir $OUTPUT_DIR # پاس دادن مسیر به اسکریپت
             echo "processed=true" >> $GITHUB_OUTPUT
           else
             echo "processed=false" >> $GITHUB_OUTPUT
@@ -118,7 +119,8 @@ jobs:
           name: work-batches
           path: ci_batches/
 
-  # --- مرحله ۴: تست سرعت موازی ---
+  # بقیه جاب‌ها (run-speed-tests و merge-and-publish) بدون تغییر باقی می‌مانند
+  # ...
   run-speed-tests:
     needs: merge-and-batch
     name: Speed Test (Batch ${{ matrix.batch_id }})
@@ -156,7 +158,6 @@ jobs:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
   
-  # --- مرحله ۵: ادغام نهایی، انتشار و پاکسازی ---
   merge-and-publish:
     name: Merge, Publish, and Cleanup
     runs-on: ubuntu-latest
