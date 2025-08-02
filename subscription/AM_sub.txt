@@ -30,7 +30,13 @@ vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:11065?type=ws&security=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&amp;encryption=none&amp;flow=
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none&flow=
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?encryption=none&security=none&type=ws&path=%2F
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?encryption=none&security=none&type=ws&path=/
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?path=%2F&security=none&encryption=none&type=ws
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?path=/&security=none&encryption=none&type=ws
+vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?security=&encryption=none&type=ws
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?security=none&encryption=none&type=ws
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?type=ws&amp;security=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300?type=ws&security=none

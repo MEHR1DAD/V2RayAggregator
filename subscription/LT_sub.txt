@@ -59,7 +59,6 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.188:
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.190:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.192:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.199:8080
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@beesyar.org:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@ltnl11.saint.ydns.eu:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@ltnl13.saint.ydns.eu:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@ltnl13.saint.ydns.eu:8080?prefix=%16%03%01%00%C2%A8%01%01
@@ -137,6 +136,7 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@45.153.7.133:443/?type=grpc&encrypt
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.153.7.133:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.153.7.133:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.153.7.133:443?type=grpc&encryption=none&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
+vless://401374e6-df77-41fb-f638-dad8184f175b@45.81.58.168:443/?type=grpc&encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.81.58.168:443?security=tls&sni=pqh24v3.hiddendom.shop&fp=random&type=grpc&serviceName=%2F&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.81.58.168:443?security=tls&sni=pqh24v3.hiddendom.shop&type=grpc&host=pqh24v3.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@86.38.214.158:443/?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
