@@ -32,8 +32,8 @@ TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 # =================================================================
 # زمان شروع اجرای اسکریپت
 START_TIME = time.time()
-# مهلت زمانی بر حسب ثانیه (۵ ساعت و ۴۵ دقیقه) تا ۱۵ دقیقه قبل از ۶ ساعت خارج شود
-WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 45 * 60 
+# *** تغییر: مهلت زمانی به ۵ ساعت و ۳۰ دقیقه کاهش یافت برای حاشیه اطمینان بیشتر ***
+WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 30 * 60 
 
 def is_approaching_timeout():
     """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
@@ -121,13 +121,9 @@ async def main():
             print(f"Successfully logged in as: {me.first_name}")
 
             for i, entity_name in enumerate(target_entities):
-                # =================================================================
-                # *** چک کردن زمان قبل از شروع پردازش هر کانال ***
-                # =================================================================
                 if is_approaching_timeout():
                     print("\n⏰ Approaching workflow timeout. Saving state and exiting gracefully...")
-                    break # خروج از حلقه اصلی
-                # =================================================================
+                    break 
 
                 print(f"\nProcessing entity: {entity_name} ({i+1}/{len(target_entities)})")
                 try:
@@ -171,7 +167,6 @@ async def main():
                 except Exception as e:
                     print(f"  -> Could not process entity '{entity_name}'. Error: {e}")
 
-                # ذخیره کردن وضعیت بعد از پردازش هر کانال (چک‌پوینت)
                 print(f"  -> Checkpoint: Saving progress after processing '{entity_name}'...")
                 save_state(state)
 
@@ -186,9 +181,7 @@ async def main():
         print(f"An unexpected error occurred: {e}")
     
     finally:
-        # این بخش همیشه اجرا می‌شود، چه با خطا و چه بدون خطا
         print("\n--- Finalizing process ---")
-        # ذخیره نهایی فایل‌های خروجی
         if total_found_configs:
             with open(DIRECT_CONFIGS_FILE, "a", encoding="utf-8") as f:
                 for config in sorted(list(total_found_configs)): f.write(config + "\n")
@@ -212,7 +205,6 @@ async def main():
                 save_targets(TARGET_ENTITIES_FILE, updated_targets)
                 print(f"✅ Successfully updated '{TARGET_ENTITIES_FILE}'.")
         
-        # ذخیره نهایی و قطعی وضعیت
         save_state(state)
         print("✅ Final state saved.")
         print("\n--- Telegram Scraper Finished ---")
