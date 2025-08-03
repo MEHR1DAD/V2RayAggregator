@@ -32,6 +32,7 @@ vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=none&
 vless://afdb6e6e-3145-4284-c15a-0a38030a8129@193.238.153.85:13305?security=none&encryption=none&host=/JOKERRVPN_BIA_CHANEL@JOKERRVPN&headerType=none&type=tcp
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@46.202.30.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@46.202.30.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@46.202.30.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@46.202.30.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.124.127.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.124.127.213:8880?security=none&type=ws&host=jp.laoyoutiao.link&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2048
