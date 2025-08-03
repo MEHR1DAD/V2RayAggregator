@@ -2,7 +2,7 @@ import os
 import re
 import json
 import asyncio
-import time # اضافه کردن ماژول زمان.
+import time # اضافه کردن ماژول زمان
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
@@ -32,8 +32,8 @@ TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 # =================================================================
 # زمان شروع اجرای اسکریپت
 START_TIME = time.time()
-# *** تغییر: مهلت زمانی به ۵ ساعت و ۳۰ دقیقه کاهش یافت برای حاشیه اطمینان بیشتر ***
-WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 30 * 60 
+# *** تغییر: مهلت زمانی به ۵۵ دقیقه برای تست سریع در شاخه develop کاهش یافت ***
+WORKFLOW_TIMEOUT_SECONDS = 55 * 60 
 
 def is_approaching_timeout():
     """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
