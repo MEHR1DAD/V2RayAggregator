@@ -2,7 +2,7 @@ import os
 import re
 import json
 import asyncio
-import time # اضافه کردن ماژول زمان
+import time # اضافه کردن ماژول زمان.
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
