@@ -21,6 +21,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@154.92.9.186:8880?allowInsecure=0&s
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.177:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
@@ -45,6 +46,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.156:8880?allowInsecure=0&s
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.213:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/?ed=2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.63:8880?type=ws&security=none&host=jp.laoyoutiao.link&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.85.59.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
@@ -133,4 +135,5 @@ vmess://eyJhZGQiOiAiZmFzdGN1cC5uZXQiLCAidiI6ICIyIiwgInBzIjogIlx1ZDgzY1x1ZGRlOFx1
 vmess://eyJhZGQiOiAiZmFzdGN1cC5uZXQiLCAidiI6ICIyIiwgInBzIjogIlx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRmZUNZXzc0X0BTdXJmYm9hcmR2MnJheSIsICJwb3J0IjogODAsICJpZCI6ICI5YzY3ZWJiZS1kNjIwLTRiNmQtYWQ4Mi0xZWJjNjc1ZTIyYzYiLCAiYWlkIjogIjAiLCAibmV0IjogIndzIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiY2RuLW5vZGUtb3NzLTk5LnBhb2Z1LmRlIiwgInBhdGgiOiAiL3Byb2ZpbGUvdGVsZWdyYW1Ac3Nyc3ViIiwgInRscyI6ICIifQ==
 vmess://eyJhZGQiOiAiZmFzdGN1cC5uZXQiLCAidiI6ICIyIiwgInBzIjogIlx1ZDgzZFx1ZGQyNUpvaW4rVGVsZWdyYW06QEZhcmFoX1ZQTlx1ZDgzZFx1ZGZlMyIsICJwb3J0IjogODAsICJpZCI6ICI5YzY3ZWJiZS1kNjIwLTRiNmQtYWQ4Mi0xZWJjNjc1ZTIyYzYiLCAiYWlkIjogIjAiLCAibmV0IjogIndzIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiY2RuLW5vZGUtb3NzLTk5LnBhb2Z1LmRlIiwgInBhdGgiOiAiL3Byb2ZpbGUvdGVsZWdyYW1Ac3Nyc3ViIiwgInRscyI6ICIifQ==
 vmess://eyJhZGQiOiAicHViZy5hYyIsICJ2IjogIjIiLCAicHMiOiAiXHU0ZTM5XHU5ZWE2IFYyQ1JPU1MuQ09NIiwgInBvcnQiOiA4MCwgImlkIjogIjljNjdlYmJlLWQ2MjAtNGI2ZC1hZDgyLTFlYmM2NzVlMjJjNiIsICJhaWQiOiAiMCIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJjZG4tbm9kZS1vc3MtOTkucGFvZnUuZGUiLCAicGF0aCI6ICIvcHJvZmlsZS90ZWxlZ3JhbUBzc3JzdWIiLCAidGxzIjogIiJ9
+vmess://eyJhZGQiOiJjc2dvLmNvbSIsInYiOiIyIiwicHMiOiLwn4ep8J+HsF9ES1/kuLnpuqYtPvCfh7rwn4e4X1VTX+e+juWbvSIsInBvcnQiOjgwLCJpZCI6Ijk1YzI3Y2M0LTgyYjUtNDVkYS05NjJlLWJhNjc1NjQyZmMzZCIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInR5cGUiOiIiLCJob3N0IjoiY2RuLW5vZGUtb3NzLTk5LnBhb2Z1LmRlIiwicGF0aCI6Ii9wcm9maWxlL3RlbGVncmFtQHNzcnN1YiIsInRscyI6IiJ9
 vmess://eyJhZGQiOiJmYXN0Y3VwLm5ldCIsInYiOiIyIiwicG9ydCI6ODAsImlkIjoiOWM2N2ViYmUtZDYyMC00YjZkLWFkODItMWViYzY3NWUyMmM2IiwiYWlkIjoiMCIsIm5ldCI6IndzIiwidHlwZSI6IiIsImhvc3QiOiJjZG4tbm9kZS1vc3MtOTkucGFvZnUuZGUiLCJwYXRoIjoiXC9wcm9maWxlXC90ZWxlZ3JhbUBzc3JzdWIiLCJ0bHMiOiIiLCJwcyI6Ilx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRmZSBDWSB8IFx1ZDgzZFx1ZGQxMyBWTUVTUyB8IEB6ZXJvYmFpcGlhbyAjMzQifQ
