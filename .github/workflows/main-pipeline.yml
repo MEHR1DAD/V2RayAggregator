@@ -2,6 +2,7 @@ name: Main Proxy Pipeline (Integrated)
 
 on:
   schedule:
+    # هر ۳ ساعت یک‌بار اجرا می‌شود
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
@@ -74,11 +75,10 @@ jobs:
         run: |
           padded_id=$(printf "%02d" ${{ matrix.batch_id }})
           CHUNK_FILE="source_chunks/chunk_${padded_id}.txt"
-          OUTPUT_DIR="protocol_configs_${{ matrix.batch_id }}" # تعریف مسیر خروجی منحصر به فرد
+          OUTPUT_DIR="protocol_configs_${{ matrix.batch_id }}"
           if [ -f "$CHUNK_FILE" ]; then
-            # اسکریپت‌ها حالا خروجی را در مسیر درست ذخیره می‌کنند
             python manage_sources.py --input $CHUNK_FILE --output active_sources_${{ matrix.batch_id }}.txt
-            python merge_configs.py --output-dir $OUTPUT_DIR # پاس دادن مسیر به اسکریپت
+            python merge_configs.py --output-dir $OUTPUT_DIR
             echo "processed=true" >> $GITHUB_OUTPUT
           else
             echo "processed=false" >> $GITHUB_OUTPUT
@@ -102,6 +102,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      # *** FIX: نصب وابستگی‌های مورد نیاز برای این جاب ***
+      - name: Install Dependencies
+        run: pip install pyyaml
       - uses: actions/download-artifact@v4
         with:
           path: partial_configs
@@ -119,8 +122,7 @@ jobs:
           name: work-batches
           path: ci_batches/
 
-  # بقیه جاب‌ها (run-speed-tests و merge-and-publish) بدون تغییر باقی می‌مانند
-  # ...
+  # --- مرحله ۴: تست سرعت موازی ---
   run-speed-tests:
     needs: merge-and-batch
     name: Speed Test (Batch ${{ matrix.batch_id }})
@@ -158,6 +160,7 @@ jobs:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
   
+  # --- مرحله ۵: ادغام نهایی، انتشار و پاکسازی ---
   merge-and-publish:
     name: Merge, Publish, and Cleanup
     runs-on: ubuntu-latest
