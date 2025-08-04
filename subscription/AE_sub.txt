@@ -5,9 +5,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0dW5uZWwtYXN0cm92cG5fb2ZmaWNpYWxfYWU=@ae-1.s
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@151.242.251.131:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@151.242.251.147:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@151.242.251.153:8080
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@beesyar.org:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjM3l3eF9XdlBhMEpJOFJ6cl8zY3F3@makhzan2.moltyali.ddns-ip.net:1080
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@beesyar.org:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprYm9VVlhVNl9IZHUxSUJpc2E5S3ZR@45.134.14.12:1080
 trojan://edf13267-a7ab-4ef8-a2ea-a567bfcc1a9f@tuntro012.instconn.com:443?sni=dibai.686911.xyz
 trojan://tunnel-astrovpn_official_ae@ae-1.stunnel.cc:8441?path=AstroVPN_Official-AstroVPN_Official-AstroVPN_Official-AstroVPN_Official-AstroVPN_Official…
@@ -122,6 +120,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@181.214.1.213:8880?type=ws&host=jp.
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@181.214.1.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.213:8880?type=ws&host=jp.laoyoutiao.link
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.63:8880?&fp=chrome&sni=jp.laoyoutiao.link&type=ws&headerType=none&host=jp.laoyoutiao.link&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram@V2ray_Alpha/?ed=2048
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.63:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560fp=chrome
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@193.124.224.63:8880?security=none&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2048
