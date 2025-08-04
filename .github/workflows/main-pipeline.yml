@@ -102,7 +102,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      # *** FIX: نصب وابستگی‌های مورد نیاز برای این جاب ***
       - name: Install Dependencies
         run: pip install pyyaml
       - uses: actions/download-artifact@v4
@@ -186,15 +185,17 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Main Pipeline)"
+          
           echo "Cleaning up processed source files..."
           echo "" > telegram_direct_configs.txt
           echo "" > telegram_source_links.txt
           echo "" > discovered_sources.txt
+          
           git add .
           if ! git diff --staged --quiet; then
             git commit -m "feat(auto): update proxy configurations and cleanup sources"
-            git pull --rebase
-            git push
+            # *** FIX: استفاده از push --force برای جلوگیری از کانفلیکت ***
+            git push --force
           else
             echo "No changes to commit."
           fi
