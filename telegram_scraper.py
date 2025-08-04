@@ -2,7 +2,7 @@ import os
 import re
 import json
 import asyncio
-import time # اضافه کردن ماژول زمان
+import time
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
@@ -15,7 +15,7 @@ TARGET_ENTITIES_FILE = "telegram_targets.txt"
 DIRECT_CONFIGS_FILE = "telegram_direct_configs.txt"
 SOURCE_LINKS_FILE = "telegram_source_links.txt"
 STATE_FILE = "telegram_scraper_state.json"
-DELAY_BETWEEN_CHANNELS = 30 # ثانیه تأخیر بین هر کانال
+DELAY_BETWEEN_CHANNELS = 30
 
 # --- متغیرهای استخراج شده از گیت‌هاب سکرت ---
 API_ID = os.getenv('TELEGRAM_API_ID')
@@ -28,19 +28,66 @@ SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
 TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 
 # =================================================================
-# *** بخش جدید: مدیریت خروج امن بر اساس زمان ***
+# *** بخش جدید: منطق فیلترینگ هوشمند لینک‌ها ***
 # =================================================================
-# زمان شروع اجرای اسکریپت
 START_TIME = time.time()
-# *** تغییر: مهلت زمانی به ۵۵ دقیقه برای تست سریع در شاخه develop کاهش یافت ***
+# مهلت زمانی برای تست سریع در شاخه develop
 WORKFLOW_TIMEOUT_SECONDS = 55 * 60 
 
+# دامنه‌هایی که همیشه اولویت بالایی دارند
+GITHUB_DOMAINS = ("raw.githubusercontent.com", "github.io")
+
+# پسوندهایی که حتی در دامنه‌های گیت‌هاب هم باید نادیده گرفته شوند
+GITHUB_BAD_EXTENSIONS = (
+    ".apk", ".exe", ".zip", ".rar", ".7z", ".tar", ".gz",
+    ".dmg", ".pkg", # اضافه شدن پسوندهای مک
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp",
+    ".mp3", ".mp4", ".avi", ".mkv", ".mov"
+)
+
+# لیست سیاه دامنه‌هایی که به احتمال زیاد حاوی کانفیگ نیستند
+GENERAL_BLACKLIST_DOMAINS = (
+    "youtube.com", "youtu.be", "instagram.com", "twitter.com", "x.com",
+    "google.com", "facebook.com", "t.me/proxy", "spotify.com",
+    "aparat.com", "mediafire.com", "play.google.com", "apps.apple.com",
+    "zoomit.ir", "digikala.com", "varzesh3.com", "virustotal.com",
+    "snappfood.ir", "torob.com", "myket.ir"
+)
+
+def is_valid_source_link(url: str) -> bool:
+    """
+    یک لینک را بر اساس قوانین هوشمند فیلتر می‌کند.
+    """
+    try:
+        # پاکسازی اولیه لینک از کاراکترهای اضافی در انتها
+        url = url.strip(')*[]')
+
+        # قانون ۱: اولویت با فایل‌های .txt
+        if url.endswith('.txt'):
+            return True
+
+        # قانون ۲: اولویت با دامنه‌های گیت‌هاب (با در نظر گرفتن لیست سیاه پسوندها)
+        if any(domain in url for domain in GITHUB_DOMAINS):
+            if not any(url.endswith(ext) for ext in GITHUB_BAD_EXTENSIONS):
+                return True
+            else:
+                return False # لینک گیت‌هاب است اما پسوند نامعتبر دارد
+
+        # قانون ۳: اعمال لیست سیاه عمومی
+        if any(domain in url for domain in GENERAL_BLACKLIST_DOMAINS):
+            return False
+
+        # اگر لینک از هیچ‌کدام از فیلترهای بالا رد نشد، آن را به عنوان یک منبع بالقوه بپذیر
+        return True
+    except:
+        return False
+
 def is_approaching_timeout():
-    """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
     elapsed_time = time.time() - START_TIME
     return elapsed_time >= WORKFLOW_TIMEOUT_SECONDS
 # =================================================================
 
+# ... (بقیه توابع بدون تغییر باقی می‌مانند) ...
 def load_targets(filename):
     if not os.path.exists(filename):
         print(f"Warning: Target file '{filename}' not found. No channels to process.")
@@ -87,7 +134,13 @@ async def process_messages(messages_iterator):
                     text_to_process += url + "\n"
         
         found_configs.update(CONFIG_REGEX.findall(text_to_process))
-        found_sources.update(SOURCE_LINK_REGEX.findall(text_to_process))
+        
+        # *** تغییر: استفاده از فیلتر هوشمند برای لینک‌ها ***
+        potential_links = SOURCE_LINK_REGEX.findall(text_to_process)
+        for link in potential_links:
+            if is_valid_source_link(link):
+                found_sources.add(link)
+
         discovered_channels.update(TELEGRAM_CHANNEL_REGEX.findall(text_to_process))
 
         if message.file and message.file.name and (message.file.name.endswith('.txt') or message.file.name.endswith('.json')):
@@ -96,7 +149,13 @@ async def process_messages(messages_iterator):
                 content = await message.download_media(file=bytes)
                 file_text = content.decode('utf-8', errors='ignore')
                 found_configs.update(CONFIG_REGEX.findall(file_text))
-                found_sources.update(SOURCE_LINK_REGEX.findall(file_text))
+                
+                # *** تغییر: استفاده از فیلتر هوشمند برای لینک‌های داخل فایل ***
+                potential_links_in_file = SOURCE_LINK_REGEX.findall(file_text)
+                for link in potential_links_in_file:
+                    if is_valid_source_link(link):
+                        found_sources.add(link)
+
             except Exception as e:
                 print(f"   -> Could not download or process attachment: {e}")
 
@@ -110,7 +169,7 @@ async def main():
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (with Graceful Shutdown) ---")
+    print("--- Starting Advanced Telegram Scraper (with Smart Filtering) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
