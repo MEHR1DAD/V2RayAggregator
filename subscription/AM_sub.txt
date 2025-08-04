@@ -50,6 +50,7 @@ vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@93.115.240.77:20000?type=ws&amp;sec
 vless://8dd851a9-39e4-4baf-a443-17c688aa6dfc@93.115.240.77:20000?type=ws&security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&&security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&amp;&amp;security=none
+vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&security=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&amp;encryption=none&amp;flow=
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none&flow=
