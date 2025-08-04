@@ -64,6 +64,7 @@ vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.177:8880?allowInsecure=0&
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.177:8880?allowInsecure=0&sni=ip.langmanshanxi.top&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳&allowInsecure=0
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.186:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2&fp=chrome
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@92.243.74.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳
@@ -77,6 +78,7 @@ vless://69ec5aaf-8d5f-4353-a286-bef914c13e33@alexde.hpcdn.info:80?encryption=non
 vless://69ec5aaf-8d5f-4353-a286-bef914c13e33@alexde.hpcdn.info:80?path=/24392/wsMMad&security=none&encryption=none&host=alexde.hpcdn.info&type=ws
 vless://6c490ae9-06ab-4896-b7a7-5890717e74f4@de1.hpcdn.info:80?encryption=none&security=none&type=ws&host=de1.hpcdn.info&path=/50641/wsMMad
 vless://6c490ae9-06ab-4896-b7a7-5890717e74f4@de1.hpcdn.info:80?encryption=none&type=ws&host=de1.hpcdn.info&path=%2F50641%2FwsMMad&security=none
+vless://7397f880-d9a8-4c4d-ae0e-11e18685a71a@152.42.177.137:32322/?type=ws&encryption=none&flow=&host=m.zoom.us&path=/FREE By Tharuwa (0767597317)
 vless://7397f880-d9a8-4c4d-ae0e-11e18685a71a@152.42.177.137:32322?encryption=none&security=none&type=ws&host=m.zoom.us&path=/FREE By Tharuwa (0767597317)
 vless://7397f880-d9a8-4c4d-ae0e-11e18685a71a@152.42.177.137:32322?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws
 vless://7397f880-d9a8-4c4d-ae0e-11e18685a71a@152.42.177.137:32322?path=/FREE By Tharuwa (0767597317)&security=none&encryption=none&host=m.zoom.us&type=ws
