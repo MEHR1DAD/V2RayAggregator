@@ -56,6 +56,7 @@ vless://6e8e9178-24dd-4b56-b5d8-fe753237be24@85.133.202.90:8080?path=/&security=
 vless://6e8e9178-24dd-4b56-b5d8-fe753237be24@85.133.202.90:8080?type=ws&headerType=none&path=%2f
 vless://7b93b058-f902-48a1-90a0-918ab81fb9fc@94.232.168.16:30501?security=&encryption=none&headerType=none&type=tcp
 vless://7b93b058-f902-48a1-90a0-918ab81fb9fc@94.232.168.16:30501?security=none&encryption=none&headerType=none&type=tcp
+vless://82a000fc-b550-4bfc-b5e4-8e7180dc4b95@mrbarani.fastsnap.info:40746?security=none&type=tcp&packetEncoding=xudp&encryption=none
 vless://82a000fc-b550-4bfc-b5e4-8e7180dc4b95@mrbarani.fastsnap.info:40746?type=tcp&security=none
 vless://8f27aceb-13ce-4bbe-9847-35049fbb46f4@panel1.zapserver.top:54002?security=&encryption=none&headerType=none&type=tcp
 vless://981d217a-17c5-4e9f-9147-8c9ad3c0707b@l23.magicnetwork.info:28995?encryption=none&security=none&type=tcp&headerType=none
@@ -97,6 +98,7 @@ vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?encryption=none&se
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?encryption=none&security=tls&sni=cs2.pishima.ir&type=tcp&headerType=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&encryption=none&headerType=none&fp=chrome&type=tcp&sni=cs2.pishima.ir
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&encryption=none&headerType=none&fp=random&type=tcp&sni=cs2.pishima.ir
+vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&sni=cs2.pishima.ir&fp=chrome&type=tcp&encryption=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&sni=cs2.pishima.ir&fp=random&type=tcp&encryption=none
 vless://e67025a0-278f-4208-8690-cac092b82306@212.80.20.50:443?security=tls&type=tcp&sni=cs2.pishima.ir&fp=chrome
 vless://e893762a-fb1b-4bc5-aad0-64d6a72c9bd1@193.151.140.34:443?security=none&encryption=none&headerType=none&type=tcp
