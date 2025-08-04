@@ -4,6 +4,7 @@ vless://06e4425e-a8cb-4b63-929f-2105604ab0a9@www.csgo.com:443?encryption=none&se
 vless://1688c7ee-35b3-4bfb-ab88-f8ce846daeb6@csgo.com:8080?security=none&type=ws&path=/profile/telegram@ssrsub&host=cdn-node-oss-99.paofu.de
 vless://1688c7ee-35b3-4bfb-ab88-f8ce846daeb6@fastcup.net:8080?security=none&type=ws&path=/profile/telegram@ssrsub&host=cdn-node-oss-99.paofu.de
 vless://1688c7ee-35b3-4bfb-ab88-f8ce846daeb6@pubg.ac:8080?security=none&type=ws&path=/profile/telegram@ssrsub&host=cdn-node-oss-99.paofu.de
+vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443/?type=grpc&encryption=none&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
@@ -48,6 +49,7 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.156:8880?allowInsecure=0&s
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.213:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.213:8880?allowInsecure=0&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/?ed=2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.63:8880?type=ws&security=none&host=jp.laoyoutiao.link&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3
