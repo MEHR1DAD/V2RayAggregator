@@ -1,4 +1,5 @@
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
+vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN&security=none&encryption=none&type=ws
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?type=ws&encryption=none&flow=
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN&security=none&encryption=none&type=ws
@@ -54,6 +55,7 @@ vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?security
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&amp;security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:10065?type=ws&security=none
 vless://63a47f68-c0bc-4682-90e5-1fc67c789ff4@wolf559.royalmt.life:11065?type=ws&security=none
+vless://6638d4e1-9e7e-4955-9730-72e21fc66c45@93.115.240.74:14140?type=ws&amp;security=none
 vless://6638d4e1-9e7e-4955-9730-72e21fc66c45@93.115.240.74:14140?type=ws&security=none
 vless://747d4612-b3e5-4165-879a-42d861e4c4b7@93.115.240.90:10000?type=ws&amp;security=none
 vless://747d4612-b3e5-4165-879a-42d861e4c4b7@93.115.240.90:10000?type=ws&security=none
@@ -65,6 +67,8 @@ vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?security=none&ty
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&&security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&amp;&amp;security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&security=none
+vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:55627?type=ws&amp;security=none
+vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:55627?type=ws&security=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&amp;encryption=none&amp;flow=
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&encryption=none&flow=
