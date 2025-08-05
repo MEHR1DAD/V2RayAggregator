@@ -1,5 +1,6 @@
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN&security=none&encryption=none&type=ws
+vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?security=none&encryption=none&type=ws
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500/?type=ws&encryption=none&flow=
 vless://020eeb0a-796f-4e31-8ad1-08cc9e13ca21@85.90.207.183:54500?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN&security=none&encryption=none&type=ws
@@ -67,6 +68,7 @@ vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?security=none&ty
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&&security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&amp;&amp;security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:53627?type=ws&security=none
+vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:55627?security=none&encryption=none&type=ws
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:55627?type=ws&amp;security=none
 vless://d83c8440-4bd9-4695-aec5-c39b52313e1c@85.90.207.59:55627?type=ws&security=none
 vless://dc4f7caf-b7d8-4803-84a9-4b0fecbc2874@85.90.207.183:54300/?type=ws&amp;encryption=none&amp;flow=
