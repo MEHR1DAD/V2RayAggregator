@@ -10,7 +10,7 @@ from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, MessageEnt
 from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 
-# --- تنظیمات اصلی ----
+# --- تنظیمات اصلی ---
 TARGET_ENTITIES_FILE = "telegram_targets.txt"
 DIRECT_CONFIGS_FILE = "telegram_direct_configs.txt"
 SOURCE_LINKS_FILE = "telegram_source_links.txt"
@@ -31,24 +31,18 @@ TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 # *** بخش مدیریت خروج امن بر اساس زمان ***
 # =================================================================
 START_TIME = time.time()
-# *** تغییر: مهلت زمانی به ۵ ساعت و ۳۰ دقیقه برای محیط اصلی بازگردانده شد ***
-WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 30 * 60 
+WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 30 * 60  # 5.5 ساعت
 
 def is_approaching_timeout():
     """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
-    elapsed_time = time.time() - START_TIME
-    return elapsed_time >= WORKFLOW_TIMEOUT_SECONDS
+    return (time.time() - START_TIME) >= WORKFLOW_TIMEOUT_SECONDS
 # =================================================================
 
-# ... (بقیه کد بدون تغییر باقی می‌ماند) ...
-
+# --- توابع کمکی ---
 def load_targets(filename):
-    if not os.path.exists(filename):
-        print(f"Warning: Target file '{filename}' not found. No channels to process.")
-        return []
+    if not os.path.exists(filename): return []
     with open(filename, 'r', encoding='utf-8') as f:
-        targets = {line.strip() for line in f if line.strip() and not line.startswith('#')}
-    return list(targets)
+        return [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
 def save_targets(filename, targets):
     with open(filename, 'w', encoding='utf-8') as f:
@@ -66,12 +60,36 @@ def save_state(state):
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=4)
 
+# --- منطق فیلترینگ هوشمند ---
+GITHUB_DOMAINS = ("raw.githubusercontent.com", "github.io")
+GITHUB_BAD_EXTENSIONS = (".apk", ".exe", ".zip", ".rar", ".7z", ".tar", ".gz", ".dmg", ".pkg", ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".mp3", ".mp4", ".avi", ".mkv", ".mov")
+GENERAL_BLACKLIST_DOMAINS = ("youtube.com", "youtu.be", "instagram.com", "twitter.com", "x.com", "google.com", "facebook.com", "t.me/proxy", "spotify.com", "aparat.com", "mediafire.com", "play.google.com", "apps.apple.com", "zoomit.ir", "digikala.com", "varzesh3.com", "virustotal.com", "snappfood.ir", "torob.com", "myket.ir")
+
+def is_valid_source_link(url: str) -> bool:
+    try:
+        url = url.strip(')*[]')
+        if url.endswith('.txt'): return True
+        if any(domain in url for domain in GITHUB_DOMAINS):
+            return not any(url.endswith(ext) for ext in GITHUB_BAD_EXTENSIONS)
+        if any(domain in url for domain in GENERAL_BLACKLIST_DOMAINS):
+            return False
+        return True
+    except: return False
+
+# --- توابع اصلی پردازش ---
 async def process_messages(messages_iterator):
     found_configs, found_sources, discovered_channels = set(), set(), set()
     last_message_id = 0
+    message_count = 0
 
     async for message in messages_iterator:
-        if not message: continue
+        message_count += 1
+        if message_count % 1000 == 0:
+            if is_approaching_timeout():
+                print("  -> ⏰ Timeout reached during message processing. Breaking loop...")
+                break
+
+        if not message or not hasattr(message, 'id'): continue
         if message.id > last_message_id:
             last_message_id = message.id
 
@@ -81,8 +99,7 @@ async def process_messages(messages_iterator):
         if message.entities:
             for ent in message.entities:
                 if isinstance(ent, (MessageEntityCode, MessageEntityPre)):
-                    code_text = message.text[ent.offset : ent.offset + ent.length]
-                    text_to_process += code_text + "\n"
+                    text_to_process += message.text[ent.offset : ent.offset + ent.length] + "\n"
                 elif isinstance(ent, (MessageEntityTextUrl, MessageEntityUrl)):
                     url = ent.url if isinstance(ent, MessageEntityTextUrl) else message.text[ent.offset:ent.offset+ent.length]
                     text_to_process += url + "\n"
@@ -96,7 +113,7 @@ async def process_messages(messages_iterator):
 
         discovered_channels.update(TELEGRAM_CHANNEL_REGEX.findall(text_to_process))
 
-        if message.file and message.file.name and (message.file.name.endswith('.txt') or message.file.name.endswith('.json')):
+        if message.file and hasattr(message.file, 'name') and message.file.name and (message.file.name.endswith('.txt') or message.file.name.endswith('.json')):
             print(f"  -> Found attachment: {message.file.name}. Downloading...")
             try:
                 content = await message.download_media(file=bytes)
@@ -107,7 +124,6 @@ async def process_messages(messages_iterator):
                 for link in potential_links_in_file:
                     if is_valid_source_link(link):
                         found_sources.add(link)
-
             except Exception as e:
                 print(f"   -> Could not download or process attachment: {e}")
 
@@ -115,13 +131,13 @@ async def process_messages(messages_iterator):
 
 async def main():
     if not all([API_ID, API_HASH, SESSION_STRING]):
-        print("FATAL ERROR: Telegram API credentials or session string not found in environment variables.")
+        print("FATAL ERROR: Telegram API credentials not found.")
         return
         
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (Production Settings) ---")
+    print("--- Starting Advanced Telegram Scraper (Final Fix) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
@@ -153,11 +169,10 @@ async def main():
                             messages_iterator = client.iter_messages(entity, reply_to=topic_id, min_id=last_message_id)
                             configs, sources, channels, new_last_id = await process_messages(messages_iterator)
                             
+                            if new_last_id > last_message_id: state[state_key] = new_last_id
                             total_found_configs.update(configs)
                             total_found_sources.update(sources)
                             total_discovered_channels.update(channels)
-                            if new_last_id > last_message_id:
-                                state[state_key] = new_last_id
                     else:
                         state_key = str(entity.id)
                         last_message_id = state.get(state_key, 0)
@@ -166,11 +181,10 @@ async def main():
                         messages_iterator = client.iter_messages(entity, min_id=last_message_id)
                         configs, sources, channels, new_last_id = await process_messages(messages_iterator)
                         
+                        if new_last_id > last_message_id: state[state_key] = new_last_id
                         total_found_configs.update(configs)
                         total_found_sources.update(sources)
                         total_discovered_channels.update(channels)
-                        if new_last_id > last_message_id:
-                            state[state_key] = new_last_id
                 
                 except FloodWaitError as e:
                     print(f"  -> FLOOD WAIT: Telegram asked us to wait for {e.seconds} seconds. Waiting...")
@@ -182,12 +196,8 @@ async def main():
                 save_state(state)
 
                 if i < len(target_entities) - 1:
-                    print(f"\n--- Waiting for {DELAY_BETWEEN_CHANNELS} seconds before next channel to avoid flood limits ---")
                     await asyncio.sleep(DELAY_BETWEEN_CHANNELS)
 
-    except ValueError as e:
-        print(f"FATAL ERROR: The session string is invalid or corrupted. Please regenerate it. Error: {e}")
-        return
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
     
@@ -205,11 +215,7 @@ async def main():
         
         if total_discovered_channels:
             current_targets = set(load_targets(TARGET_ENTITIES_FILE))
-            newly_discovered = set()
-            for channel in total_discovered_channels:
-                if not channel.lower().endswith('bot') and channel not in current_targets:
-                    newly_discovered.add(channel)
-
+            newly_discovered = {ch for ch in total_discovered_channels if not ch.lower().endswith('bot') and ch not in current_targets}
             if newly_discovered:
                 print(f"\n🔎 Discovered {len(newly_discovered)} new channels. Appending to target file...")
                 updated_targets = list(current_targets.union(newly_discovered))
@@ -219,38 +225,6 @@ async def main():
         save_state(state)
         print("✅ Final state saved.")
         print("\n--- Telegram Scraper Finished ---")
-
-# Dummy functions for filtering logic to be included
-def is_valid_source_link(url: str) -> bool:
-    try:
-        url = url.strip(')*[]')
-        if url.endswith('.txt'):
-            return True
-        if any(domain in url for domain in GITHUB_DOMAINS):
-            if not any(url.endswith(ext) for ext in GITHUB_BAD_EXTENSIONS):
-                return True
-            else:
-                return False
-        if any(domain in url for domain in GENERAL_BLACKLIST_DOMAINS):
-            return False
-        return True
-    except:
-        return False
-
-GITHUB_DOMAINS = ("raw.githubusercontent.com", "github.io")
-GITHUB_BAD_EXTENSIONS = (
-    ".apk", ".exe", ".zip", ".rar", ".7z", ".tar", ".gz",
-    ".dmg", ".pkg",
-    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp",
-    ".mp3", ".mp4", ".avi", ".mkv", ".mov"
-)
-GENERAL_BLACKLIST_DOMAINS = (
-    "youtube.com", "youtu.be", "instagram.com", "twitter.com", "x.com",
-    "google.com", "facebook.com", "t.me/proxy", "spotify.com",
-    "aparat.com", "mediafire.com", "play.google.com", "apps.apple.com",
-    "zoomit.ir", "digikala.com", "varzesh3.com", "virustotal.com",
-    "snappfood.ir", "torob.com", "myket.ir"
-)
 
 if __name__ == "__main__":
     asyncio.run(main())
