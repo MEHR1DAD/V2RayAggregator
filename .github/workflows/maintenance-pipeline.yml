@@ -1,0 +1,60 @@
+name: Database Maintenance
+
+on:
+  schedule:
+    # هر ۱۲ ساعت یک‌بار در نیمه شب و ظهر به وقت جهانی اجرا می‌شود
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  maintain:
+    name: Maintain and Clean Database
+    runs-on: ubuntu-latest
+    # خروج امن: این جاب نباید بیشتر از ۳ ساعت طول بکشد
+    timeout-minutes: 180 
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        # *** FIX: Added all necessary dependencies ***
+        run: pip install pyyaml geoip2 requests httpx
+
+      - name: Download Prerequisite Tools
+        run: |
+          # دانلود ابزارهای مورد نیاز برای تست سرعت
+          wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -o -q xray.zip xray && chmod +x xray
+          # *** FIX: Added Hysteria binary download ***
+          wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria && chmod +x hysteria
+          echo "Prerequisite tools are ready."
+
+      - name: Run Database Maintenance Script
+        run: python maintain_db.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (DB Maintenance)"
+          
+          # فقط دیتابیس و فایل‌های خروجی را اضافه می‌کنیم
+          git add aggregator_data.db summary.json subscription/
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(db): maintain and clean up database"
+            # استفاده از push --force برای جلوگیری از کانفلیکت‌های احتمالی
+            git push --force
+          else
+            echo "No changes to the database to commit."
+          fi
