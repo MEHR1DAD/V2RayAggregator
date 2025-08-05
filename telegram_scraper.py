@@ -28,66 +28,20 @@ SOURCE_LINK_REGEX = re.compile(r'https?://[^\s"`<]+')
 TELEGRAM_CHANNEL_REGEX = re.compile(r't\.me/([a-zA-Z0-9_]{5,})')
 
 # =================================================================
-# *** بخش جدید: منطق فیلترینگ هوشمند لینک‌ها ***
+# *** بخش مدیریت خروج امن بر اساس زمان ***
 # =================================================================
 START_TIME = time.time()
-# مهلت زمانی برای تست سریع در شاخه develop
-WORKFLOW_TIMEOUT_SECONDS = 55 * 60 
-
-# دامنه‌هایی که همیشه اولویت بالایی دارند
-GITHUB_DOMAINS = ("raw.githubusercontent.com", "github.io")
-
-# پسوندهایی که حتی در دامنه‌های گیت‌هاب هم باید نادیده گرفته شوند
-GITHUB_BAD_EXTENSIONS = (
-    ".apk", ".exe", ".zip", ".rar", ".7z", ".tar", ".gz",
-    ".dmg", ".pkg", # اضافه شدن پسوندهای مک
-    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp",
-    ".mp3", ".mp4", ".avi", ".mkv", ".mov"
-)
-
-# لیست سیاه دامنه‌هایی که به احتمال زیاد حاوی کانفیگ نیستند
-GENERAL_BLACKLIST_DOMAINS = (
-    "youtube.com", "youtu.be", "instagram.com", "twitter.com", "x.com",
-    "google.com", "facebook.com", "t.me/proxy", "spotify.com",
-    "aparat.com", "mediafire.com", "play.google.com", "apps.apple.com",
-    "zoomit.ir", "digikala.com", "varzesh3.com", "virustotal.com",
-    "snappfood.ir", "torob.com", "myket.ir"
-)
-
-def is_valid_source_link(url: str) -> bool:
-    """
-    یک لینک را بر اساس قوانین هوشمند فیلتر می‌کند.
-    """
-    try:
-        # پاکسازی اولیه لینک از کاراکترهای اضافی در انتها
-        url = url.strip(')*[]')
-
-        # قانون ۱: اولویت با فایل‌های .txt
-        if url.endswith('.txt'):
-            return True
-
-        # قانون ۲: اولویت با دامنه‌های گیت‌هاب (با در نظر گرفتن لیست سیاه پسوندها)
-        if any(domain in url for domain in GITHUB_DOMAINS):
-            if not any(url.endswith(ext) for ext in GITHUB_BAD_EXTENSIONS):
-                return True
-            else:
-                return False # لینک گیت‌هاب است اما پسوند نامعتبر دارد
-
-        # قانون ۳: اعمال لیست سیاه عمومی
-        if any(domain in url for domain in GENERAL_BLACKLIST_DOMAINS):
-            return False
-
-        # اگر لینک از هیچ‌کدام از فیلترهای بالا رد نشد، آن را به عنوان یک منبع بالقوه بپذیر
-        return True
-    except:
-        return False
+# *** تغییر: مهلت زمانی به ۵ ساعت و ۳۰ دقیقه برای محیط اصلی بازگردانده شد ***
+WORKFLOW_TIMEOUT_SECONDS = 5 * 60 * 60 + 30 * 60 
 
 def is_approaching_timeout():
+    """چک می‌کند که آیا به پایان مهلت زمانی ورک‌فلو نزدیک می‌شویم یا نه."""
     elapsed_time = time.time() - START_TIME
     return elapsed_time >= WORKFLOW_TIMEOUT_SECONDS
 # =================================================================
 
-# ... (بقیه توابع بدون تغییر باقی می‌مانند) ...
+# ... (بقیه کد بدون تغییر باقی می‌ماند) ...
+
 def load_targets(filename):
     if not os.path.exists(filename):
         print(f"Warning: Target file '{filename}' not found. No channels to process.")
@@ -135,7 +89,6 @@ async def process_messages(messages_iterator):
         
         found_configs.update(CONFIG_REGEX.findall(text_to_process))
         
-        # *** تغییر: استفاده از فیلتر هوشمند برای لینک‌ها ***
         potential_links = SOURCE_LINK_REGEX.findall(text_to_process)
         for link in potential_links:
             if is_valid_source_link(link):
@@ -150,7 +103,6 @@ async def process_messages(messages_iterator):
                 file_text = content.decode('utf-8', errors='ignore')
                 found_configs.update(CONFIG_REGEX.findall(file_text))
                 
-                # *** تغییر: استفاده از فیلتر هوشمند برای لینک‌های داخل فایل ***
                 potential_links_in_file = SOURCE_LINK_REGEX.findall(file_text)
                 for link in potential_links_in_file:
                     if is_valid_source_link(link):
@@ -169,7 +121,7 @@ async def main():
     target_entities = load_targets(TARGET_ENTITIES_FILE)
     if not target_entities: return
 
-    print("--- Starting Advanced Telegram Scraper (with Smart Filtering) ---")
+    print("--- Starting Advanced Telegram Scraper (Production Settings) ---")
     
     total_found_configs, total_found_sources, total_discovered_channels = set(), set(), set()
     state = load_state()
@@ -267,6 +219,38 @@ async def main():
         save_state(state)
         print("✅ Final state saved.")
         print("\n--- Telegram Scraper Finished ---")
+
+# Dummy functions for filtering logic to be included
+def is_valid_source_link(url: str) -> bool:
+    try:
+        url = url.strip(')*[]')
+        if url.endswith('.txt'):
+            return True
+        if any(domain in url for domain in GITHUB_DOMAINS):
+            if not any(url.endswith(ext) for ext in GITHUB_BAD_EXTENSIONS):
+                return True
+            else:
+                return False
+        if any(domain in url for domain in GENERAL_BLACKLIST_DOMAINS):
+            return False
+        return True
+    except:
+        return False
+
+GITHUB_DOMAINS = ("raw.githubusercontent.com", "github.io")
+GITHUB_BAD_EXTENSIONS = (
+    ".apk", ".exe", ".zip", ".rar", ".7z", ".tar", ".gz",
+    ".dmg", ".pkg",
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp",
+    ".mp3", ".mp4", ".avi", ".mkv", ".mov"
+)
+GENERAL_BLACKLIST_DOMAINS = (
+    "youtube.com", "youtu.be", "instagram.com", "twitter.com", "x.com",
+    "google.com", "facebook.com", "t.me/proxy", "spotify.com",
+    "aparat.com", "mediafire.com", "play.google.com", "apps.apple.com",
+    "zoomit.ir", "digikala.com", "varzesh3.com", "virustotal.com",
+    "snappfood.ir", "torob.com", "myket.ir"
+)
 
 if __name__ == "__main__":
     asyncio.run(main())
