@@ -6,6 +6,7 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.42.89.251:8880/?type=ws&encrypt
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.42.89.251:8880?eh=Sec-WebSocket-Protocol&encryption=none&host=cf.d3z.net&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3%2520%40WangCai2%2520%2F&security=none&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.42.89.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.42.89.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2+%2F%3Fed%3D2560fp%3Dchrome
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.42.89.251:8880?type=ws&host=cf.d3z.net&path=/Telegram🇨🇳 @WangCai2 /?ed=2560fp=chrome
 vless://25c5cbda-39e5-47ed-b36c-b87ffef2378d@188.42.88.31:443?encryption=none&security=tls&sni=worker-fancy-base-7d08.yajici1215.workers.Dev&alpn=h2,http/1.1&fp=chrome&type=ws&host=worker-fancy-base-7d08.yajici1215.workers.Dev&path=/?ed=2048
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@188.42.88.227:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@188.42.88.252:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560

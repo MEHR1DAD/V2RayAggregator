@@ -52,6 +52,7 @@ vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@pubg.ac:8080?security=none&type=ws&
 vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@pubg.ac:8080?security=none&type=ws&path=/profile/telegram@ssrsub&host=cdn-node-oss-99.paofu.de
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.156:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=kjgx.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.156:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=kjgx.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.213:8880?type=ws&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@195.26.229.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
