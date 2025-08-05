@@ -10,7 +10,7 @@ from telethon.tl.types import MessageEntityTextUrl, MessageEntityUrl, MessageEnt
 from telethon.tl.functions.channels import GetForumTopicsRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 
-# --- تنظیمات اصلی ---
+# --- تنظیمات اصلی ----
 TARGET_ENTITIES_FILE = "telegram_targets.txt"
 DIRECT_CONFIGS_FILE = "telegram_direct_configs.txt"
 SOURCE_LINKS_FILE = "telegram_source_links.txt"
