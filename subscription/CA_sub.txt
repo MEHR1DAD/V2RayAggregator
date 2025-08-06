@@ -116,6 +116,7 @@ vless://cef1e956-e92b-4dbb-999a-6524679f8a40@51.222.158.206:80?path=/vless/&secu
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051/?security=none&encryption=none&type=tcp&headerType=none
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051/?type=tcp&encryption=none
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051/?type=tcp&encryption=none&flow=
+vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051?Telegram=@NasaV2,@NasaV2,@NasaV2,@NasaV2,@NasaV2,@NasaV2&security=none&encryption=none&headerType=none&type=tcp
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051?encryption=none&security=none&type=tcp&headerType=none
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051?security=&encryption=none&headerType=none&type=tcp
 vless://d1e720d6-4ac9-4a03-b781-567960161b13@51.222.86.157:54051?security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
