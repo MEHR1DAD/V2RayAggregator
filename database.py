@@ -111,6 +111,17 @@ def get_all_db_configs():
     conn.close()
     return configs
 
+# *** تابع جدید برای پیشنهاد شما ***
+def get_top_configs(limit: int):
+    """۱۰۰ کانفیگ برتر را، صرف نظر از کشور، بر اساس سرعت برمی‌گرداند."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    query = "SELECT config FROM configs ORDER BY speed_kbps DESC LIMIT ?"
+    cursor.execute(query, (limit,))
+    configs = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return configs
+
 def bulk_delete_configs(configs_to_delete: list):
     if not configs_to_delete:
         return
