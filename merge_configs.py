@@ -2,18 +2,17 @@ import httpx
 import asyncio
 import os
 import time
+import argparse # ماژول برای خواندن آرگومان‌های خط فرمان اضافه شد
 from database import get_active_sources
 from collections import defaultdict
 
 # --- Constants ---
-OUTPUT_DIR = "protocol_configs"
 REQUEST_TIMEOUT = 10
 KNOWN_PROTOCOLS = {"vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hysteria2", "tuic", "socks", "wireguard"}
 
 # --- Batch Processing Settings ---
 BATCH_SIZE = 100
 DELAY_BETWEEN_BATCHES = 5  # seconds
-# --- End of Constants ---
 
 async def fetch_one(client, url):
     """Fetches configs from a single URL."""
@@ -36,17 +35,19 @@ def process_results(results, configs_by_protocol):
                     if protocol in KNOWN_PROTOCOLS:
                         configs_by_protocol[protocol].add(clean_config)
 
-def save_separated_configs(configs_by_protocol):
-    """Saves the separated configs into different files."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+def save_separated_configs(configs_by_protocol, output_dir): # آرگومان output_dir اضافه شد
+    """Saves the separated configs into different files in the specified directory."""
+    # به جای ثابت، از مسیر ورودی استفاده می‌کنیم
+    os.makedirs(output_dir, exist_ok=True)
     
-    print(f"\n--- Saving configs into separate files in '{OUTPUT_DIR}' directory ---")
+    print(f"\n--- Saving configs into separate files in '{output_dir}' directory ---")
     
     for protocol, configs in sorted(configs_by_protocol.items()):
         if not configs:
             continue
             
-        filename = os.path.join(OUTPUT_DIR, f"{protocol}_configs.txt")
+        # مسیر فایل خروجی با استفاده از output_dir ساخته می‌شود
+        filename = os.path.join(output_dir, f"{protocol}_configs.txt")
         try:
             with open(filename, "w", encoding="utf-8") as f:
                 for config in sorted(list(configs)):
@@ -55,7 +56,7 @@ def save_separated_configs(configs_by_protocol):
         except Exception as e:
             print(f"❌ Error saving file {filename}: {e}")
 
-async def main():
+async def main(output_dir): # آرگومان output_dir به تابع اصلی اضافه شد
     """Main function to run the process."""
     urls = get_active_sources()
     
@@ -68,7 +69,6 @@ async def main():
     
     configs_by_protocol = defaultdict(set)
     
-    # --- New Batch Processing Loop ---
     for i in range(0, len(urls), BATCH_SIZE):
         batch_urls = urls[i:i + BATCH_SIZE]
         print(f"\n--- Processing batch {i // BATCH_SIZE + 1} of {len(urls) // BATCH_SIZE + 1} ({len(batch_urls)} URLs) ---")
@@ -82,7 +82,6 @@ async def main():
         total_fetched = sum(len(s) for s in configs_by_protocol.values())
         print(f"Batch finished. Total unique configs fetched so far: {total_fetched}")
 
-        # Add delay between batches
         if i + BATCH_SIZE < len(urls):
             print(f"Waiting for {DELAY_BETWEEN_BATCHES} seconds before next batch...")
             await asyncio.sleep(DELAY_BETWEEN_BATCHES)
@@ -90,10 +89,20 @@ async def main():
     total_fetched = sum(len(s) for s in configs_by_protocol.values())
     print(f"\nFinished fetching all batches. Fetched a total of {total_fetched} unique configurations for {len(configs_by_protocol)} protocols.")
     
-    save_separated_configs(configs_by_protocol)
+    # پاس دادن مسیر خروجی به تابع ذخیره‌سازی
+    save_separated_configs(configs_by_protocol, output_dir)
     
     print("\nSeparation process finished successfully.")
 
-
 if __name__ == "__main__":
-    asyncio.run(main())
+    # بخش خواندن آرگومان‌های خط فرمان
+    parser = argparse.ArgumentParser(description="Fetch, merge, and separate proxy configs by protocol.")
+    parser.add_argument(
+        '--output-dir',
+        required=True,
+        help="The directory where separated protocol configs will be saved."
+    )
+    args = parser.parse_args()
+    
+    # اجرای تابع اصلی با مسیر خروجی مشخص شده
+    asyncio.run(main(args.output_dir))

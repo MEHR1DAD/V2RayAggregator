@@ -1,138 +1,201 @@
-# نام ربات اصلی ما (نسخه نهایی و ساده شده)
-name: Main Proxy Pipeline
+name: Main Proxy Pipeline (Integrated)
 
 on:
-  # هر ۳ ساعت یک‌بار به صورت خودکار اجرا می‌شود
   schedule:
+    # هر ۳ ساعت یک‌بار اجرا می‌شود
     - cron: '0 */3 * * *'
-  # امکان اجرای دستی را هم فراهم می‌کند
   workflow_dispatch:
 
-# تضمین می‌کند که فقط یک نمونه از این ربات در هر لحظه در حال اجرا باشد
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
-  #----------------------------------------------------
-  # مرحله ۱: آماده‌سازی و بسته‌بندی کارها
-  #----------------------------------------------------
-  prepare-work:
+  # --- مرحله ۱: ادغام منابع و تقسیم بین کارگرها ---
+  dispatch-sources:
+    name: Dispatch Sources for Parallel Processing
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      has_sources: ${{ steps.merge_and_split.outputs.has_sources }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
-      - name: Install Dependencies
-        run: pip install pyyaml httpx requests
-
-      - name: Run Data Acquisition and Batching
-        env:
-          GH_PAT: "${{ secrets.GH_PAT }}"
+      - name: Merge All Source Links and Create Chunks
+        id: merge_and_split
         run: |
-          python manage_sources.py
-          python merge_configs.py
-          python prepare_batches.py
-      
-      - name: Upload Batch Artifacts
+          touch telegram_source_links.txt discovered_sources.txt
+          echo "Merging source links from GitHub and Telegram..."
+          cat telegram_source_links.txt discovered_sources.txt > all_sources.txt
+          sed -i '/^$/d' all_sources.txt
+          sort -u -o all_sources.txt all_sources.txt
+          total_lines=$(wc -l < all_sources.txt)
+          echo "Total unique source links to process: $total_lines"
+          if [ $total_lines -eq 0 ]; then
+            echo "No sources found to split."
+            echo "has_sources=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "has_sources=true" >> $GITHUB_OUTPUT
+          mkdir -p source_chunks
+          lines_per_chunk=$(( (total_lines + 19) / 20 ))
+          split -l $lines_per_chunk -d -a 2 --additional-suffix=.txt all_sources.txt source_chunks/chunk_
+
+      - name: Upload source chunks
+        if: steps.merge_and_split.outputs.has_sources == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: work-batches
-          path: ci_batches/
+          name: source-chunks
+          path: source_chunks/
 
-  #------------------------------------------------------------------
-  # مرحله ۲: اجرای تست‌های موازی (تست سرعت مستقیم)
-  #------------------------------------------------------------------
-  run-speed-tests:
-    needs: prepare-work
+  # --- مرحله ۲: پردازش موازی لینک‌های اشتراک ---
+  process-sources:
+    needs: dispatch-sources
+    if: needs.dispatch-sources.outputs.has_sources == 'true'
+    name: Process Sources (Batch ${{ matrix.batch_id }})
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-    
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml httpx requests
+      - uses: actions/download-artifact@v4
+        with:
+          name: source-chunks
+          path: source_chunks/
+      - name: Run Data Acquisition
+        id: acquisition
+        run: |
+          padded_id=$(printf "%02d" ${{ matrix.batch_id }})
+          CHUNK_FILE="source_chunks/chunk_${padded_id}.txt"
+          OUTPUT_DIR="protocol_configs_${{ matrix.batch_id }}"
+          if [ -f "$CHUNK_FILE" ]; then
+            python manage_sources.py --input $CHUNK_FILE --output active_sources_${{ matrix.batch_id }}.txt
+            python merge_configs.py --output-dir $OUTPUT_DIR
+            echo "processed=true" >> $GITHUB_OUTPUT
+          else
+            echo "processed=false" >> $GITHUB_OUTPUT
+          fi
+      - name: Upload partial protocol configs
+        if: steps.acquisition.outputs.processed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: partial-protocol-configs-${{ matrix.batch_id }}
+          path: protocol_configs_${{ matrix.batch_id }}/
+
+  # --- مرحله ۳: ادغام نتایج و آماده‌سازی برای تست سرعت ---
+  merge-and-batch:
+    name: Merge and Prepare for Speed Test
+    needs: process-sources
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install Dependencies
-        run: pip install requests geoip2 pyyaml httpx
-
-      - name: Download Prerequisite Tools (Xray, Hysteria2 & GeoIP)
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pip install pyyaml
+      - uses: actions/download-artifact@v4
+        with:
+          path: partial_configs
+          pattern: partial-protocol-configs-*
+      - name: Merge All Configs and Create Batches
         run: |
-          wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
-          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -o -q xray.zip xray
-          chmod +x xray
-          wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria
-          chmod +x hysteria
-          echo "Xray, Hysteria2, and GeoIP are ready."
-      
-      - name: Download Config Batch Artifact
-        uses: actions/download-artifact@v4
+          python merge_and_batch.py --input-dir partial_configs --output-dir protocol_configs
+          echo "Adding direct configs from Telegram..."
+          if [ -f "telegram_direct_configs.txt" ]; then
+            cat telegram_direct_configs.txt >> protocol_configs/telegram_direct.txt
+          fi
+          python prepare_batches.py --input-dir protocol_configs
+      - uses: actions/upload-artifact@v4
         with:
           name: work-batches
           path: ci_batches/
-      
+
+  # --- مرحله ۴: تست سرعت موازی ---
+  run-speed-tests:
+    needs: merge-and-batch
+    name: Speed Test (Batch ${{ matrix.batch_id }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        batch_id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests geoip2 pyyaml httpx
+      - name: Download Prerequisite Tools
+        run: |
+          wget -q https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+          wget -q -O xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -o -q xray.zip xray && chmod +x xray
+          wget -q https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64 -O hysteria && chmod +x hysteria
+      - uses: actions/download-artifact@v4
+        with:
+          name: work-batches
+          path: ci_batches/
       - name: Run Speed Test on Assigned Batch
         run: |
           CONFIG_FILE="ci_batches/batch_${{ matrix.batch_id }}.txt"
           DB_FILE="results_${{ matrix.batch_id }}.db"
           if [ -f "$CONFIG_FILE" ]; then
             python test_worker.py --input "$CONFIG_FILE" --db-file "$DB_FILE"
-          else
-            echo "Batch file $CONFIG_FILE not found, skipping."
           fi
-
-      - name: Upload Result Artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: db-result-${{ matrix.batch_id }}
           path: results_${{ matrix.batch_id }}.db
   
-  #-------------------------------------------------------------
-  # مرحله ۳: ادغام نتایج، ساخت خروجی‌ها و انتشار
-  #-------------------------------------------------------------
+  # --- مرحله ۵: ادغام نهایی، انتشار و پاکسازی ---
   merge-and-publish:
+    name: Merge, Publish, and Cleanup
     runs-on: ubuntu-latest
     needs: run-speed-tests
-    if: success() || failure()
+    if: always()
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install pyyaml jdatetime pytz pycountry country-converter
-
-      - name: Download All Result Artifacts
-        uses: actions/download-artifact@v4
+      - run: pip install pyyaml jdatetime pytz pycountry
+      - uses: actions/download-artifact@v4
         with:
           path: db_results/
           pattern: db-result-*
-
       - name: Merge, Generate, and Finalize
         run: |
           python merge_databases.py --input-dir db_results/ --output-db aggregator_data.db
           python create_rotating_sub.py
           python generate_readme.py
-      
-      - name: Commit and Push Final Changes
+      - name: Cleanup and Commit Final Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (Main Pipeline)"
+          
+          echo "Cleaning up processed source files..."
+          echo "" > telegram_direct_configs.txt
+          echo "" > telegram_source_links.txt
+          echo "" > discovered_sources.txt
+          
           git add .
           if ! git diff --staged --quiet; then
-            git commit -m "feat(auto): update proxy configurations and README"
-            git pull --rebase
-            git push
+            git commit -m "feat(auto): update proxy configurations and cleanup sources"
+            # *** FIX: استفاده از push --force برای جلوگیری از کانفلیکت ***
+            git push --force
           else
             echo "No changes to commit."
           fi

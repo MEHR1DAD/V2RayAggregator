@@ -1,0 +1,51 @@
+name: Telegram Source Collector
+
+on:
+  schedule:
+    # هر ۶ ساعت یک‌بار اجرا می‌شود
+    - cron: '0 */6 * * *'
+  # امکان اجرای دستی را هم فراهم می‌کند
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    name: Collect from Telegram
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install telethon
+
+      - name: Run Telegram Scraper
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
+        run: python telegram_scraper.py
+
+      - name: Commit and Push Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Telegram Collector)"
+          # اضافه کردن تمام فایل‌های مربوط به تلگرام
+          git add telegram_direct_configs.txt telegram_source_links.txt telegram_scraper_state.json telegram_targets.txt
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(data): update sources from Telegram"
+            git pull --rebase
+            git push
+          else
+            echo "No new data from Telegram to commit."
+          fi
