@@ -1,7 +1,8 @@
 import os
 import yaml
 import random
-from database import get_configs_by_country, get_countries_with_config_counts, get_all_db_configs
+# *** تابع جدید را وارد می‌کنیم ***
+from database import get_configs_by_country, get_countries_with_config_counts, get_all_db_configs, get_top_configs
 
 # --- Load Configuration ---
 with open("config.yml", "r", encoding="utf-8") as f:
@@ -15,6 +16,7 @@ ALL_CONFIGS_FILE = config['paths']['merged_configs']
 def create_subscription_files():
     """
     Creates final subscription files.
+    - Top 100: The 100 fastest configs regardless of country.
     - Full list: All live configs for a country.
     - Sized list: A random sample of live configs.
     - Merged list: All live configs from all countries.
@@ -22,21 +24,30 @@ def create_subscription_files():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("--- Creating Final Subscription Files ---")
 
-    # --- 1. Generate merged file for all configs ---
+    # --- ۱. ایجاد فایل ۱۰۰ کانفیگ برتر (پیشنهاد شما) ---
+    print("\nGenerating Top 100 subscription file...")
+    TOP_100_FILE = os.path.join(OUTPUT_DIR, 'TOP100_sub.txt')
+    top_100_configs = get_top_configs(100)
+    if top_100_configs:
+        with open(TOP_100_FILE, 'w', encoding='utf-8') as f:
+            f.write("\n".join(top_100_configs))
+        print(f"✅ Saved {len(top_100_configs)} fastest configs to {TOP_100_FILE}")
+    else:
+        print("🟡 No configs found in database to create a Top 100 list.")
+
+    # --- ۲. ایجاد فایل کلی شامل تمام کانفیگ‌ها ---
     all_configs_from_db = get_all_db_configs()
     if all_configs_from_db:
-        # Sort configs for consistent output
         all_configs_from_db.sort()
         with open(ALL_CONFIGS_FILE, 'w', encoding='utf-8') as f:
             f.write("\n".join(all_configs_from_db))
         print(f"✅ Saved {len(all_configs_from_db)} total configs to {ALL_CONFIGS_FILE}")
     else:
-        # Create an empty file if no configs are found
         open(ALL_CONFIGS_FILE, 'w').close()
         print("🟡 No configs found in database. Created an empty merged file.")
 
 
-    # --- 2. Generate per-country subscription files ---
+    # --- ۳. ایجاد فایل‌های اشتراک برای هر کشور ---
     countries_from_db = get_countries_with_config_counts()
 
     if not countries_from_db:
@@ -51,16 +62,15 @@ def create_subscription_files():
         if not all_configs:
             continue
 
-        # --- Save the full subscription file ---
+        # --- ذخیره فایل اشتراک کامل ---
         full_sub_filename = f"{country_code.upper()}_sub.txt"
         full_sub_path = os.path.join(OUTPUT_DIR, full_sub_filename)
-        # Sort for consistent output
         all_configs.sort()
         with open(full_sub_path, 'w', encoding='utf-8') as f:
             f.write("\n".join(all_configs))
         print(f"✅ Saved {len(all_configs)} live configs to {full_sub_filename}")
 
-        # --- Save the random sample subscription file ---
+        # --- ذخیره فایل اشتراک نمونه تصادفی ---
         random.shuffle(all_configs)
         sample_configs = all_configs[:CHUNK_SIZE]
         
