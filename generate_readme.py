@@ -6,6 +6,7 @@ from urllib.parse import quote
 import yaml
 import json
 import pycountry
+import sqlite3
 
 # --- دیکشنری کامل برای ترجمه‌های فارسی ---
 PERSIAN_COUNTRY_NAMES = {
@@ -74,6 +75,13 @@ PERSIAN_COUNTRY_NAMES = {
     "XX": "مکان نامشخص"
 }
 
+# --- فایل‌های ورودی و خروجی ---
+DB_FILE = "aggregator_data.db"
+TELEGRAM_TARGETS_FILE = "telegram_targets.txt"
+GITHUB_CRAWLED_URLS_FILE = "crawled_urls.txt"
+SUMMARY_OUTPUT_FILE = "summary.json"
+REPORT_OUTPUT_FILE = "report_data.json"
+
 def get_country_flag_emoji(country_code):
     if not country_code or len(country_code) != 2:
         return "🏴‍☠️"
@@ -84,9 +92,8 @@ def get_country_info(country_code):
     country_code = country_code.upper()
     flag = get_country_flag_emoji(country_code)
     
-    if country_code in PERSIAN_COUNTRY_NAMES:
-        name = PERSIAN_COUNTRY_NAMES[country_code]
-    else:
+    name = PERSIAN_COUNTRY_NAMES.get(country_code)
+    if not name:
         try:
             country = pycountry.countries.get(alpha_2=country_code)
             name = country.name if country else country_code
@@ -99,34 +106,83 @@ def get_country_info(country_code):
         
     return {"name": name, "flag": flag}
 
+def get_line_count(filename):
+    """تعداد خطوط غیرخالی یک فایل را می‌شمارد."""
+    if not os.path.exists(filename):
+        return 0
+    with open(filename, 'r', encoding='utf-8') as f:
+        return len([line for line in f if line.strip()])
 
-from database import get_countries_with_config_counts
+def get_db_stats(db_path):
+    """آمار را از دیتابیس استخراج می‌کند."""
+    if not os.path.exists(db_path):
+        return {
+            "total_active_configs": 0,
+            "configs_by_protocol": {},
+            "countries_with_counts": [],
+            "top_10_countries": []
+        }
 
-with open("config.yml", "r", encoding="utf-8") as f:
-    config = yaml.safe_load(f)
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
 
-REPO_OWNER = config['project']['repo_owner']
-REPO_NAME = config['project']['repo_name']
-SUBSCRIPTION_URL_BASE = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/raw/refs/heads/master/subscription"
+    cursor.execute("SELECT COUNT(*) FROM configs")
+    total_configs = cursor.fetchone()[0]
 
-def get_iso_update_time():
-    tehran_tz = pytz.timezone('Asia/Tehran')
-    now_utc = datetime.utcnow().replace(tzinfo=pytz.utc)
-    return now_utc.astimezone(tehran_tz).isoformat()
-
-def generate_summary_file():
-    country_data = []
-    total_configs_count = 0
+    cursor.execute("SELECT config FROM configs")
+    all_configs = [row[0] for row in cursor.fetchall()]
     
-    print("--- Generating Final Output File (summary.json only) ---")
-    print("Fetching data from database...")
+    configs_by_protocol = {}
+    for config in all_configs:
+        try:
+            protocol = config.split("://")[0]
+            configs_by_protocol[protocol] = configs_by_protocol.get(protocol, 0) + 1
+        except IndexError:
+            continue
+    
+    cursor.execute("""
+        SELECT country_code, COUNT(config) as count
+        FROM configs
+        WHERE country_code IS NOT NULL AND country_code != ''
+        GROUP BY country_code
+        ORDER BY count DESC
+    """)
+    countries_with_counts = cursor.fetchall()
+    top_10_countries = countries_with_counts[:10]
 
-    countries_from_db = get_countries_with_config_counts()
+    conn.close()
 
-    for code, count in countries_from_db:
+    return {
+        "total_active_configs": total_configs,
+        "configs_by_protocol": dict(sorted(configs_by_protocol.items(), key=lambda item: item[1], reverse=True)),
+        "countries_with_counts": countries_with_counts,
+        "top_10_countries": top_10_countries
+    }
+
+def main():
+    print("--- Generating All Final Output Files (Summary and Report) ---")
+    
+    with open("config.yml", "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    REPO_OWNER = config['project']['repo_owner']
+    REPO_NAME = config['project']['repo_name']
+    SUBSCRIPTION_URL_BASE = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/raw/refs/heads/master/subscription"
+
+    tehran_tz = pytz.timezone('Asia/Tehran')
+    update_time_utc = datetime.utcnow().replace(tzinfo=pytz.utc)
+    update_time_tehran = update_time_utc.astimezone(tehran_tz).isoformat()
+
+    # --- ۱. جمع‌آوری تمام آمار مورد نیاز ---
+    db_stats = get_db_stats(DB_FILE)
+    telegram_targets_count = get_line_count(TELEGRAM_TARGETS_FILE)
+    github_crawled_urls_count = get_line_count(GITHUB_CRAWLED_URLS_FILE)
+    
+    # --- ۲. ساخت و ذخیره فایل summary.json ---
+    country_data_for_summary = []
+    for code, count in db_stats["countries_with_counts"]:
         info = get_country_info(code)
-        total_configs_count += count
-        country_data.append({
+        country_data_for_summary.append({
             'code': code.upper(),
             'name': info['name'],
             'flag': info['flag'],
@@ -134,24 +190,39 @@ def generate_summary_file():
             'full_link': f"{SUBSCRIPTION_URL_BASE}/{code.upper()}_sub.txt",
             'link_100': f"{SUBSCRIPTION_URL_BASE}/{code.upper()}_sub_100.txt"
         })
-    
-    country_data.sort(key=lambda x: x['count'], reverse=True)
-    
-    web_update_time = get_iso_update_time()
 
     summary_data = {
-        "last_update": web_update_time,
-        "merged_configs_count": total_configs_count,
-        "countries": country_data
+        "last_update": update_time_tehran,
+        "merged_configs_count": db_stats["total_active_configs"],
+        "countries": country_data_for_summary
     }
-    with open("summary.json", "w", encoding='utf-8') as f:
+    with open(SUMMARY_OUTPUT_FILE, "w", encoding='utf-8') as f:
         json.dump(summary_data, f, ensure_ascii=False, indent=4)
-    print("✅ summary.json generated successfully.")
-    print("Skipping README.md generation for security.")
+    print(f"✅ {SUMMARY_OUTPUT_FILE} generated successfully.")
 
+    # --- ۳. ساخت و ذخیره فایل report_data.json ---
+    report_data = {
+        "report_generated_at": update_time_utc.isoformat(),
+        "stats": {
+            "total_active_configs": db_stats["total_active_configs"],
+            "configs_by_protocol": db_stats["configs_by_protocol"],
+            "top_10_countries": db_stats["top_10_countries"],
+            "telegram_stats": {
+                "total_targets": telegram_targets_count
+            },
+            "github_stats": {
+                "total_crawled_urls": github_crawled_urls_count
+            }
+        }
+    }
+    with open(REPORT_OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(report_data, f, ensure_ascii=False, indent=4)
+    print(f"✅ {REPORT_OUTPUT_FILE} generated successfully.")
+
+    print("\nSkipping README.md generation for security.")
 
 if __name__ == "__main__":
     if not os.path.exists('config.yml'):
         print("FATAL: config.yml not found.")
     else:
-        generate_summary_file()
+        main()
