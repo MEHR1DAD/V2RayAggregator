@@ -1,17 +1,14 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.209.147.198:990
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpqUWFoUUJsTjFYZHUxdWh3VUtyRTdr@64.227.144.190:50690
 ss://YWVzLTEyOC1nY206MTYyNjI5ZDctY2IxNy00M2IxLTgyYzktZjljN2FlNmNiYTcw@82.180.146.173:30607
 ss://YWVzLTEyOC1nY206MTYyNjI5ZDctY2IxNy00M2IxLTgyYzktZjljN2FlNmNiYTcw@82.180.146.173:30607?prefix=%16%03%01%00%C2%A8%01%01
 ss://YWVzLTEyOC1nY206OTM0OTg1MzktNzgzOC00ODM2LWI5YjMtODMxMWZmYzc5YmNm@82.180.146.173:35652
 ss://YWVzLTEyOC1nY206OTM0OTg1MzktNzgzOC00ODM2LWI5YjMtODMxMWZmYzc5YmNm@82.180.146.173:35652?prefix=%16%03%01%00%C2%A8%01%01
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome&security=&encryption=none&host=cf.d3z.net&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome&security=none&encryption=none&host=cf.d3z.net&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2+%2F%3Fed%3D2560fp%3Dchrome&security=none&encryption=none&host=cf.d3z.net&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880?security=none&type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.228.251:8880?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@154.198.173.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://08704c01-7edb-454a-98a2-328ccb9936fa@45.88.183.156:12794/?type=tcp&encryption=none
 vless://08704c01-7edb-454a-98a2-328ccb9936fa@45.88.183.156:12794?encryption=none&security=none&type=tcp&headerType=none
 vless://08704c01-7edb-454a-98a2-328ccb9936fa@45.88.183.156:12794?security=&encryption=none&headerType=none&type=tcp
@@ -20,7 +17,6 @@ vless://08704c01-7edb-454a-98a2-328ccb9936fa@45.88.183.156:12794?security=none&e
 vless://08704c01-7edb-454a-98a2-328ccb9936fa@freevpn.vizzpn.join.channel.vizzfrag.ir:12794/?type=tcp&encryption=none&flow=
 vless://08704c01-7edb-454a-98a2-328ccb9936fa@freevpn.vizzpn.join.channel.vizzfrag.ir:12794?security=none&encryption=none&headerType=none&type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@blr-in.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@154.198.173.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
 vless://d3daa900-0377-4575-9ebc-c4d88cb8486c@45.88.183.158:44629/?type=tcp&encryption=none
 vless://ef246c6f-6e7d-4286-af33-5485544b0ba8@45.88.183.164:49355/?type=tcp&encryption=none
 vless://ef246c6f-6e7d-4286-af33-5485544b0ba8@45.88.183.164:49355/?type=tcp&encryption=none&flow=
