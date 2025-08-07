@@ -1,0 +1,59 @@
+{
+    "report_generated_at": "2025-08-07T09:17:48.712301+00:00",
+    "stats": {
+        "total_active_configs": 7265,
+        "configs_by_protocol": {
+            "vless": 3576,
+            "vmess": 3038,
+            "ss": 651
+        },
+        "top_10_countries": [
+            [
+                "US",
+                1455
+            ],
+            [
+                "GB",
+                1088
+            ],
+            [
+                "FR",
+                887
+            ],
+            [
+                "DE",
+                634
+            ],
+            [
+                "JP",
+                373
+            ],
+            [
+                "CA",
+                298
+            ],
+            [
+                "NL",
+                283
+            ],
+            [
+                "RU",
+                276
+            ],
+            [
+                "FI",
+                198
+            ],
+            [
+                "HK",
+                184
+            ]
+        ],
+        "telegram_stats": {
+            "total_targets": 10947
+        },
+        "github_stats": {
+            "total_crawled_urls": 15738
+        }
+    }
+}
