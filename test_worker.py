@@ -20,18 +20,18 @@ with open("config.yml", "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 # --- Constants ---
+# ... (بخش ثابت‌ها بدون تغییر) ...
 GLOBAL_TIMEOUT_MINUTES = config['settings'].get('global_timeout_minutes', 170)
 WORKFLOW_TIMEOUT_SECONDS = GLOBAL_TIMEOUT_MINUTES * 60
 GEOIP_DB = "GeoLite2-City.mmdb"
 XRAY_PATH = './xray'
-HYSTERIA_PATH = './hysteria' # path to hysteria client
+HYSTERIA_PATH = './hysteria'
 REQUEST_TIMEOUT = config['settings']['exp_country']['request_timeout']
 SPEED_TEST_URLS = config['settings']['exp_country']['speed_test_urls']
 SPEED_TEST_TIMEOUT = config['settings']['exp_country']['speed_test_timeout']
 BATCH_SIZE = config['settings']['exp_country']['batch_size']
 TASK_TIMEOUT = 60
 START_TIME = time.time()
-
 
 # --- Helper functions ---
 def is_approaching_timeout():
@@ -40,7 +40,15 @@ def is_approaching_timeout():
 def initialize_worker_db(db_path):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS configs (config TEXT PRIMARY KEY, source_url TEXT, country_code TEXT, speed_kbps REAL, last_tested TEXT)''')
+    # آپدیت ساختار جدول برای پشتیبانی از پینگ
+    cursor.execute('''CREATE TABLE IF NOT EXISTS configs (
+                        config TEXT PRIMARY KEY, 
+                        source_url TEXT, 
+                        country_code TEXT, 
+                        speed_kbps REAL, 
+                        ping_ms INTEGER, 
+                        last_tested TEXT
+                    )''')
     conn.commit()
     conn.close()
 
@@ -48,34 +56,32 @@ def bulk_upsert_to_worker_db(db_path, configs_data):
     if not configs_data: return
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.executemany('''INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?) ON CONFLICT(config) DO UPDATE SET speed_kbps = excluded.speed_kbps, last_tested = excluded.last_tested''', configs_data)
+    # آپدیت دستور برای پشتیبانی از پینگ
+    cursor.executemany('''INSERT INTO configs (config, source_url, country_code, speed_kbps, ping_ms, last_tested) 
+                          VALUES (?, ?, ?, ?, ?, ?) 
+                          ON CONFLICT(config) DO UPDATE SET 
+                            speed_kbps = excluded.speed_kbps, 
+                            ping_ms = excluded.ping_ms,
+                            last_tested = excluded.last_tested''', configs_data)
     conn.commit()
     conn.close()
 
 # --- Parser functions ---
+# ... (توابع پارسر بدون تغییر) ...
 def parse_hysteria2_uri_to_json(uri: str):
     try:
         parsed = urlparse(uri)
         params = parse_qs(parsed.query)
-        
         hysteria_config = {
             "server": f"{parsed.hostname}:{parsed.port}",
             "auth": parsed.username or "",
-            "tls": {
-                "sni": params.get("sni", [parsed.hostname])[0],
-                "insecure": "insecure" in params and params["insecure"][0] == "1"
-            },
-            "socks5": { 
-                "listen": "" # Will be filled in later
-            }
+            "tls": { "sni": params.get("sni", [parsed.hostname])[0], "insecure": "insecure" in params and params["insecure"][0] == "1" },
+            "socks5": { "listen": "" }
         }
         return hysteria_config
-    except Exception as e:
-        print(f"[HY2-DEBUG] Failed to parse URI: {uri[:50]}... Error: {e}")
-        return None
+    except Exception: return None
 
 def parse_proxy_uri_to_xray_json(uri: str):
-    # This function remains unchanged for xray protocols
     try:
         if uri.startswith("vless://"):
             parsed = urlparse(uri); params = parse_qs(parsed.query); user_object = {"id": parsed.username, "encryption": "none", "flow": params.get("flow", [""])[0]}; stream_settings = {"network": params.get("type", ["tcp"])[0], "security": params.get("security", ["none"])[0]};
@@ -110,48 +116,64 @@ def parse_proxy_uri_to_xray_json(uri: str):
             if ":" not in creds or ":" not in server: return None
             method, password = creds.split(":", 1); hostname, port_str = server.rsplit(':', 1)
             return {"protocol": "shadowsocks", "settings": {"servers": [{"address": hostname, "port": int(port_str), "method": method, "password": password}]}}
-    except Exception:
-        return None
+    except Exception: return None
     return None
 
-# --- Speed Test Functions ---
+# --- توابع تست جدید ---
+async def run_ping_test_with_curl(port: int):
+    """پینگ (latency) را با استفاده از time_connect در curl اندازه‌گیری می‌کند."""
+    curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{time_connect}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), 'https://speed.cloudflare.com/']
+    proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    stdout, _ = await proc.communicate()
+    if proc.returncode == 0 and stdout:
+        try:
+            connect_time_sec = float(stdout.decode('utf-8').strip())
+            return int(connect_time_sec * 1000) # تبدیل به میلی‌ثانیه
+        except (ValueError, TypeError):
+            return 9999 # مقدار بالا برای خطای پینگ
+    return 9999
+
 async def run_speed_test_with_curl(port: int):
+    # ... (این تابع بدون تغییر) ...
     speed_test_url = random.choice(SPEED_TEST_URLS)
     curl_cmd = ['curl', '--socks5-hostname', f'127.0.0.1:{port}', '-w', '%{speed_download}', '-o', '/dev/null', '-s', '--connect-timeout', str(REQUEST_TIMEOUT), '--max-time', str(SPEED_TEST_TIMEOUT), speed_test_url]
     proc = await asyncio.create_subprocess_exec(*curl_cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
-    stdout, stderr = await proc.communicate()
-    
+    stdout, _ = await proc.communicate()
     if proc.returncode == 0 and stdout:
         try:
             speed_bytes_per_sec = float(stdout.decode('utf-8').strip())
-            return (speed_bytes_per_sec * 8) / 1024  # Convert to Kbps
-        except (ValueError, TypeError):
-            return 0.0
-    # Print curl errors if any
-    if stderr:
-        print(f"[CURL-DEBUG] Curl failed for port {port}. Error: {stderr.decode('utf-8', errors='ignore').strip()}")
+            return (speed_bytes_per_sec * 8) / 1024
+        except (ValueError, TypeError): return 0.0
     return 0.0
 
+# --- توابع تست اصلی اصلاح‌شده ---
 async def test_xray_speed(proxy_config: str, port: int):
+    # ... (منطق این تابع اصلاح می‌شود تا هم پینگ و هم سرعت را برگرداند) ...
     config_path = f"temp_xray_config_{port}.json"
     process = None
     outbound_config = parse_proxy_uri_to_xray_json(proxy_config)
-    if not outbound_config:
-        return 0.0
+    if not outbound_config: return None
 
     xray_config = {"log": {"loglevel": "warning"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"auth": "noauth", "udp": False}}], "outbounds": [outbound_config]}
     
     try:
         with open(config_path, 'w') as f: json.dump(xray_config, f)
-        
         command = [XRAY_PATH, '-c', config_path]
         process = await asyncio.create_subprocess_exec(*command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         await asyncio.sleep(2)
         
-        if process.returncode is not None: return 0.0
-        return await run_speed_test_with_curl(port)
+        if process.returncode is not None: return None
+        
+        # اجرای هر دو تست
+        ping_task = run_ping_test_with_curl(port)
+        speed_task = run_speed_test_with_curl(port)
+        ping_ms, speed_kbps = await asyncio.gather(ping_task, speed_task)
+
+        if speed_kbps > 1: # فقط در صورت موفقیت تست سرعت، نتیجه را معتبر بدان
+            return {"speed": speed_kbps, "ping": ping_ms}
+        return None
     except Exception:
-        return 0.0
+        return None
     finally:
         if process and process.returncode is None:
             try: process.terminate(); await process.wait()
@@ -159,73 +181,60 @@ async def test_xray_speed(proxy_config: str, port: int):
         if os.path.exists(config_path): os.remove(config_path)
 
 async def test_hysteria2_speed(proxy_config: str, port: int):
-    print(f"[HY2-DEBUG] Starting test for {proxy_config[:50]}...")
+    # ... (این تابع هم برای برگرداندن پینگ و سرعت اصلاح می‌شود) ...
     config_path = f"temp_hysteria_config_{port}.json"
     process = None
     hysteria_config = parse_hysteria2_uri_to_json(proxy_config)
-    if not hysteria_config:
-        return 0.0
+    if not hysteria_config: return None
 
     hysteria_config["socks5"]["listen"] = f"127.0.0.1:{port}"
     
     try:
         with open(config_path, 'w') as f: json.dump(hysteria_config, f)
-        
         command = [HYSTERIA_PATH, "client", "-c", config_path]
-        print(f"[HY2-DEBUG] Executing command: {' '.join(command)}")
+        process = await asyncio.create_subprocess_exec(*command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+        await asyncio.sleep(3)
         
-        process = await asyncio.create_subprocess_exec(
-            *command, 
-            stdout=asyncio.subprocess.PIPE, 
-            stderr=asyncio.subprocess.PIPE
-        )
-        await asyncio.sleep(3) # Increased sleep time for hysteria2
-        
-        if process.returncode is not None:
-            stdout, stderr = await process.communicate()
-            print(f"[HY2-DEBUG] Hysteria client failed to start for port {port}.")
-            if stderr:
-                print(f"[HY2-ERROR] {stderr.decode('utf-8', errors='ignore').strip()}")
-            return 0.0
+        if process.returncode is not None: return None
 
-        return await run_speed_test_with_curl(port)
-    except Exception as e:
-        print(f"[HY2-DEBUG] Exception during test for port {port}: {e}")
-        return 0.0
+        ping_task = run_ping_test_with_curl(port)
+        speed_task = run_speed_test_with_curl(port)
+        ping_ms, speed_kbps = await asyncio.gather(ping_task, speed_task)
+
+        if speed_kbps > 1:
+            return {"speed": speed_kbps, "ping": ping_ms}
+        return None
+    except Exception:
+        return None
     finally:
         if process and process.returncode is None:
-            try: 
-                process.terminate()
-                stdout, stderr = await process.communicate()
-                if stderr:
-                    print(f"[HY2-SHUTDOWN-ERROR] {stderr.decode('utf-8', errors='ignore').strip()}")
+            try: process.terminate(); await process.wait()
             except ProcessLookupError: pass
         if os.path.exists(config_path): os.remove(config_path)
 
 # --- Dispatcher and Batch Processing ---
 async def test_proxy(proxy_config: str, port: int):
-    """Dispatcher function to select the correct speed test."""
     protocol = proxy_config.split("://")[0]
     if protocol in ["vless", "vmess", "trojan", "ss"]:
         return await test_xray_speed(proxy_config, port)
     elif protocol == "hysteria2":
         return await test_hysteria2_speed(proxy_config, port)
     else:
-        return 0.0
+        return None
 
 async def process_batch(batch, reader, start_port):
-    tasks = []
-    for i, conn in enumerate(batch):
-        task = asyncio.wait_for(test_proxy(conn, start_port + i), timeout=TASK_TIMEOUT)
-        tasks.append(task)
-    
+    tasks = [asyncio.wait_for(test_proxy(conn, start_port + i), timeout=TASK_TIMEOUT) for i, conn in enumerate(batch)]
     results = await asyncio.gather(*tasks, return_exceptions=True)
     
     successful_in_batch = []
     now = datetime.utcnow().isoformat()
     
     for conn, result in zip(batch, results):
-        if isinstance(result, float) and result > 1: # Speed in Kbps
+        # حالا نتیجه یک دیکشنری است
+        if isinstance(result, dict) and result.get("speed") > 1:
+            speed_kbps = result["speed"]
+            ping_ms = result["ping"]
+            
             host_port_str = extract_ip_from_connection(conn)
             if not host_port_str or ':' not in host_port_str: continue
             
@@ -236,11 +245,13 @@ async def process_batch(batch, reader, start_port):
             country_code = await asyncio.to_thread(get_country_code, ip, reader)
             
             if country_code:
-                successful_in_batch.append((conn, 'speed-tested', country_code, round(result, 2), now))
-                print(f"✅ Success ({round(result)} Kbps) | Country: {country_code} | Config: {conn[:40]}...")
+                # اضافه کردن پینگ به داده‌های ارسالی به دیتابیس
+                successful_in_batch.append((conn, 'speed-tested', country_code, round(speed_kbps, 2), ping_ms, now))
+                print(f"✅ Success (Speed: {round(speed_kbps)} Kbps, Ping: {ping_ms}ms) | Country: {country_code} | Config: {conn[:40]}...")
             
     return successful_in_batch
 
+# ... (تابع main بدون تغییر) ...
 async def main(input_path, db_path):
     initialize_worker_db(db_path)
     if not os.path.exists(GEOIP_DB) or not os.path.exists(input_path): return
@@ -256,25 +267,25 @@ async def main(input_path, db_path):
     if not connections_to_test:
         reader.close(); return
 
-    print(f"--- Worker starting Speed Test on {len(connections_to_test)} candidates ---")
+    print(f"--- Worker starting Speed & Ping Test on {len(connections_to_test)} candidates ---")
     start_port = 10900
     
     for i in range(0, len(connections_to_test), BATCH_SIZE):
         if is_approaching_timeout():
-            print("⏰ Approaching workflow timeout. Stopping speed tests for this worker."); break
+            print("⏰ Approaching workflow timeout. Stopping tests for this worker."); break
         
         batch = connections_to_test[i:i + BATCH_SIZE]
-        print(f"--- Processing speed test batch {i//BATCH_SIZE + 1} ---")
+        print(f"--- Processing test batch {i//BATCH_SIZE + 1} ---")
         
         successful_in_batch = await process_batch(batch, reader, start_port)
         if successful_in_batch:
             bulk_upsert_to_worker_db(db_path, successful_in_batch)
     
     reader.close()
-    print("\nSpeed test worker finished.")
+    print("\nTest worker finished.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run speed test on a batch of configs.")
+    parser = argparse.ArgumentParser(description="Run speed and ping test on a batch of configs.")
     parser.add_argument('--input', required=True)
     parser.add_argument('--db-file', required=True)
     args = parser.parse_args()
