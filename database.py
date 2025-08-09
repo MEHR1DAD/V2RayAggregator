@@ -17,12 +17,14 @@ def initialize_db():
             last_checked TEXT NOT NULL
         )
     ''')
+    # --- FIX: Added ping_ms column to the table definition ---
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS configs (
             config TEXT PRIMARY KEY,
             source_url TEXT,
             country_code TEXT,
             speed_kbps REAL,
+            ping_ms INTEGER, -- ستون جدید برای ذخیره پینگ
             last_tested TEXT
         )
     ''')
@@ -64,12 +66,14 @@ def bulk_update_configs(configs_data: list):
         return
     conn = get_connection()
     cursor = conn.cursor()
+    # --- FIX: Updated SQL query to include the ping_ms column ---
     cursor.executemany('''
-        INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested) VALUES (?, ?, ?, ?, ?)
+        INSERT INTO configs (config, source_url, country_code, speed_kbps, ping_ms, last_tested) VALUES (?, ?, ?, ?, ?, ?)
         ON CONFLICT(config) DO UPDATE SET
             source_url = excluded.source_url,
             country_code = excluded.country_code,
             speed_kbps = excluded.speed_kbps,
+            ping_ms = excluded.ping_ms,
             last_tested = excluded.last_tested
     ''', configs_data)
     conn.commit()
@@ -80,7 +84,8 @@ def bulk_update_configs(configs_data: list):
 def get_configs_by_country(country_code: str, limit: int = None):
     conn = get_connection()
     cursor = conn.cursor()
-    query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC"
+    # --- FIX: Updated ORDER BY to include ping for better sorting ---
+    query = "SELECT config FROM configs WHERE country_code = ? ORDER BY speed_kbps DESC, ping_ms ASC"
     if limit:
         query += f" LIMIT {limit}"
     cursor.execute(query, (country_code,))
@@ -111,12 +116,12 @@ def get_all_db_configs():
     conn.close()
     return configs
 
-# *** تابع جدید برای پیشنهاد شما ***
 def get_top_configs(limit: int):
-    """۱۰۰ کانفیگ برتر را، صرف نظر از کشور، بر اساس سرعت برمی‌گرداند."""
+    """کانفیگ‌های برتر را بر اساس سرعت (نزولی) و پینگ (صعودی) برمی‌گرداند."""
     conn = get_connection()
     cursor = conn.cursor()
-    query = "SELECT config FROM configs ORDER BY speed_kbps DESC LIMIT ?"
+    # --- FIX: Updated ORDER BY to include ping for better sorting ---
+    query = "SELECT config FROM configs ORDER BY speed_kbps DESC, ping_ms ASC LIMIT ?"
     cursor.execute(query, (limit,))
     configs = [row[0] for row in cursor.fetchall()]
     conn.close()
@@ -146,7 +151,7 @@ def get_configs_above_speed(country_code: str, speed_kbps: float) -> list:
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT config FROM configs WHERE country_code = ? AND speed_kbps >= ? ORDER BY speed_kbps DESC",
+        "SELECT config FROM configs WHERE country_code = ? AND speed_kbps >= ? ORDER BY speed_kbps DESC, ping_ms ASC",
         (country_code, speed_kbps)
     )
     configs = [row[0] for row in cursor.fetchall()]
@@ -157,7 +162,6 @@ def get_live_configs_no_speed(country_code: str) -> list:
     """Gets live configs that have not been speed-tested (speed is NULL or 0)."""
     conn = get_connection()
     cursor = conn.cursor()
-    # Assuming configs with no speed test have speed_kbps as NULL or 0
     cursor.execute(
         "SELECT config FROM configs WHERE country_code = ? AND (speed_kbps IS NULL OR speed_kbps <= 1)",
         (country_code,)
