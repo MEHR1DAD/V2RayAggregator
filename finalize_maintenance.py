@@ -12,19 +12,20 @@ def finalize_database(input_dir, final_db_path):
     
     new_db_path = f"new_{final_db_path}"
     
-    # Ensure no old temporary file exists
     if os.path.exists(new_db_path):
         os.remove(new_db_path)
 
-    # Create a new, clean database
+    # Create a new, clean database with the CORRECT schema
     main_conn = sqlite3.connect(new_db_path)
     main_cursor = main_conn.cursor()
+    # *** FIX: Added the ping_ms column to the CREATE TABLE statement ***
     main_cursor.execute('''
         CREATE TABLE configs (
             config TEXT PRIMARY KEY,
             source_url TEXT,
             country_code TEXT,
             speed_kbps REAL,
+            ping_ms INTEGER,
             last_tested TEXT
         )
     ''')
@@ -46,15 +47,18 @@ def finalize_database(input_dir, final_db_path):
             source_conn = sqlite3.connect(db_path)
             source_cursor = source_conn.cursor()
             
-            source_cursor.execute("SELECT config, source_url, country_code, speed_kbps, last_tested FROM configs")
+            # *** FIX: Select the ping_ms column from partial results ***
+            source_cursor.execute("SELECT config, source_url, country_code, speed_kbps, ping_ms, last_tested FROM configs")
             configs_to_merge = source_cursor.fetchall()
             
             if configs_to_merge:
+                # *** FIX: Insert data including the ping_ms column ***
                 main_cursor.executemany('''
-                    INSERT INTO configs (config, source_url, country_code, speed_kbps, last_tested)
-                    VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO configs (config, source_url, country_code, speed_kbps, ping_ms, last_tested)
+                    VALUES (?, ?, ?, ?, ?, ?)
                     ON CONFLICT(config) DO UPDATE SET
                         speed_kbps = excluded.speed_kbps,
+                        ping_ms = excluded.ping_ms,
                         last_tested = excluded.last_tested
                 ''', configs_to_merge)
                 main_conn.commit()
@@ -67,7 +71,6 @@ def finalize_database(input_dir, final_db_path):
 
     main_conn.close()
     
-    # Replace the old database with the new, clean one
     print(f"\nReplacing old database with the new one containing {total_merged_configs} live configs.")
     os.rename(new_db_path, final_db_path)
     
