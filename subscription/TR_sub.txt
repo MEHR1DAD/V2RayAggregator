@@ -9,6 +9,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@62.133.63.212:57456?pr
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@62.133.63.212:57456?type=tcp&headerType=none
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@tr.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@tr.vpnsparta.pro:57456?type=tcp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpqZFlZT1N1RHVWcHRvSVE5Z29Od093@62.133.63.21:65262?note=--Telegram--@NetifyVPN--
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ist1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221/?security=none&encryption=none&headerType=none&type=tcp
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221/?type=tcp&encryption=none

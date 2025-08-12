@@ -13,6 +13,7 @@ vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.85.119.151:8880?path=%2F6TvG8D6H
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.85.119.151:8880?path=%2FJ5aLQOY1R9ONWYCM%3Fed%3D%23Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI---Join---MARAMBASHI%3Fed%3D2560&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.85.119.151:8880?path=/6TvG8D6HimXKgdp2?ed=2560&security=none&encryption=none&host=vngsupply.ip-ddns.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@45.85.119.151:8880?security=none&type=ws&path=%2FJ5aLQOY1R9ONWYCM&host=vngsupply.ip-ddns.com&sni=vngsupply.ip-ddns.com&fp=chrome
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.12.31.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.85.118.213:8880?type=ws&host=jp.laoyoutiao.link
 vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNkXHVkZDEyIFZNLVRDUC1OQSBcdWQ4M2NcdWRkZjdcdWQ4M2NcdWRkZjQgUk8tNS4xODIuMzcuMjMxOjQ5NjY0IiwgImFkZCI6ICI1LjE4Mi4zNy4yMzEiLCAicG9ydCI6ICI0OTY2NCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJ0bHMiOiAiIiwgImlkIjogIjkzOTU0NzRjLWUyYTEtNDU2NS1iYTU2LWMxNmU3MzczYzRjNCJ9
 vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNkXHVkZDI1Sm9pbitUZWxlZ3JhbTpARmFyYWhfVlBOXHVkODNkXHVkZmUzIiwgImFkZCI6ICI1LjE4Mi4zNy4yMzEiLCAicG9ydCI6ICI0OTY2NCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJ0bHMiOiAiIiwgImlkIjogIjkzOTU0NzRjLWUyYTEtNDU2NS1iYTU2LWMxNmU3MzczYzRjNCJ9
