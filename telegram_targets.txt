@@ -4445,6 +4445,7 @@ SDA_69
 SDTLiveChat
 SDTOfficialChannel
 SD_Companies
+SD_CompaniesUg
 SD_WLF_Teamwork
 SEPAHCYBERY
 SETSPACETOKEN
