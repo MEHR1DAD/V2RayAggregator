@@ -1,9 +1,6 @@
-vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIue+juWbvSh5dWRvdTEyMy50b3Ag546J6LGG5YWN6LS56IqC54K5KSIsDQogICJhZGQiOiAiMTg4LjE2NC4xNTkuMTUiLA0KICAicG9ydCI6ICI4ODgwIiwNCiAgImlkIjogImY4YjZjOGE0LTU2MzMtMzE1OC05YzBlLTc3NTE4ZTNmYzM1NiIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiVEcuV2FuZ0NhaTIuczQuZGItbGluazAyLnRvcCIsDQogICJwYXRoIjogIi9kYWJhaSZUZWxlZ3JhbfCfh6jwn4ezQFdhbmdDYWkyLz9lZD0yNTYwIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIlRHLldhbmdDYWkyLnM0LmRiLWxpbmswMi50b3AiLA0KICAiYWxwbiI6ICIiDQp9
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?security=&sni=Telegram-channel-WangCai2&allowInsecure=1&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&host=cf.d3z.net&encryption=none
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=/Telegram🇨🇳&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=/Telegram🇨🇳&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2تعداد
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?security=&sni=Telegram-channel-WangCai2&allowInsecure=1&type=ws&path=/Telegram🇨🇳&host=cf.d3z.net&encryption=none
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=/Telegram🇨🇳&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2تعداد
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?security=&sni=Telegram-channel-WangCai2&allowInsecure=1&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&host=cf.d3z.net&encryption=none
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?security=&sni=Telegram-channel-WangCai2&allowInsecure=1&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3&host=cf.d3z.net&encryption=none
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=/Telegram🇨🇳&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
