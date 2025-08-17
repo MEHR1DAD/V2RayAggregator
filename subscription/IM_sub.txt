@@ -1,4 +1,3 @@
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.162.228.251:8880?&sni=Telegram-channel-WangCai2&type=ws&headerType=none&host=cf.d3z.net&path=%2FTelegram
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.162.228.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.162.228.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://86817ff4-7da0-4b54-92c3-65b5f2cf73ea@185.162.229.86:443?security=tls&sni=panel.xrayone.click&type=ws&host=panel.xrayone.click&path=%2Fdl&fp=random&alpn=h2
