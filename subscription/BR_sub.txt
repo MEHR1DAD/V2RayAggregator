@@ -1,4 +1,5 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.192.124.188:990
+vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.133.35.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram%D9%8B%DA%BA%E2%80%A1%C2%A8%D9%8B%DA%BA%E2%80%A1%C2%B3
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.133.35.251:8880?path=%2FTelegram%D9%8B%DA%BA%E2%80%A1%C2%A8%D9%8B%DA%BA%E2%80%A1%C2%B3&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.133.35.251:8880?path=/Telegramًں‡¨ًں‡³&security=none&encryption=none&host=cf.d3z.net&type=ws&sni=Telegram-channel-WangCai2
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.133.35.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegramًں‡¨ًں‡³&allowInsecure=0
@@ -9,6 +10,7 @@ vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?encryption=none&se
 vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?encryption=none&security=tls&sni=pq-brazil1.09vpn.com&type=ws&headertype=none&path=%2Fvless%2F
 vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?path=%2Fvless%2F&security=tls&encryption=none&type=ws&sni=pq-brazil1.09vpn.com
 vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?security=tls&sni=pq-brazil1.09vpn.com&allowInsecure=1&fp=chrome&type=ws&path=/vless/&packetEncoding=xudp&encryption=none
+vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?security=tls&sni=pq-brazil1.09vpn.com&type=ws&path=%2Fvless%2F&allowInsecure=1
 vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?security=tls&sni=pq-brazil1.09vpn.com&type=ws&path=/vless/
 vless://1a7a39e4-8c9b-4052-b8b2-c0929536bba5@95.164.4.88:8443?security=tls&sni=pq-brazil1.09vpn.com&type=ws&path=/vless/&fp=chrome
 vless://1dbfb57c-164e-47c5-9355-8e0c429e7b99@45.82.245.173:80?path=%2Fvless%2F&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
