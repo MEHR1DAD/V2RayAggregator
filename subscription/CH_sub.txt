@@ -19,6 +19,7 @@ trojan://LG7HKcZFIJ@45.155.54.117:110?type=tcp&headerType=none&security=tls&sni=
 trojan://LG7HKcZFIJ@sws.ftpcomand.com:110/?type=tcp&security=tls&sni=sws.ftpcomand.com
 trojan://LG7HKcZFIJ@sws.ftpcomand.com:110?security=tls&sni=sws.ftpcomand.com&type=tcp&headerType=none
 vless://394f6981-a782-4779-9a85-e6cf22935d93@zrh-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://583ceab3-4022-4553-9158-9bedc625ad4e@185.18.250.177:8880?sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳&allowInsecure=0
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80/?type=ws&encryption=none&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80?encryption=none&security=none&type=ws&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed%3D2560
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80?security=none&type=ws&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed%3D2560
