@@ -1,6 +1,4 @@
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@154.197.75.251:8880?encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3&security=none&type=ws
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@154.197.75.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@154.218.15.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://22d373dd-baa2-44a3-995c-80898e052534@154.194.0.15:443?path=%2FJust%2FWay%2FForFreedom%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=download.wablo.ir&fp=chrome&type=ws&sni=download.wablo.ir
 vless://22d373dd-baa2-44a3-995c-80898e052534@154.194.0.15:443?path=/Just/Way/ForFreedom/&security=tls&alpn=h2,http/1.1&encryption=none&host=download.wablo.ir&fp=chrome&type=ws&sni=download.wablo.ir
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.197.64.43:443?encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&fp=chrome&type=grpc&authority=&serviceName=%2F&mode=gun
@@ -12,9 +10,3 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@154.218.15.238:443?security=tls&alp
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.218.15.238:443?security=tls&sni=pqh23v4.hiddendom.shop&fp=random&type=grpc&serviceName=%2F&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.218.15.238:443?security=tls&sni=pqh23v4.hiddendom.shop&type=grpc&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.218.15.238:443?security=tls&sni=pqh23v4.hiddendom.shop&type=grpc&host=pqh23v4.hiddendom.shop&alpn=h2
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@156.243.83.7:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=ip.langmanshanxi.top&sni=Telegram-channel-WangCai2
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.197.75.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.218.15.213:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=%2F
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.218.15.29:8880?encryption=none&host=hk.laoyoutiao.link&path=%2FTelegramU0001F1E8U0001F1F3&security=none&type=ws
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.218.15.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.218.15.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
