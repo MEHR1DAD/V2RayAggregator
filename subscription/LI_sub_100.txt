@@ -1,4 +1,4 @@
-vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?security=tls&sni=1lpxy6haqm-451516713-direct.zamam.co&alpn=h2,http/1.1&fp=randomized&type=tcp&flow=xtls-rprx-vision&encryption=none
-vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?security=tls&alpn=h2,http/1.1&fp=randomized&type=tcp&flow=xtls-rprx-vision&encryption=none
-vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=1lpxy6haqm-451516713-direct.zamam.co&alpn=h2%2Chttp%2F1.1&fp=randomized&type=tcp&headerType=none
 vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?security=tls&sni=1lpxy6haqm-451516713-direct.zamam.co&alpn=h2,http/1.1&fp=chrome&type=tcp&flow=xtls-rprx-vision&encryption=none
+vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=1lpxy6haqm-451516713-direct.zamam.co&alpn=h2%2Chttp%2F1.1&fp=randomized&type=tcp&headerType=none
+vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?security=tls&alpn=h2,http/1.1&fp=randomized&type=tcp&flow=xtls-rprx-vision&encryption=none
+vless://1lpxy6haqm@1lpxy6haqm-451516713-direct.zamam.co:443?security=tls&sni=1lpxy6haqm-451516713-direct.zamam.co&alpn=h2,http/1.1&fp=randomized&type=tcp&flow=xtls-rprx-vision&encryption=none
