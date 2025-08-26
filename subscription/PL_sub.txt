@@ -18,6 +18,8 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxc2NhdkY1VXZpSUwtOFYtRTRyYUJB@2.59.163.101:2
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxc2NhdkY1VXZpSUwtOFYtRTRyYUJB@2.59.163.104:2222
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxc2NhdkY1VXZpSUwtOFYtRTRyYUJB@2.59.163.106:2222
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxc2NhdkY1VXZpSUwtOFYtRTRyYUJB@2.59.163.106:2222?prefix=%16%03%01%00%C2%A8%01%01
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyU2UySEVvTUJ0QXAxdVE5TnRVTjVV@77.83.246.74:443
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyU2UySEVvTUJ0QXAxdVE5TnRVTjVV@77.83.246.74:443?note=--Telegram--@NetifyVPN--
 trojan://IvyZSIWHO1MFSuxOazT8gxUGb@free-fin-0.undef.network:443?type=ws&host=free-fin-0.undef.network&path=/f2fc2a1f&security=tls&sni=free-fin-0.undef.network
 vless://32db15da-c178-4b0c-9a27-0351951711d3@ov-poland1.09vpn.com:8443/?type=ws&encryption=none&flow=&path=/vless/&security=tls
 vless://32db15da-c178-4b0c-9a27-0351951711d3@ov-poland1.09vpn.com:8443?encryption=none&security=tls&type=ws&path=%2Fvless%2F
