@@ -7,7 +7,6 @@ vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?note=---Telegra
 vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?note=@DHLIM0&path=/&security=none&encryption=none&type=ws
 vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?path=%2F&security=none&encryption=none&type=ws
 vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?path=/&security=none&encryption=none&type=ws
-vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?security=none&type=ws&packetEncoding=xudp&encryption=none
 vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?type=ws&amp;security=none
 vless://53d981cc-ad13-4ddd-812b-10bd372e88bb@93.115.240.74:15700?type=ws&security=none
 vless://dc5273c5-1ef2-406c-84e6-098ce6c74310@93.115.240.88:20200?type=ws&security=none
