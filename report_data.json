@@ -1,5 +1,5 @@
 {
-    "report_generated_at": "2025-08-27T15:11:29.175397+00:00",
+    "report_generated_at": "2025-08-27T18:14:26.772363+00:00",
     "stats": {
         "total_active_configs": 7954,
         "configs_by_protocol": {
@@ -23,7 +23,7 @@
             ],
             [
                 "DE",
-                791
+                790
             ],
             [
                 "JP",
@@ -43,7 +43,7 @@
             ],
             [
                 "FI",
-                166
+                167
             ],
             [
                 "LT",
