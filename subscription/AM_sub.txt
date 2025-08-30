@@ -1,9 +1,4 @@
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@188.164.159.192:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=cf.d3z.net&sni=Telegram-channel-WangCai2
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.192:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=cf.d3z.net&sni=Telegram-channel-WangCai2
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
-vless://583ceab3-4022-4553-9158-9bedc625ad4e@77.105.163.186:8880?encryption=none&security=none&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=%2FTelegramU0001F1E8U0001F1F3%20%40WangCai2
 vless://73938f0e-d1af-43ab-9b6d-063bca1dd694@93.115.240.74:15800?encryption=none&security=none&type=ws&path=%2F
 vless://73938f0e-d1af-43ab-9b6d-063bca1dd694@93.115.240.74:15800?type=ws&amp;security=none
 vless://73938f0e-d1af-43ab-9b6d-063bca1dd694@93.115.240.74:15800?type=ws&security=none
 vless://dc5273c5-1ef2-406c-84e6-098ce6c74310@93.115.240.88:20200?type=ws&security=none
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
