@@ -3,6 +3,8 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@193.124.18.251:8880?encryption=none
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@193.124.18.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@195.85.23.251:8880/?type=ws&encryption=none&flow=&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@195.85.23.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3
+vless://35aedb95-51ae-47ee-80c0-c02b7f928831@195.85.23.225:443?encryption=none&security=tls&sni=bahram.shirazipooya.ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=bahram.shirazipooya.ir&path=%2FeyJqdW5rIjoidVFVRmZkMXR0a25nIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560
+vless://35aedb95-51ae-47ee-80c0-c02b7f928831@195.85.23.236:443?encryption=none&security=tls&sni=bahram.shirazipooya.ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=bahram.shirazipooya.ir&path=%2FeyJqdW5rIjoidVFVRmZkMXR0a25nIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560
 vless://394f6981-a782-4779-9a85-e6cf22935d93@cz1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@195.85.23.225:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@195.85.23.236:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
