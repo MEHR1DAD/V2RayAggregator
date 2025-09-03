@@ -1,7 +1,17 @@
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0akRKOGxPa1R2eThqbmY2S0dDYUE0@77.83.246.74:443
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@45.144.49.140:57456
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@pl.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozSTRnbERaV25LSFpTS0hLWVB5VW02@77.83.246.74:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozSTRnbERaV25LSFpTS0hLWVB5VW02@77.83.246.74:443?note=--Telegram--@NetifyVPN--
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0dlgxdiNOU0ZQX0xHX2JK@79.133.122.157:808
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpFbnQ4REUyV2Vpd2JaUEFkYWtrbDMy@77.83.246.74:443
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@45.144.49.140:57456
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@45.144.49.140:57456?note=Telegram---NetifyVPN---
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@45.144.49.140:57456?prefix=%16%03%01%00%C2%A8%01%01
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@pl.vmagnum.win:57456
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMzgzNzIyNGVkNDY1ZjAw@45.144.48.63:57456
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMzgzNzIyNGVkNDY1ZjAw@45.144.48.63:57456?type=tcp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMzgzNzIyNGVkNDY1ZjAw@war.ssvpnapp.win:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990?type=tcp
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990?type=tcp&headerType=none
@@ -16,6 +26,7 @@ vless://5402dc3b-206e-4ae8-a58d-4fd27a59e142@57.128.198.226:80/?type=ws&encrypti
 vless://5402dc3b-206e-4ae8-a58d-4fd27a59e142@57.128.198.226:80?encryption=none&security=none&type=ws&host=---%40External_Net---%40External_Net---%40External_Net---%40External_Net---%40External_Net&path=%2Fvless%2F
 vless://5402dc3b-206e-4ae8-a58d-4fd27a59e142@57.128.198.226:80?path=%2Fvless%2F&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
 vless://5402dc3b-206e-4ae8-a58d-4fd27a59e142@57.128.198.226:80?path=/vless/&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
+vless://5e8990b1-17c9-4e98-88c5-bbeee2b6bf58@57.128.198.152:80/?type=ws&encryption=none&flow=&host=ShadowProxy66&path=%2Fvless%2F
 vless://5e8990b1-17c9-4e98-88c5-bbeee2b6bf58@57.128.198.152:80/?type=ws&encryption=none&host=ShadowProxy66&path=%2Fvless%2F
 vless://5e8990b1-17c9-4e98-88c5-bbeee2b6bf58@57.128.198.152:80?encryption=none&security=none&type=ws&host=%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn&path=%2Fvless%2F
 vless://5e8990b1-17c9-4e98-88c5-bbeee2b6bf58@57.128.198.152:80?encryption=none&security=none&type=ws&host=---%40ShadowProxy66&path=%2Fvless%2F
