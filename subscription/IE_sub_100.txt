@@ -1,7 +1,7 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U%3D@23.94.67.166:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U@23.94.67.166:8080
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U@ie01.giamping.com:8080
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U=@23.94.67.166:8080
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U%3D@23.94.67.166:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U=@ie01.giamping.com:8080
-vless://b60c854d-a608-4cde-87b8-76256814b330@37.0.6.253:2096?encryption=none&security=tls&type=ws&sni=edge-tunnel.dtcm.monster&host=edge-tunnel.dtcm.monster&path=%2ftelegram%f0%9f%87%a8%f0%9f%87%b3%40wangcai2%2f%3fed%3d2560
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U=@23.94.67.166:8080
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U@ie01.giamping.com:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0MjAwMGUwMi02YjRkLTQ2YWQtYTU3Mi04MGRiN2RiMmE5Y2U%3D@ie01.giamping.com:8080
+vless://b60c854d-a608-4cde-87b8-76256814b330@37.0.6.253:2096?encryption=none&security=tls&type=ws&sni=edge-tunnel.dtcm.monster&host=edge-tunnel.dtcm.monster&path=%2ftelegram%f0%9f%87%a8%f0%9f%87%b3%40wangcai2%2f%3fed%3d2560
