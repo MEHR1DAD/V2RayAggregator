@@ -26,3 +26,5 @@ vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.82.213:8880?type=ws&host=jp
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.168:8880?encryption=none&security=none&sni=kjgx.laoyoutiao.link&type=ws&host=kjgx.laoyoutiao.link&path=Telegram%40WangCai2%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.20:8880?security=&type=ws&path=Telegram&host=us.laoyoutiao.link&encryption=none
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.251.83.213:8880?type=ws&host=jp.laoyoutiao.link
+vmess://eyJhZGQiOiAiMTg1LjIzNi4yNi4xMTEiLCAidiI6ICIyIiwgInBzIjogIlx1ODk3Zlx1NzNlZFx1NzI1OSBWMkNST1NTLkNPTSIsICJwb3J0IjogMzIwMjAsICJpZCI6ICI3OGI0ZmI1Ny0zOWQ3LTRlOWQtZGQzOC1jOWEzODMyMmJjYjIiLCAiYWlkIjogIjAiLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIn0=
+vmess://eyJhZGQiOiIxODUuMjM2LjI2LjExMSIsInYiOiIyIiwicHMiOiJcdWQ4M2NcdWRkZTlcdWQ4M2NcdWRkZWEgREUgfCBcdWQ4M2RcdWRkMTMgVk1FU1MgfCBAemVyb2JhaXBpYW8gWzE3XSIsInBvcnQiOjMyMDIwLCJpZCI6Ijc4YjRmYjU3LTM5ZDctNGU5ZC1kZDM4LWM5YTM4MzIyYmNiMiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwiaG9zdCI6IiIsInBhdGgiOiIiLCJ0bHMiOiIifQ
