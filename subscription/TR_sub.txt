@@ -34,6 +34,7 @@ vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221?security=none&
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221?security=none&type=tcp&encryption=none&headerType=none
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221?security=none&type=tcp&packetEncoding=xudp&encryption=none
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221?type=tcp
+vless://93491e84-f8ec-463b-a43a-e5465f3fe056@164.138.202.139:10777?security=none&encryption=none&headerType=none&type=tcp
 vless://affe7ad5-8bc5-47c0-94b9-5231452412bb@164.138.202.139:10777
 vless://affe7ad5-8bc5-47c0-94b9-5231452412bb@164.138.202.139:10777?security=&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://affe7ad5-8bc5-47c0-94b9-5231452412bb@164.138.202.139:10777?security=&encryption=none&headerType=none&type=tcp
