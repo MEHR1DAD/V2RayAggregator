@@ -4,9 +4,8 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ejRYb1MwVGZ6eE5zU3FCVkFXdDdO@83.147.216.70:
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@185.193.102.7:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@185.193.102.7:57456?prefix=%16%03%01%00%C2%A8%01%01
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@rusrv.vpnsparta.pro:57456
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0dlgxdiNOU0ZQX0xHX2JK@46.62.152.84:808
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0dlgxdiNOU0ZQX0xHX2JK@213.111.182.241:808
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M1RkenNIb3NQUWpHQWFMbW85bEdR@83.147.216.70:64519
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3OURGOVJUbmFyQ1EwY3JJNXJ5a0VV@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCSjVuRFpUdWxtWXpuSHZIWGhTNloz@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpGM25ZNzNkaTVvbldWM2dvdGJwSTBR@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpLYUtldVVkaVNaSjF2bDJqVThHbmZZ@83.147.216.70:64519
@@ -23,10 +22,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZWGdTOENvbVRhbTdxb2VzUGx6bE1v@83.147.216.70:
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZWGdTOENvbVRhbTdxb2VzUGx6bE1v@83.147.216.70:64519?prefix=%16%03%01%00%C2%A8%01%01
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZWGdTOENvbVRhbTdxb2VzUGx6bE1v@83.147.216.70:64519?type=tcp
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@rusrv.vmagnum.win:57456
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprbWdrMXNXWTRGaDRkdzlieGsyTkJH@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptWkdVRldNQWxmV3FJNHZQNTh6dzlEQUh4UjhUWkxuZEtrdlJnSEhGYTllcVdkbng%3D@65.21.243.22:31348
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptWkdVRldNQWxmV3FJNHZQNTh6dzlEQUh4UjhUWkxuZEtrdlJnSEhGYTllcVdkbng=@65.21.243.22:31348
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptWkdVRldNQWxmV3FJNHZQNTh6dzlEQUh4UjhUWkxuZEtrdlJnSEhGYTllcVdkbng=@65.21.243.22:31348?note=Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptWkdVRldNQWxmV3FJNHZQNTh6dzlEQUh4UjhUWkxuZEtrdlJnSEhGYTllcVdkbng@65.21.243.22:31348
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptWkdVRldNQWxmV3FJNHZQNTh6dzlEQUh4UjhUWkxuZEtrdlJnSEhGYTllcVdkbng@65.21.243.22:31348?note=--Telegram--@NetifyVPN--
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwVFViNFl1U21Qb1NKVDRiWVVZZWUy@83.147.216.70:64519
@@ -59,8 +55,12 @@ vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082/?type=ws&encrypt
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?encryption=none&security=none&type=ws&path=%2F
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?path=%2F&security=none&encryption=none&type=ws
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@77.91.103.216:2082?security=&encryption=none&type=ws
-vless://9feaa0bf-df48-5be7-8d91-f9b2a78d3339@93.123.30.86:80?security=&fp=chrome&type=ws&path=/vless&host=fi1.xvless.online&encryption=none
+vless://9feaa0bf-df48-5be7-8d91-f9b2a78d3339@93.123.30.86:80?type=ws&path=%2Fvless
 vless://9feaa0bf-df48-5be7-8d91-f9b2a78d3339@fi1.xvless.online:80?path=%2Fvless&security=&encryption=none&host=fi1.xvless.online&type=ws
+vless://c6eb0c47-9ffb-4240-b300-2e9dd54fdb4a@45.12.151.100:27774?security=none&encryption=none&headerType=none&type=tcp
+vless://c6eb0c47-9ffb-4240-b300-2e9dd54fdb4a@45.12.151.102:27774?security=none&encryption=none&headerType=none&type=tcp
+vless://c6eb0c47-9ffb-4240-b300-2e9dd54fdb4a@45.12.151.109:27774?security=none&encryption=none&headerType=none&type=tcp
+vless://c6eb0c47-9ffb-4240-b300-2e9dd54fdb4a@stephen-yarmohammader.info:27774?encryption=none&security=none&type=tcp&headerType=none
 vless://c6eb0c47-9ffb-4240-b300-2e9dd54fdb4a@stephen-yarmohammader.info:27774?security=none&encryption=none&headerType=none&type=tcp
 vmess://eyJhZGQiOiJ4cmF5dnBuLnRvcCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJlYTQzNzBlMS1iNDZhLTRiYjAtOTgyZS1kZjEzODQ1MDg3NDgiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIyNDEyIiwicHMiOiJAdnBuY2xhc2hmYSAtIDI5NlxuIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
 vmess://eyJhZGQiOiJ5dHJydHAzZTY2NWIucGV5bWFucmlidmFyLnh5eiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0Ijoid3d3LmJpbmcuY29tIiwiaWQiOiIxZDkwMDExMi1lYzNlLTQ1OGMtOTVmOC1kZDQ3NzAxZmRlNWYiLCJuZXQiOiJ3cyIsInBhdGgiOiIxZDkwMDExMi1lYzNlLTQ1OGMtOTVmOC1kZDQ3NzAxZmRlNWYtdm0iLCJwb3J0IjoiMjA1MiIsInBzIjoi2qnYp9mG2KfZhC7Yudi22YjYtNmI8J+RiPCfkZF2MnJheU5HX3JpYnZhcvCfkZHwn5GGIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
