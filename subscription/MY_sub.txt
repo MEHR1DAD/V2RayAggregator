@@ -1,5 +1,7 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@103.243.215.17:990
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.128.54.6:8880/?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---&encryption=none&security=none&fp=chrome&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.128.54.6:8880/?type=grpc&encryption=none&flow=
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.128.54.6:8880?note=---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---&encryption=none&security=none&fp=chrome&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.89.107.232:8880?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---&mode=gun&security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@45.89.107.232:8880?security=&fp=chrome&type=grpc&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930176646994428.gorgan-drc-tusabt.info:8880/?type=grpc&encryption=none&flow=
@@ -10,6 +12,7 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930176646994428.gorgan-drc-tusab
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930176646994428.gorgan-drc-tusabt.info:8880?type=grpc&path=%2f
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053019975.tabriz-drc-tusabt.info:8880?encryption=none&security=&sni=&type=grpc&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053019975.tabriz-drc-tusabt.info:8880?encryption=none&security=none&type=grpc
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053019975.tabriz-drc-tusabt.info:8880?mode=gun&security=none&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053019975.tabriz-drc-tusabt.info:8880?security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053025132.tabriz-drc-tusabt.info:8880?encryption=none&security=&sni=&type=grpc&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638930381053025132.tabriz-drc-tusabt.info:8880?encryption=none&security=none&type=grpc
