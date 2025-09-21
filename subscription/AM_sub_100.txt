@@ -1,3 +1,1 @@
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://0ce0be53-fbc8-4340-a1f8-12f9df28e25b@92.223.2.119:25750?type=ws&security=none
