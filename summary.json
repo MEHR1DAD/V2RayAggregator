@@ -1,5 +1,5 @@
 {
-    "last_update": "2025-09-25T00:39:21.084227+03:30",
+    "last_update": "2025-09-25T04:15:34.897218+03:30",
     "merged_configs_count": 12753,
     "countries": [
         {
@@ -110,7 +110,7 @@
             "code": "HK",
             "name": "هنگ کنگ",
             "flag": "🇭🇰",
-            "count": 122,
+            "count": 121,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/HK_sub_100.txt"
         },
@@ -259,6 +259,14 @@
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/PH_sub_100.txt"
         },
         {
+            "code": "SC",
+            "name": "سیشل",
+            "flag": "🇸🇨",
+            "count": 19,
+            "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SC_sub.txt",
+            "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SC_sub_100.txt"
+        },
+        {
             "code": "KZ",
             "name": "قزاقستان",
             "flag": "🇰🇿",
@@ -273,14 +281,6 @@
             "count": 19,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ID_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/ID_sub_100.txt"
-        },
-        {
-            "code": "SC",
-            "name": "سیشل",
-            "flag": "🇸🇨",
-            "count": 18,
-            "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SC_sub.txt",
-            "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/SC_sub_100.txt"
         },
         {
             "code": "CY",

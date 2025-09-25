@@ -11,12 +11,11 @@ trojan://8482e9fe-eef2-41ea-8675-c5fcc8215d8c@v01.gutingting.com:30017?security=
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hkg1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.232:443/?type=grpc&encryption=none&flow=&security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.232:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
-vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443/?type=grpc&encryption=none&flow=&security=tls&sni=pqh24v3.hiddendom.shop
-vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&alpn=h2&type=grpc
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&type=grpc
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh24v3.hiddendom.shop
+vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh24v3.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&sni=pqh24v3.hiddendom.shop&type=grpc&alpn=h2
-vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&sni=pqh24v3.hiddendom.shop&type=grpc&host=pqh24v3.hiddendom.shop&alpn=h2
+vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?type=grpc&encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&alpn=h2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@156.238.19.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.192.222.213:8880?security=none&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=
 vless://vpn@109.205.56.37:5000?security=none&fp=chrome&type=ws&path=/&host=viber.com&packetEncoding=xudp&encryption=none
