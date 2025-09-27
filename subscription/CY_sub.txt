@@ -1,10 +1,8 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.255.210.49:990
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.150.115.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
-vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&encryption=none&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&path=%2f
-vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&allowInsecure=1&fp=chrome&type=grpc&packetEncoding=xudp&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
-vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.76:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
+vless://48300e8d-4f24-483b-a817-f5e894f06b68@www.csgo.com:2053?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=companypdf9.pages.dev&type=ws&sni=companypdf9.pages.dev
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.85.59.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
 vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@csgo.com:8080?encryption=none&security=none&sni=cdn-node-oss-99.paofu.de&type=ws&host=cdn-node-oss-99.paofu.de&path=%2Fprofile%2Ftelegram%40ssrsub
