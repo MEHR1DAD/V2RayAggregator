@@ -1,2 +1,1 @@
-vless://3766bbe4-16a2-4987-8833-2dcb20731a5f@45.196.29.255:80?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=myvps.nilphreakz.me&fp=chrome
-vless://a225a8ff-1505-4dfd-a3b7-59737bb499ee@45.194.11.255:80?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=myvps.nilphreakz.me&fp=chrome
+vmess://eyJhZGQiOiI0NS4xOTIuOTguMjA1IiwidiI6IjIiLCJwcyI6Ilx1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBISyB8IFx1ZDgzZFx1ZGQxMyBWTUVTUyB8IEB6ZXJvYmFpcGlhbyBbMjFdIiwicG9ydCI6NjQ3MDQsImlkIjoiMjhiZTFkYzgtYzBjMy00OTczLTkyMDUtMmU2MGYzMzU3MmNmIiwiYWlkIjoiMCIsIm5ldCI6IndzIiwidHlwZSI6IiIsImhvc3QiOiIiLCJwYXRoIjoiXC9hcmtpP2VkPTIwNDgiLCJ0bHMiOiIifQ
