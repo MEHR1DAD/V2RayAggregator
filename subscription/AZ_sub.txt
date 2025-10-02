@@ -1,1 +1,2 @@
-vless://136804c6-6f7c-4422-9c36-4d61f4e3f2ff@180.149.44.224:4655?security=none&encryption=none&headerType=none&type=tcp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozcHplNGx5ajhGRmREaXhPa2YySzJvUTRySFg3VnE5eEM5dUt3Qmd2UVlETnhMZjg%3D@180.149.44.105:31348
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozcHplNGx5ajhGRmREaXhPa2YySzJvUTRySFg3VnE5eEM5dUt3Qmd2UVlETnhMZjg@180.149.44.105:31348
