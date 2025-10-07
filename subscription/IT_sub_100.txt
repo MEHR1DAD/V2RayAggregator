@@ -1,4 +1,4 @@
+vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprSnI1Q1BoajNYcm84a3kwbUhnRUJi@91.201.65.82:8443?note=--Telegram--NetifyVPN--
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprSnI1Q1BoajNYcm84a3kwbUhnRUJi@91.201.65.82:8443?note=--Telegram--@NetifyVPN--
-vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprSnI1Q1BoajNYcm84a3kwbUhnRUJi@91.201.65.82:8443
