@@ -1,6 +1,4 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ%3D%3D@176.123.1.175:990
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2052?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me&packetEncoding=xudp&encryption=none
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2082?security=&fp=chrome&type=ws&path=/&host=niyunejw0.kopoly.info&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.193:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.4:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.4:8880?encryption=none&security=none&type=grpc
