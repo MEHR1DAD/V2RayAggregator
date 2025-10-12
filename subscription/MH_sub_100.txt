@@ -1,5 +1,5 @@
+vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?encryption=none&security=tls&sni=vlesspro.llengcugit.sbs&fp=chrome&type=ws&host=vlesspro.llengcugit.sbs&path=%2FTelegram
+vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?encryption=none&security=tls&sni=vlesspro.llengcugit.sbs&fp=chrome&type=ws&host=vlesspro.llengcugit.sbs&path=%2FTelegram%40freecodes%2F%3Fed%3D2560security%3Dtls
 vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096/?type=ws&encryption=none&flow=&host=vlesspro.llengcugit.sbs&path=%2FTelegram%40freecodes%2F%3Fed%3D2560security%3Dtls&security=tls&sni=vlesspro.llengcugit.sbs
 vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?encryption=none&security=tls&sni=vlesspro.llengcugit.sbs&type=ws&host=vlesspro.llengcugit.sbs&path=%2FTelegram%40freecodes%2F%3Fed%3D2560security%3Dtls
-vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?encryption=none&security=tls&sni=vlesspro.llengcugit.sbs&fp=chrome&type=ws&host=vlesspro.llengcugit.sbs&path=%2FTelegram%40freecodes%2F%3Fed%3D2560security%3Dtls
-vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?encryption=none&security=tls&sni=vlesspro.llengcugit.sbs&fp=chrome&type=ws&host=vlesspro.llengcugit.sbs&path=%2FTelegram
 vless://6e433a29-22ac-4061-ae8b-f1731715d0d9@185.207.197.253:2096?path=%2FTelegram%40freecodes%2F%3Fed%3D2560security%3Dtls&security=tls&encryption=none&host=vlesspro.llengcugit.sbs&type=ws&sni=vlesspro.llengcugit.sbs
