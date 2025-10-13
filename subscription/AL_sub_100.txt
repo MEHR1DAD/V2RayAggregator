@@ -1,1 +1,1 @@
-vless://10f3650d-32f6-470a-b100-e29471cf3380@78.159.131.107:443?security=reality&sni=pingless.com&fp=random&pbk=6vqqlSsqIQLQ-pmkPfTQ0tJ2kh3U74YqTUcn06nYagY&sid=b6&type=tcp&flow=xtls-rprx-vision&encryption=none
+vless://d2965257-0536-4811-a0d5-cdce54e90326@45.38.139.10:8443?encryption=none&security=tls&sni=fei.634676.xyz&type=ws&host=fei.634676.xyz&path=%2F%3Fed%3D2560
