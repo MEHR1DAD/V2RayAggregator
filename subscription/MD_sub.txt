@@ -1,7 +1,5 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ%3D%3D@176.123.1.175:990
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@176.123.1.175:990
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2052?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me&packetEncoding=xudp&encryption=none
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2082?security=&fp=chrome&type=ws&path=/&host=niyunejw0.kopoly.info&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.193:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.4:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.190.4:8880?encryption=none&security=none&type=grpc
@@ -690,7 +688,6 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dn
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880/?type=grpc&encryption=none&packetEncoding=xudp
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?encryption=none&security=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?encryption=none&security=none&type=grpc&mode=gun
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?encryption=none&type=grpc&mode=gun
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?encryption=none&type=grpc&path=%2f
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?mode=&security=&alpn=&encryption=none&fp=&type=grpc&serviceName=&sni=&allowInsecure=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638940926058862147.stockholm-prx-dnraacm.info:8880?mode=gun&security=&encryption=none&type=grpc
@@ -771,7 +768,6 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@638943929060330315.warsaw-prx-dnraa
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638943929060330315.warsaw-prx-dnraacp.info:8880?security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638943929060330315.warsaw-prx-dnraacp.info:8880?security=&type=grpc&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880/?encryption=none&security=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880/?encryption=none&type=grpc&mode=gun&security=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880/?type=grpc&amp;encryption=none&amp;flow=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880/?type=grpc&encryption=none&flow=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?encryption=none&security=none&type=grpc
@@ -788,7 +784,6 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraa
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?mode=gun&security=none&encryption=none&authority=?ed=2048@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?mode=gun&security=none&encryption=none&authority=@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz---@V2rayBaaz&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?mode=gun&security=none&encryption=none&authority=MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN---MTMVPN&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?mode=gun&security=none&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?mode=gun&security=none&encryption=none&type=grpc&note=Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---Telegram---@Raiv2mmr---
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638944337658439808.dezful-prx-dnraacp.info:8880?security=none&encryption=none&type=grpc&path=%2f
@@ -910,25 +905,6 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434423505.neyshabur-drc-tu
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434423505.neyshabur-drc-tusacaf.info:8880?security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434423505.neyshabur-drc-tusacaf.info:8880?security=none&encryption=none&type=grpc&path=%2f
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434423505.neyshabur-drc-tusacaf.info:8880?type=grpc&encryption=none
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880/?mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880/?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---&mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880/?type=grpc&encryption=none&flow=
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&security=&type=grpc&alpn=&host=speedtest.net
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&security=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&security=none&type=grpc&authority=v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree---v_ngfree%26&mode=gun
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&security=none&type=grpc&mode=gun
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?encryption=none&type=grpc&path=%2f
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?flow=&type=grpc&mode=gun&serviceName=&security=none
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?mode=gun&security=&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?mode=gun&security=none&encryption=none&type=grpc&serviceName=
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?note=---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---Telegram---%40NetifyVPN---&mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---&mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?note=---Telegram---NetifyVPN---Telegram---NetifyVPN---Telegram---NetifyVPN---Telegram---NetifyVPN---&mode=gun&security=none&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?security=&encryption=none&type=grpc
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?security=none&encryption=none&type=grpc&path=%2f
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430524.neyshabur-drc-tusacaf.info:8880?type=grpc&encryption=none&flow=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430922.neyshabur-drc-tusacaf.info:8880?encryption=none&security=&sni=&type=grpc&alpn=&host=&path=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434430922.neyshabur-drc-tusacaf.info:8880?encryption=none&security=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@638950280434431325.neyshabur-drc-tusacaf.info:8880/?type=grpc&encryption=none
