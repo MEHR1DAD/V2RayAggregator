@@ -58,6 +58,7 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?mode=gun&secur
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?mode=gun&security=none&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?note=-----------Confvip-----------&mode=gun&security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?note=---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---Telegram---@NetifyVPN---&mode=gun&security=none&encryption=none&type=grpc
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?security=&encryption=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?security=&fp=chrome&type=grpc&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?security=&type=grpc&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.153.183.211:8880?security=none&allowInsecure=1&fp=chrome&type=grpc&packetEncoding=xudp&encryption=none
@@ -638,6 +639,7 @@ vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?path=/vless/&secur
 vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?path=/vless/&security=none&encryption=none&host=---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net&type=ws
 vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?security=none&allowInsecure=1&fp=chrome&type=ws&path=/vless/?ed%3D2048@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn&packetEncoding=xudp&encryption=none
 vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?security=none&fp=chrome&type=ws&path=/vless/?ed%3D2048@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn&packetEncoding=xudp&encryption=none
+vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?type=ws&path=/vless/
 vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?type=ws&path=/vless/?ed%3D2048@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn&security=none
 vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?type=ws&path=/vless/?ed=2048@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn----@Evay_vpn&security=none
 vless://ef246c6f-6e7d-4286-af33-5485544b0ba8@45.88.183.164:49355

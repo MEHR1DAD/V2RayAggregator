@@ -55,7 +55,6 @@ vless://eb42c1ce-5ab3-41f0-95ad-80fa467607d9@5.253.41.237:8443?security=tls&sni=
 vless://eb42c1ce-5ab3-41f0-95ad-80fa467607d9@5.253.41.237:8443?security=tls&sni=pq-japan3.09vpn.com&fp=chrome&type=ws&path=/vless/&host=pq-japan3.09vpn.com&encryption=none
 vless://eb42c1ce-5ab3-41f0-95ad-80fa467607d9@5.253.41.237:8443?security=tls&sni=pq-japan3.09vpn.com&fp=random&type=ws&path=/vless/&host=pq-japan3.09vpn.com&encryption=none
 vless://eb42c1ce-5ab3-41f0-95ad-80fa467607d9@5.253.41.237:8443?security=tls&sni=pq-japan3.09vpn.com&type=ws&path=/vless/&allowInsecure=1
-vless://ed242313-b502-4a4a-97f4-336da621a837@45.12.134.217:80?type=ws&path=/vless/
 vless://f61a4285-7264-4d07-9408-7b9ba1922c26@109.123.231.212:2053?security=tls&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=gaosir.unfeeling.sbs&sni=gaosir.unfeeling.sbs&fp=chrome
 vless://f61a4285-7264-4d07-9408-7b9ba1922c26@121.85.55.59:19842?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&type=ws&host=gaosir.unfeeling.sbs&path=X%40%E8%8A%82%E7%82%B9%E7%8B%82%E9%AD%94%2F%3Fed%3D2560
 vless://f61a4285-7264-4d07-9408-7b9ba1922c26@131.186.38.123:443?security=tls&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=gaosir.unfeeling.sbs&sni=gaosir.unfeeling.sbs&fp=chrome

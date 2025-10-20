@@ -1,5 +1,5 @@
 {
-    "last_update": "2025-10-20T21:45:49.911471+03:30",
+    "last_update": "2025-10-21T00:40:19.306204+03:30",
     "merged_configs_count": 23176,
     "countries": [
         {
@@ -14,7 +14,7 @@
             "code": "FR",
             "name": "فرانسه",
             "flag": "🇫🇷",
-            "count": 4428,
+            "count": 4427,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/FR_sub_100.txt"
         },
@@ -62,7 +62,7 @@
             "code": "CY",
             "name": "قبرس",
             "flag": "🇨🇾",
-            "count": 737,
+            "count": 739,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CY_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CY_sub_100.txt"
         },
@@ -94,7 +94,7 @@
             "code": "JP",
             "name": "ژاپن",
             "flag": "🇯🇵",
-            "count": 397,
+            "count": 396,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/JP_sub_100.txt"
         },

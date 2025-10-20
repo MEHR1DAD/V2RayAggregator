@@ -19,7 +19,6 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@92.60.74.149:443?security=tls&sni=p
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.148.107.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.37:8880?security=&sni=sk.laoyoutiao.link&allowInsecure=1&type=ws&path=/TelegramU0001F1E8U0001F1F3&host=sk.laoyoutiao.link&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.83.2.167:443/?type=grpc&encryption=none&security=tls&sni=pqh23v4.hiddendom.shop&alpn=h2
-ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@37.19.198.243:443
 vless://e4824193-4f54-453b-d037-88368e85ef0e@pqh24v2.vetmainconf.shop:8880?encryption=none&security=none&sni=pqh24v2.vetmainconf.shop&alpn=&type=grpc&host=pqh24v2.vetmainconf.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.188.36:443?security=tls&sni=pqh23v4.hiddendom.shop&type=grpc&alpn=h2
 vless://e4824193-4f54-453b-d037-88368e85ef0e@pqh27v5.waipdirect.shop:8880?encryption=none&security=none&sni=pqh27v5.waipdirect.shop&alpn=&type=grpc&host=pqh27v5.waipdirect.shop
@@ -57,6 +56,7 @@ vless://3956dd35-4f86-4b48-a1ca-45a3dbe471a0@51.222.86.7:51952?type=tcp&encrypti
 vless://e4824193-4f54-453b-d037-88368e85ef0e@pqh27v4.waipdirect.shop:8880?encryption=none&security=none&type=grpc
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.8.211.86:443?security=tls&sni=pqh23v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.122:8880/?type=grpc&encryption=none&flow=
+vmess://eyJ2IjoiMiIsInBzIjoiXHUyNjljXHVmZTBmVGVsZWdyYW06QElQX0NGIiwiYWRkIjoiMTAzLjEyNC4xMDcuMTQ0IiwicG9ydCI6IjI5ODAwIiwidHlwZSI6Im5vbmUiLCJpZCI6ImNjMzFkZGZjLWQ5MmUtNGRhYi1jZDA2LTAwZGZiODRhZjhhYyIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=
 vless://401374e6-df77-41fb-f638-dad8184f175b@176.124.223.161:443?security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@94.247.142.103:443?encryption=none&security=tls&sni=pqh23v5.hiddendom.shop&type=grpc
 vless://401374e6-df77-41fb-f638-dad8184f175b@185.135.9.223:443?mode=gun&security=tls&encryption=none&alpn=h2&type=grpc&serviceName=&sni=pqh24v3.hiddendom.shop
@@ -89,6 +89,7 @@ vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.93:8880?mode=gun&security
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.131.7.127:443?security=tls&sni=pqh23v4.hiddendom.shop&type=grpc&alpn=h2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.248:8880/?type=ws&encryption=none&flow=&host=sk.laoyoutiao.link&path=%2FTelegramU0001F1E8U0001F1F3%3Fed%3D2048%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn----%40Evay_vpn
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.162:8880?sni=sk.laoyoutiao.link&type=ws&host=sk.laoyoutiao.link&path=/TelegramрЯЗ®рЯЗ≥&allowInsecure=0
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@64.74.163.218:990
 vmess://eyJhZGQiOiAiNDUuOC4xNDYuMTI5IiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICIwNzA0MDE2Zi01NDM1LTQ2NTUtYmU2YS03NzFhNWFiYTUyYzMiLCAibmV0IjogIndzIiwgInBhdGgiOiAiL3ZtZXNzLyIsICJwb3J0IjogIjgwIiwgInBzIjogIlx1ZDgzZFx1ZGQyNUpvaW4rVGVsZWdyYW06QEZhcmFoX1ZQTlx1ZDgzZFx1ZGZlMyIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICItLS0iLCAidiI6ICIyIn0=
 vless://401374e6-df77-41fb-f638-dad8184f175b@45.12.30.232:443?security=tls&sni=pqh36v4.hiddendom.shop&type=grpc&host=pqh36v4.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@141.11.203.139:443?mode=gun&security=tls&encryption=none&alpn=h2&authority=&type=grpc&serviceName=&sni=pqh23v5.hiddendom.shop
@@ -97,4 +98,3 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@45.8.211.86:443?mode=gun&security=t
 vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.78:8880?mode=gun&security=none&encryption=none&type=grpc
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@91.193.58.121:8880/?type=ws&encryption=none&host=sk.laoyoutiao.link&path=%2FTelegram%25F0%259F%2587%25A8%25F0%259F%2587%25B3%2520%40MxlShare%2520%40WangCai2%2520%2F
 vmess://eyJhZGQiOiIxNTkuMjAzLjEzOC4xMjMiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZGQzN2ViODktYTkyYS00MTAyLWFmMzUtZWFjN2YyYTk1MzY3IiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIxOTAxIiwicHMiOiJAdnBuY2xhc2hmYSAtIDE4N1xuIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
-vless://e4824193-4f54-453b-d037-88368e85ef0e@185.236.232.129:8880?security=&encryption=none&type=grpc
