@@ -1,6 +1,11 @@
 vless://119ca269-b05c-4491-b735-ff97b5a450fa@45.207.200.90:18000?security=none&type=tcp&path=%2f
+vless://119ca269-b05c-4491-b735-ff97b5a450fa@45.207.200.90:18000?security=none&type=tcp&path=/
 vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096/?type=ws&encryption=none&flow=&host=vless.muzheng.top&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560&security=tls&sni=vless.muzheng.top
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?encryption=none&security=tls&sni=vless.muzheng.top&fp=chrome&type=ws&host=vless.muzheng.top&path=%2F
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?encryption=none&security=tls&sni=vless.muzheng.top&fp=chrome&type=ws&host=vless.muzheng.top&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560
 vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?encryption=none&type=ws&host=vless.muzheng.top&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3@WangCai2/?ed%3D2560&security=tls&sni=vless.muzheng.top
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560&security=tls&encryption=none&host=vless.muzheng.top&type=ws&sni=vless.muzheng.top
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?path=/Telegram🇨🇳@WangCai2/?ed=2560&security=tls&encryption=none&host=vless.muzheng.top&type=ws&sni=vless.muzheng.top
 vless://99f314b4-ac10-498b-b7c9-04aa904e1b12@45.207.200.90:18000?security=none&type=tcp&path=%2f
 vless://e31a3192-7215-4130-9035-eadc9f347ae8@45.207.200.90:18000?&type=tcp&headerType=none&path=%2F
 vless://e31a3192-7215-4130-9035-eadc9f347ae8@45.207.200.90:18000?&type=tcp&headerType=none&path=🔒 [By EbraSha] vless-US
