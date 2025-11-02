@@ -1,5 +1,4 @@
 vless://9de88209-c544-4294-8419-1119153d624c@sv4.utsteam2.top:40001?encryption=none&security=none&type=ws
+vless://18a056b9-6591-45b4-bace-52667b18f8c1@180.149.44.224:4655?security=none&encryption=none&headerType=none&type=tcp
 vless://9de88209-c544-4294-8419-1119153d624c@sv4.utsteam2.top:40001?encryption=none&security=none&type=ws&path=%2F
 vless://9de88209-c544-4294-8419-1119153d624c@sv4.utsteam2.top:40004?encryption=none&security=none&type=tcp&headerType=none
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozcHplNGx5ajhGRmREaXhPa2YySzJvUTRySFg3VnE5eEM5dUt3Qmd2UVlETnhMZjg@180.149.44.105:31348
-vless://18a056b9-6591-45b4-bace-52667b18f8c1@180.149.44.224:4655?security=none&encryption=none&headerType=none&type=tcp
