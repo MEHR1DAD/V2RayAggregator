@@ -406,8 +406,6 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@pqh30v7.ipforvetra.shop:80/?type=gr
 vless://401374e6-df77-41fb-f638-dad8184f175b@pqh30v7.ipforvetra.shop:80?encryption=none&security=none&sni=pqh30v7.ipforvetra.shop&alpn=&type=grpc&host=pqh30v7.ipforvetra.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@pqh30v7.ipforvetra.shop:80?type=grpc&path=%2f
 vless://6446027109-client-4be@94.131.104.225:2085?path=%2Fassets%2Fimg%2Fbanner_v3.webp%2F%23%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL%2C%40V2RAY_SPATIAL&security=none&encryption=none&host=ws.li.tunnelx.space&type=ws
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2052?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me&packetEncoding=xudp&encryption=none
-vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2082?security=&fp=chrome&type=ws&path=/&host=niyunejw0.kopoly.info&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.189.107:8880/?type=grpc&encryption=none&flow=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.189.107:8880?encryption=none&security=none&type=grpc
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@103.35.189.107:8880?security=&encryption=none&type=grpc
@@ -880,7 +878,6 @@ vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.137:8880?security=none&a
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.137:8880?security=none&encryption=none&fp=chrome&type=grpc&path=%2f
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.137:8880?security=none&fp=chrome&type=grpc&packetEncoding=xudp&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.137:8880?type=grpc&encryption=none&flow=
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.154:8880/?type=grpc&encryption=none
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.154:8880/?type=grpc&encryption=none&flow=
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.154:8880/?type=grpc&encryption=none&flow=&packetEncoding=xudp
 vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.242.87.154:8880?encryption=none&security=none&fp=chrome&type=grpc
