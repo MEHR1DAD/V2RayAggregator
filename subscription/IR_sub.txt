@@ -1,7 +1,6 @@
 vless://148939da-8ac0-4a38-b8ae-ebb78f787f30@2.144.4.218:443?encryption=none&security=none&fp=chrome&type=ws&path=%2F
 vless://148939da-8ac0-4a38-b8ae-ebb78f787f30@2.144.4.218:443?path=%2F&security=&encryption=none&type=ws
 vless://148939da-8ac0-4a38-b8ae-ebb78f787f30@2.144.4.218:443?path=%2F&security=none&encryption=none&type=ws
-vless://148939da-8ac0-4a38-b8ae-ebb78f787f30@2.144.4.218:443?path=/&security=none&encryption=none&type=ws
 vless://148939da-8ac0-4a38-b8ae-ebb78f787f30@2.144.4.218:443?path=/&security=none&encryption=none&type=ws&note=@freeOnlineVPN
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?security=&encryption=none&headerType=none&type=tcp
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?type=tcp&security=none
