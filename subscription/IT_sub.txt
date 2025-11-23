@@ -15,4 +15,3 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystr
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://b7c88dc6-1513-49c0-be12-1cfe37bcd25b@151.101.241.242:80/?type=ws&encryption=none&flow=&host=cd123.global.ssl.fastly.net&path=%2F
 vless://b7c88dc6-1513-49c0-be12-1cfe37bcd25b@151.101.241.242:80?type=ws&encryption=none&host=cd123.global.ssl.fastly.net&path=/
-vless://b7c88dc6-1513-49c0-be12-1cfe37bcd25b@usa.fastlynew.hosting-ip.com:80/?type=ws&encryption=none&flow=&host=cd123.global.ssl.fastly.net&path=%2F
