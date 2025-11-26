@@ -1,3 +1,3 @@
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+@WangCai2+%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.135.235.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram
 vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%40%E8%8A%82%E7%82%B9%E7%8B%82%E9%AD%94%2F%3Fed%3D2560
+vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+@WangCai2+%2F%3Fed%3D2560
