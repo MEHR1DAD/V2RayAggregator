@@ -1,6 +1,9 @@
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.135.235.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%3F%3F%3F%3F%2B%40WangCai2%2B%2F%3Fed%3D2560
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%40%E8%8A%82%E7%82%B9%E7%8B%82%E9%AD%94%2F%3Fed%3D2560
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&fp=chrome&type=ws&host=gaosir.unfeeling.sbs&path=/Telegram????+@WangCai2+/?ed%3D2560&packetEncoding=xudp
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&fp=chrome&type=ws&host=gaosir.unfeeling.sbs&path=/Telegram@节点狂魔/?ed%3D2560&packetEncoding=xudp
-vless://f61a4285-7264-4d07-9408-7b9ba1922c26@45.135.235.253:2096?encryption=none&security=tls&sni=gaosir.unfeeling.sbs&type=ws&host=gaosir.unfeeling.sbs&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+@WangCai2+%2F%3Fed%3D2560
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh27v5.carwashipdir.shop&alpn=h2&type=grpc&host=pqh27v5.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh27v7.carwashipdir.shop&alpn=h2&type=grpc&host=pqh27v7.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh29v2.carwashipdir.shop&alpn=h2&type=grpc&host=pqh29v2.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh29v3.carwashipdir.shop&alpn=h2&type=grpc&host=pqh29v3.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh29v4.carwashipdir.shop&alpn=h2&type=grpc&host=pqh29v4.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh29v7.carwashipdir.shop&alpn=h2&type=grpc&host=pqh29v7.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh30v7.carwashipdir.shop&alpn=h2&type=grpc&host=pqh30v7.carwashipdir.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?mode=gun&security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh27v5.hiddendom.shop
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?mode=gun&security=tls&encryption=none&alpn=h2&authority=&type=grpc&serviceName=&sni=pqh27v5.hiddendom.shop
