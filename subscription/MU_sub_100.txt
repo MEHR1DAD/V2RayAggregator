@@ -1,1 +1,5 @@
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?path=%2F%3FTELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI%3Fed%3D512&security=tls&encryption=none&host=vless.muzheng.top&type=ws&sni=vless.muzheng.top
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?path=%2F&security=tls&encryption=none&host=vless.muzheng.top&fp=chrome&type=ws&sni=vless.muzheng.top
 vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%2F%3Fed%3D2560&security=tls&encryption=none&host=vless.muzheng.top&type=ws&sni=vless.muzheng.top
+vless://2456f90c-5183-476d-b069-16ae74ce120f@45.194.11.253:2096?encryption=none&security=tls&sni=fast01.0860852.xyz&type=ws&host=fast01.0860852.xyz&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3+@WangCai2+%2F%3Fed%3D2560
+vless://7556317c-dff6-46e8-ad29-b408f2a6456e@45.192.224.253:2096?allowInsecure=1&ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=vless.muzheng.top&path=%2FTelegram%25F0%259F%2587%25AE%25F0%259F%2587%25B7%40ShadowProxy66%2F&security=tls&sni=vless.muzheng.top&type=ws
