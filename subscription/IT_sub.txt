@@ -17,4 +17,3 @@ vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?security=none&
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?type=tcp&encryption=none&flow=
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?type=tcp&path=%2f
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?type=tcp&path=/
-vless://ed419045-6333-4f6a-93ba-9d87d4e5759b@usaa.fastlynew.hosting-ip.com:80?path=/&security=none&encryption=none&host=mojhsjd.global.ssl.fastly.net&type=ws
