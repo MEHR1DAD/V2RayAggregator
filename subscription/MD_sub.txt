@@ -1,6 +1,7 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2VkFjbGw0UDh4UFRVVlZ0SGVTVDNvblJtTG9WSUJTVQ%3D%3D@94.131.104.147:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2VkFjbGw0UDh4UFRVVlZ0SGVTVDNvblJtTG9WSUJTVQ==@94.131.104.147:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2VkFjbGw0UDh4UFRVVlZ0SGVTVDNvblJtTG9WSUJTVQ@94.131.104.147:443
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4YWZjNjMzZWI2MzIyN2U5@lv.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1bzdFYnRxSXdnWlhYSG1NdjVMYkxjT3hwdHlQbE5raA%3D%3D@178.23.190.238:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1bzdFYnRxSXdnWlhYSG1NdjVMYkxjT3hwdHlQbE5raA==@178.23.190.238:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1bzdFYnRxSXdnWlhYSG1NdjVMYkxjT3hwdHlQbE5raA@178.23.190.238:443
@@ -58,6 +59,8 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@pqh27v6.ipforvetra.shop:80?encrypti
 vless://401374e6-df77-41fb-f638-dad8184f175b@pqh29v5.ipforvetra.shop:80?encryption=none&security=none&sni=pqh29v5.ipforvetra.shop&alpn=&type=grpc&host=pqh29v5.ipforvetra.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@pqh29v6.ipforvetra.shop:80?encryption=none&security=none&sni=pqh29v6.ipforvetra.shop&alpn=&type=grpc&host=pqh29v6.ipforvetra.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@pqh29v8.ipforvetra.shop:80?encryption=none&security=none&sni=pqh29v8.ipforvetra.shop&alpn=&type=grpc&host=pqh29v8.ipforvetra.shop
+vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2052?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me&packetEncoding=xudp&encryption=none
+vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2082?security=&fp=chrome&type=ws&path=/&host=niyunejw0.kopoly.info&encryption=none
 vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@185.236.232.117:8880?security=none&encryption=none&type=grpc&path=%2f
 vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@185.236.232.117:8880?security=none&encryption=none&type=grpc&path=/
 vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@185.236.232.117:8880?type=grpc&path=%2f
