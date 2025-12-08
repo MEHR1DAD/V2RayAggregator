@@ -1,5 +1,6 @@
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?security=&encryption=none&headerType=none&type=tcp
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?type=tcp&security=none
+vless://296f8b1b-5f03-48ca-a72f-1072894d79ee@81.12.33.182:3080?security=none&type=ws&headerType=&path=%2Flklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwjlklklkopkpwqkepoqwejdiojqowijedopjqwepdijqwedjpqwoejopjdwj%3Fed%3D4096&host=parsabr.com
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=none&security=none&type=ws&path=/
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?path=/&security=none&encryption=none&type=ws
