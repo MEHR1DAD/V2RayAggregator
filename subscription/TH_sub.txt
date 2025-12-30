@@ -10,4 +10,3 @@ trojan://pUF+zmIw0QuRESBPLofx7eOj6Xc49@38.54.82.205:27877/?type=tcp&security=tls
 trojan://pUF+zmIw0QuRESBPLofx7eOj6Xc49@38.54.82.205:27877?security=tls&sni=www.metaphysicalmagnet.click&path=%2f
 trojan://pUF+zmIw0QuRESBPLofx7eOj6Xc49@38.54.82.205:27877?security=tls&sni=www.metaphysicalmagnet.click&path=/
 trojan://pUF+zmIw0QuRESBPLofx7eOj6Xc49@38.54.82.205:27877?type=tcp&security=tls&sni=www.metaphysicalmagnet.click
-vless://8afb49f3-c337-4c3a-a113-a6fb98a29c48@vpn.chitphong.shop:8080?encryption=none&security=none&type=ws&host=www.speedtest.net&path=%2F
