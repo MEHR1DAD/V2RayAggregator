@@ -1,4 +1,4 @@
-vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=%2FIVApi%2FUS%2F1&security=none&encryption=none&type=ws
 vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=/IVApi/US/1&security=none&encryption=none&type=ws
-vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=/IVApi/US/1?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN&security=none&encryption=none&type=ws
+vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=%2FIVApi%2FUS%2F1&security=none&encryption=none&type=ws
 vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=%2FIVApi%2FUS%2F1%3Fed%3D2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN&security=none&encryption=none&type=ws
+vless://a8cc4860-2daa-a943-a2ba-d2ea31251d11@87.229.100.155:80?path=/IVApi/US/1?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN&security=none&encryption=none&type=ws
