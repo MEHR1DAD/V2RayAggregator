@@ -17,6 +17,10 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443?type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://8449ba07-9c88-4967-9a5c-6663b4f42dcf@usaa.fastlynew.hosting-ip.com:80?path=%2F&security=none&encryption=none&host=civan.global.ssl.fastly.net&type=ws
+vless://8449ba07-9c88-4967-9a5c-6663b4f42dcf@usaa.fastlynew.hosting-ip.com:80?security=none&type=ws&path=%2F&host=civan.global.ssl.fastly.net&encryption=none
+vless://turboo-server@server.ultra-irancell.com:80/?path=%2Fed%3D2560&security=&encryption=none&host=turboo-server.io&type=ws
+vless://turboo-server@server.ultra-irancell.com:80/?path=%2Fed%3D2560&security=none&encryption=none&host=turboo-server.io&type=ws
 vless://turboo-server@server.ultra-irancell.com:80?encryption=none&type=ws&host=turboo-server.io&path=/ed%3D2560&security=none
 vless://turboo-server@server.ultra-irancell.com:80?path=%2Fed%3D2560&security=&encryption=none&host=turboo-server.io&type=ws
 vless://turboo-server@server.ultra-irancell.com:80?path=%2Fed%3D2560&security=none&encryption=none&host=turboo-server.io&type=ws
