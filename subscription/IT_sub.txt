@@ -12,9 +12,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRNHQ4VDdoRVlZM21EMkZuNHdueHlLNFgzNUFVenZSOA=
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRNHQ4VDdoRVlZM21EMkZuNHdueHlLNFgzNUFVenZSOA@176.126.83.121:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRNHQ4VDdoRVlZM21EMkZuNHdueHlLNFgzNUFVenZSOA@176.126.83.121:443?
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRNHQ4VDdoRVlZM21EMkZuNHdueHlLNFgzNUFVenZSOA@176.126.83.121:443?name=0360+%7C+%F0%9F%87%AE%F0%9F%87%B9+Italy+%7C+SS+%7C+TG%3A+%40YoutubeUnBlockRu
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193:443
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193:443?note=@freeOnlineVPN
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443?type=tcp
+vless://0b923ff4-007f-43b8-f3b8-b0fd84fed30c@usaa.fastlynew.hosting-ip.com:80?path=%2F&security=none&encryption=none&host=civan.global.ssl.fastly.net&type=ws
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://7e11f8db-4200-4bed-b352-b06516128fba@usaa.fastlynew.hosting-ip.com:80?path=/&security=none&encryption=none&host=civan.global.ssl.fastly.net&type=ws
