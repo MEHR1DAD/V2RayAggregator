@@ -18,10 +18,10 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443?type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://TELEGRAM-NUFiLTER-3@NUFiLTER.fastlynew.hosting-ip.com:80?path=%2Ftelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%3Fed%3D1024&security=&encryption=none&host=barayekhoda.global.ssl.fastly.net&type=ws
 vless://TELEGRAM-NUFiLTER-3@NUFiLTER.fastlynew.hosting-ip.com:80?path=/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER?ed=1024&security=none&encryption=none&host=barayekhoda.global.ssl.fastly.net&type=ws
 vless://telegram-turboo-server@server.ultra-irancell.com:80/?path=%2Fed%3D2056&security=none&encryption=none&host=jone-turboo-server.com&type=ws
 vless://telegram-turboo-server@server.ultra-irancell.com:80?encryption=none&security=none&type=ws&host=jone-turboo-server.com&path=%2Fed%3D2056
 vless://telegram-turboo-server@server.ultra-irancell.com:80?path=%2Fed%3D2056&security=&encryption=none&host=jone-turboo-server.com&type=ws
+vless://telegram-turboo-server@server.ultra-irancell.com:80?path=%2Fed%3D2056&security=none&encryption=none&host=jone-turboo-server.com&type=ws
 vless://telegram-turboo-server@server.ultra-irancell.com:80?path=/ed=2056&security=none&encryption=none&host=jone-turboo-server.com&type=ws
 vless://telegram-turboo-server@server.ultra-irancell.com:80?type=ws&host=jone-turboo-server.com&path=/ed%3D2056&security=none
