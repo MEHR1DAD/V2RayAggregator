@@ -5,6 +5,4 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0ZGYyYmU3YzZlZWYwZWQ2@38.54.29.130:11204
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0ZGYyYmU3YzZlZWYwZWQ2@38.54.29.130:11205
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5MzJhNTE5YzgxNDdhOTk4@38.54.29.18:11201
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjk1NWM4NTMwMzIwMTIw@38.54.29.57:11201
-ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M%3D@38.54.29.82:9090
-ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M@38.54.29.82:9090
 vless://4d94fa33-9462-48b4-b7de-8a2863560d19@217.12.204.110:7443?alpn=h2%2Chttp%2F1.1&encryption=none&host=chat.speedload.ru&path=%2F&fp=chrome&security=tls&sni=chat.speedload.ru&type=xhttp
