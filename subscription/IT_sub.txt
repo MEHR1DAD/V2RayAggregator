@@ -18,6 +18,5 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@promo19v.bystrivpn.ru:443?type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://92d927ec-7af8-7960-cdcd-5fc48fd0f6f8@s.pou-ria.com:80?path=%2Fed%3D2560&security=none&encryption=none&host=speedtest.net.net&type=ws
 vless://turboo-server@server.ultra-irancell.com:80?path=%2Fed%3D2560&security=none&encryption=none&host=jone-turboo-server.com&type=ws
 vless://turboo-server@server.ultra-irancell.com:80?path=/ed=2560&security=none&encryption=none&host=jone-turboo-server.com&type=ws
