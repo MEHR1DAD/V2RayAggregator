@@ -1,5 +1,5 @@
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
-vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@188.164.159.158:2096?security=tls&type=ws&path=/?ed=2560&Telegram🇨🇳+@WangCai2&host=sni.111000.de5.net&sni=sni.111000.de5.net&fp=chrome&encryption=none
-vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@188.164.159.158:2096?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&encryption=none&host=sni.111000.de5.net&fp=chrome&type=ws&sni=sni.111000.de5.net
 vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@188.164.159.158:2096?encryption=none&security=tls&sni=sni.111000.de5.net&fp=chrome&type=ws&host=sni.111000.de5.net&path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2
+vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@188.164.159.158:2096?security=tls&type=ws&path=/?ed=2560&Telegram🇨🇳+@WangCai2&host=sni.111000.de5.net&sni=sni.111000.de5.net&fp=chrome&encryption=none
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
+vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@188.164.159.158:2096?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&encryption=none&host=sni.111000.de5.net&fp=chrome&type=ws&sni=sni.111000.de5.net
