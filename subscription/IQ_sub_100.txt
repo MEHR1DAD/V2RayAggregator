@@ -1,2 +1,2 @@
-vless://02fb468f-21f2-460e-bfa1-ef52ae5e627f@81.90.29.19:443?encryption=none&security=tls&sni=nlcdn5.suio.me&packetEncoding=xudp
 vless://02fb468f-21f2-460e-bfa1-ef52ae5e627f@81.90.29.19:443?encryption=none&security=tls&sni=nlcdn5.suio.me&type=tcp
+vless://02fb468f-21f2-460e-bfa1-ef52ae5e627f@81.90.29.19:443?encryption=none&security=tls&sni=nlcdn5.suio.me&packetEncoding=xudp
