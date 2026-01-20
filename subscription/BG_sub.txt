@@ -12,6 +12,10 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwUW1uQzAzSk9iYlBoZGg1RkJKSGdENmpuVExjaHNSQQ%
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwUW1uQzAzSk9iYlBoZGg1RkJKSGdENmpuVExjaHNSQQ==@95.164.116.33:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwUW1uQzAzSk9iYlBoZGg1RkJKSGdENmpuVExjaHNSQQ@95.164.116.33:443
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwUW1uQzAzSk9iYlBoZGg1RkJKSGdENmpuVExjaHNSQQ@95.164.116.33:443?
+vless://cffb4fa6-9b24-4ecf-9e89-87ea3535395a@185.221.64.12:666?security=&encryption=none&headerType=none&type=tcp
+vless://e8b1500b-e9e8-5492-8312-f4eadf7d0767@146.19.80.73:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=nasnet-146198073-direct.iranpress.co&allowInsecure=true&alpn=h2,http/1.1&packetEncoding=xudp
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@147.78.140.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
+vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@147.78.140.20:8880?path=%2F&security=&encryption=none&host=us.laoyoutiao.link&type=ws&sni=us.laoyoutiao.link
 vless://nasnet@146.19.80.73:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=nasnet-146198073-direct.iranpress.co&alpn=h2%2Chttp%2F1.1&allowInsecure=1&fp=chrome
 vless://nasnet@nasnet-146198073-direct.iranpress.co:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=nasnet-146198073-direct.iranpress.co&alpn=h2%2Chttp%2F1.1&allowInsecure=1&fp=chrome
 vless://nasnet@nasnet-146198073-direct.iranpress.co:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=nasnet-146198073-direct.iranpress.co&alpn=h2%2Chttp%2F1.1&fp=chrome&packetEncoding=xudp

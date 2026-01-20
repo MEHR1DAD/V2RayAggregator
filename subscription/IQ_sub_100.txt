@@ -1,6 +1,2 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpIbVpmZEduZjJMQmRraWRpdks0VjM5@81.90.31.219:443
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6RzMyYmtqajNjZWhYdDJCOGVpamJW@81.90.31.219:443
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUDY1Ump0dFB3QzZrSjVtVFRvcVNp@81.90.31.219:443/?outline=1
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpKQzFCREVYT2RZbmM3N2NIMGl1UUFP@81.90.31.219:443
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpIbVpmZEduZjJMQmRraWRpdks0VjM5@81.90.31.219:443?note=--Telegram--NetifyVPN--
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2SDhRMU9YS1pST0pWeGRlT3Y2bG83@81.90.31.219:443
+vless://02fb468f-21f2-460e-bfa1-ef52ae5e627f@81.90.29.19:443?encryption=none&security=tls&sni=nlcdn5.suio.me&type=tcp
+vless://02fb468f-21f2-460e-bfa1-ef52ae5e627f@81.90.29.19:443?encryption=none&security=tls&sni=nlcdn5.suio.me&packetEncoding=xudp
