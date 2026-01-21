@@ -1,4 +1,7 @@
 vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?encryption=none&packetEncoding=xudp
-vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?security=none&amp%3Bencryption=none&amp%3BheaderType=none&amp%3Btype=tcp
-vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?security=&encryption=none&headerType=none&type=tcp
+vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117/?type=tcp&encryption=none&flow=
 vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?security=none&encryption=none&headerType=none&type=tcp
+vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?type=tcp&path=%2f
+vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?security=none&amp%3Bencryption=none&amp%3BheaderType=none&amp%3Btype=tcp
+vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117
+vless://582c84b9-25e9-48ae-826b-e1bdafca3730@98.142.254.3:25117?security=&encryption=none&headerType=none&type=tcp
