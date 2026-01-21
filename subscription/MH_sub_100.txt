@@ -1,6 +1,6 @@
-vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&insecure=0&allowInsecure=0&type=ws&host=sni.111000.cc.cd&path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2
-vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&insecure=0&allowInsecure=0&type=ws&host=sni.111000.cc.cd&path=%2F
-vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&type=ws&host=sni.111000.cc.cd&path=/&packetEncoding=xudp
 vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&type=ws&host=sni.111000.cc.cd&packetEncoding=xudp
+vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&type=ws&host=sni.111000.cc.cd&path=/&packetEncoding=xudp
+vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&insecure=0&allowInsecure=0&type=ws&host=sni.111000.cc.cd&path=%2F
 vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&type=ws&host=sni.111000.cc.cd&path=/?ed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3@WangCai2&packetEncoding=xudp
 vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&type=ws&host=sni.111000.cc.cd&path=/?ed=2560&Telegram🇨🇳@WangCai2
+vless://1a25f8ad-cad2-4e93-b5bf-34e42bcac02a@185.207.199.238:2096?encryption=none&security=tls&sni=sni.111000.cc.cd&insecure=0&allowInsecure=0&type=ws&host=sni.111000.cc.cd&path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2
