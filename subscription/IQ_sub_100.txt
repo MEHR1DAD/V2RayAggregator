@@ -1,6 +1,6 @@
-vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@81.90.29.19:443?type=tcp&encryption=none&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
+vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@nlcdn5.suio.me:443/?type=tcp&encryption=none&flow=&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
 vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@nlcdn5.suio.me:443?encryption=none&security=tls&sni=nlcdn5.suio.me&insecure=0&allowInsecure=0&type=tcp&headerType=none
 vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@nlcdn5.suio.me:443?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=nlcdn5.suio.me
-vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@81.90.29.19:443/?type=tcp&encryption=none&flow=&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
-vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@nlcdn5.suio.me:443/?type=tcp&encryption=none&flow=&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
 vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@nlcdn5.suio.me:443?type=tcp&encryption=none&flow=&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
+vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@81.90.29.19:443?type=tcp&encryption=none&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
+vless://ba9ddd0d-5ffd-4d40-b76d-df32ecb092a1@81.90.29.19:443/?type=tcp&encryption=none&flow=&security=tls&sni=nlcdn5.suio.me&allowInsecure=1
