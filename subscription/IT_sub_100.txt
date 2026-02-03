@@ -1,10 +1,11 @@
-vless://a7a9f670-44c0-45a9-8047-69db0203c142@185.247.184.59:443?type=tcp&encryption=none&security=tls&sni=itcdn1.suio.me&allowInsecure=1
 vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443/?type=tcp&encryption=none&flow=&security=tls&sni=itcdn1.suio.me&allowInsecure=1
-vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?encryption=none&security=tls&sni=itcdn1.suio.me&insecure=1&allowInsecure=1&type=tcp&headerType=none
 vless://a7a9f670-44c0-45a9-8047-69db0203c142@185.247.184.59:443/?type=tcp&encryption=none&flow=&security=tls&sni=itcdn1.suio.me&allowInsecure=1
-vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?security=tls&encryption=none&sni=itcdn1.suio.me&type=tcp&path=/
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193:443?
-vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?security=tls&encryption=none&sni=itcdn1.suio.me&type=tcp&path=%2f
+vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?encryption=none&security=tls&sni=itcdn1.suio.me&insecure=1&allowInsecure=1&type=tcp&headerType=none
 vless://a7a9f670-44c0-45a9-8047-69db0203c142@185.247.184.59:443?encryption=none&security=tls&sni=itcdn1.suio.me&type=tcp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193:443?
+vless://a7a9f670-44c0-45a9-8047-69db0203c142@185.247.184.59:443?type=tcp&encryption=none&security=tls&sni=itcdn1.suio.me&allowInsecure=1
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpTd1RTaFhZU1FkNDA0RklTczhORmVK@38.180.195.193:443
+vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?security=tls&encryption=none&sni=itcdn1.suio.me&type=tcp&path=%2f
 vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://a7a9f670-44c0-45a9-8047-69db0203c142@itcdn1.suio.me:443?security=tls&encryption=none&sni=itcdn1.suio.me&type=tcp&path=/
 vless://a7a9f670-44c0-45a9-8047-69db0203c142@185.247.184.59:443?encryption=none&security=tls&sni=itcdn1.suio.me&fp=chrome&insecure=0&allowInsecure=0&type=tcp&headerType=none
