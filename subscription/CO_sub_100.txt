@@ -1,3 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@181.119.30.20:990
-vless://4c642cae-1a6d-4e51-a1c3-fa5892437aa3@91.148.134.83:8443?&security=tls&fp=chrome&sni=5465765525.ccfly.tech&type=ws&headerType=none&host=5465765525.ccfly.tech&path=%2F%3Fed%3D2048
 vless://4c642cae-1a6d-4e51-a1c3-fa5892437aa3@91.148.134.83:8443?encryption=none&security=tls&sni=5465765525.ccfly.tech&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=5465765525.ccfly.tech&path=%2F%3Fed%3D2048
