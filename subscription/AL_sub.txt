@@ -20,7 +20,6 @@ vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?encryption
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=none&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&serviseName=%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray&security=none&encryption=none&type=ws
-vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&serviseName=@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray&security=none&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?type=ws&security=none&path=/vless/
