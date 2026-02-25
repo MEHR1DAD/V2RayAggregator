@@ -1,5 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@77.74.228.138:2096?path=/?ed=2560&telegram @wangcai2&security=tls&encryption=none&host=sni.111000.indevs.in&fp=chrome&type=ws&sni=sni.111000.indevs.in
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@77.74.228.238:2096?type=ws&security=tls&encryption=none&sni=sni.jpmj.dev&host=sni.jpmj.dev&ed=2560&eh=Sec-WebSocket-Protocol
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@77.74.228.238:2096?encryption=none&security=tls&sni=sni.jpmj.dev&type=ws&host=sni.jpmj.dev&path=%2F%3Fed%3D2560
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@77.74.228.238:2096?type=ws&security=tls&encryption=none&sni=sni.jpmj.dev&path=/%3Fed%3D2560&host=sni.jpmj.dev
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@77.74.228.138:2096?encryption=none&security=tls&sni=sni.111000.indevs.in&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=sni.111000.indevs.in&path=%2F
