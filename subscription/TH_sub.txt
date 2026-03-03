@@ -15,5 +15,3 @@ vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80?encryption=
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80?path=/vless&security=none&encryption=none&host=www.ptnk.sry-vpn.com&type=ws
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80?security=none&encryption=none&type=ws&host=www.ptnk.sry-vpn.com&path=%2fvless
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80?type=ws&encryption=none&flow=&host=www.ptnk.sry-vpn.com&path=%2Fvless
-vless://8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e@s112.ayxj.top:443?encryption=none&type=tcp&headerType=none&fp=random&host=s112.ayxj.top&path=&flow=xtls-rprx-vision&security=tls&sni=u708330u1799s112.ayxj.top&serviceName=&mode=&alpn=
-vless://8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e@s169.ayxj.top:443?encryption=none&flow=xtls-rprx-vision&type=raw&headerType=none&security=tls&fp=chrome&sni=u708330ua013s169.ayxj.top
