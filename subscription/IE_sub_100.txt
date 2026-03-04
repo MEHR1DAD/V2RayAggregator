@@ -1,2 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@37.0.6.138:2096?type=ws&host=sni.111000.indevs.in&path=/?ed=2560&security=tls&sni=sni.111000.indevs.in&fp=chrome&allowInsecure=0
 ss://YWVzLTI1Ni1nY206a0RXdlhZWm9UQmNHa0M0@38.180.152.210:8881
