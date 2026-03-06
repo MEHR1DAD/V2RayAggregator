@@ -1,6 +1,8 @@
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855/?type=ws&encryption=none&flow=&path=%2F
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855/?type=ws&encryption=none&flow=&path=/
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855/?type=ws&encryption=none&path=%2F
+vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855?allowInsecure=0&sni=Join---i10VPN---Join---i10VPN---Join---i10VPN---Join---i10VPN&type=ws&host=Join---i10VPN---Join---i10VPN---Join---i10VPN---Join---i10VPN&path=/
+vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855?allowInsecure=0&type=ws
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855?encryption=none&security=none&type=ws
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855?encryption=none&security=none&type=ws&path=%2F
 vless://e4fc4761-154f-490e-bbaa-b4fa193f1073@45.148.31.0:15855?encryption=none&type=ws&path=%2F&security=none
