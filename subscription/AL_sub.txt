@@ -1,4 +1,3 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@78.159.131.90:443?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2&security=tls&encryption=none&insecure=0&host=sni.111000.v6.navy&type=ws&allowInsecure=0&sni=sni.111000.v6.navy
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?encryption=none&type=ws&path=%2Fvless%2F&security=none
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?encryption=none&type=ws&security=none&path=%2Fvless%2F
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?path=%2Fvless%2F&security=&encryption=none&type=ws
@@ -9,9 +8,7 @@ vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?encryption
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=none&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=%2Fvless%2F&serviseName=%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray%2C%40icv2ray&security=none&encryption=none&type=ws
-vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws
-vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@45.15.170.237:80?encryption=none&path=%2Fvless%2F&security=none&type=ws
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@45.15.170.237:80?encryption=none&path=%2Fvless%2F&type=ws
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@45.15.170.237:80?encryption=none&type=ws&path=%2fvless%2f
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@45.15.170.237:80?type=ws&encryption=none&path=/vless/
