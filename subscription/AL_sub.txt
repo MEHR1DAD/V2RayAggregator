@@ -1,5 +1,6 @@
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?encryption=none&type=ws&security=none&path=%2Fvless%2F
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?path=%2Fvless%2F&security=&encryption=none&type=ws
+vless://8910cbb3-33b1-4266-a243-ac780ac63394@45.15.170.237:80?path=/vless/&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-Albania1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-Albania1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?encryption=none&path=%2Fvless%2F&security=none&type=ws
@@ -12,6 +13,7 @@ vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?path=/vles
 vless://8910cbb3-33b1-4266-a243-ac780ac63394@pq-albania1.09vpn.com:80?security=none&type=ws&path=%2Fvless%2F&host=pq-albania1.09vpn.com&encryption=none
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@pq-Albania1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
+vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@pq-albania1.09vpn.com:80?path=%2Fvless%2F&security=none&encryption=none&type=ws
 vless://b4819c49-6c7e-4b57-9b9b-c73031e1de11@pq-albania1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws
 vmess://eyJ2IjoiMiIsInBzIjoiQUwgXHVkODNjXHVkZGU2XHVkODNjXHVkZGYxIFx1MjUwNyBWTUVTUy1XUy1OVExTIC0gUHEgSG9zdGluZyBQbHVzIFMuci5sLiBcdTI1MDcgNDUuMTUuMTcwLjIzNyIsImFkZCI6IjQ1LjE1LjE3MC4yMzciLCJwb3J0Ijo4MCwiaWQiOiI4MjBkNGI0Zi0zMzU3LTRkYzctOTM4MS02ZTVmZDUyYjVmMzkiLCJhaWQiOjAsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiItLS0iLCJwYXRoIjoiL3ZtZXNzLyJ9
 vmess://eyJ2IjoiMiIsInBzIjoiW09wZW5SYXldIPCfh6bwn4exIEFMLTQ4IiwiYWRkIjoiNDUuMTUuMTcwLjIzNyIsInBvcnQiOjgwLCJpZCI6IjgyMGQ0YjRmLTMzNTctNGRjNy05MzgxLTZlNWZkNTJiNWYzOSIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiNDUuMTUuMTcwLjIzNyIsInBhdGgiOiIvdm1lc3MvIn0=
