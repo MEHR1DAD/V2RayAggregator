@@ -8,4 +8,5 @@ vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@168.222.16.102:80?encryption=none&h
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@168.222.16.102:80?encryption=none&host=www.ptnk.sry-vpn.com&path=/vless&security=none&type=ws
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@168.222.16.102:80?encryption=none&type=ws&security=none&path=/vless&host=www.ptnk.sry-vpn.com
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@168.222.16.102:80?type=ws&encryption=none&host=www.ptnk.sry-vpn.com&path=/vless
+vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80/?type=ws&encryption=none&flow=&host=www.ptnk.sry-vpn.com&path=%2Fvless
 vless://4dc817f7-2595-4330-a1b0-e35e7c6b803a@www.ptnk.sry-vpn.com:80/?type=ws&encryption=none&flow=&host=www.ptnk.sry-vpn.com&path=/vless
