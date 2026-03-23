@@ -1,49 +1,49 @@
 {
-    "report_generated_at": "2026-03-23T01:10:53.522069+00:00",
+    "report_generated_at": "2026-03-23T05:52:47.249900+00:00",
     "stats": {
-        "total_active_configs": 10213,
+        "total_active_configs": 10408,
         "configs_by_protocol": {
-            "vmess": 4651,
-            "vless": 4076,
-            "ss": 1266,
-            "trojan": 220
+            "vmess": 4641,
+            "vless": 4175,
+            "ss": 1307,
+            "trojan": 285
         },
         "top_10_countries": [
             [
                 "US",
-                2449
+                2515
             ],
             [
                 "FR",
-                1435
+                1468
             ],
             [
                 "GB",
-                1014
+                1056
             ],
             [
                 "DE",
-                1003
+                947
             ],
             [
                 "NL",
-                538
+                546
             ],
             [
                 "MD",
-                498
+                500
             ],
             [
                 "JP",
-                403
+                438
             ],
             [
                 "RU",
-                270
+                296
             ],
             [
                 "CY",
-                249
+                247
             ],
             [
                 "CA",
@@ -54,7 +54,7 @@
             "total_targets": 13300
         },
         "github_stats": {
-            "total_crawled_urls": 227044
+            "total_crawled_urls": 227971
         }
     }
 }
