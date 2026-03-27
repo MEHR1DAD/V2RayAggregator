@@ -1,10 +1,11 @@
-trojan://WF42809561@settled-camel.rooster465.autos:443?sni=settled-camel.rooster465.autos
-trojan://WF42809561@optimal-dane.rooster465.autos:443?sni=optimal-dane.rooster465.autos
-trojan://WF42809561@saving-anemone.rooster465.autos:443?sni=saving-anemone.rooster465.autos
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@37.0.6.138:2096?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&type=ws&allowInsecure=0&sni=sni.111000.indevs.in
+trojan://WF42809561@tough-pigeon.rooster465.autos:443?sni=tough-pigeon.rooster465.autos
 trojan://WF42809561@eternal-serval.rooster465.autos:443?sni=eternal-serval.rooster465.autos
 trojan://WF42809561@genuine-cougar.rooster465.autos:443?sni=genuine-cougar.rooster465.autos
-trojan://WF42809561@wondrous-dogfish.rooster465.autos:443?sni=wondrous-dogfish.rooster465.autos
-trojan://WF42809561@sharing-porpoise.rooster465.autos:443?sni=sharing-porpoise.rooster465.autos
+trojan://WF42809561@optimal-dane.rooster465.autos:443?sni=optimal-dane.rooster465.autos
 trojan://WF42809561@grown-goldfish.rooster465.autos:443?sni=grown-goldfish.rooster465.autos
-trojan://WF42809561@tough-pigeon.rooster465.autos:443?sni=tough-pigeon.rooster465.autos
 ss://YWVzLTI1Ni1nY206a0RXdlhZWm9UQmNHa0M0@38.180.152.210:8881
+trojan://WF42809561@settled-camel.rooster465.autos:443?sni=settled-camel.rooster465.autos
+trojan://WF42809561@sharing-porpoise.rooster465.autos:443?sni=sharing-porpoise.rooster465.autos
+trojan://WF42809561@saving-anemone.rooster465.autos:443?sni=saving-anemone.rooster465.autos
+trojan://WF42809561@wondrous-dogfish.rooster465.autos:443?sni=wondrous-dogfish.rooster465.autos

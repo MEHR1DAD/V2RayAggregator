@@ -8,3 +8,4 @@ trojan://WF42809561@settled-camel.rooster465.autos:443?sni=settled-camel.rooster
 trojan://WF42809561@sharing-porpoise.rooster465.autos:443?sni=sharing-porpoise.rooster465.autos
 trojan://WF42809561@tough-pigeon.rooster465.autos:443?sni=tough-pigeon.rooster465.autos
 trojan://WF42809561@wondrous-dogfish.rooster465.autos:443?sni=wondrous-dogfish.rooster465.autos
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@37.0.6.138:2096?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&type=ws&allowInsecure=0&sni=sni.111000.indevs.in
