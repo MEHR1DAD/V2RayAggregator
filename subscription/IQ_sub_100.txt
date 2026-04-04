@@ -1,2 +1,2 @@
-vless://62ad5a48-f452-4868-b7eb-d27df9b3d723@decdn4.suio.me:443?type=tcp&security=tls&sni=decdn4.suio.me
-vless://62ad5a48-f452-4868-b7eb-d27df9b3d723@decdn4.suio.me:443?allowInsecure=1&encryption=none&security=tls&sni=decdn4.suio.me&type=tcp
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@178.17.51.45:8388
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA==@178.17.51.45:8388
