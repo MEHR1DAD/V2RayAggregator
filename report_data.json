@@ -1,60 +1,60 @@
 {
-    "report_generated_at": "2026-04-16T01:24:08.426177+00:00",
+    "report_generated_at": "2026-04-16T06:16:55.770455+00:00",
     "stats": {
-        "total_active_configs": 9790,
+        "total_active_configs": 9648,
         "configs_by_protocol": {
-            "vless": 5195,
-            "vmess": 3442,
-            "ss": 1072,
-            "trojan": 81
+            "vless": 5280,
+            "vmess": 3189,
+            "ss": 1083,
+            "trojan": 96
         },
         "top_10_countries": [
             [
                 "US",
-                2261
+                2244
             ],
             [
                 "GB",
-                1208
-            ],
-            [
-                "DE",
-                1074
+                1221
             ],
             [
                 "FR",
-                1045
+                1077
+            ],
+            [
+                "DE",
+                957
             ],
             [
                 "NL",
-                478
+                468
             ],
             [
                 "JP",
-                355
+                381
             ],
             [
                 "HK",
-                348
+                333
             ],
             [
                 "CY",
-                301
+                305
+            ],
+            [
+                "MY",
+                227
             ],
             [
                 "RU",
-                201
-            ],
-            [
-                "CA",
-                164
+                202
             ]
         ],
         "telegram_stats": {
             "total_targets": 13300
         },
         "github_stats": {
-            "total_crawled_urls": 252299
+            "total_crawled_urls": 253148
         }
     }
 }
