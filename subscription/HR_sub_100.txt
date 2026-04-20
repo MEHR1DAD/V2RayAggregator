@@ -1,4 +1,4 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@213.182.199.138:2096?security=tls&type=ws&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%3D&host=sni.111000.indevs.in&sni=sni.111000.indevs.in&fp=chrome&encryption=none
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@213.182.199.138:2096?allowInsecure=1&encryption=none&host=sni.111000.indevs.in&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%3D&security=tls&sni=sni.111000.indevs.in&type=ws
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@46.183.184.60:990
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@213.182.199.138:2096?allowInsecure=1&encryption=none&host=sni.111000.indevs.in&path=/?Telegram🇨🇳@WangCai2=&security=tls&sni=sni.111000.indevs.in&type=ws
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@213.182.199.138:2096?allowInsecure=1&encryption=none&host=sni.111000.indevs.in&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%3D&security=tls&sni=sni.111000.indevs.in&type=ws
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@213.182.199.138:2096?security=tls&type=ws&path=%2F%3FTelegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2%3D&host=sni.111000.indevs.in&sni=sni.111000.indevs.in&fp=chrome&encryption=none
