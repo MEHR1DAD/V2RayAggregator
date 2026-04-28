@@ -9,16 +9,12 @@ vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@188.42.88.227:443?encryption=none&s
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@188.42.88.252:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@188.42.89.174:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.238:2096?allowInsecure=1&encryption=none&host=sni.jpmj.dev&security=tls&sni=sni.jpmj.dev&type=ws
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.238:2096?encryption=none&security=tls&sni=sni.jpmj.dev&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=sni.jpmj.dev&path=%2F
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.238:2096?encryption=none&security=tls&sni=sni.jpmj.dev&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=sni.jpmj.dev&path=%2F%3Fed%3D2560
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.238:2096?encryption=none&security=tls&sni=sni.jpmj.dev&fp=chrome&type=ws&host=sni.jpmj.dev&path=/?ed=2560&telegram🇨🇳@wangcai2
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.253:8880?encryption=none&host=joss.jak.biz.id&path=%2FFree-VPN-CF-Geo-Project%2FHK&security=none&type=ws
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.253:8880?encryption=none&host=joss.jak.biz.id&path=/Free-VPN-CF-Geo-Project/HK&security=none&type=ws
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.253:8880?encryption=none&host=joss.jak.biz.id&path=/Free-VPN-CF-Geo-Project/HK?ed=2560&https://t.me/WangCai2🇨🇳&security=none&type=ws
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.88.253:8880?encryption=none&security=none&type=ws&host=joss.jak.biz.id&path=%2FFree-VPN-CF-Geo-Project%2FHK%3Fed%3D2560%26https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.89.253:8880?encryption=none&host=joss.jak.biz.id&path=%2FFree-VPN-CF-Geo-Project%2FHK&security=none&type=ws
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.89.253:8880?encryption=none&host=joss.jak.biz.id&path=/Free-VPN-CF-Geo-Project/HK&security=none&type=ws
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.42.89.253:8880?encryption=none&security=none&type=ws&host=joss.jak.biz.id&path=%2FFree-VPN-CF-Geo-Project%2FHK%3Fed%3D2560%26https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@188.42.89.145:443/?type=ws&encryption=none&flow=&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F%40rayan_config&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@188.42.89.145:443/?type=ws&encryption=none&flow=&host=rAyAn-12.LeIlA.DpDnS.OrG&path=%2F&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@188.42.89.145:443/?type=ws&encryption=none&flow=&host=rayan-12.leila.dpdns.org&path=%2F%40Rayan_Config&security=tls&sni=rAyAn-12.LeIlA.DpDnS.OrG
