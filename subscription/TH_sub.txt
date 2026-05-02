@@ -1,9 +1,13 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@119.59.127.129:990
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@119.59.127.129:990
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpJY0hodWNJV2lKaGZsZUthQjduX2F3@141.98.17.63:65443
+trojan://07674705-f964-4314-93bf-65ae6bde387e@svip-tg.xiaobaivpn.icu:28804?allowInsecure=0&peer=&sni=&type=tcp
+trojan://647d7dbc-a3ff-4615-9311-3fca57342867@svip-tg.xiaobaivpn.icu:28806?allowInsecure=0&peer=&sni=&type=tcp
+trojan://6b86c305-4a31-4a60-b2e2-82ff8a23b456@svip-tg.xiaobaivpn.icu:28805?allowInsecure=0&peer=&sni=&type=tcp
 trojan://8673a453-f62a-4eef-a724-6fb9a006a96e@svip-tg.xiaobaivpn.icu:28804?allowInsecure=0&peer=&sni=&type=tcp
 trojan://8673a453-f62a-4eef-a724-6fb9a006a96e@svip-tg.xiaobaivpn.icu:28805?allowInsecure=0&peer=&sni=&type=tcp
 trojan://8673a453-f62a-4eef-a724-6fb9a006a96e@svip-tg.xiaobaivpn.icu:28806?allowInsecure=0&peer=&sni=&type=tcp
+trojan://99a2b3c7-c32e-402c-a052-83498bd0fc88@svip-tg.xiaobaivpn.icu:28805?security=tls&sni=svip-tg.xiaobaivpn.icu
 trojan://9fee2bd1-9076-49f4-8649-32bce2ce7d6f@svip-tg.xiaobaivpn.icu:28805?allowInsecure=0&peer=&sni=&type=tcp
 trojan://9fee2bd1-9076-49f4-8649-32bce2ce7d6f@svip-tg.xiaobaivpn.icu:28806?allowInsecure=0&peer=&sni=&type=tcp
 vless://3c52e091-6714-4915-949f-2149fe69951b@v2ray.simspeedup.com:80?type=ws&host=aIs.SpEeDtEsT.nEt&path=/ws
