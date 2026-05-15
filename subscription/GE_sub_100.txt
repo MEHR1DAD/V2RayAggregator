@@ -1,2 +1,2 @@
-vless://7bd29cac-f692-48a3-88d1-505f7e55f0d0@88.218.94.10:443?sni=sub.sbrf-cdn342.ru&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls
 vless://7bd29cac-f692-48a3-88d1-505f7e55f0d0@88.218.94.10:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=sub.sbrf-cdn342.ru&type=tcp
+vless://7bd29cac-f692-48a3-88d1-505f7e55f0d0@88.218.94.10:443?sni=sub.sbrf-cdn342.ru&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls
