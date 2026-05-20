@@ -4,7 +4,6 @@ vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=non
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?path=/&security=none&encryption=none&type=ws
 vless://51caffd8-9a8f-47e3-a930-a4e24ba81f49@193.151.140.34:443?type=tcp&security=none
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@62.60.153.248:443?encryption=none&security=tls&sni=sni.111000.v6.rocks&insecure=1&allowInsecure=1&type=ws&host=sni.111000.v6.rocks&path=%2F%3Fed%3D2560%26https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@62.60.245.69:443?security=tls&sni=sni.latonyamadeline.ndjp.net&type=ws&host=sni.latonyamadeline.ndjp.net&allowInsecure=1
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&fp=chrome&type=ws&path=/
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&type=ws&path=%2F
