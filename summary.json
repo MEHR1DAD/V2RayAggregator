@@ -1,12 +1,12 @@
 {
-    "last_update": "2026-05-27T01:44:45.416591+03:30",
+    "last_update": "2026-05-27T05:38:35.694397+03:30",
     "merged_configs_count": 8586,
     "countries": [
         {
             "code": "US",
             "name": "ایالات متحده",
             "flag": "🇺🇸",
-            "count": 2029,
+            "count": 2028,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/US_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/US_sub_100.txt"
         },
@@ -54,7 +54,7 @@
             "code": "CA",
             "name": "کانادا",
             "flag": "🇨🇦",
-            "count": 250,
+            "count": 251,
             "full_link": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub.txt",
             "link_100": "https://github.com/MEHR1DAD/V2RayAggregator/raw/refs/heads/master/subscription/CA_sub_100.txt"
         },

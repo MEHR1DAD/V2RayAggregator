@@ -1,5 +1,5 @@
 {
-    "report_generated_at": "2026-05-26T22:14:45.416591+00:00",
+    "report_generated_at": "2026-05-27T02:08:35.694397+00:00",
     "stats": {
         "total_active_configs": 8586,
         "configs_by_protocol": {
@@ -11,7 +11,7 @@
         "top_10_countries": [
             [
                 "US",
-                2029
+                2028
             ],
             [
                 "DE",
@@ -35,7 +35,7 @@
             ],
             [
                 "CA",
-                250
+                251
             ],
             [
                 "KR",
