@@ -15,6 +15,7 @@ vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?path=%2F&secur
 vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?security=none&type=ws&path=/&packetEncoding=xudp&encryption=none
 vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?type=ws&security=&path=%2F&encryption=none
 vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?type=ws&security=&path=/&encryption=none
+vless://873f54fb-117c-431c-9817-ab649e089968@213.21.241.104:35935?type=tcp&security=none
 vless://e0042666-497b-4fde-bf4a-c5281df24d15@45.130.214.192:20992?security=none&type=tcp&packetEncoding=xudp&encryption=none
 vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGYxXHVkODNjXHVkZGZiTFZfMTNfQFN1cmZib2FyZHYycmF5IiwgImFkZCI6ICIyMTYuMTczLjY5LjI1MCIsICJwb3J0IjogIjg0NDMiLCAiaWQiOiAiOTEzODIwOTItMjMzMC00NTViLThhMWMtOWMxMjljZmU2NjFhIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiIsICJmcCI6ICIifQ==
 vmess://eyJhZGQiOiIyMTYuMTczLjY5LjI1MCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiI5MTM4MjA5Mi0yMzMwLTQ1NWItOGExYy05YzEyOWNmZTY2MWEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6Ijg0NDMiLCJwcyI6IkB2cG5jbGFzaGZhIC0gMTAxOVxuIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiIiLCJ2IjoiMiJ9
