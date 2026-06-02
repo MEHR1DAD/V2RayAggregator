@@ -1,6 +1,6 @@
-trojan://T5mQb1DCbOaJsr5UACQTe0elQ3BBH9Bf_g@185.126.238.78:443?type=tcp&security=tls&headerType=none&sni=www.archiveselector.click&fp=chrome&allowInsecure=1
 trojan://T5mQb1DCbOaJsr5UACQTe0elQ3BBH9Bf_g@185.126.238.78:443?security=tls&insecure=1&headerType=none&fp=chrome&type=tcp&allowInsecure=1&sni=www.archiveselector.click
-vless://0c8a9f50-51b3-43b5-b1fb-09fc3131a800@91.186.199.129:443?security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision-udp443&sni=gwapp-ru01.freenets.store
+trojan://T5mQb1DCbOaJsr5UACQTe0elQ3BBH9Bf_g@185.126.238.78:443?type=tcp&security=tls&headerType=none&sni=www.archiveselector.click&fp=chrome&allowInsecure=1
 trojan://T5mQb1DCbOaJsr5UACQTe0elQ3BBH9Bf_g@185.126.238.78:443?security=tls&sni=www.archiveselector.click&fp=chrome&type=tcp
-vless://0c8a9f50-51b3-43b5-b1fb-09fc3131a800@gwapp-ru01.freenets.store:443?encryption=none&flow=xtls-rprx-vision-udp443&type=raw&headerType=none&security=tls&alpn=h2%2Chttp%2F1.1&sni=gwapp-ru01.freenets.store
 vless://0c8a9f50-51b3-43b5-b1fb-09fc3131a800@gwapp-ru01.freenets.store:443?encryption=none&flow=xtls-rprx-vision&type=raw&headerType=none&security=tls&alpn=h2%2Chttp%2F1.1&sni=gwapp-ru01.freenets.store
+vless://0c8a9f50-51b3-43b5-b1fb-09fc3131a800@91.186.199.129:443?security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision-udp443&sni=gwapp-ru01.freenets.store
+vless://0c8a9f50-51b3-43b5-b1fb-09fc3131a800@gwapp-ru01.freenets.store:443?encryption=none&flow=xtls-rprx-vision-udp443&type=raw&headerType=none&security=tls&alpn=h2%2Chttp%2F1.1&sni=gwapp-ru01.freenets.store
