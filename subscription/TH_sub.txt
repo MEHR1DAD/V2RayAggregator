@@ -3,6 +3,12 @@ vless://3c52e091-6714-4915-949f-2149fe69951b@116.206.124.228:80?encryption=none&
 vless://3c52e091-6714-4915-949f-2149fe69951b@116.206.124.228:80?path=%2Fws&security=&encryption=none&host=aIs.SpEeDtEsT.nEt&type=ws
 vless://3c52e091-6714-4915-949f-2149fe69951b@116.206.124.228:80?type=ws&host=aIs.SpEeDtEsT.nEt&path=/ws
 vless://3c52e091-6714-4915-949f-2149fe69951b@v2ray.simspeedup.com:80?type=ws&host=aIs.SpEeDtEsT.nEt&path=/ws
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?encryption=none&host=cJ-sPeEdTeSt.EbB.mY&mode=auto&path=%2F&security=none&type=xhttp
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?encryption=none&mode=auto&security=none&type=xhttp
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?mode=auto&path=%2F&security=none&encryption=none&host=cJ-sPeEdTeSt.EbB.mY&type=xhttp
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?mode=auto&path=%2F&security=none&encryption=none&type=xhttp
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?mode=auto&security=none&encryption=none&type=xhttp
+vless://85b62084-d81e-52cd-a016-944f261d34a0@bm.xq-vpn.com:80?mode=auto&type=xhttp
 vless://FREE@bm.xq-vpn.com:80?encryption=none&security=none&sni=cJ-sPeEdTeSt.EbB.mY&type=xhttp&path=%2F&mode=auto
 vless://FREE@bm.xq-vpn.com:80?encryption=none&security=none&type=xhttp&host=cJ-sPeEdTeSt.EbB.mY&path=%2F&mode=auto
 vless://FREE@bm.xq-vpn.com:80?encryption=none&security=none&type=xhttp&path=%2F
