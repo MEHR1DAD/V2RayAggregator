@@ -1,5 +1,5 @@
 {
-    "report_generated_at": "2026-06-09T22:17:35.817238+00:00",
+    "report_generated_at": "2026-06-10T02:07:38.821986+00:00",
     "stats": {
         "total_active_configs": 12728,
         "configs_by_protocol": {
@@ -11,7 +11,7 @@
         "top_10_countries": [
             [
                 "US",
-                2878
+                2879
             ],
             [
                 "DE",
@@ -47,7 +47,7 @@
             ],
             [
                 "CA",
-                358
+                357
             ]
         ],
         "telegram_stats": {
