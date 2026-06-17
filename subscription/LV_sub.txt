@@ -17,7 +17,6 @@ vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?type=ws&securi
 vless://5ae45629-3db6-4c6b-9b9e-346c3e1a798d@90.156.254.164:40432?type=ws&security=&path=/&encryption=none
 vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?encryption=none&type=ws&path=%2Fws&host=31.56.117.211
 vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?encryption=none&type=ws&path=/ws&host=31.56.117.211
-vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?path=%2Fws&security=&encryption=none&host=31.56.117.211&type=ws
 vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?path=%2Fws&security=none&encryption=none&host=31.56.117.211&type=ws
 vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?path=/ws&security=&encryption=none&host=31.56.117.211&type=ws
 vless://835989bc-f82c-4ae5-93d8-77bcb63105b3@31.56.117.211:443?path=/ws&security=none&encryption=none&host=31.56.117.211&type=ws
