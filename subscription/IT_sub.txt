@@ -14,7 +14,6 @@ vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?encryption=none&ty
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=%2Fvless%2F&security=&encryption=none&host=OV-Italy1.09vpn.com&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=/vless/&encryption=none&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=/vless/&security=&encryption=none&type=ws
-vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?security=none&type=ws&host=OV-Italy1.09vpn.com&path=%2Fvless%2F
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?type=ws&path=%2Fvless%2F
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@OV-Italy1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@OV-Italy1.09vpn.com:80?security=none&type=ws&path=%2Fvless%2F&host=OV-Italy1.09vpn.com&encryption=none
@@ -27,7 +26,6 @@ vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?encryption=n
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?encryption=none&security=none&type=ws&host=OV-Italy1.09vpn.com&path=/vless/
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?encryption=none&type=ws&path=%2Fvless%2F&security=none
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?encryption=none&type=ws&path=/vless/&security=none
-vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&host=OV-Italy1.09vpn.com&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?path=%2Fvless%2F&security=&encryption=none&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?path=/vless/&security=&encryption=none&host=OV-Italy1.09vpn.com&type=ws
 vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?type=ws&path=%2Fvless%2F&host=OV-Italy1.09vpn.com
@@ -42,7 +40,6 @@ vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=%2Fvless%2F&s
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=%2Fvless%2F&security=none&encryption=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=/vless/&security=&encryption=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=/vless/&security=none&encryption=none&type=ws
-vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?security=none&type=ws&path=%2Fvless%2F
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?security=none&type=ws&path=/vless/
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?security=none&type=ws&path=/vless/&host=OV-Italy1.09vpn.com
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@OV-Italy1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws
@@ -638,8 +635,6 @@ vless://b0f88da8-4c4b-5030-b273-4f11af95cced@muihzxwtdd-19523160218-direct.irgam
 vless://b0f88da8-4c4b-5030-b273-4f11af95cced@muihzxwtdd-19523160218-direct.irgame.co:443?flow=xtls-rprx-vision&security=tls&allowInsecure=0&encryption=none&type=tcp&sni=muihzxwtdd-19523160218-direct.irgame.co&fp=chrome&headerType=none&alpn=h2,http/1.1
 vless://b0f88da8-4c4b-5030-b273-4f11af95cced@muihzxwtdd-19523160218-direct.irgame.co:443?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&headerType=&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=muihzxwtdd-19523160218-direct.irgame.co
 vless://b0f88da8-4c4b-5030-b273-4f11af95cced@muihzxwtdd-19523160218-direct.irgame.co:443?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=muihzxwtdd-19523160218-direct.irgame.co
-vless://c4325011-c2de-4387-b423-7d62efe182a7@62.76.232.26:47569?descriptions=%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D1%83%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D1%83847&headertype=none&security=none&type=tcp
-vless://c4325011-c2de-4387-b423-7d62efe182a7@62.76.232.26:47569?type=tcp&security=none&encryption=none&descriptions=СвободуИнтернету567&seq=you_are_beautiful9779
 vless://dc0d0eda-2293-4001-aa03-bd6c9431ed24@57.131.32.191:8443?encryption=none&host=ov-italy1.09vpn.com&path=%2Fvless%2F&security=tls&sni=ov-italy1.09vpn.com&type=ws
 vless://dc0d0eda-2293-4001-aa03-bd6c9431ed24@57.131.32.191:8443?encryption=none&security=tls&sni=ov-italy1.09vpn.com&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=ov-italy1.09vpn.com&path=%2Fvless%2F
 vless://dc0d0eda-2293-4001-aa03-bd6c9431ed24@57.131.32.191:8443?security=tls&sni=ov-italy1.09vpn.com&type=ws&path=/vless/&allowInsecure=1
