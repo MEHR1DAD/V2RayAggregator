@@ -3,8 +3,6 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFh@beesyar.org:80
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@151.242.251.131:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@151.242.251.153:8080
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9q@beesyar.org:8080
-vless://0058c215-ab1e-400c-a403-b5b2fda7e846@cd4.videobazi.com:8080?path=%2F&security=&encryption=none&host=tr-cd.sublink-vip2.com&type=ws
-vless://0058c215-ab1e-400c-a403-b5b2fda7e846@cd4.videobazi.com:8080?path=/&security=&encryption=none&host=tr-cd.sublink-vip2.com&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.245.229.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@181.214.1.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://1f8dbd69-e105-4805-f35d-386b718dee80@31.58.144.49:2053/?security=none&type=ws&path=/telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY-telegram,@BINEXTIFY?ed%3D2560&host=chess.com&packetEncoding=xudp&encryption=none
