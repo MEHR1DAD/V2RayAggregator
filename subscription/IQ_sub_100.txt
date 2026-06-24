@@ -1,2 +1,2 @@
-trojan://bNpSPq25FqLYblE9xl_Zpaq43o1iEmrcOW@130.94.97.140:443?type=tcp&security=tls&headerType=none&sni=www.static-optimizer.click&fp=chrome&insecure=1&allowInsecure=1
-trojan://bNpSPq25FqLYblE9xl_Zpaq43o1iEmrcOW@130.94.97.140:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&type=tcp&security=tls&headerType=none&sni=www.static-optimizer.click&fp=chrome&insecure=1&allowInsecure=1
+trojan://d5VIifAZlI.VX459mxBPZ0skFQ2JP6BvHy@130.94.97.33:443?security=tls&insecure=0&allowInsecure=0&type=tcp&headerType=none
+trojan://d5VIifAZlI.VX459mxBPZ0skFQ2JP6BvHy@130.94.97.33:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0
