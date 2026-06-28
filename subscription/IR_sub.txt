@@ -15,11 +15,7 @@ vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?security=none&
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?type=ws&fp=chrome
 vless://b54b4029-43df-4068-8e0d-ce8f524ba5e9@194.180.11.193:53740?encryption=none&type=grpc&security=none
 vless://b54b4029-43df-4068-8e0d-ce8f524ba5e9@194.180.11.193:53740?mode=gun&security=none&encryption=none&type=grpc
-vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@193.176.240.129:8880?path=%2F&security=&encryption=none&host=azsv2.ir5ive.ir&type=ws
-vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@193.176.240.129:8880?path=%2F&security=none&encryption=none&host=azsv2.ir5ive.ir&type=ws
-vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@sv2.azparadox.ir:8880?path=%2F&security=none&encryption=none&host=azsv2.ir5ive.ir&type=ws
-vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@sv2.azparadox.ir:8880?path=/&security=none&encryption=none&host=azsv2.ir5ive.ir&type=ws
-vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@sv2.azparadox.ir:8880?type=ws&host=azsv2.ir5ive.ir&path=/
+vless://b9f5a731-ad7c-4185-9d86-89a4a043961d@185.233.131.236:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=v3p.sabermusic.ir
 vless://e893762a-fb1b-4bc5-aad0-64d6a72c9bd1@193.151.140.34:443?security=none&encryption=none&headerType=none&type=tcp
 vless://e893762a-fb1b-4bc5-aad0-64d6a72c9bd1@193.151.140.34:443?type=tcp&security=none
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlRHOkB2MnJheV9zdWIiLA0KICAiYWRkIjogIjM3LjIwMi4yMjUuNzQiLA0KICAicG9ydCI6ICI0MDUyMSIsDQogICJpZCI6ICJiMzY4YTg2ZS02ZmJjLTQzMWMtOWYwNS02ZTFmYWI4OTY4NTgiLA0KICAiYWlkIjogIjAiLA0KICAic2N5IjogImF1dG8iLA0KICAibmV0IjogIndzIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIi8iLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIiwNCiAgImZwIjogIiINCn0
