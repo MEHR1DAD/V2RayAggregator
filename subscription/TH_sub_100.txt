@@ -1,4 +1,4 @@
-vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722
+vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722?encryption=none&type=raw&headerType=none&security=none
 vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722?type=tcp&security=none&fp=firefox
 vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722?type=raw&security=none&fp=firefox
-vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722?encryption=none&type=raw&headerType=none&security=none
+vless://ec5d6408-23f6-4a78-ad39-7237ff366469@38.54.33.177:28722
