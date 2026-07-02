@@ -1,3 +1,4 @@
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@147.78.1.27:990
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@45.134.9.133:8443?encryption=none&security=tls&sni=ul-mexico1.09vpn.com&allowInsecure=true&type=ws&path=/vless/&packetEncoding=xudp
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@45.134.9.133:8443?security=tls&type=ws&path=/vless/&host=ul-mexico1.09vpn.com&sni=ul-mexico1.09vpn.com&fp=chrome&encryption=none
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@45.134.9.133:8443?security=tls&type=ws&path=/vless/&sni=ul-mexico1.09vpn.com&fp=chrome&encryption=none
@@ -23,3 +24,4 @@ vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@ul-mexico1.09vpn.com:8443?path=/vle
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@ul-mexico1.09vpn.com:8443?security=tls&encryption=none&sni=ul-mexico1.09vpn.com&fp=chrome&type=ws&host=ul-mexico1.09vpn.com&path=%2fvless%2f&allow_insecure=1
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@ul-mexico1.09vpn.com:8443?security=tls&type=ws&path=/vless/&host=ul-mexico1.09vpn.com&sni=ul-mexico1.09vpn.com&fp=chrome&encryption=none
 vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@ul-mexico1.09vpn.com:8443?security=tls&type=ws&path=/vless/&sni=ul-mexico1.09vpn.com&fp=chrome&encryption=none
+vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@159.54.134.203:443?encryption=none&flow=xtls-rprx-vision-udp443&security=tls&sni=r1.mizulina.top&type=tcp&headerType=none
