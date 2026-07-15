@@ -8,4 +8,3 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880?security=&type=
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880?type=ws&host=cf.d3z.net&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3%20@WangCai2%20/?ed%3D2560
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@212.183.88.30:8880?path=/%3Fed%3D2560&security=none&encryption=none&host=vms.lifetime23.workers.dev&type=ws&sni=212.183.88.30
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@212.183.88.30:8880?security=none&type=ws&path=/?ed=2560&host=vms.lifetime23.workers.dev&packetEncoding=xudp&sni=212.183.88.30&encryption=none
-vless://7753ff1b-1f46-4c83-b425-fed11bcd5c0b@138.124.90.249:7445?fp=chrome&host=5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev&path=%2F%40Marisa_kristi&security=tls&sni=5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev&type=ws
