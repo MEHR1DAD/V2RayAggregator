@@ -53,6 +53,7 @@ trojan://NQ26071394@108.131.117.154:443?sni=funky-opossum.rooster465.autos&type=
 trojan://NQ26071394@3.255.100.31:443?fp=chrome&sni=thankful-piranha.rooster465.autos
 trojan://NQ26071394@3.255.100.31:443?security=tls&sni=thankful-piranha.rooster465.autos&fp=chrome&type=tcp&headerType=none&path=%2f&allow_insecure=0
 trojan://NQ26071394@3.255.100.31:443?security=tls&sni=thankful-piranha.rooster465.autos&path=%2f
+trojan://NQ26071394@3.255.100.31:443?security=tls&sni=thankful-piranha.rooster465.autos&type=tcp&headerType=none&path=%2f&allow_insecure=0
 trojan://NQ26071394@3.255.100.31:443?sni=thankful-piranha.rooster465.autos&fp=chrome&path=%2f
 trojan://NQ26071394@3.255.100.31:443?sni=thankful-piranha.rooster465.autos&fp=chrome&type=tcp&path=%2f
 trojan://NQ26071394@3.255.100.31:443?sni=thankful-piranha.rooster465.autos&path=%2f
