@@ -1,8 +1,6 @@
+vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?&security=tls&fp=chrome&sni=ov186.ochmaybrooooo.online&type=ws&headerType=none&host=ov186.ochmaybrooooo.online&path=%2F
+vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?type=ws&headerType=none&security=tls&encryption=none&sni=ov186.ochmaybrooooo.online&fp=chrome&alpn=http%2F1.1&path=%2F&host=ov186.ochmaybrooooo.online&insecure=0
 vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?encryption=none&type=ws&host=ov186.ochmaybrooooo.online&path=%2F&security=tls&alpn=http%2F1.1&fp=chrome&sni=ov186.ochmaybrooooo.online
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.105.163.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳&allowInsecure=0
 vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?security=tls&type=ws&path=%2F&host=ov186.ochmaybrooooo.online&alpn=http%2F1.1&sni=ov186.ochmaybrooooo.online&fp=chrome&encryption=none
 vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?security=tls&type=ws&path=/&host=ov186.ochmaybrooooo.online&alpn=http/1.1&sni=ov186.ochmaybrooooo.online&fp=chrome&encryption=none
-vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?type=ws&headerType=none&security=tls&encryption=none&sni=ov186.ochmaybrooooo.online&fp=chrome&alpn=http%2F1.1&path=%2F&host=ov186.ochmaybrooooo.online&insecure=0
-vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@188.164.158.63:8880?sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=/Telegram
-vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?&security=tls&fp=chrome&sni=ov186.ochmaybrooooo.online&type=ws&headerType=none&host=ov186.ochmaybrooooo.online&path=%2F
 vless://218b4b35-e826-49d4-b5dc-558fc7eb9923@77.105.163.46:443?&security=tls&fp=chrome&alpn=http%2F1.1&sni=ov186.ochmaybrooooo.online&type=ws&headerType=none&host=ov186.ochmaybrooooo.online&path=%2F
