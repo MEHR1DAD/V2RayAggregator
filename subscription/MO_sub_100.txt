@@ -1,3 +1,3 @@
-vless://11e5e68c-355a-415c-8024-3bf12637e220@45.207.34.239:10086?type=ws&host=45.207.34.239&path=%2Fvless&fp=chrome
 vless://11e5e68c-355a-415c-8024-3bf12637e220@45.207.34.239:10086?encryption=none&security=none&type=ws&path=%2Fvless
 vless://11e5e68c-355a-415c-8024-3bf12637e220@45.207.34.239:10086?encryption=none&security=none&type=ws&path=/vless
+vless://11e5e68c-355a-415c-8024-3bf12637e220@45.207.34.239:10086?type=ws&host=45.207.34.239&path=%2Fvless&fp=chrome
