@@ -1,2 +1,2 @@
-vless://c7e9c591-2764-423a-afca-efbd010fd396@52.19.138.237:2053?fp=chrome&host=forfreeuse.sub-flow.online&path=%2F&security=tls&sni=forfreeuse.sub-flow.online&type=ws
 vless://c7e9c591-2764-423a-afca-efbd010fd396@52.19.138.237:2053?security=tls&type=ws&path=/&host=forfreeuse.sub-flow.online&packetEncoding=xudp&sni=forfreeuse.sub-flow.online&fp=chrome
+vless://c7e9c591-2764-423a-afca-efbd010fd396@52.19.138.237:2053?fp=chrome&host=forfreeuse.sub-flow.online&path=%2F&security=tls&sni=forfreeuse.sub-flow.online&type=ws
