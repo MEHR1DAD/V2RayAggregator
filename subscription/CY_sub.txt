@@ -7,6 +7,7 @@ vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@csgo.com:8080?encryption=none&secur
 vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@csgo.com:8080?security=none&type=ws&path=%2Fprofile%2Ftelegram%40ssrsub&host=cdn-node-oss-99.paofu.de
 vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@fastcup.net:8080?security=none&type=ws&path=%2Fprofile%2Ftelegram%40ssrsub&host=cdn-node-oss-99.paofu.de
 vless://9c67ebbe-d620-4b6d-ad82-1ebc675e22c6@pubg.ac:8080?security=none&type=ws&path=%2Fprofile%2Ftelegram%40ssrsub&host=cdn-node-oss-99.paofu.de
+vless://c7e9c591-2764-423a-afca-efbd010fd396@171.22.114.27:2053?security=tls&type=ws&path=/&host=forfreeuse.sub-flow.online&packetEncoding=xudp&sni=forfreeuse.sub-flow.online&fp=chrome
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.92.9.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram🇨🇳&allowInsecure=0
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.150.115.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNkXHVkZDI1Sm9pbitUZWxlZ3JhbTpARmFyYWhfVlBOXHVkODNkXHVkZmUzIiwgImFkZCI6ICJmYXN0Y3VwLm5ldCIsICJwb3J0IjogIjgwIiwgInR5cGUiOiAibm9uZSIsICJpZCI6ICI5YzY3ZWJiZS1kNjIwLTRiNmQtYWQ4Mi0xZWJjNjc1ZTIyYzYiLCAiYWlkIjogIjAiLCAibmV0IjogIndzIiwgInBhdGgiOiAiL3Byb2ZpbGUvdGVsZWdyYW1Ac3Nyc3ViIiwgImhvc3QiOiAiY2RuLW5vZGUtb3NzLTk5LnBhb2Z1LmRlIiwgInRscyI6ICIifQ==
