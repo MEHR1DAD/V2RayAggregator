@@ -1,12 +1,5 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@181.119.30.20:990
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.162.154:62145?encryption=none&security=none&type=tcp&headerType=none
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.175.28:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.175.28:62145?&type=tcp&headerType=none&path=/
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.189.180:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.190.126:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.214.172:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.214.172:62145?&type=tcp&headerType=none&path=/
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.223.179:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.223.179:62145?allowInsecure=0
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.224.94:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.226.24:62145?
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.181.254:62145?&type=tcp&headerType=none&path=%2F
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.181.254:62145?encryption=none&headerType=none&type=tcp&security=none
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.181.254:62145?encryption=none&security=none&type=tcp&headerType=none
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.181.254:62145?security=none&encryption=none&headerType=none&type=tcp
