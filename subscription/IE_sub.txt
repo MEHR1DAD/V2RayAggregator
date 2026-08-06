@@ -12,6 +12,7 @@ trojan://ND91608427@54.170.212.206:443?sni=skilled-lioness.rooster465.autos&peer
 trojan://ND91608427@54.170.212.206:443?sni=skilled-lioness.rooster465.autos&type=tcp&fp=chrome
 trojan://ND91608427@54.170.212.206:443?type=tcp&security=tls&headerType=none&sni=skilled-lioness.rooster465.autos&fp=chrome&insecure=0&allowInsecure=0
 trojan://ND91608427@54.217.133.71:443?sni=willing-beagle.rooster465.autos&allowInsecure=1&type=tcp&fp=chrome
+trojan://ND91608427@54.217.133.71:443?sni=willing-beagle.rooster465.autos&fp=chrome&type=tcp&path=%2f
 trojan://ND91608427@54.217.133.71:443?sni=willing-beagle.rooster465.autos&fp=chrome&type=tcp&path=/
 trojan://ND91608427@skilled-lioness.rooster465.autos:443
 trojan://ND91608427@skilled-lioness.rooster465.autos:443?allowInsecure=1&sni=skilled-lioness.rooster465.autos
