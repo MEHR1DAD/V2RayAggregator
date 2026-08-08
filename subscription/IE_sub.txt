@@ -1,7 +1,6 @@
 trojan://ND91608427@54.170.212.206:443?fp=chrome&sni=skilled-lioness.rooster465.autos
 trojan://ND91608427@54.170.212.206:443?insecure=0&security=tls&sni=skilled-lioness.rooster465.autos&headerType=none&type=tcp&allowInsecure=0&fp=chrome
 trojan://ND91608427@54.170.212.206:443?security=tls&sni=skilled-lioness.rooster465.autos&path=%2f
-trojan://ND91608427@54.170.212.206:443?security=tls&sni=skilled-lioness.rooster465.autos&path=/
 trojan://ND91608427@54.170.212.206:443?sni=skilled-lioness.rooster465.autos&allowInsecure=1&type=tcp&fp=chrome
 trojan://ND91608427@54.170.212.206:443?sni=skilled-lioness.rooster465.autos&fp=chrome&path=/
 trojan://ND91608427@54.170.212.206:443?sni=skilled-lioness.rooster465.autos&fp=chrome&type=tcp&path=%2f
