@@ -14,17 +14,6 @@ ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.162:443
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.163:443
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.164:443
 vless://394f6981-a782-4779-9a85-e6cf22935d93@zrh-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&fp=firefox&security=tls&sni=fi1.hys.braidx.tech&type=tcp
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=fi1.hys.braidx.tech&fp=chrome&insecure=0&allowInsecure=0&type=tcp&headerType=none
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=fi1.hys.braidx.tech&fp=chrome&insecure=0&allowInsecure=0&type=tcp&headerType=none&host=%2F%3FBIA_TELEGRAM%40MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=fi1.hys.braidx.tech&fp=firefox&insecure=0&allowInsecure=0&type=tcp&headerType=none
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=fi1.hys.braidx.tech&fp=firefox&insecure=0&allowInsecure=0&type=tcp&headerType=none&host=%2F%3FBIA_TELEGRAM%40MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=fi1.hys.braidx.tech&type=tcp&headerType=none
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?flow=xtls-rprx-vision&security=tls&encryption=none&sni=fi1.hys.braidx.tech&type=tcp&headerType=none&path=%2f
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?security=tls&encryption=none&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=fi1.hys.braidx.tech
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=fi1.hys.braidx.tech
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?security=tls&encryption=none&insecure=0&host=%2F%3F&headerType=none&fp=firefox&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=fi1.hys.braidx.tech
-vless://8787dd0a-095a-414e-804f-a7d16a1ae166@138.124.244.77:8443?security=tls&encryption=none&insecure=0&host=/?&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=fi1.hys.braidx.tech
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80/?type=ws&encryption=none&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80?encryption=none&security=none&type=ws&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed%3D2560
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@185.18.250.12:80?security=none&type=ws&host=ana-SErVICe.xAbjCDZ.wORkErs.deV&path=%2F1Y6MN5DFV8zB82Ai%3Fed%3D2560

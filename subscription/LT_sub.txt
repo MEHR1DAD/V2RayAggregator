@@ -66,10 +66,7 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@89.116.180.248:443/?type=grpc&encry
 vless://401374e6-df77-41fb-f638-dad8184f175b@89.116.180.248:443?alpn=h2&encryption=none&security=tls&sni=pqh23v4.hiddendom.shop&type=grpc
 vless://401374e6-df77-41fb-f638-dad8184f175b@89.116.180.248:443?security=tls&sni=pqh23v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://401374e6-df77-41fb-f638-dad8184f175b@89.116.180.248:443?security=tls&sni=pqh23v4.hiddendom.shop&type=grpc&alpn=h2
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@88.216.69.30:8880?security=none&type=ws&path=/&host=vms.lifetime06.workers.dev&packetEncoding=xudp
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@89.116.180.40:8880?security=none&type=ws&path=/?ed=2560&https://t.me/youtube@ZYFXS🇨🇳&host=vms.lifetime09.workers.dev&packetEncoding=xudp&encryption=none
-vless://8376b8b2-e3dd-4d81-bce6-436eb3ba1022@89.116.250.135:443?encryption=none&type=xhttp&security=tls&path=%2F&alpn=-@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig&host=ab.xonira.ir&mode=packet-up&sni=ab.xonira.ir&alpn=h2%2Chttp%2F1.1&fp=firefox
-vless://8376b8b2-e3dd-4d81-bce6-436eb3ba1022@89.116.250.135:443?encryption=none&type=xhttp&security=tls&path=/&alpn=-@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig---@NormanConfig&host=ab.xonira.ir&mode=packet-up&sni=ab.xonira.ir&alpn=h2,http/1.1&fp=chrome
+vless://SoonTeam@191.215.37.90:443?encryption=none&headerType=none&type=tcp&security=none
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.153.7.213:8880/?type=ws&encryption=none&flow=&host=jp.laoyoutiao.link
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@86.38.214.156:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=kjgx.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3 @WangCai2 /?ed=2560
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@86.38.214.20:8880?sni=us.laoyoutiao.link&type=ws&host=us.laoyoutiao.link&path=/TelegramU0001F1E8U0001F1F3&allowInsecure=0
