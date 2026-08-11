@@ -1,13 +1,2 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@181.119.30.20:990
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.162.116:62145?security=&encryption=none&headerType=&type=tcp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.162.116:62145?security=none&type=tcp&packetEncoding=xudp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.162.116:62145?type=tcp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.162.116:62145?type=tcp&headerType=none&encryption=none&security=none
 vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.189.106:62145?
 vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.189.106:62145?security=none&type=tcp&packetEncoding=xudp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.224.180:62145?security=none&type=tcp&packetEncoding=xudp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.229.129:62145?security=none&type=tcp&packetEncoding=xudp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.234.207:62145?
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.234.207:62145?security=none&type=tcp&packetEncoding=xudp
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@158.247.126.107:62145?&type=tcp&headerType=none&path=%2F
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@158.247.126.107:62145?&type=tcp&headerType=none&path=/
