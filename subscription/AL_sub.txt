@@ -1,1 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYRjBrbHc3ODcwdlhuM3VRSXhlMTlR@31.171.152.222:1080
+vless://1f619326-cd93-4d6b-aebe-e0b5f8831d02@nl6.unlockvpn.online:8445?alpn=http%2F1.1&fp=firefox&host=nl6.unlockvpn.online&path=%2Fapi%2Fv1%2Fdevices%2Fe1971f0b19%2Ftelemetry&security=tls&sni=nl6.unlockvpn.online&type=ws
