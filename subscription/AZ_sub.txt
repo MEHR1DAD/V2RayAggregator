@@ -1,4 +1,1 @@
-vless://a8307b5d-2d9e-4d34-912d-5b5dd8340082@azerbaijan.zelnora.ir:64584?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&amp;security=none&amp;encryption=none&amp;headerType=none&amp;type=tcp
-vless://a8307b5d-2d9e-4d34-912d-5b5dd8340082@azerbaijan.zelnora.ir:64584?encryption=none&type=tcp
-vless://a8307b5d-2d9e-4d34-912d-5b5dd8340082@azerbaijan.zelnora.ir:64584?security=none
-vless://a8307b5d-2d9e-4d34-912d-5b5dd8340082@azerbaijan.zelnora.ir:64584?security=none&encryption=none&headerType=none&type=tcp
+vless://a5194487-9b9a-462f-a047-ac7580d80201@94.20.154.22:443?alpn=http%2F1.1&encryption=none&host=kotakbla.b-cdn.net&path=%2F&security=tls&sni=kotakbla.b-cdn.net&type=ws&fp=firefox
