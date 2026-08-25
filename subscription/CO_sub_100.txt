@@ -1,7 +1,7 @@
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad
 vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?security=none&type=tcp&packetEncoding=xudp
 vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.165.253:62145?&type=tcp&headerType=none&path=/
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad
-vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@181.119.30.20:990
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.165.253:62145?&type=tcp&headerType=none&path=/
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@157.137.239.241:62145?
