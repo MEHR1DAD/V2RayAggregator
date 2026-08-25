@@ -1,1 +1,1 @@
-vless://cc5201c6-b6b9-4065-adad-ab6d17958b94@by02.botovod.space:443?security=tls&type=xhttp&path=%2F&alpn=h2%2Chttp%2F1.1&sni=by02.botovod.space&fp=chrome&mode=auto&encryption=none
+vless://a817d012-0eeb-4b13-9f8e-0269e939d6f6@by01.botovod.space:443?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=by01.botovod.space
