@@ -11,17 +11,13 @@ vless://6202b230-417c-4d8e-b624-0f71afa9c75d@45.194.53.30:8880?security=none&typ
 vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443/?type=ws&encryption=none&flow=&host=support.zoom.us.yxls.eu.cc&path=/sg-amz&security=tls&sni=support.zoom.us.yxls.eu.cc&fp=chrome
 vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443?encryption=none&fp=chrome&host=support.zoom.us.yxls.eu.cc&path=%2Fsg-amz&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws
 vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443?encryption=none&fp=chrome&host=support.zoom.us.yxls.eu.cc&path=/sg-amz&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws
-vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443?encryption=none&type=ws&host=support.zoom.us.yxls.eu.cc&path=%2Fsg-amz&security=tls&fp=chrome&sni=support.zoom.us.yxls.eu.cc
 vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443?path=%2Fsg-amz&security=tls&encryption=none&insecure=0&host=support.zoom.us.yxls.eu.cc&fp=chrome&type=ws&allowInsecure=0&sni=support.zoom.us.yxls.eu.cc
-vless://6680846a-8a57-4dfd-9a0e-63209cfc8535@45.130.125.207:443?security=tls&type=ws&path=%2Fsg-amz&host=support.zoom.us.yxls.eu.cc&sni=support.zoom.us.yxls.eu.cc&fp=chrome&encryption=none
 vless://b2f6aa3a-2550-4a1c-b2c0-1c94b1207217@45.130.125.207:443?path=%2Fhdgrbws&security=tls&encryption=none&insecure=0&host=terazhediii.info&fp=chrome&type=ws&allowInsecure=0&sni=terazhediii.info
 vless://b2f6aa3a-2550-4a1c-b2c0-1c94b1207217@45.130.125.207:443?path=/hdgrbws&security=tls&encryption=none&insecure=0&host=terazhediii.info&fp=chrome&type=ws&allowInsecure=0&sni=terazhediii.info
 vless://b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9@45.130.125.126:443/?type=ws&encryption=none&flow=&host=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&path=/eyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0&security=tls&sni=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&alpn=http/1.1&fp=chrome
 vless://b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9@45.130.125.126:443?alpn=http%2F1.1&encryption=none&fp=chrome&host=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&path=%2FeyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0&security=tls&sni=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&type=ws
 vless://b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9@45.130.125.126:443?alpn=http/1.1&encryption=none&fp=chrome&host=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&path=/eyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0&security=tls&sni=BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv&type=ws
 vless://dc8a9493-c54a-459e-d060-81a700000001@45.130.125.201:80?security=none&type=ws&path=%2Fsync&host=nahan-core.netizo09.workers.dev&sni=nahan-core.netizo09.workers.dev&encryption=none
-vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@45.130.125.207:80?path=%2Fhttp&security=none&encryption=none&host=de.vpnbase.net&type=ws
-vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@45.130.125.207:80?type=ws&encryption=none&path=%2Fhttp&host=de.vpnbase.net&fp=chrome&alpn=http%2F1.1&headerType=none
 vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@45.130.125.209:80?path=%2Fhttp&security=none&encryption=none&host=de.vpnbase.net&type=ws
 vless://dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51@45.130.125.209:80?security=none&type=ws&path=/http&host=de.vpnbase.net&packetEncoding=xudp
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@154.218.15.63:8880?sni=sg.laoyoutiao.link&type=ws&host=sg.laoyoutiao.link&path=/Telegram
