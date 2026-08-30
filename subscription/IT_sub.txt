@@ -2,6 +2,15 @@ ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ==@57.131.48.45:8388
 ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ==@57.131.48.45:8388?type=tcp
 ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ@57.131.48.45:8388
 ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ@57.131.48.45:8388?type=tcp&headerType=none
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?encryption=none&type=ws&path=/vless/
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@OV-Italy1.09vpn.com:80?path=/vless/&security=&encryption=none&type=ws
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80/?type=ws&encryption=none&host=OV-Italy1.09vpn.com&path=%2Fvless%2F
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80??security=none&type=ws&path=%2Fvless%2F&host=172.217.20.225&packetEncoding=xudp&sni=ov-italy1.09vpn.com
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?security=none&type=ws&path=%2Fvless%2F&host=ov-italy1.09vpn.com&packetEncoding=xudp&sni=ov-italy1.09vpn.com
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?security=none&type=ws&path=/vless/&host=OV-Italy1.09vpn.com&packetEncoding=xudp
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?type=ws&path=%2Fvless%2F&host=OV-Italy1.09vpn.com
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?type=ws&path=%2Fvless%2F&host=ov-italy1.09vpn.com
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@ov-italy1.09vpn.com:80?type=ws&path=/vless/
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?alpn=http%2F1.1&fp=chrome&host=ov-italy1.09vpn.com&path=%2Fvless%2F&security=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?encryption=none&host=OV-Italy1.09vpn.com&path=/vless/&security=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?encryption=none&security=none&type=ws&host=OV-Italy1.09vpn.com&path=%2Fvless%2F
@@ -10,6 +19,7 @@ vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=%2Fvless%2F&s
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=/vless/&security=&encryption=none&host=ov-italy1.09vpn.com&type=ws&sni=OV-Italy1.09vpn.com
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?path=/vless/&security=&encryption=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?security=none&type=ws&path=/vless/&host=ov-italy1.09vpn.com&packetEncoding=xudp&sni=OV-Italy1.09vpn.com&encryption=none
+vless://1e280316-0408-47c4-b058-05b8f1f17f02@OV-Italy1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?&security=none&type=ws&headerType=&host=ov-italy1.09vpn.com&path=%2Fvless%2F
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80??encryption=none&security=none&sni=OV-Italy1.09vpn.com&type=ws&path=%2Fvless%2F&host=172.217.20.225
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?encryption=none&security=none&sni=OV-Italy1.09vpn.com&type=ws&path=%2Fvless%2F
@@ -17,6 +27,7 @@ vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?path=%2Fvles
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?security=none&type=ws&headerType=&host=172.217.20.225&path=%2Fvless%2F
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?type=ws&path=%2Fvless%2F&host=OV-Italy1.09vpn.com
 vless://1e280316-0408-47c4-b058-05b8f1f17f02@ov-italy1.09vpn.com:80?type=ws&path=%2Fvless%2F&sni=ov-italy1.09vpn.com
+vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://699ce9a1-abbb-4525-988e-b940381352e8@151.241.215.109:443?encryption=none&type=ws&path=%2F&security=none
 vless://699ce9a1-abbb-4525-988e-b940381352e8@151.241.215.109:443?security=none&type=ws&path=%2F
 vless://699ce9a1-abbb-4525-988e-b940381352e8@151.241.215.109:443?security=none&type=ws&path=%2F&sni=151.241.215.109
