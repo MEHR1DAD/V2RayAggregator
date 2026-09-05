@@ -11,8 +11,6 @@ vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&alpn
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&sni=pqh24v3.hiddendom.shop&type=grpc&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?security=tls&sni=pqh24v3.hiddendom.shop&type=grpc&host=pqh24v3.hiddendom.shop&alpn=h2
 vless://401374e6-df77-41fb-f638-dad8184f175b@156.238.19.95:443?type=grpc&encryption=none&security=tls&sni=pqh24v3.hiddendom.shop&alpn=h2
-vless://caec0d8d-ab2f-4247-b97d-7fb1a34ab195@207.174.133.163:10000?encryption=none&type=tcp
-vless://caec0d8d-ab2f-4247-b97d-7fb1a34ab195@207.174.133.163:10000?type=tcp&headerType=none&path=/
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@156.238.19.156:8880?security=none&type=ws&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&host=kjgx.laoyoutiao.link&sni=Telegram-channel-WangCai2
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@45.192.222.213:8880?security=none&sni=jp.laoyoutiao.link&type=ws&host=jp.laoyoutiao.link&path=
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1RDgzQ1x1REQ3Q1x1RDgzQ1x1REQ3NFx1RDgzQ1x1REQ3N1x1RDgzQ1x1REQ3M1x1RDgzQ1x1REQ3OCIsDQogICJhZGQiOiAiMjEwLjMuMTU5LjE1MCIsDQogICJwb3J0IjogIjQyNzE3IiwNCiAgImlkIjogImI1ODAzZDc0LWM2ZjgtNDE1Zi1lMWU2LWViYzllNDI2OWI4NiIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiLyIsDQogICJ0bHMiOiAiIiwNCiAgInNuaSI6ICIiLA0KICAiYWxwbiI6ICIiLA0KICAiZnAiOiAiIg0KfQ==
