@@ -1,3 +1,1 @@
-vless://c7e9c591-2764-423a-afca-efbd010fd396@54.229.164.147:2053?fp=chrome&host=forfreeuse.rtqa.ru&path=%2F&security=tls&sni=forfreeuse.rtqa.ru&type=ws
-vless://c7e9c591-2764-423a-afca-efbd010fd396@54.229.164.147:2053?path=%2F&security=tls&encryption=none&insecure=0&host=forfreeuse.rtqa.ru&type=ws&allowInsecure=0&sni=forfreeuse.rtqa.ru
-vless://c7e9c591-2764-423a-afca-efbd010fd396@54.229.164.147:2053?security=tls&type=ws&path=/&host=forfreeuse.rtqa.ru&packetEncoding=xudp&sni=forfreeuse.rtqa.ru&fp=chrome
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@50.7.5.163:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=ir-viper.failspace.top&alpn=h2&fp=firefox
