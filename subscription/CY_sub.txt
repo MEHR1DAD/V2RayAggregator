@@ -1,14 +1,8 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.255.210.49:990
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.150.115.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443/?type=grpc&encryption=none&flow=&security=tls&sni=torr.wlrus.cfd&allowInsecure=1&fp=chrome
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443/?type=grpc&encryption=none&flow=&security=tls&sni=torr.wlrus.cfd&alpn=networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-&fp=chrome
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?&security=tls&fp=chrome&sni=torr.wlrus.cfd&type=grpc&serviceName=&mode=gun
 vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?encryption=none&fp=chrome&security=tls&sni=torr.wlrus.cfd&type=grpc
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?mode=gun&security=tls&encryption=none&authority=&fp=chrome&type=grpc&serviceName=&sni=torr.wlrus.cfd
 vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?mode=gun&security=tls&encryption=none&insecure=0&fp=chrome&type=grpc&allowInsecure=0&sni=torr.wlrus.cfd
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?security=tls&encryption=none&insecure=0&fp=chrome&type=grpc&allowInsecure=0&sni=torr.wlrus.cfd
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?security=tls&encryption=none&sni=torr.wlrus.cfd&fp=chrome&type=grpc&path=%2f
-vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?security=tls&encryption=none&sni=torr.wlrus.cfd&fp=chrome&type=grpc&path=/
 vless://167610e4-bcaf-4074-bc2d-0c08dc4ea294@45.9.2.171:8443?type=grpc&encryption=none&security=tls&sni=torr.wlrus.cfd&allowInsecure=1&fp=chrome
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
