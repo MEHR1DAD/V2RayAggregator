@@ -2,3 +2,4 @@ trojan://C0ldyfh-vpnjantit.com@46.29.142.57:4443?security=tls&alpn=v2rayNplus--v
 trojan://C0ldyfh-vpnjantit.com@46.29.142.57:4443?security=tls&sni=hu2.vpnjantit.com&fp=android&type=tcp&headerType=none&path=/&allow_insecure=0
 trojan://C0ldyfh-vpnjantit.com@46.29.142.57:4443?sni=hu2.vpnjantit.com&type=tcp&fp=android
 trojan://C0ldyfh-vpnjantit.com@hu2.vpnjantit.com:4443?security=tls&sni=hu2.vpnjantit.com&fp=android&type=tcp&headerType=none&path=%2f&allow_insecure=0
+trojan://C0ldyfh-vpnjantit.com@hu2.vpnjantit.com:4443?sni=hu2.vpnjantit.com&type=tcp&fp=android
