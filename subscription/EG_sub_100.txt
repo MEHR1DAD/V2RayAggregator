@@ -1,6 +1,6 @@
 vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087/?type=ws&encryption=none&flow=&path=/d1000b16fe76
-vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087?encryption=none&path=%2Fd1000b16fe76&security=none&type=ws
 vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087?security=none&type=ws&path=/d1000b16fe76&packetEncoding=xudp&encryption=none
 ss://YWVzLTI1Ni1nY206cEtFVzhKUEJ5VFZUTHRN@38.54.59.102:443
 vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087?path=%2Fd1000b16fe76&security=none&encryption=none&host=Telegram-Leviko_v2ray&type=ws
 vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087?encryption=none&path=/d1000b16fe76&security=none&type=ws
+vless://cd842ef8-9577-47f3-83ca-627147ed291b@38.54.59.209:2087?encryption=none&path=%2Fd1000b16fe76&security=none&type=ws
