@@ -3,3 +3,4 @@ vless://894fe9f0-b998-49c0-8003-a5007de921e1@189.74.97.47:2087?Telegram=Cfox_Ser
 vless://894fe9f0-b998-49c0-8003-a5007de921e1@189.74.97.47:2087?encryption=none&security=none&type=ws&path=%2F755276b33b6f
 vless://894fe9f0-b998-49c0-8003-a5007de921e1@189.74.97.47:2087?encryption=none&security=none&type=ws&path=/755276b33b6f
 vless://894fe9f0-b998-49c0-8003-a5007de921e1@189.74.97.47:2087?path=%2F755276b33b6f&security=none&encryption=none&type=ws
+vless://894fe9f0-b998-49c0-8003-a5007de921e1@189.74.97.47:2087?path=/755276b33b6f&encryption=none&type=ws
