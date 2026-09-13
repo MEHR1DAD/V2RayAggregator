@@ -1,6 +1,6 @@
 vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?&type=tcp&headerType=none&host=basalam.horqen.ir&path=%2F
-vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&alpn=v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus&encryption=none&headerType=none&type=tcp
-vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&alpn=v2rayNplus
-vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?
-vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&amp;alpn=v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus&amp;encryption=none&amp;headerType=none&amp;type=tcp
 vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?encryption=none&type=raw&headerType=none&security=none
+vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&alpn=v2rayNplus
+vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&amp;alpn=v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus&amp;encryption=none&amp;headerType=none&amp;type=tcp
+vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?
+vless://c12db015-a63c-43e5-a744-6398a90373b5@basalam.horqen.ir:21289?security=&alpn=v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus&encryption=none&headerType=none&type=tcp
