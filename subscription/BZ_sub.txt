@@ -1,2 +1,1 @@
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.135.235.251:8880?sni=Telegram-channel-WangCai2&type=ws&host=cf.d3z.net&path=/Telegram
-vless://7967bf59-57e3-4cde-9898-527b0fe60022@45.135.235.7:8443?path=%2Fdula%3FTelegram-WangCai2&security=tls&encryption=none&insecure=0&host=speed.dulacloud.store&fp=chrome&type=ws&allowInsecure=0&sni=speed.dulacloud.store
