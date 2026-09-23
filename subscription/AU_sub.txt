@@ -1,8 +1,8 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHIXlCd1BXSDNWYW8=@185.167.116.241:801
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@143.244.62.106:990
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@103.169.142.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
-vless://8be20011-59b1-4118-91ed-83e8e6b662cd@202.166.187.132:443?&security=tls&fp=firefox&sni=f.yoptybla.ru&type=ws&headerType=none&host=f.yoptybla.ru&path=%2F
-vless://8be20011-59b1-4118-91ed-83e8e6b662cd@202.166.187.132:443?path=%2F&security=tls&encryption=none&insecure=0&host=f.yoptybla.ru&fp=firefox&type=ws&allowInsecure=0&sni=f.yoptybla.ru
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@103.169.142.30:8880?encryption=none&host=vms.lifetime38.workers.dev&path=%2F&security=none&type=ws
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@192.65.217.30:8880?security=none&type=ws&path=/&host=vms.lifetime37.workers.dev&packetEncoding=xudp&encryption=none
 vless://8be20011-59b1-4118-91ed-83e8e6b662cd@202.166.187.132:443?path=/&security=tls&encryption=none&insecure=0&host=f.yoptybla.ru&fp=chrome&type=ws&allowInsecure=0&sni=f.yoptybla.ru
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIua+s+a0slx1RDgzRFx1REM0OVx1RDgzQ1x1REQ5NCBUR0BwZ2tqNjY2IiwNCiAgImFkZCI6ICIxNzIuMTA1LjE3NC4yMzciLA0KICAicG9ydCI6ICI0MzE4MyIsDQogICJpZCI6ICJhYThiODVjZi02MTUzLTQ1N2YtOWVhYi03ZmZlMTljYWVlNDciLA0KICAiYWlkIjogIjAiLA0KICAic2N5IjogImF1dG8iLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIiwNCiAgImZwIjogIiINCn0=
 vmess://eyJ2IjoiMiIsInBzIjoiXHUyNjljXHVmZTBmVGVsZWdyYW06QElQX0NGIiwiYWRkIjoiMTcyLjEwNS4xNzQuMjM3IiwicG9ydCI6IjQzMTgzIiwidHlwZSI6Im5vbmUiLCJpZCI6ImFhOGI4NWNmLTYxNTMtNDU3Zi05ZWFiLTdmZmUxOWNhZWU0NyIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=
