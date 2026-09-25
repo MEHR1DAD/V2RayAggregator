@@ -11,7 +11,6 @@ vless://5cc814de-2bbb-4409-ad8c-ee841ca7bad1@84.22.150.39:7443?security=tls&sni=
 vless://5cc814de-2bbb-4409-ad8c-ee841ca7bad1@84.22.150.39:7443?security=tls&type=ws&path=/@Marisa_kristi&host=sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev&packetEncoding=xudp&sni=sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev&fp=chrome&encryption=none
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi11.bot-hosting.net:20083?encryption=none&security=none&type=ws&path=%2F
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi8.bot-hosting.net:20915?encryption=none&security=none&type=ws&path=%2F
-vless://92c863cb-7b96-405c-bc04-ff4d73465f1a@dissolvedvpn.eu.cc:443?encryption=none&security=tls&sni=dissolvedvpn.eu.cc&type=ws&path=%2Fdissolved-ws%2F&host=dissolvedvpn.eu.cc&fp=android
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2052/?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082/?type=ws&encryption=none&flow=
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2082?encryption=none&security=none&type=ws&path=/
