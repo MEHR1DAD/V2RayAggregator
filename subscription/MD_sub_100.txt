@@ -1,2 +1,6 @@
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@md-new.failspace.top:443?encryption=none&flow=xtls-rprx-vision&security=tls&type=tcp
+vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2082?security=&fp=chrome&type=ws&path=/&host=niyunejw0.kopoly.info&encryption=none
 vless://54ee5e59-55a3-4599-83ff-0c67b3f411b2@143.246.219.51:8081?path=%2Fvless-test&security=none&encryption=none&type=ws
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@md-new.failspace.top:443?flow=xtls-rprx-vision-udp443&fp=chrome&security=tls
 vless://54ee5e59-55a3-4599-83ff-0c67b3f411b2@143.246.219.51:8081?security=none&type=ws&path=/vless-test&packetEncoding=xudp
+vless://838f5273-5d2d-4630-a0f5-9cc8e4aef4d6@91.225.219.114:2052?security=none&allowInsecure=1&fp=chrome&type=ws&path=/&host=vkvd127.mycdn.me&packetEncoding=xudp&encryption=none
