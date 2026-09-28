@@ -6,7 +6,6 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@rusrv.vpnsparta.pro:57
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCSjVuRFpUdWxtWXpuSHZIWGhTNloz@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@rusrv.vmagnum.win:57456
 vless://115cdea7-3a2a-4ac9-9c29-f5a2e9b088a8@65.109.212.140:58117?security=none&encryption=none&headerType=none&type=tcp
-vless://11d826ce-d6e5-4154-8658-6829bb17dca2@fi10-node.rumedia-cdn.com:2096?encryption=none&security=tls&sni=st6dbbc.rumedia-cdn.com&fp=random&type=ws&path=%2Fcdn%2Fv3%2Flive&host=st6dbbc.rumedia-cdn.com
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi11.bot-hosting.net:20083?encryption=none&security=none&type=ws&path=%2F
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi8.bot-hosting.net:20915?encryption=none&security=none&type=ws&path=%2F
