@@ -1,2 +1,2 @@
-vless://0250424c-ae75-4b6b-890f-3fe26fae36c3@85.90.197.53:443?&security=tls&fp=chrome&sni=hk.152568.xyz&type=ws&headerType=none&host=hk.152568.xyz&path=/cdn/packages/runtime-core.tar.gz
 vless://660174a2-d32d-4521-840d-d1853bfc80b8@83.147.216.223:4433?encryption=none&security=tls&sni=3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev&fp=chrome&type=ws&host=3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev&path=%2F%40Marisa_kristi
+vless://0250424c-ae75-4b6b-890f-3fe26fae36c3@85.90.197.53:443?&security=tls&fp=chrome&sni=hk.152568.xyz&type=ws&headerType=none&host=hk.152568.xyz&path=/cdn/packages/runtime-core.tar.gz
