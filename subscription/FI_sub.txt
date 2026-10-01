@@ -5,7 +5,6 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@185.193.102.7:57456?pr
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@rusrv.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCSjVuRFpUdWxtWXpuSHZIWGhTNloz@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@rusrv.vmagnum.win:57456
-vless://0c1b7949-fe09-43d9-863f-2c031f66bfc1@smart.avenone.ir:1085?type=tcp&security=none&encryption=none&headerType=none
 vless://115cdea7-3a2a-4ac9-9c29-f5a2e9b088a8@65.109.212.140:58117?security=none&encryption=none&headerType=none&type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi11.bot-hosting.net:20083?encryption=none&security=none&type=ws&path=%2F
