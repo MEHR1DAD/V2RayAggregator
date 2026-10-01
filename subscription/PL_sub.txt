@@ -10,6 +10,10 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMzgzNzIyNGVkNDY1ZjAw@war.ssvpnapp.win:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990?type=tcp
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@92.118.205.228:990?type=tcp&headerType=none
+trojan://UX82473651@cheerful-swan.rooster465.autos:443?mux=1&allowInsecure=1&sni=cheerful-swan.rooster465.autos
+trojan://UX82473651@cheerful-swan.rooster465.autos:443?security=tls&sni=cheerful-swan.rooster465.autos
 vless://32db15da-c178-4b0c-9a27-0351951711d3@ov-poland1.09vpn.com:8443?path=/vless/&security=tls&encryption=none&type=ws
 vless://394f6981-a782-4779-9a85-e6cf22935d93@pl1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@144.31.5.3:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=pl4.moritech.net&fp=firefox&alpn=h2&type=tcp&headerType=none
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@pl3.moritech.net:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=pl3.moritech.net&fp=chrome&alpn=h2&type=tcp&headerType=none&host=-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@pl3.moritech.net:443?security=tls&alpn=h2&encryption=none&insecure=0&headerType=none&fp=qq&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=pl3.moritech.net
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@pl3.moritech.net:443?security=tls&type=tcp&packetEncoding=xudp&sni=pl3.moritech.net&fp=chrome&flow=xtls-rprx-vision
