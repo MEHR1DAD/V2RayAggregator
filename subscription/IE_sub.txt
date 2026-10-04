@@ -1,4 +1,7 @@
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ireland-new-ded1.failspace.top:443?&security=tls&flow=xtls-rprx-vision&fp=chrome&type=tcp&headerType=none&host=ireland-new-ded1.failspace.top&path=%2F
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ireland-new-ded1.failspace.top:443?allowInsecure=1&insecure=1&type=tcp&security=tls&sni=ireland-new-ded1.failspace.top&flow=xtls-rprx-vision
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ireland-new-ded1.failspace.top:443?security=tls&encryption=none&insecure=0&headerType=&type=tcp&allowInsecure=0&flow=xtls-rprx-vision
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ireland-new-ded1.failspace.top:443?type=tcp&security=tls&flow=xtls-rprx-vision&fp=chrome&sni=ireland-new-ded1.failspace.top
+trojan://UX82473651@loved-shark.rooster465.autos:443?allowInsecure=1
+trojan://UX82473651@loved-shark.rooster465.autos:443?allowInsecure=1&sni=loved-shark.rooster465.autos
+trojan://UX82473651@loved-shark.rooster465.autos:443?security=tls&sni=loved-shark.rooster465.autos
+trojan://UX82473651@loved-shark.rooster465.autos:443?sni=loved-shark.rooster465.autos&fp=chrome&type=tcp&path=%2f
+trojan://UX82473651@loved-shark.rooster465.autos:443?sni=loved-shark.rooster465.autos&path=%2f
+trojan://UX82473651@sacred-anemone.rooster465.autos:443
+vless://4b21fbc7-00c2-4665-9788-02153832f9e5@85.159.229.122:443?encryption=none&security=tls&sni=v2ray.aizgl.com&type=ws&path=%2Fxray-ws&host=v2ray.aizgl.com&fp=android
