@@ -1,12 +1,9 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplSS1tSG1Zb2R6SDJhR1hvcnFwOHBB@185.226.119.96:8082?type=tcp&headerType=none
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?security=&encryption=none&headerType=none&type=tcp
 vless://17a7a43e-fc4d-4bce-94df-124e54026a72@panel1.zapserver.top:53217?type=tcp&security=none
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?encryption=none&security=none&type=ws&path=/
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@185.208.77.113:11140?path=%2F&security=none&encryption=none&type=ws
 vless://39420bb7-5535-48fc-c56c-5c98c6eafce8@v1.mailiran.net:11140?path=/&security=none&encryption=none&type=ws
 vless://51caffd8-9a8f-47e3-a930-a4e24ba81f49@193.151.140.34:443?type=tcp&security=none
-vless://63ad98c8-f8c2-d771-336d-12bc5906aee2@dl2.armanstore22.ir:32989?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&path=/?ed=2048&security=tls&alpn=h2&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=
-vless://63ad98c8-f8c2-d771-336d-12bc5906aee2@dl2.armanstore22.ir:32989?path=/?ed=2048&security=tls&alpn=h2&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=dl2.armanstore22.ir
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&fp=chrome&type=ws&path=/
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&type=ws&path=%2F
 vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?encryption=none&security=none&type=ws&path=/
