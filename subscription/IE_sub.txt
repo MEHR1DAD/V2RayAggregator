@@ -9,4 +9,3 @@ trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-anemone.rooster465.autos&fp=chrome&type=tcp&headerType=none
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-anemone.rooster465.autos&type=tcp&headerType=none
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&type=tcp&sni=sacred-anemone.rooster465.autos
-vless://4b21fbc7-00c2-4665-9788-02153832f9e5@85.159.229.122:443?encryption=none&security=tls&sni=v2ray.aizgl.com&type=ws&path=%2Fxray-ws&host=v2ray.aizgl.com&fp=android
