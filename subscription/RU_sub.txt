@@ -66,6 +66,7 @@ vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.8.211.236:443?encryption=none&se
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.8.211.254:443/?type=ws&encryption=none&flow=&host=rAyAn-11.LeIlA.DpDnS.OrG&path=%2F%40rayan_config&security=tls&sni=rAyAn-11.LeIlA.DpDnS.OrG&fp=chrome
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.8.211.254:443?encryption=none&security=tls&sni=rAyAn-11.LeIlA.DpDnS.OrG&type=ws&host=rAyAn-11.LeIlA.DpDnS.OrG&path=%2F%40rayan_config
 vless://7a80a8d9-92f9-4f0a-8352-9005a8215ab8@45.8.211.254:443?path=%2F%40Rayan_Config&security=tls&encryption=none&host=rayan-11.leila.dpdns.org&fp=chrome&type=ws&sni=rAyAn-11.LeIlA.DpDnS.OrG
+vless://9ea8b000-58ce-005a-b108-989dd4f248f1@31.131.251.17:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=quatro.lmstream.org
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@185.148.104.141:8880/?path=/Etb1L6YUdZFZuTOr?ed=2560/?JOKERRVPNBIA_CHANEL@JOKERRVPN&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@185.148.104.141:8880/?type=ws&encryption=none&flow=&host=VngSuPpLY.IP-DdnS.com&path=%2FEtb1L6YUdZFZuTOr%3Fed%3D2560
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@185.148.104.141:8880?encryption=none&security=none&type=ws&host=VngSuPpLY.IP-DdnS.com&path=%2F
