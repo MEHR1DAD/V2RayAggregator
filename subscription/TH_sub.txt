@@ -1,12 +1,5 @@
 ss://YWVzLTI1Ni1nY206c3hhakNUd3JsSzB6bCt6bUhwWDBwMGpYSWZhdG56bEx6V2xTUTk1MEwxYz0=@pphfree2.mvpnpvpn.de5.net:52351
 ss://YWVzLTI1Ni1nY206c3hhakNUd3JsSzB6bCt6bUhwWDBwMGpYSWZhdG56bEx6V2xTUTk1MEwxYz0@pphfree2.mvpnpvpn.de5.net:52351
-vless://3c52e091-6714-4915-949f-2149fe69951b@103.86.49.57:80?encryption=none&security=none&type=ws&host=aIs.SpEeDtEsT.nEt&path=%2Fws
-vless://3c52e091-6714-4915-949f-2149fe69951b@103.86.49.57:80?path=%2Fws&security=none&encryption=none&host=aIs.SpEeDtEsT.nEt&type=ws
-vless://3c52e091-6714-4915-949f-2149fe69951b@103.86.49.57:80?path=/ws&security=&encryption=none&host=aIs.SpEeDtEsT.nEt&type=ws
-vless://3c52e091-6714-4915-949f-2149fe69951b@V2rAy.SiMsPeEdUp.CoM:80?path=%2Fws&security=&encryption=none&host=aIs.SpEeDtEsT.nEt&type=ws
-vless://3c52e091-6714-4915-949f-2149fe69951b@support.zoom.us.v2ray.simspeedup.com:80?fp=firefox&host=support.zoom.us.v2ray.simspeedup.com&path=%2Fws&security=none&sni=support.zoom.us.v2ray.simspeedup.com&type=ws
-vless://3c52e091-6714-4915-949f-2149fe69951b@v2ray.simspeedup.com:80?&packet-encoding=xudp&type=ws&headerType=none&host=v2ray.simspeedup.com&path=%2Fws
-vless://3c52e091-6714-4915-949f-2149fe69951b@v2ray.simspeedup.com:80?host=ais.speedtest.net&path=%2Fws&security=none&sni=ais.speedtest.net&type=ws
 vmess://eyJ2IjoiMiIsInBzIjoi8J+HufCfh60g0KLQsNC40LvQsNC90LQgWyPQoNCa0J9dIiwiYWRkIjoiMTE5LjQ2LjUxLjQ1IiwicG9ydCI6IjM3NTE1IiwiaWQiOiI5Yjc2YmMzMS0xN2E1LTQ0NTQtOTM0YS04ZDVmYjYwMmNkNzAiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIiLCJ0bHMiOiIifQ==
 vmess://eyJ2IjoiMiIsInBzIjoiIzc0MiDwn4e58J+HrSBUSCDihpIg8J+HufCfh60gVEgiLCJhZGQiOiIxMTkuNDYuNTEuNDUiLCJwb3J0IjoiMzc1MTUiLCJpZCI6IjliNzZiYzMxLTE3YTUtNDQ1NC05MzRhLThkNWZiNjAyY2Q3MCIsImFpZCI6IjAiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6IiIsInRscyI6IiIsInNuaSI6IiIsImFscG4iOiIiLCJmcCI6IiJ9
 vmess://eyJhZGQiOiIxMTkuNDYuNTEuNDUiLCJwb3J0IjoiMzc1MTUiLCJpZCI6IjliNzZiYzMxLTE3YTUtNDQ1NC05MzRhLThkNWZiNjAyY2Q3MCIsImFpZCI6IjAiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidiI6IjIiLCJob3N0IjoiIiwicGF0aCI6IiIsInRscyI6IiIsInNuaSI6IiIsInR5cGUiOiIiLCJzZXJ2ZXJQb3J0IjowLCJuYXRpb24iOiIifQ==
