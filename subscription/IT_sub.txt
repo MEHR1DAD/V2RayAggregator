@@ -1,7 +1,4 @@
 ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ==@57.131.48.45:8388
-vless://394f6981-a782-4779-9a85-e6cf22935d93@mil-it.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://489f1717-d3c7-4940-ad68-bdbdbab857f4@5.249.148.85:443?path=t.me%2FTEAMNETGRATISCOL&security=tls&encryption=none&insecure=0&host=x.m-90.xyz&fp=firefox&type=ws&allowInsecure=0&sni=x.m-90.xyz
-vless://489f1717-d3c7-4940-ad68-bdbdbab857f4@5.249.148.85:443?security=tls&type=ws&path=%2Ft.me%2FTEAMNETGRATISCOL&host=x.m-90.xyz&packetEncoding=xudp&sni=x.m-90.xyz&fp=firefox&encryption=none
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086/?type=tcp&encryption=none&flow=
 vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?
