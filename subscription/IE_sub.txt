@@ -40,6 +40,10 @@ trojan://UX82473651@loved-shark.rooster465.autos:443?type=tcp
 trojan://UX82473651@master-possum.rooster465.autos:443?allowInsecure=1
 trojan://UX82473651@master-possum.rooster465.autos:443?allowInsecure=1&sni=master-possum.rooster465.autos
 trojan://UX82473651@sacred-anemone.rooster465.autos:443
+trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=none&type=tcp&sni=sacred-anemone.rooster465.autos
+trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-anemone.rooster465.autos
+trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&type=tcp&sni=sacred-anemone.rooster465.autos
+trojan://UX82473651@sacred-anemone.rooster465.autos:443?sni=sacred-anemone.rooster465.autos
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?sni=sacred-anemone.rooster465.autos&allowInsecure=1&type=tcp&fp=chrome
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?type=raw&headerType=none&security=tls&sni=sacred-anemone.rooster465.autos
 trojan://UX82473651@sacred-anemone.rooster465.autos:443?type=tcp
