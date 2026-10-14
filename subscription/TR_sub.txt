@@ -4,11 +4,6 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@62.133.63.212:57456?ty
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@tr.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNDA2NDFjMWY4OWU3YWNi@tr.vpnsparta.pro:57456?type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@ist1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://439628ee-ef8e-4a3e-ba0f-091b7376dcb8@googol.wookshop.ir:17915?encryption=none&security=tls&type=tcp
-vless://439628ee-ef8e-4a3e-ba0f-091b7376dcb8@googol.wookshop.ir:17915?fp=chrome&security=tls
-vless://439628ee-ef8e-4a3e-ba0f-091b7376dcb8@googol.wookshop.ir:17915?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&headerType=&fp=chrome&type=tcp&sni=googol.wookshop.ir
-vless://439628ee-ef8e-4a3e-ba0f-091b7376dcb8@googol.wookshop.ir:17915?security=tls&alpn=h2,http/1.1&encryption=none&headerType=&fp=chrome&type=tcp&sni=googol.wookshop.ir
-vless://439628ee-ef8e-4a3e-ba0f-091b7376dcb8@googol.wookshop.ir:17915?sni=googol.wookshop.ir&alpn=h2%2Chttp/1.1&fp=chrome&security=tls
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221/?security=none&encryption=none&headerType=none&type=tcp
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221/?type=tcp&encryption=none
 vless://90efad13-d266-4d10-a914-bc40028ec469@94.131.108.195:53221/?type=tcp&encryption=none&flow=
