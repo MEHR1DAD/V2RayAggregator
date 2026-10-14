@@ -32,6 +32,7 @@ vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem
 vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem4.siasia.ir:2053?encryption=none&security=tls&sni=hheydudethisworldisshet.siasia.ir&alpn=h3,h2&fp=chrome&type=ws&host=hheydudethisworldisshet.siasia.ir&path=/apiii
 vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem4.siasia.ir:2053?security=tls&sni=hheydudethisworldisshet.siasia.ir&fp=randomized&type=ws&path=/apiii&host=hheydudethisworldisshet.siasia.ir&encryption=none
 vless://394f6981-a782-4779-9a85-e6cf22935d93@spb1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
+vless://3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f@185.147.27.164:8443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=user-6a8d949a.noooo.win&type=tcp
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@45.142.120.54:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://401374e6-df77-41fb-f638-dad8184f175b@176.124.223.161:443?security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@185.59.218.168:443/?security=tls&encryption=none&type=grpc&sni=pqh23v4.hiddendom.shop

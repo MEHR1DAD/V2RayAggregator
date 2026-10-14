@@ -15,8 +15,11 @@ ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.161:443
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.162:443
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.163:443
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@156.146.62.164:443
+vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?encryption=none&fp=chrome&path=%2F&security=tls&sni=sweden.homyak.app&type=httpupgrade
+vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?encryption=none&fp=chrome&path=/&security=tls&sni=sweden.homyak.app&type=httpupgrade
 vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?path=%2F&security=tls&encryption=none&insecure=0&fp=random&type=httpupgrade&allowInsecure=0&sni=sweden.homyak.app
 vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?path=/&security=tls&encryption=none&insecure=0&fp=chrome&type=httpupgrade&allowInsecure=0&sni=sweden.homyak.app
+vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?security=tls&encryption=none&insecure=0&fp=chrome&type=httpupgrade&allowInsecure=0&sni=sweden.homyak.app
 vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?type=httpupgrade&security=tls&fp=random&sni=sweden.homyak.app&path=/
 vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@lte.homyak.app:41826?encryption=none&security=tls&sni=sweden.homyak.app&type=httpupgrade&path=%2F
 vless://394f6981-a782-4779-9a85-e6cf22935d93@zrh-1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
