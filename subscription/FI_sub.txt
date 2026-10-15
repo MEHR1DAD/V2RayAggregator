@@ -8,9 +8,7 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQemxjYl9QZVYzdVJnaUMyTk5vTkt3@b2a2.velqixa.i
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@rusrv.vmagnum.win:57456
 ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ=@185.103.110.66:18280
 ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ=@185.103.110.68:18283
-ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ@185.103.110.66:18280
 ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ@185.103.110.68:18283
-ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ@185.103.110.68:18283?
 vless://115cdea7-3a2a-4ac9-9c29-f5a2e9b088a8@65.109.212.140:58117?security=none&encryption=none&headerType=none&type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
 vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?sni=45.144.234.157&type=ws&host=45.144.234.157&path=/vless
