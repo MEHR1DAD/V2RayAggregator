@@ -1,6 +1,10 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@45.139.24.24:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@45.139.24.24:57456?type=tcp
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.126.239.250:990
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpqM1BLT0NqN3dIbDVQazZ0aEk5SHlYdENhNkpVMTgwSWxCcFdBTmdGamtZPQ@130.49.189.158:43558
+ss://YWVzLTEyOC1nY206NjYzYjM0MDViZjA2NjJkMDEwNTkwN2Y0Y2VjZWI5ZjY@38.60.223.254:10881
+ss://YWVzLTI1Ni1nY206Y0NNSmdKVEEzQkE0ODlZVVlyRnE3WEhYU2lTcFdsTGE=@176.32.32.108:18443
+ss://YWVzLTI1Ni1nY206Y0NNSmdKVEEzQkE0ODlZVVlyRnE3WEhYU2lTcFdsTGE@176.32.32.108:18443
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@176.124.223.251:8880?allowInsecure=1&sni=cf.d3z.net&type=ws&host=cf.d3z.net&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@176.124.223.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.148.104.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome
@@ -21,15 +25,13 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.232.140.251:8880?path=%2FTelegra
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.232.140.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560&security=none&encryption=none&host=cf.d3z.net&type=ws
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.232.140.251:8880?security=none&type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@77.232.140.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
-vless://019fbe0f-2d9f-4b89-9f81-e1e36129892a@77.110.105.122:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=co-pl.speedtec.ru&type=tcp&headerType=none
-vless://019fbe0f-2d9f-4b89-9f81-e1e36129892a@77.110.105.122:443?security=tls&encryption=none&host=%2F%3FTELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&headerType=none&fp=random&type=tcp&flow=xtls-rprx-vision&sni=co-pl.speedtec.ru
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@185.221.160.3:80/?path=%2F193.123.81.105%3D443&security=&encryption=none&host=zoomgov.vipren.biz.id&type=ws
 vless://2036e2c3-18a5-4eed-9db4-f91a7f02c7d5@185.221.160.3:80?path=%2F193.123.81.105%3D443&security=&encryption=none&host=zoomgov.vipren.biz.id&type=ws
+vless://379998c5-2a71-4202-9c74-522e0c3c5404@185.147.27.183:8443?encryption=none&flow=xtls-rprx-vision&fp=firefox&security=tls&sni=user-6a917f32.noooo.win&type=tcp
 vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem4.siasia.ir:2053?encryption=none&security=tls&sni=hheydudethisworldisshet.siasia.ir&alpn=h3%2Ch2&fp=randomized&type=ws&host=hheydudethisworldisshet.siasia.ir&path=%2Fapiii
 vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem4.siasia.ir:2053?encryption=none&security=tls&sni=hheydudethisworldisshet.siasia.ir&alpn=h3,h2&fp=chrome&type=ws&host=hheydudethisworldisshet.siasia.ir&path=/apiii
 vless://3891b3ce-bb3a-45bf-bd8e-90e2487d121e@wouldyoumarriemepleasefuckthesystem4.siasia.ir:2053?security=tls&sni=hheydudethisworldisshet.siasia.ir&fp=randomized&type=ws&path=/apiii&host=hheydudethisworldisshet.siasia.ir&encryption=none
 vless://394f6981-a782-4779-9a85-e6cf22935d93@spb1.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f@185.147.27.164:8443?encryption=none&type=tcp&security=tls&sni=user-6a8d949a.noooo.win&flow=xtls-rprx-vision
 vless://3e7974ae-db38-4d4a-ba60-9a9b67758863@45.142.120.54:443?encryption=none&security=tls&sni=MarI.shirAzIPoOYa.Ir&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=mari.shirazipooya.ir&path=%2F4RHLgw9SOFKIALri%3Fed%3D2560
 vless://401374e6-df77-41fb-f638-dad8184f175b@176.124.223.161:443?security=tls&alpn=h2&encryption=none&type=grpc&sni=pqh36v4.hiddendom.shop
 vless://401374e6-df77-41fb-f638-dad8184f175b@185.59.218.168:443/?security=tls&encryption=none&type=grpc&sni=pqh23v4.hiddendom.shop
