@@ -1,7 +1,6 @@
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.218.192:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.188.13:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
-vmess://eyJhZGQiOiI0NS4xMjguNTQuODQiLCJhaWQiOiIwIiwiaG9zdCI6IiIsImlkIjoiNzJmZWI4MzMtNDE5Ni00YTcwLWEzZjUtYWViMDExZjdkNTM0IiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIzNzMxMyIsInBzIjoicW5fMjY0MyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.218.192:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=firefox&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@187.52.127.204:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.188.13:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=firefox&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@166.88.194.74:2087?&security=tls&fp=chrome&sni=snip.edgeoneai.cc.cd&type=ws&headerType=none&host=snip.edgeoneai.cc.cd&path=%2F
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.218.192:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@76.13.188.13:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@187.52.127.204:8443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2F
