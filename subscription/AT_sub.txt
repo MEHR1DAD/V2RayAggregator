@@ -6,11 +6,3 @@ vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880/?type=ws&encryp
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880/?type=ws&encryption=none&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880?security=&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3%20@WangCai2%20/?ed%3D2560&host=cf.d3z.net&encryption=none
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@212.183.88.251:8880?type=ws&host=cf.d3z.net&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3%20@WangCai2%20/?ed%3D2560
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@188.137.158.169:443?type=raw&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=softice.net
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@188.137.158.179:443?type=raw&security=tls&flow=xtls-rprx-vision&fp=chrome&sni=softice.net
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@188.137.158.189:443?type=raw&security=tls&flow=xtls-rprx-vision&fp=chrome&sni=softice.net
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@188.137.158.199:443?type=raw&security=tls&flow=xtls-rprx-vision&fp=chrome&sni=softice.net
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@softice.net:443?&security=tls&flow=xtls-rprx-vision&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=softice.net&type=tcp&headerType=none&host=softice.net&path=%2F
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@softice.net:443?encryption=none&flow=xtls-rprx-vision&security=tls&sni=softice.net&fp=chrome&alpn=h2,http/1.1&type=tcp&headerType=none
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@softice.net:443?sni=softice.net&alpn=h2%2Chttp/1.1&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls
-vless://ef328563-cda1-4530-9b0a-988cc5a74d78@softice.net:443?type=raw&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=softice.net

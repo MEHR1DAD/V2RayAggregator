@@ -1,1 +1,1 @@
-trojan://4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA@ie1.dedushka.top:443?alpn=http%2F1.1&security=tls&sni=ie1.dedushka.top
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@50.7.5.188:443?allowInsecure=1&type=tcp&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=ir-new-ded.failspace.top
