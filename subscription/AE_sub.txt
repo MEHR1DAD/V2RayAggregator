@@ -22,4 +22,7 @@ vless://b6a617b7-758e-4639-b2f4-d296c0f1b03e@94.140.0.22:2052?encryption=none&se
 vless://b6a617b7-758e-4639-b2f4-d296c0f1b03e@94.140.0.22:2052?encryption=none&security=none&type=ws&host=register.tunnelbreaking.shop&path=%2F
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?encryption=none&security=none&type=ws&path=/?ed=2560/?JOKERRVPN_BIA_CHANEL@JOKERRVPN
 vless://cac07fc1-9c38-42af-b26f-421eaca2cd65@94.183.158.13:1190?path=%2F%3Fed%3D2560&security=none&encryption=none&type=ws
+vless://e3c3b722-1264-4cdc-a97c-b0a1bb73cd67@140.225.208.50:2083?encryption=none&security=tls&sni=speedtestmark.com&fp=chrome&alpn=http%2F1.1&type=ws&path=%2Fvless-ws
+vless://e3c3b722-1264-4cdc-a97c-b0a1bb73cd67@140.225.208.50:2083?encryption=none&security=tls&sni=speedtestmark.com&fp=random&alpn=http%2F1.1&type=ws&path=%2Fvless-ws
+vless://e3c3b722-1264-4cdc-a97c-b0a1bb73cd67@140.225.208.50:2083?path=%2Fvless-ws&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&fp=random&type=ws&allowInsecure=0&sni=speedtestmark.com
 vless://e9979910-79d1-4621-a93c-b2a579c44ba7@94.140.0.109:8880?path=%2F&security=&encryption=none&host=VngSuPpLY.IP-DdnS.com&type=ws
