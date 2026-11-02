@@ -1,6 +1,8 @@
-trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?sni=th001.zestapp778.com&allowInsecure=1
 trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?type=tcp&security=tls&fp=chrome&sni=th001.zestapp778.com
+trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?security=tls&sni=th001.zestapp778.com&fp=chrome&type=tcp&headerType=none
 trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?sni=th001.zestapp778.com&allowInsecure=1&type=tcp&fp=chrome
 trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?security=tls&sni=th001.zestapp778.com&type=tcp&headerType=none
-trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?security=tls&sni=th001.zestapp778.com&fp=chrome&type=tcp&headerType=none
+trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?sni=th001.zestapp778.com&type=tcp&fp=chrome
 trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?allowInsecure=1&sni=th001.zestapp778.com&type=tcp
+trojan://5t6i121em5lkmsmk@th001.zestapp778.com:33079?sni=th001.zestapp778.com&allowInsecure=1
+vmess://eyJ2IjoiMiIsInBzIjoi8J+HufCfh61USF82fDcyOEtCL3N8TTAwMy0yNjA4MDYgWzBmODFiODc3YTM1ZF0iLCJhZGQiOiIxMTkuNDYuNTEuNDUiLCJwb3J0IjozNzUxNSwiaWQiOiI5Yjc2YmMzMS0xN2E1LTQ0NTQtOTM0YS04ZDVmYjYwMmNkNzAiLCJhaWQiOjAsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIn0=
