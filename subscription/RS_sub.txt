@@ -1,2 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@194.71.126.31:990
 vless://689a62e4-37e7-41de-9e6a-f2a56368c9e2@185.72.11.43:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&security=tls&sni=rs8.speedtestinternet.link&type=tcp
