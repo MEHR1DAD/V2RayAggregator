@@ -5,6 +5,8 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@lv.vpnsparta.pro:57456
 vless://0cc9d390-42ee-461e-94ae-e4370883dc48@77.73.238.191:29505?path=%2F&security=&encryption=none&type=ws
 vless://0cc9d390-42ee-461e-94ae-e4370883dc48@77.73.238.191:29505?path=%2F&security=none&encryption=none&type=ws
 vless://0cc9d390-42ee-461e-94ae-e4370883dc48@77.73.238.191:29505?path=/&security=none&encryption=none&type=ws
+vless://3694cbd9-986b-4bf3-95df-3649b37ccb47@latvia.zovip2.ir:443?encryption=none&security=tls&sni=sync.zovip2.ir&fp=chrome&alpn=http%2F1.1&type=ws&host=sync.zovip2.ir&path=%2Fapi%2Fv3%2Fpulse
+vless://3694cbd9-986b-4bf3-95df-3649b37ccb47@latvia.zovip2.ir:443?encryption=none&security=tls&sni=sync.zovip2.ir&fp=chrome&alpn=http/1.1&type=ws&host=sync.zovip2.ir&path=/api/v3/pulse
 vless://393044fb-755a-4623-965e-3ae4fe39d730@83.222.20.64:53299?path=%2F&security=none&encryption=none&type=ws
 vless://393044fb-755a-4623-965e-3ae4fe39d730@83.222.20.64:53299?path=/&security=none&encryption=none&type=ws
 vless://393044fb-755a-4623-965e-3ae4fe39d730@83.222.20.64:53299?security=none&type=ws&path=/&packetEncoding=xudp&encryption=none
