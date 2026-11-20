@@ -1,10 +1,7 @@
-ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206ZjJOcTVZTG55Y2xQYVdSOG15Ny9WZGQzWlg4VVJuY1haTmx5NStIY1VTcz06ZFE2V1ljUHBHWDV4SXhVVlBBUjh3MUE5ZVk2a0VWb0tLVzNIbGVKNm84WT0=@frr.drwrdoh.org:8086
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206ZjJOcTVZTG55Y2xQYVdSOG15Ny9WZGQzWlg4VVJuY1haTmx5NStIY1VTcz06ZFE2V1ljUHBHWDV4SXhVVlBBUjh3MUE5ZVk2a0VWb0tLVzNIbGVKNm84WT0@frr.drwrdoh.org:8086
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.255.210.49:990
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpsRGU4dVktTUlzYTJDX1BmcHdVYXFVSHNNa2Y1dHFQRQ==@45.83.85.31:1080
 vless://0132166f-e702-48ed-a9e7-b07af768faf8@45.150.115.251:8880?type=ws&host=cf.d3z.net&path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560
-vless://352a250d-080b-47b5-b7db-f9f8fa31c551@132.243.212.204:443?allowInsecure=1&type=tcp&security=tls&flow=xtls-rprx-vision&fp=firefox&sni=10w0wjw.virtual-network.lol
-vless://352a250d-080b-47b5-b7db-f9f8fa31c551@132.243.212.204:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=tls&sni=10w0wjw.virtual-network.lol&fp=firefox
-vless://352a250d-080b-47b5-b7db-f9f8fa31c551@132.243.212.204:443?security=tls&flow=xtls-rprx-vision&sni=10w0wjw.virtual-network.lol&type=tcp&headerType=none&host=10w0wjw.virtual-network.lol&path=%2F&fp=chrome
-vless://352a250d-080b-47b5-b7db-f9f8fa31c551@132.243.212.204:443?security=tls&type=tcp&sni=10w0wjw.virtual-network.lol&flow=xtls-rprx-vision&fp=firefox
 vless://401374e6-df77-41fb-f638-dad8184f175b@154.92.9.26:443?security=tls&sni=pqh36v4.hiddendom.shop&alpn=h2&type=grpc&encryption=none
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.26.229.188:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram🇨🇳 @WangCai2 /?ed=2560
 vless://583ceab3-4022-4553-9158-9bedc625ad4e@195.85.59.186:8880?allowInsecure=0&sni=Telegram-channel-WangCai2&type=ws&host=ip.langmanshanxi.top&path=/Telegram @WangCai2 /?ed=2560
