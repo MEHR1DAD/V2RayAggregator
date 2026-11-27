@@ -5,12 +5,8 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@185.193.102.7:57456?pr
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNjBlMjFkMjE5NzdkYzEx@rusrv.vpnsparta.pro:57456
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCSjVuRFpUdWxtWXpuSHZIWGhTNloz@83.147.216.70:64519
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNThmYTYyYjQ5NDRkZGJm@rusrv.vmagnum.win:57456
-trojan://174rUJ1RGKdZ4ETwzu9uhT2GEeof2zrp@152.234.245.206:8443?allowInsecure=0&alpn=h2%2Chttp/1.1&fp=firefox&headerType=&insecure=0&security=tls&sni=flf.serverstats.ru&type=tcp
-trojan://174rUJ1RGKdZ4ETwzu9uhT2GEeof2zrp@152.234.245.206:8443?security=tls&sni=flf.serverstats.ru&alpn=h2,http/1.1&fp=firefox&type=tcp
 vless://115cdea7-3a2a-4ac9-9c29-f5a2e9b088a8@65.109.212.140:58117?security=none&encryption=none&headerType=none&type=tcp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@hel2.fromblancwithlove.com:8443?encryption=none&security=tls&alpn=h2&type=tcp&headerType=none
-vless://58e22afd-bf74-4736-984d-63a8ca03d7f0@185.232.204.31:443?encryption=none&fp=firefox&host=accessfooter.cleanfoodshop.org&path=/media/ws/&security=tls&sni=accessfooter.cleanfoodshop.org&type=ws
-vless://58e22afd-bf74-4736-984d-63a8ca03d7f0@185.232.204.31:443?security=tls&type=ws&path=%2Fmedia%2Fws%2F&host=accessfooter.cleanfoodshop.org&packetEncoding=xudp&sni=accessfooter.cleanfoodshop.org&fp=firefox&encryption=none
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi11.bot-hosting.net:20083?encryption=none&security=none&type=ws&path=%2F
 vless://8c94dfd8-52dd-451c-8c85-26770cd41768@fi8.bot-hosting.net:20915?encryption=none&security=none&type=ws&path=%2F
 vless://9e769ce1-34be-4e3f-b0a6-823f30eb8f69@45.15.127.184:2052/?type=ws&encryption=none&flow=
